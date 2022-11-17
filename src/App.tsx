@@ -1,24 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useCallback } from 'react';
 import './App.css';
 
+import 'survey-core/modern.min.css';
+import { StylesManager, Model } from 'survey-core'
+import { Survey } from 'survey-react-ui';
+import { debounce } from "lodash";
+
+StylesManager.applyTheme("modern");
+
+const surveyJson: any = {
+  elements: [{
+    name: "name.first",
+    title: "Enter your first name:",
+    type: "text",
+  }, {
+    name: "name.last",
+    title: "Enter your last name:",
+    type: "text",
+  }],
+};
+
+const saveData = (options: any) => {
+  console.log(options.name, options.value)
+}
+
+surveyJson.textUpdateMode = "onTyping" // Force onValueChanged to happen with every keypress so data is not lost
+const debouncers: any = {};
+
 function App() {
+  const survey = new Model(surveyJson)
+
+  const handleChange = useCallback((sender: any, options: any) => {
+    if (!debouncers[options.name]) {
+      debouncers[options.name] = debounce((options2) => {
+        saveData(options2)
+      }, 1000)
+    }
+    debouncers[options.name](options)
+  }, []);
+
+  survey.onValueChanged.add(handleChange)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Survey model={survey} />
     </div>
   );
 }
