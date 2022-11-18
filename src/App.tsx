@@ -5,30 +5,19 @@ import 'survey-core/modern.min.css';
 import { StylesManager, Model } from 'survey-core'
 import { Survey } from 'survey-react-ui';
 import { debounce } from "lodash";
+import { surveyFormat } from './surveyFormat';
 
 StylesManager.applyTheme("modern");
-
-const surveyJson: any = {
-  elements: [{
-    name: "name.first",
-    title: "Enter your first name:",
-    type: "text",
-  }, {
-    name: "name.last",
-    title: "Enter your last name:",
-    type: "text",
-  }],
-};
 
 const saveData = (options: any) => {
   console.log(options.name, options.value)
 }
 
-surveyJson.textUpdateMode = "onTyping" // Force onValueChanged to happen with every keypress so data is not lost
+surveyFormat.textUpdateMode = "onTyping" // Force onValueChanged to happen with every keypress so data is not lost
 const debouncers: any = {};
 
 function App() {
-  const survey = new Model(surveyJson)
+  const survey = new Model(surveyFormat)
 
   const handleChange = useCallback((sender: any, options: any) => {
     if (!debouncers[options.name]) {
