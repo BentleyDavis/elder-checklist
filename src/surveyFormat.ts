@@ -6,7 +6,7 @@ export const surveyFormat: any = {
             "elements": [
                 {
                     "type": "matrix",
-                    "name": "question2",
+                    "name": "feelToday",
                     "title": "How do you feel today?",
                     "verticalAlign": "top",
                     "columns": [
@@ -40,7 +40,7 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "matrix",
-                    "name": "question1",
+                    "name": "pain",
                     "title": "Pain",
                     "verticalAlign": "top",
                     "alternateRows": true,
@@ -88,7 +88,7 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "matrix",
-                    "name": "question3",
+                    "name": "other",
                     "title": "Other",
                     "alternateRows": true,
                     "columns": [
