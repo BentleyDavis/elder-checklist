@@ -1,20 +1,14 @@
 import './App.css';
-import 'survey-core/modern.min.css';
 import { useEffect, useRef, useState } from 'react';
-import { StylesManager, Model } from 'survey-core'
-import { Survey } from 'survey-react-ui';
 import { surveyFormat } from './surveyFormat';
 import { firebaseApp, firebaseInit } from './database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, User } from 'firebase/auth';
 import { doc, getDoc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { newId } from './newId';
+import Components from "./components/Components";
 
-// import { debounce } from "lodash";
-// const debouncers: any = {};
-// let userAccessToken: string | undefined;
-
-StylesManager.applyTheme("modern");
+const provider = new GoogleAuthProvider();
 
 function getSurveyDateId() {
   const date = new Date();
@@ -23,11 +17,7 @@ function getSurveyDateId() {
     date.getDate().toString().padStart(2, "0")
 }
 
-surveyFormat.textUpdateMode = "onTyping" // Force onValueChanged to happen with every keypress so data is not lost
-const provider = new GoogleAuthProvider();
-
 function App() {
-  const survey = new Model(surveyFormat)
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   const [user, setUser] = useState<User>()
   const [surveyData, setsurveyData] = useState<any>(undefined)
@@ -83,54 +73,28 @@ function App() {
     }
   }, [])
 
-  const saveData = async (options: any) => {
-    if (dbDocRef.current) {
-      await updateDoc(dbDocRef.current, {
-        [options.name]: options.value,
-        updateFrom: uniqueSessionId.current,
-        updated: { [options.name]: options.value }
-      });
-    }
-  }
-
-  const handleSurveyChange = (sender: any, options: any) => {
-    // console.log(sender.data.pain.arms, options.value.arms);
-
-    //const handleSurveyChange = useCallback((sender: any, options: any) => {
-    saveData(options)
-    // if (!debouncers[options.name]) {
-    //   debouncers[options.name] = debounce((options2) => {
-    //     saveData(options2)
-    //   }, 1000)
-    // }
-    // debouncers[options.name](options)
-    //}, []);
-  }
-
-  survey.onValueChanged.add(handleSurveyChange)
-
-  // // Failed attempt to detect sub changes to matrix questions
-  // survey.onAfterRenderQuestion.add((survey: any, options: any) => {
-  //   console.log(options.question);
-  //   if (options?.question?.onPropertyChanged?.add) {
-  //     options.question.onPropertyChanged.add((sender: any, options: any) => {
-  //       console.log(options);
-  //     })
+  // const saveData = async (options: any) => {
+  //   if (dbDocRef.current) {
+  //     await updateDoc(dbDocRef.current, {
+  //       [options.name]: options.value,
+  //       updateFrom: uniqueSessionId.current,
+  //       updated: { [options.name]: options.value }
+  //     });
   //   }
-  // })
+  // }
 
   return (
-    <div className="App">
+    <div className="container">
+
       {authState === "in" && surveyData !== undefined &&
         <>
-          <div className='sv-body__page'>
+          <div>
             <h2>Reminders</h2>
             <ul>
               <li>Don't use Diclofenac cream if you have a rash</li>
             </ul>
           </div>
-          <Survey model={survey} data={surveyData} />
-          {/* <pre>{JSON.stringify(survey, undefined, 2)}</pre> */}
+          {surveyFormat.elements.map((e: any) => { return Components(e, surveyData) })}
         </>
       }
 
