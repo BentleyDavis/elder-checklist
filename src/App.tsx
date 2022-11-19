@@ -94,6 +94,7 @@ function App() {
   }
 
   const handleSurveyChange = (sender: any, options: any) => {
+    // console.log(sender.data.pain.arms, options.value.arms);
 
     //const handleSurveyChange = useCallback((sender: any, options: any) => {
     saveData(options)
@@ -108,10 +109,26 @@ function App() {
 
   survey.onValueChanged.add(handleSurveyChange)
 
+  // // Failed attempt to detect sub changes to matrix questions
+  // survey.onAfterRenderQuestion.add((survey: any, options: any) => {
+  //   console.log(options.question);
+  //   if (options?.question?.onPropertyChanged?.add) {
+  //     options.question.onPropertyChanged.add((sender: any, options: any) => {
+  //       console.log(options);
+  //     })
+  //   }
+  // })
+
   return (
     <div className="App">
       {authState === "in" && surveyData !== undefined &&
         <>
+          <div className='sv-body__page'>
+            <h2>Reminders</h2>
+            <ul>
+              <li>Don't use Diclofenac cream if you have a rash</li>
+            </ul>
+          </div>
           <Survey model={survey} data={surveyData} />
           {/* <pre>{JSON.stringify(survey, undefined, 2)}</pre> */}
         </>
