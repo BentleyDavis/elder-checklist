@@ -1,0 +1,4 @@
+/* TODO: figure out why survey.js alternating colors is not working*/
+.sv-matrix-root tr:nth-child(even) {
+  background-color: #ccc;
+}
