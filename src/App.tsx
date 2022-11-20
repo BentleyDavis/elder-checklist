@@ -1,8 +1,8 @@
 import './App.css';
-import { useEffect, useReducer, useRef, useState, useSyncExternalStore } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { surveyFormat } from './surveyFormat';
 import { firebaseApp, firebaseInit } from './database';
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, User } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
 import { doc, getDoc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { newId } from './newId';
@@ -24,7 +24,7 @@ const uniqueSessionId = newId()
 
 function App() {
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
-  const [user, setUser] = useState<User>()
+  // const [user, setUser] = useState<User>()
   const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
 
   useEffect(() => { // Log Into Firebase
@@ -34,7 +34,7 @@ function App() {
     let unsubscribe = onAuthStateChanged(auth, async (incomingUser) => {
       if (incomingUser) {
         setAuthState("in");
-        setUser(incomingUser);
+        // setUser(incomingUser);
 
         // Subscribe the survey data
         const db = getFirestore(firebaseApp);
