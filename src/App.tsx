@@ -25,10 +25,9 @@ const uniqueSessionId = newId()
 function App() {
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   const [user, setUser] = useState<User>()
-  const [surveyData, setsurveyData] = useState<any>(undefined)
   const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
-  // const dbDocRef = useRef<any>(undefined)
-  //const uniqueSessionId = useRef(newId())
+
+
 
   useEffect(() => { // Log Into Firebase
     firebaseInit()
@@ -54,7 +53,6 @@ function App() {
             const data = doc.data();
             if (data) {
               if (data.updateFrom !== uniqueSessionId) {
-                setsurveyData(data);
                 dispatchForm({ path: "", data })
               } else {
               }
@@ -79,20 +77,9 @@ function App() {
     }
   }, [])
 
-  // const saveData = async (options: any) => {
-  //   if (dbDocRef.current) {
-  //     await updateDoc(dbDocRef.current, {
-  //       [options.name]: options.value,
-  //       updateFrom: uniqueSessionId.current,
-  //       updated: { [options.name]: options.value }
-  //     });
-  //   }
-  // }
-
   function formStateReducer(oldState: any, action: { path: string, data: any }) {
 
     // Update Remotre State
-    //saveData({ name: action.path, value: action.data })
     if (dbDocRef && action.path !== "") {
       updateDoc(dbDocRef, {
         [action.path]: action.data,
@@ -118,12 +105,6 @@ function App() {
 
       {authState === "in" && formState !== undefined &&
         <>
-          <div>
-            <h2>Reminders</h2>
-            <ul>
-              <li>Don't use Diclofenac cream if you have a rash</li>
-            </ul>
-          </div>
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
         </>
       }
@@ -131,9 +112,10 @@ function App() {
       {authState === "unknown" &&
         <h1>Checking login...</h1>
       }
-      <span style={{ opacity: .2 }}>
-        {user?.displayName}({user?.uid})
-      </span>
+      {/* <span style={{ opacity: .2 }}>
+        {user?.displayName}
+        ({user?.uid})
+      </span> */}
 
     </div>
   );
