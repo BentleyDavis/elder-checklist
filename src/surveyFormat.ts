@@ -143,7 +143,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "comment",
-            "name": "Notes",
+            "name": "question4",
             "title": "Notes"
         }
     ]

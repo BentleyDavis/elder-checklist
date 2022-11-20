@@ -1,5 +1,12 @@
 
-export default function Matrix({ elementData, dataStore }: { elementData: any, dataStore: any }) {
+export default function Matrix({ elementData, dataStore, dispatch }: {
+    elementData: any, dataStore: any,
+    dispatch: React.Dispatch<{
+        path: string;
+        data: any;
+    }>
+}) {
+
     return <>
         {/* <pre>{JSON.stringify(dataStore, undefined, 2)}</pre> */}
         <div className="row">
@@ -27,13 +34,19 @@ export default function Matrix({ elementData, dataStore }: { elementData: any, d
 
                         return <tr key={r.value}>
                             <th scope="row">
-                                {r.text}: {dataStore[elementData.name][r.value]}
+                                {r.text}
                             </th>
                             {elementData.columns.map((c: any) => {
 
-                                return <td key={c.text}>
-                                    <input className="form-check-input" type="radio" name={r.text} id={c.value}
-                                        checked={dataStore[elementData.name][r.value] === c.value} />
+                                return <td key={c.text} style={{ textAlign: "center" }}>
+                                    <input className="form-check-input" type="radio" name={r.value} id={c.value}
+                                        checked={dataStore[elementData.name][r.value] === c.value}
+                                        onChange={() => {
+                                            dispatch({
+                                                path: elementData.name + "." + r.value,
+                                                data: c.value
+                                            })
+                                        }} />
                                 </td>
                             })}
                         </tr>

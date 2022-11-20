@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
 import { surveyFormat } from './surveyFormat';
 import { firebaseApp, firebaseInit } from './database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, User } from 'firebase/auth';
@@ -7,6 +7,8 @@ import { doc, getDoc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { newId } from './newId';
 import Components from "./components/Components";
+import { deepCopy, pathCreateObject } from './utils/dataStore';
+import { merge } from 'lodash';
 
 const provider = new GoogleAuthProvider();
 
@@ -17,12 +19,16 @@ function getSurveyDateId() {
     date.getDate().toString().padStart(2, "0")
 }
 
+let dbDocRef: any
+const uniqueSessionId = newId()
+
 function App() {
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   const [user, setUser] = useState<User>()
   const [surveyData, setsurveyData] = useState<any>(undefined)
-  const dbDocRef = useRef<any>(undefined)
-  const uniqueSessionId = useRef(newId())
+  const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
+  // const dbDocRef = useRef<any>(undefined)
+  //const uniqueSessionId = useRef(newId())
 
   useEffect(() => { // Log Into Firebase
     firebaseInit()
@@ -35,11 +41,11 @@ function App() {
 
         // Subscribe the survey data
         const db = getFirestore(firebaseApp);
-        if (!dbDocRef.current) {
+        if (!dbDocRef) {
 
           // create the doc if it doesn't exist
           const docRef = doc(db, "lists", "AL3vE9W4KNpbHaZ03IGp", "submissions", getSurveyDateId());
-          dbDocRef.current = docRef;
+          dbDocRef = docRef;
           if (!(await getDoc(docRef)).exists()) {
             await setDoc(docRef, {})
           }
@@ -47,8 +53,9 @@ function App() {
           const unsub = onSnapshot(docRef, (doc) => {
             const data = doc.data();
             if (data) {
-              if (data.updateFrom !== uniqueSessionId.current) {
+              if (data.updateFrom !== uniqueSessionId) {
                 setsurveyData(data);
+                dispatchForm({ path: "", data })
               } else {
               }
             }
@@ -64,7 +71,6 @@ function App() {
     });
 
     cancelables.push(unsubscribe)
-
 
     return () => {
       for (const c of cancelables) {
@@ -83,10 +89,34 @@ function App() {
   //   }
   // }
 
+  function formStateReducer(oldState: any, action: { path: string, data: any }) {
+
+    // Update Remotre State
+    //saveData({ name: action.path, value: action.data })
+    if (dbDocRef && action.path !== "") {
+      updateDoc(dbDocRef, {
+        [action.path]: action.data,
+        updateFrom: uniqueSessionId,
+        updated: { [action.path]: action.data }
+      });
+    }
+
+
+    // Update local state
+    let partial = action.data;
+    if (action.path !== "") {
+      partial = pathCreateObject(action.path, action.data)
+    }
+    return merge(deepCopy(oldState), deepCopy(partial));
+  }
+
   return (
     <div className="container">
+      {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(surveyData, undefined, 2)}</pre> */}
 
-      {authState === "in" && surveyData !== undefined &&
+
+      {authState === "in" && formState !== undefined &&
         <>
           <div>
             <h2>Reminders</h2>
@@ -94,7 +124,7 @@ function App() {
               <li>Don't use Diclofenac cream if you have a rash</li>
             </ul>
           </div>
-          {surveyFormat.elements.map((e: any) => { return Components(e, surveyData) })}
+          {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
         </>
       }
 

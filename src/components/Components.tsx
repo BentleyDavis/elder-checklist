@@ -8,7 +8,11 @@ const components: { [key: string]: any } = {
 };
 
 
-export default function Components(element: any, dataStore: any) {
+export default function Components(element: any, dataStore: any,
+    dispatch: React.Dispatch<{
+        path: string;
+        data: any;
+    }>) {
 
 
     if (typeof components[element.type] !== "undefined") {
@@ -16,7 +20,8 @@ export default function Components(element: any, dataStore: any) {
             key: element.name,
             // block: Components
             elementData: element,
-            dataStore: dataStore
+            dataStore: dataStore,
+            dispatch: dispatch
         });
     }
     return React.createElement(
