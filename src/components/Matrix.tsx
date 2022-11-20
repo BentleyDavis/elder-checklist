@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "react";
+import { pathGetAt } from "../utils/dataStore";
 
 export default function Matrix({ elementData, dataStore, dispatch }: {
     elementData: any, dataStore: any,
@@ -7,14 +9,30 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
     }>
 }) {
 
+
+    function useWide(selector = (id: any) => id) {
+        return useSyncExternalStore(
+            (onStoreChange: any) => {
+                global.window?.addEventListener("resize", onStoreChange);
+                return () =>
+                    global.window?.removeEventListener(
+                        "resize",
+                        onStoreChange
+                    );
+            },
+            () => selector(global.window?.innerWidth > 400 ? true : false)
+        );
+    }
+
     return <>
-        {/* <pre>{JSON.stringify(dataStore, undefined, 2)}</pre> */}
+
         <div className="row">
             <div className="col">
                 <h2>{elementData.title}</h2>
             </div>
         </div>
-        <div className="table-responsive">
+
+        {useWide() && <>
             <table className="table table-striped" style={{ width: "unset" }}>
                 <thead>
                     <tr>
@@ -40,7 +58,7 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
 
                                 return <td key={c.text} style={{ textAlign: "center" }}>
                                     <input className="form-check-input" type="radio" name={r.value} id={c.value}
-                                        checked={dataStore[elementData.name][r.value] === c.value}
+                                        checked={pathGetAt([elementData.name, r.value], dataStore) === c.value}
                                         onChange={() => {
                                             dispatch({
                                                 path: elementData.name + "." + r.value,
@@ -53,7 +71,39 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
                     })}
                 </tbody>
             </table>
-        </div>
+        </>}
 
+
+        {!useWide() && <>
+            {elementData.rows.map((r: any) => {
+                if (typeof r === "string") {
+                    r = { text: r, value: r }
+                }
+
+                return <div className="mb-3" key={r.value}>
+                    <label htmlFor="exampleFormControlTextarea1" className="form-label">{r.text}</label>
+                    <select className="form-select" aria-label={r.text}
+                        value={pathGetAt([elementData.name, r.value], dataStore)}
+                        onChange={(event) => {
+                            dispatch({
+                                path: elementData.name + "." + r.value,
+                                data: event.currentTarget.value.toString()
+                            })
+                        }} >
+                        <option value=""></option>
+                        {elementData.columns.map((c: any) => {
+                            return <option
+                                key={c.text}
+                                value={c.value}
+                            >
+                                {c.text}
+                            </option>
+                        })}
+                    </select>
+                </div>
+            })}
+
+        </>
+        }
     </>
 }

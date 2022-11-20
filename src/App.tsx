@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useReducer, useRef, useState, useSyncExternalStore } from 'react';
 import { surveyFormat } from './surveyFormat';
 import { firebaseApp, firebaseInit } from './database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect, User } from 'firebase/auth';
@@ -26,8 +26,6 @@ function App() {
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   const [user, setUser] = useState<User>()
   const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
-
-
 
   useEffect(() => { // Log Into Firebase
     firebaseInit()
@@ -101,7 +99,6 @@ function App() {
     <div className="container">
       {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
       {/* <pre>{JSON.stringify(surveyData, undefined, 2)}</pre> */}
-
 
       {authState === "in" && formState !== undefined &&
         <>

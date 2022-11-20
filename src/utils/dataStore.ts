@@ -1,4 +1,4 @@
-import { isArray, merge } from "lodash";
+import { isArray } from "lodash";
 
 export function deepCopy<Type>(source: Type) {
     if (!source) return source;
@@ -23,4 +23,21 @@ export function pathCreateObject(path: string | string[], value: any) {
     }, pathObject);
     endObject[pathEnd(path)] = value;
     return pathObject;
+}
+
+export function pathGetAt(path: string | string[], source: any) {
+    if (!Array.isArray(path))
+        path = path.split('.');
+    const result = path.reduce((o: any, i) => {
+        if (o === undefined) {
+            return o
+        } else {
+            return o[i] ? o[i] : undefined;
+        }
+    }, source);
+    if (result?.bind) {
+        return result.bind(source)
+    } else {
+        return result
+    }
 }
