@@ -5,7 +5,7 @@ import { firebaseApp, firebaseInit } from './database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
 import { doc, getDoc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
-import { newId } from './newId';
+import { newId } from './utils/newId';
 import Components from "./components/Components";
 import { deepCopy, pathCreateObject } from './utils/dataStore';
 import { merge } from 'lodash';

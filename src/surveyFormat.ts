@@ -31,7 +31,7 @@ export const surveyFormat: any = {
             "rows": [
                 {
                     "value": "feel",
-                    "text": " "
+                    "text": "feel?"
                 }
             ]
         },
