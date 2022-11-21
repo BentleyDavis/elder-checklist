@@ -2,11 +2,13 @@ import React from "react";
 import Matrix from "./Matrix";
 import Comment from "./Comment";
 import Tasks from "./Tasks";
+import H1 from "./H1";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
     comment: Comment,
     tasks: Tasks,
+    h1: H1,
 };
 
 

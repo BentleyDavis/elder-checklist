@@ -3,3 +3,8 @@
   border: 1px solid black;
   border-radius: 10px;
 }
+
+.task.Started {
+  background-color: var(--bs-success);
+  color: white;
+}

@@ -12,9 +12,10 @@ export default function Tasks({ elementData, dataStore, dispatch }: {
         {elementData.tasks.map((task: any) => {
             return <div key={task.id}>
                 {data?.[task.id] === undefined ||
-                    data?.[task.id] === "" ?
+                    data?.[task.id] === "" ||
+                    data?.[task.id] === "Started" ?
                     // Value not currently set
-                    <div className="task" >
+                    <div className={"task " + data?.[task.id] || ""} >
                         {task.content}
 
                         {task.type === "reminder" ?
@@ -27,7 +28,19 @@ export default function Tasks({ elementData, dataStore, dispatch }: {
                                 }}>
                                 ok
                             </button>
-                            : <>
+                            : // ToDo Task
+                            <>
+                                {data?.[task.id] !== "Started" &&
+                                    <button type="button" className="btn btn-primary mx-1"
+                                        onClick={() => {
+                                            dispatch({
+                                                path: elementData.id + "." + task.id,
+                                                data: "Started"
+                                            })
+                                        }}>
+                                        Start
+                                    </button>
+                                }
                                 <button type="button" className="btn btn-primary mx-1"
                                     onClick={() => {
                                         dispatch({
