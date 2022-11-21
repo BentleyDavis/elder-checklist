@@ -8,7 +8,7 @@ export const surveyFormat: any = {
             "tasks": [
                 {
                     "id": "Diclofenac",
-                    "content": "Reminder: Do not use Diclofenac gel until you speak to Bentley",
+                    "content": "Reminder: Do not use Diclofenac gel until you speak to Ben",
                     "type": "reminder"
                 },
                 {
