@@ -1,3 +1,4 @@
+import ReactTextareaAutosize from "react-textarea-autosize";
 
 export default function Comment({ elementData, dataStore, dispatch }: {
     elementData: any, dataStore: any,
@@ -9,13 +10,13 @@ export default function Comment({ elementData, dataStore, dispatch }: {
     return <div className="row">
         <div className="mb-3">
             <label htmlFor="exampleFormControlTextarea1" className="form-label">{elementData.title}</label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows={6} value={dataStore[elementData.name]}
+            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={3} value={dataStore[elementData.name]}
                 onChange={(event) => {
                     dispatch({
                         path: elementData.name,
                         data: event.currentTarget.value
                     })
-                }} ></textarea>
+                }} ></ReactTextareaAutosize >
         </div>
     </div>
 }
