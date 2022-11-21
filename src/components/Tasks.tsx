@@ -11,34 +11,63 @@ export default function Tasks({ elementData, dataStore, dispatch }: {
         <h2>{elementData.title}</h2>
         {elementData.tasks.map((task: any) => {
             return <div key={task.id}>
-                {data?.[task.id] === "done" ?
+                {data?.[task.id] === undefined ||
+                    data?.[task.id] === "" ?
+                    // Value not currently set
+                    <div className="task" >
+                        {task.content}
+
+                        {task.type === "reminder" ?
+                            <button type="button" className="btn btn-primary mx-1"
+                                onClick={() => {
+                                    dispatch({
+                                        path: elementData.id + "." + task.id,
+                                        data: "heard"
+                                    })
+                                }}>
+                                ok
+                            </button>
+                            : <>
+                                <button type="button" className="btn btn-primary mx-1"
+                                    onClick={() => {
+                                        dispatch({
+                                            path: elementData.id + "." + task.id,
+                                            data: "done"
+                                        })
+                                    }}>
+                                    Done
+                                </button>
+                                <button type="button" className="btn btn-primary mx-1"
+                                    onClick={() => {
+                                        dispatch({
+                                            path: elementData.id + "." + task.id,
+                                            data: "skipped"
+                                        })
+                                    }}>
+                                    Skip
+                                </button>
+                            </>
+                        }
+
+                    </div>
+
+
+
+                    : // Value has been set
                     <div className="task" style={{ opacity: .5 }} >
-                        <button type="button" className="btn btn-primary"
+                        {task.content} : {data?.[task.id]}
+                        <button type="button" className="btn btn-primary mx-1"
                             onClick={() => {
                                 dispatch({
                                     path: elementData.id + "." + task.id,
-                                    data: "pending"
+                                    data: ""
                                 })
                             }}>
                             reset
                         </button>
-                        {task.content}
                     </div>
 
-                    :
 
-                    <div className="task" >
-                        <button type="button" className="btn btn-primary"
-                            onClick={() => {
-                                dispatch({
-                                    path: elementData.id + "." + task.id,
-                                    data: "done"
-                                })
-                            }}>
-                            {task.button || "Done"}
-                        </button>
-                        {task.content}
-                    </div>
                 }
             </div>
 

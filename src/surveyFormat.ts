@@ -9,15 +9,17 @@ export const surveyFormat: any = {
                 {
                     "id": "Diclofenac",
                     "content": "Reminder: Do not use Diclofenac gel until you speak to Bentley",
-                    "button": "ok"
+                    "type": "reminder"
                 },
                 {
                     "id": "backStretches",
                     "content": "Do Back Stretches",
+                    "type": "task"
                 },
                 {
                     "id": "floss",
                     "content": "Floss Teeth",
+                    "type": "task"
                 }
             ]
         },
