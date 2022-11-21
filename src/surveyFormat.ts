@@ -2,26 +2,24 @@ export const surveyFormat: any = {
 
     "elements": [
         {
-            "type": "tasks",
-            "title": "Tasks",
-            "id": "tasks",
-            "tasks": [
-                {
-                    "id": "Diclofenac",
-                    "content": "Reminder: Do not use Diclofenac gel until you speak to Ben",
-                    "type": "reminder"
-                },
-                {
-                    "id": "backStretches",
-                    "content": "Do Back Stretches",
-                    "type": "task"
-                },
-                {
-                    "id": "floss",
-                    "content": "Floss Teeth",
-                    "type": "task"
-                }
-            ]
+            "type": "h1",
+            "id": "tasksH1",
+            "content": "Tasks"
+        },
+        {
+            "type": "todo",
+            "id": "backStretches",
+            "content": "Do Back Stretches",
+        },
+        {
+            "type": "todo",
+            "id": "floss",
+            "content": "Floss teeth",
+        },
+        {
+            "type": "reminder",
+            "id": "DiclofenacReminder",
+            "content": "Reminder: Do not use Diclofenac gel until you speak to Ben"
         },
         {
             "type": "matrix",

@@ -6,6 +6,6 @@ export default function H1({ elementData, dataStore, dispatch }: {
     }>
 }) {
     return <div className="row">
-        <h1>{elementData.title}</h1>
+        <h1>{elementData.content}</h1>
     </div>
 }

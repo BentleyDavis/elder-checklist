@@ -1,0 +1,23 @@
+import { useState } from "react";
+
+export default function Reminder({ elementData, dataStore, dispatch }: {
+    elementData: any, dataStore: any,
+    dispatch: React.Dispatch<{
+        path: string;
+        data: any;
+    }>
+}) {
+
+    const [state, setstate] = useState({})
+    return <div className="row">
+        <div className="card">
+            <div className="card-body">
+                {elementData.content}
+                <button type="button" className={`btn btn-primary mx-1`}
+                    onClick={() => {
+
+                    }}>ok</button>
+            </div>
+        </div>
+    </div>
+}
