@@ -6,11 +6,12 @@ export default function Tasks({ elementData, dataStore, dispatch }: {
         data: any;
     }>
 }) {
+    const data = dataStore[elementData.id];
     return <div className="row" >
         <h2>{elementData.title}</h2>
         {elementData.tasks.map((task: any) => {
             return <div key={task.id}>
-                {dataStore[elementData.id][task.id] === "done" ?
+                {data && data[task.id] === "done" ?
                     <div className="task" style={{ opacity: .5 }} >
                         <button type="button" className="btn btn-primary"
                             onClick={() => {
