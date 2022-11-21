@@ -11,7 +11,7 @@ export default function Tasks({ elementData, dataStore, dispatch }: {
         <h2>{elementData.title}</h2>
         {elementData.tasks.map((task: any) => {
             return <div key={task.id}>
-                {data && data[task.id] === "done" ?
+                {data?.[task.id] === "done" ?
                     <div className="task" style={{ opacity: .5 }} >
                         <button type="button" className="btn btn-primary"
                             onClick={() => {

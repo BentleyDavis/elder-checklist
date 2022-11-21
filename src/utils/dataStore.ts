@@ -29,11 +29,7 @@ export function pathGetAt(path: string | string[], source: any) {
     if (!Array.isArray(path))
         path = path.split('.');
     const result = path.reduce((o: any, i) => {
-        if (o === undefined) {
-            return o
-        } else {
-            return o[i] ? o[i] : undefined;
-        }
+        return o?.[i]
     }, source);
     if (result?.bind) {
         return result.bind(source)
