@@ -22,7 +22,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
     const localActions: { [key: string]: any } = actions(localDispatch);
 
-    function ToDoButton({ action, title, btnType = "primary" }:
+    function StateButton({ action, title, btnType = "primary" }:
         { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" }) {
         if (can(localState, action)) {
             return <button type="button" className={`btn btn-${btnType} mx-1`}
@@ -33,14 +33,14 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className="row">
-        <div className={"card task-" + localState.state}>
+    return <div className="row stripeable">
+        <div className={"card  task-" + localState.state}>
             <div className="card-body">
                 {elementData.content}
-                <ToDoButton action={"start"} title={"Start"} btnType="success"></ToDoButton>
-                <ToDoButton action={"complete"} title={"Done"} btnType="info"></ToDoButton>
-                <ToDoButton action={"skip"} title={"Skip"} btnType="warning"></ToDoButton>
-                <ToDoButton action={"reset"} title={"Reset"}></ToDoButton>
+                <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
+                <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
+                <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
+                <StateButton action={"reset"} title={"Reset"}></StateButton>
             </div>
         </div>
     </div>

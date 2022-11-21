@@ -1,6 +1,9 @@
-/* TODO: figure out why survey.js alternating colors is not working*/
-.sv-matrix-root tr:nth-child(even) {
-  background-color: #ccc;
+.stripeable:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  --bs-card-bg: transparent;
 }
 
 table {

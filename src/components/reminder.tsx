@@ -22,7 +22,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
 
     const localActions: { [key: string]: any } = actions(localDispatch);
 
-    function ToDoButton({ action, title, btnType = "primary" }:
+    function StateButton({ action, title, btnType = "primary" }:
         { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" }) {
         if (can(localState, action)) {
             return <button type="button" className={`btn btn-${btnType} mx-1`}
@@ -33,12 +33,12 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className="row">
+    return <div className="row stripeable">
         <div className={"card task-" + localState.state}>
             <div className="card-body">
                 {elementData.content}
-                <ToDoButton action={"complete"} title={"Ok"} btnType="primary"></ToDoButton>
-                <ToDoButton action={"reset"} title={"Reset"} btnType="secondary"></ToDoButton>
+                <StateButton action={"complete"} title={"Ok"} btnType="primary"></StateButton>
+                <StateButton action={"reset"} title={"Reset"} btnType="secondary"></StateButton>
             </div>
         </div>
     </div>

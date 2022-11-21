@@ -1,5 +1,5 @@
 .task-started {
-  background-color: var(--bs-success);
+  background-color: rgba(var(--bs-success-rgb), 0.75) !important;
   color: white;
 }
 

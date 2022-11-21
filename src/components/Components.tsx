@@ -1,7 +1,6 @@
 import React from "react";
 import Matrix from "./Matrix";
 import Comment from "./Comment";
-import Tasks from "./Tasks";
 import H1 from "./H1";
 import ToDo from "./Todo";
 import Reminder from "./Reminder";
@@ -9,7 +8,6 @@ import Reminder from "./Reminder";
 const components: { [key: string]: any } = {
     matrix: Matrix,
     comment: Comment,
-    tasks: Tasks,
     h1: H1,
     todo: ToDo,
     reminder: Reminder
