@@ -8,15 +8,13 @@ export default function Comment({ elementData, dataStore, dispatch }: {
     }>
 }) {
     return <div className="row">
-        <div className="mb-3">
-            <label htmlFor="exampleFormControlTextarea1" className="form-label">{elementData.title}</label>
-            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={3} value={dataStore[elementData.name]}
-                onChange={(event) => {
-                    dispatch({
-                        path: elementData.name,
-                        data: event.currentTarget.value
-                    })
-                }} ></ReactTextareaAutosize >
-        </div>
+        <h2>{elementData.title}</h2>
+        <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={3} value={dataStore[elementData.name]}
+            onChange={(event) => {
+                dispatch({
+                    path: elementData.name,
+                    data: event.currentTarget.value
+                })
+            }} ></ReactTextareaAutosize >
     </div>
 }

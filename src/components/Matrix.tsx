@@ -58,10 +58,10 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
 
                                 return <td key={c.text} style={{ textAlign: "center" }}>
                                     <input className="form-check-input" type="radio" name={r.value} id={c.value}
-                                        checked={pathGetAt([elementData.name, r.value], dataStore) === c.value}
+                                        checked={pathGetAt(r.value, dataStore) === c.value}
                                         onChange={() => {
                                             dispatch({
-                                                path: elementData.name + "." + r.value,
+                                                path: r.value,
                                                 data: c.value
                                             })
                                         }} />
@@ -83,10 +83,10 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
                 return <div className="mb-3" key={r.value}>
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">{r.text}</label>
                     <select className="form-select" aria-label={r.text}
-                        value={pathGetAt([elementData.name, r.value], dataStore)}
+                        value={pathGetAt(r.value, dataStore)}
                         onChange={(event) => {
                             dispatch({
-                                path: elementData.name + "." + r.value,
+                                path: r.value,
                                 data: event.currentTarget.value.toString()
                             })
                         }} >

@@ -2,6 +2,26 @@ export const surveyFormat: any = {
 
     "elements": [
         {
+            "type": "tasks",
+            "title": "Tasks",
+            "id": "tasks",
+            "tasks": [
+                {
+                    "id": "Diclofenac",
+                    "content": "Reminder: Do not use Diclofenac gel until you speak to Bentley",
+                    "button": "ok"
+                },
+                {
+                    "id": "backStretches",
+                    "content": "Do Back Stretches",
+                },
+                {
+                    "id": "floss",
+                    "content": "Floss Teeth",
+                }
+            ]
+        },
+        {
             "type": "matrix",
             "name": "feelToday",
             "title": "How do you feel today?",
@@ -113,37 +133,41 @@ export const surveyFormat: any = {
             "rows": [
                 {
                     "value": "dizziness",
-                    "text": " dizziness"
+                    "text": "dizziness"
                 },
                 {
                     "value": "bladder",
                     "text": " bladder trouble"
                 },
                 {
+                    "value": "rashes",
+                    "text": "rashes"
+                },
+                {
                     "value": "gutNoise",
-                    "text": " lout gut"
+                    "text": "loud gut"
                 },
                 {
                     "value": "spam",
-                    "text": " spam call ring"
+                    "text": "spam call ring"
                 },
                 {
                     "value": "noise",
-                    "text": " noisy neighbors"
+                    "text": "noisy neighbors"
                 },
                 {
                     "value": "ringing",
-                    "text": " ringing noise"
+                    "text": "ringing noise"
                 },
                 {
                     "value": "weirdNoises",
-                    "text": " chanting/ mumbling"
+                    "text": "chanting/ mumbling"
                 }
             ]
         },
         {
             "type": "comment",
-            "name": "question4",
+            "name": "notes",
             "title": "Notes"
         }
     ]

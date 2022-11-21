@@ -10,6 +10,8 @@ import Components from "./components/Components";
 import { deepCopy, pathCreateObject } from './utils/dataStore';
 import { merge } from 'lodash';
 
+import './components/tasks.css';
+
 const provider = new GoogleAuthProvider();
 
 function getSurveyDateId() {
