@@ -1,24 +1,34 @@
 import React from "react";
+
 import Matrix from "./Matrix";
 import Comment from "./Comment";
 import H1 from "./H1";
 import ToDo from "./Todo";
 import Reminder from "./Reminder";
+import Select from "./Select";
+import Events from "./Events";
+import { lowerFirst } from "lodash";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
     comment: Comment,
     h1: H1,
     todo: ToDo,
-    reminder: Reminder
+    reminder: Reminder,
+    select: Select,
+    events: Events,
 };
 
 
-export default function Components(element: any, dataStore: any,
+export default function Components(
+    element: any,
+    dataStore: any,
     dispatch: React.Dispatch<{
         path: string;
         data: any;
-    }>) {
+    }>,
+    path?: string
+) {
 
 
     if (typeof components[element.type] !== "undefined") {
@@ -27,7 +37,8 @@ export default function Components(element: any, dataStore: any,
             // block: Components
             elementData: element,
             dataStore: dataStore,
-            dispatch: dispatch
+            dispatch: dispatch,
+            path: path
         });
     }
     return React.createElement(

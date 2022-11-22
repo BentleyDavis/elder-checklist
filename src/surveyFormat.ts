@@ -3,6 +3,78 @@ export const surveyFormat: any = {
     "elements": [
         {
             "type": "h1",
+            "id": "h1Bms",
+            "content": "BMs"
+        },
+        {
+            "type": "events",
+            "id": "bMs",
+            "addButtonTitle": "Add a BM",
+            "elements": [
+                {
+                    "type": "select",
+                    "id": "thickness",
+                    "title": "Thickness",
+                    "options": [
+                        {
+                            "text": "Diarrhea",
+                            "value": "-2"
+                        },
+                        {
+                            "text": "Too Soft",
+                            "value": "-1"
+                        },
+                        {
+                            "text": "Just Right; toothpaste",
+                            "value": "0"
+                        },
+                        {
+                            "text": "Too hard",
+                            "value": "1"
+                        },
+                        {
+                            "text": "Painful",
+                            "value": "2"
+                        },
+                    ],
+                },
+                {
+                    "type": "select",
+                    "id": "size",
+                    "title": "Size",
+                    "options": [
+                        {
+                            "text": "Tablespoon",
+                            "value": "-2"
+                        },
+                        {
+                            "text": "1 Cup",
+                            "value": "-1"
+                        },
+                        {
+                            "text": "2 Cups - Just right",
+                            "value": "0"
+                        },
+                        {
+                            "text": "3 Cups",
+                            "value": "1"
+                        },
+                        {
+                            "text": "Massive",
+                            "value": "2"
+                        },
+                    ],
+                },
+                {
+                    "type": "comment",
+                    "id": "notes",
+                    "title": "BM Notes",
+                    "minRows": 1,
+                }
+            ]
+        },
+        {
+            "type": "h1",
             "id": "h1Tasks",
             "content": "Tasks"
         },
@@ -184,9 +256,10 @@ export const surveyFormat: any = {
             "type": "h1",
             "id": "h1Notes",
             "content": "Notes"
-        }, {
+        },
+        {
             "type": "comment",
-            "name": "notes",
+            "id": "notes",
             "title": ""
         }
     ]
