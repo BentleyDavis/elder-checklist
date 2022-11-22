@@ -81,12 +81,17 @@ export const surveyFormat: any = {
         {
             "type": "reminder",
             "id": "DiclofenacReminder",
-            "content": "Reminder: Do not use Diclofenac gel until you speak to Ben"
+            "content": "Do not use Diclofenac gel until you speak to Ben"
         },
         {
             "type": "reminder",
             "id": "textIfNoisyNeighbor",
-            "content": "Reminder: Text Ben when the Neighbor is noisy again"
+            "content": "Noisy Neighbor? Text Ben when it is hapening"
+        },
+        {
+            "type": "reminder",
+            "id": "textIfNeedGroceries",
+            "content": "Need Groceries? Text ben that you need help with groceries"
         },
         {
             "type": "todo",
@@ -231,6 +236,10 @@ export const surveyFormat: any = {
                 {
                     "value": "forgetful",
                     "text": "forgetful"
+                },
+                {
+                    "value": "swolenAnkles",
+                    "text": "swolen ankles"
                 },
                 {
                     "value": "dizziness",
