@@ -3,7 +3,7 @@ export const surveyFormat: any = {
     "elements": [
         {
             "type": "h1",
-            "id": "tasksH1",
+            "id": "h1Tasks",
             "content": "Tasks"
         },
         {
@@ -22,9 +22,14 @@ export const surveyFormat: any = {
             "content": "Floss teeth",
         },
         {
+            "type": "h1",
+            "id": "h1Feel",
+            "content": "How do you feel today?"
+        },
+        {
             "type": "matrix",
             "name": "feelToday",
-            "title": "How do you feel today?",
+            "title": "",
             "verticalAlign": "top",
             "columns": [
                 {
@@ -56,9 +61,14 @@ export const surveyFormat: any = {
             ]
         },
         {
+            "type": "h1",
+            "id": "h1Pain",
+            "content": "Pain"
+        },
+        {
             "type": "matrix",
             "name": "pain",
-            "title": "Pain",
+            "title": "",
             "verticalAlign": "top",
             "alternateRows": true,
             "columns": [
@@ -104,9 +114,14 @@ export const surveyFormat: any = {
             ]
         },
         {
+            "type": "h1",
+            "id": "h1Other",
+            "content": "Other"
+        },
+        {
             "type": "matrix",
             "name": "other",
-            "title": "Other",
+            "title": "",
             "alternateRows": true,
             "columns": [
                 {
@@ -166,9 +181,13 @@ export const surveyFormat: any = {
             ]
         },
         {
+            "type": "h1",
+            "id": "h1Notes",
+            "content": "Notes"
+        }, {
             "type": "comment",
             "name": "notes",
-            "title": "Notes"
+            "title": ""
         }
     ]
 }

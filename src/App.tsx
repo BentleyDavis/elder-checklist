@@ -105,6 +105,8 @@ function App() {
       {authState === "in" && formState !== undefined &&
         <>
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
+          <br />
+          <br />
         </>
       }
 

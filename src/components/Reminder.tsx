@@ -33,7 +33,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className="row stripeable">
+    return <div className="row stripeable mb-2">
         <div className={"card task-" + localState.state}>
             <div className="card-body">
                 {elementData.content}

@@ -26,11 +26,13 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
 
     return <>
 
-        <div className="row">
-            <div className="col">
-                <h2>{elementData.title}</h2>
+        {elementData.title &&
+            <div className="row">
+                <div className="col">
+                    <h2>{elementData.title}</h2>
+                </div>
             </div>
-        </div>
+        }
 
         {useWide() && <>
             <table className="table table-striped" style={{ width: "unset" }}>
