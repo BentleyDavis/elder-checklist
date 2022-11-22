@@ -7,6 +7,11 @@ export const surveyFormat: any = {
             "content": "Tasks"
         },
         {
+            "type": "reminder",
+            "id": "DiclofenacReminder",
+            "content": "Reminder: Do not use Diclofenac gel until you speak to Ben"
+        },
+        {
             "type": "todo",
             "id": "backStretches",
             "content": "Do Back Stretches",
@@ -15,11 +20,6 @@ export const surveyFormat: any = {
             "type": "todo",
             "id": "floss",
             "content": "Floss teeth",
-        },
-        {
-            "type": "reminder",
-            "id": "DiclofenacReminder",
-            "content": "Reminder: Do not use Diclofenac gel until you speak to Ben"
         },
         {
             "type": "matrix",
