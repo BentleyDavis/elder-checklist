@@ -81,6 +81,11 @@ export const surveyFormat: any = {
         {
             "type": "reminder",
             "id": "DiclofenacReminder",
+            "content": "Walk? try only 5 minutes, later in the day, and don't exercise arms"
+        },
+        {
+            "type": "reminder",
+            "id": "DiclofenacReminder",
             "content": "Do not use Diclofenac gel until you speak to Ben"
         },
         {
@@ -188,7 +193,9 @@ export const surveyFormat: any = {
                     "value": "lowerBack",
                     "text": "lower back"
                 },
+                "shoulders",
                 "arms",
+                "wrists",
                 "hands",
                 "thighs",
                 "hip joint",
