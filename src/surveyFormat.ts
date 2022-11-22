@@ -84,6 +84,11 @@ export const surveyFormat: any = {
             "content": "Reminder: Do not use Diclofenac gel until you speak to Ben"
         },
         {
+            "type": "reminder",
+            "id": "textIfNoisyNeighbor",
+            "content": "Reminder: Text Ben when the Neighbor is noisy again"
+        },
+        {
             "type": "todo",
             "id": "backStretches",
             "content": "Do Back Stretches",
