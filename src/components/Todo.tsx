@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { ActionsUnion, createActions, createStates, StatesUnion, transition, useTransition } from "react-states";
 
 export default function ToDo({ elementData, dataStore, dispatch }: {
@@ -8,6 +8,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         data: any;
     }>
 }) {
+    const [showInstructions, setShowInstructions] = useState(false)
 
     const [localState, localDispatch] = useReducer(reducer, {
         state: dataStore[elementData.id] || 'waiting',
@@ -41,6 +42,15 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                 <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
                 <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
                 <StateButton action={"reset"} title={"Reset"}></StateButton>
+                {elementData.instructions && <>
+                    <button className="btn btn-secondary mx-1"
+                        onClick={() => setShowInstructions(!showInstructions)}
+                    >Instructions</button>
+                    {showInstructions && <>
+                        <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
+                        </div>
+                    </>}
+                </>}
             </div>
         </div>
     </div>

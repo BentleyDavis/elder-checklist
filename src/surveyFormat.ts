@@ -80,7 +80,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "reminder",
-            "id": "DiclofenacReminder",
+            "id": "walk",
             "content": "Walk? try only 5 minutes, later in the day, and don't exercise arms"
         },
         {
@@ -102,6 +102,15 @@ export const surveyFormat: any = {
             "type": "todo",
             "id": "backStretches",
             "content": "Do Back Stretches",
+            "instructions": `
+            <ul>
+                <li> Stand in the doorway facing the door jam</li>
+                <li> Grab the door jamb with both hands</li>
+                <li> Pull your body back stretching your arms straight and your back</li>
+                <li> Do 3 times for a count of 20</li>
+            <ul>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `
         },
         {
             "type": "todo",
@@ -198,7 +207,7 @@ export const surveyFormat: any = {
                 "wrists",
                 "hands",
                 "thighs",
-                "hip joint",
+                "hip joints",
                 "calves",
                 "feet",
             ]
