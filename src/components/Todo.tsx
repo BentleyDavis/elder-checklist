@@ -45,7 +45,10 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                 {elementData.instructions && <>
                     <button className="btn btn-secondary mx-1"
                         onClick={() => setShowInstructions(!showInstructions)}
-                    >Instructions</button>
+                    >
+                        {showInstructions && <>Close </>}
+                        Instructions
+                    </button>
                     {showInstructions && <>
                         <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
                         </div>
