@@ -186,8 +186,9 @@ export const surveyFormat: any = {
                 "arms",
                 "hands",
                 "thighs",
+                "hip joint",
                 "calves",
-                "feet"
+                "feet",
             ]
         },
         {
@@ -223,6 +224,14 @@ export const surveyFormat: any = {
                 }
             ],
             "rows": [
+                {
+                    "value": "confusion",
+                    "text": "confusion"
+                },
+                {
+                    "value": "forgetful",
+                    "text": "forgetful"
+                },
                 {
                     "value": "dizziness",
                     "text": "dizziness"
