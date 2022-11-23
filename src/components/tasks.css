@@ -3,7 +3,7 @@
   color: white;
 }
 
-.task-completed,
+.task-done,
 .task-skipped {
-  opacity: 0.5;
+  opacity: 0.4;
 }

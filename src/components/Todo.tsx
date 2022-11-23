@@ -34,27 +34,31 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className="row stripeable mb-2">
-        <div className={"card  task-" + localState.state}>
-            <div className="card-body">
-                {elementData.content}
-                <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
-                <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
-                <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-                <StateButton action={"reset"} title={"Reset"}></StateButton>
-                {elementData.instructions && <>
-                    <button className="btn btn-secondary mx-1"
-                        onClick={() => setShowInstructions(!showInstructions)}
-                    >
-                        {showInstructions && <>Close </>}
-                        Instructions
-                    </button>
-                    {showInstructions && <>
-                        <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
-                        </div>
-                    </>}
+    return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
+        <div className="col">
+            {{
+                done: "Done: ",
+                skipped: "Skipped: ",
+                started: "Started: ",
+                waiting: ""
+            }[localState.state]}
+            {elementData.content}
+            <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
+            <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
+            <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
+            <StateButton action={"reset"} title={"Reset"}></StateButton>
+            {elementData.instructions && <>
+                <button className="btn btn-secondary mx-1"
+                    onClick={() => setShowInstructions(!showInstructions)}
+                >
+                    {showInstructions && <>Close </>}
+                    Instructions
+                </button>
+                {showInstructions && <>
+                    <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
+                    </div>
                 </>}
-            </div>
+            </>}
         </div>
     </div>
 }
@@ -62,13 +66,13 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
 function can(incomingState: { state: string }, hopefulState: string) {
     // @ts-ignore
-    return transitions[incomingState.state][hopefulState] !== undefined
+    return transitions?.[incomingState.state]?.[hopefulState] !== undefined
 }
 
 export const states = createStates({
     waiting: () => ({}),
     started: () => ({}),
-    completed: () => ({}),
+    done: () => ({}),
     skipped: () => ({}),
 });
 type State = StatesUnion<typeof states>;
@@ -84,15 +88,15 @@ type Action = ActionsUnion<typeof actions>;
 const transitions = {
     waiting: {
         start: () => states.started(),
-        complete: () => states.completed(),
+        complete: () => states.done(),
         skip: () => states.skipped(),
     },
     started: {
-        complete: () => states.completed(),
+        complete: () => states.done(),
         skip: () => states.skipped(),
         reset: () => states.waiting(),
     },
-    completed: {
+    done: {
         reset: () => states.waiting(),
     },
     skipped: {

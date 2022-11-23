@@ -33,13 +33,11 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className="row stripeable mb-2">
-        <div className={"card task-" + localState.state}>
-            <div className="card-body">
-                {elementData.content}
-                <StateButton action={"complete"} title={"Ok"} btnType="primary"></StateButton>
-                <StateButton action={"reset"} title={"Reset"} btnType="secondary"></StateButton>
-            </div>
+    return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
+        <div className="col">
+            {elementData.content}
+            <StateButton action={"complete"} title={"Ok"} btnType="primary"></StateButton>
+            <StateButton action={"reset"} title={"Reset"} btnType="secondary"></StateButton>
         </div>
     </div>
 }
@@ -47,14 +45,14 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
 
 function can(incomingState: { state: string }, hopefulState: string) {
     // @ts-ignore
-    return transitions[incomingState.state][hopefulState] !== undefined
+    return transitions?.[incomingState.state]?.[hopefulState] !== undefined
 }
 
 const reducer = (state: State, action: Action) => transition(state, action, transitions);
 
 export const states = createStates({
     waiting: () => ({}),
-    completed: () => ({}),
+    done: () => ({}),
 });
 type State = StatesUnion<typeof states>;
 
@@ -66,9 +64,9 @@ type Action = ActionsUnion<typeof actions>;
 
 const transitions = {
     waiting: {
-        complete: () => states.completed(),
+        complete: () => states.done(),
     },
-    completed: {
+    done: {
         reset: () => states.waiting(),
     }
 }

@@ -96,7 +96,7 @@ export const surveyFormat: any = {
         {
             "type": "reminder",
             "id": "textIfNeedGroceries",
-            "content": "Need Groceries? Text ben that you need help with groceries"
+            "content": "Need Groceries? Text Ben that you need help with groceries"
         },
         {
             "type": "todo",
@@ -108,8 +108,8 @@ export const surveyFormat: any = {
                 <li> Grab the door jamb with both hands</li>
                 <li> Pull your body back stretching your arms straight and your back</li>
                 <li> Do 3 times for a count of 20</li>
-            <ul>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </ul>
+            <iframe width="100%" style="aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `
         },
         {
