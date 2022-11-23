@@ -1,4 +1,5 @@
 import ReactTextareaAutosize from "react-textarea-autosize";
+import { pathGetAt } from "../utils/dataStore";
 
 export default function Comment({ elementData, dataStore, dispatch, path }: {
     elementData: any,
@@ -12,15 +13,20 @@ export default function Comment({ elementData, dataStore, dispatch, path }: {
 
     const dataPath = path ?
         path + "." + elementData.id :
-        elementData.id
+        elementData.id;
+
+    const value = pathGetAt(dataPath, dataStore);
+
 
     return <div className="row">
         <div className="col">
             {elementData.title &&
-                <label htmlFor="exampleFormControlTextarea1" className="form-label">{elementData.title}</label>
+                <label htmlFor="exampleFormControlTextarea1" className="form-label">
+                    {elementData.title}
+                </label>
             }
 
-            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={elementData.minRows || 3} value={dataStore[elementData.id]}
+            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={elementData.minRows || 3} value={value}
                 onChange={(event) => {
                     dispatch({
                         path: dataPath,
