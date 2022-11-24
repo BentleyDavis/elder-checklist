@@ -74,6 +74,252 @@ export const surveyFormat: any = {
             ]
         },
         {
+            "type": "events",
+            "id": "painEvents",
+            "addButtonTitle": "Report a Pain",
+            "elements": [
+                {
+                    "type": "select",
+                    "id": "location",
+                    "title": "Pain Location",
+                    "options": [
+                        {
+                            "text": "head",
+                            "value": "head"
+                        },
+                        {
+                            "text": "neck",
+                            "value": "neck"
+                        },
+                        {
+                            "text": "shoulder",
+                            "value": "shoulder"
+                        },
+                        {
+                            "text": "upper arm",
+                            "value": "upper arm"
+                        },
+                        {
+                            "text": "elbow",
+                            "value": "elbow"
+                        },
+                        {
+                            "text": "wrist",
+                            "value": "wrist"
+                        },
+                        {
+                            "text": "hand",
+                            "value": "hand"
+                        },
+                        {
+                            "text": "finger",
+                            "value": "finger"
+                        },
+                        {
+                            "text": "gut",
+                            "value": "gut"
+                        },
+                        {
+                            "text": "hip joint",
+                            "value": "hip joint"
+                        },
+                        {
+                            "text": "thigh",
+                            "value": "thigh"
+                        },
+                        {
+                            "text": "knee",
+                            "value": "knee"
+                        },
+                        {
+                            "text": "ankle",
+                            "value": "ankle"
+                        },
+                        {
+                            "text": "ball of foot",
+                            "value": "ball of foot"
+                        },
+                        {
+                            "text": "toe",
+                            "value": "toe"
+                        },
+                    ],
+                },
+                {
+                    "type": "select",
+                    "id": "side",
+                    "title": "Pain side",
+                    "options": [
+                        {
+                            "text": "left",
+                            "value": "left"
+                        },
+                        {
+                            "text": "right",
+                            "value": "right"
+                        },
+                        {
+                            "text": "both",
+                            "value": "both"
+                        },
+                    ],
+                },
+                {
+                    "type": "select",
+                    "id": "severity",
+                    "title": "Severity",
+                    "options": [
+                        {
+                            "text": "0",
+                            "value": "0"
+                        },
+                        {
+                            "text": "1",
+                            "value": "1"
+                        },
+                        {
+                            "text": "2",
+                            "value": "2"
+                        },
+                        {
+                            "text": "3",
+                            "value": "3"
+                        },
+                        {
+                            "text": "4",
+                            "value": "4"
+                        },
+                        {
+                            "text": "5",
+                            "value": "5"
+                        },
+                        {
+                            "text": "6",
+                            "value": "6"
+                        },
+                        {
+                            "text": "7",
+                            "value": "7"
+                        },
+                        {
+                            "text": "8",
+                            "value": "8"
+                        },
+                        {
+                            "text": "9",
+                            "value": "9"
+                        },
+                        {
+                            "text": "10",
+                            "value": "10"
+                        },
+                    ],
+                },
+                {
+                    "type": "selectButtons",
+                    "id": "sensation",
+                    "title": "Sensation:",
+                    "options": [
+                        {
+                            "text": "shooting",
+                            "value": "shooting"
+                        },
+                        {
+                            "text": "tingling",
+                            "value": "tingling"
+                        },
+                        {
+                            "text": "aching",
+                            "value": "aching"
+                        },
+                        {
+                            "text": "joint",
+                            "value": "joint"
+                        },
+                        {
+                            "text": "muscle",
+                            "value": "muscle"
+                        },
+                        {
+                            "text": "skin",
+                            "value": "skin"
+                        },
+                        {
+                            "text": "itchy",
+                            "value": "itchy"
+                        },
+                        {
+                            "text": "stings",
+                            "value": "stings"
+                        },
+                        {
+                            "text": "bleeding",
+                            "value": "bleeding"
+                        },
+                        {
+                            "text": "burning",
+                            "value": "burning"
+                        },
+                        {
+                            "text": "throbbing",
+                            "value": "throbbing"
+                        },
+                    ],
+                },
+                {
+                    "type": "selectButtons",
+                    "id": "triggers",
+                    "title": "Triggers:",
+                    "options": [
+                        {
+                            "text": "morning",
+                            "value": "morning"
+                        },
+                        {
+                            "text": "evening",
+                            "value": "evening"
+                        },
+                        {
+                            "text": "eating",
+                            "value": "eating"
+                        },
+                        {
+                            "text": "walking",
+                            "value": "walking"
+                        },
+                        {
+                            "text": "chores",
+                            "value": "chores"
+                        },
+                        {
+                            "text": "bending over",
+                            "value": "bending over"
+                        },
+                        {
+                            "text": "lying down",
+                            "value": "lying down"
+                        },
+                        {
+                            "text": "standing",
+                            "value": "standing"
+                        },
+                    ],
+                },
+                {
+                    "type": "comment",
+                    "id": "cause",
+                    "title": "Did an event cause this pain? like a fall, accident. Please describe or put \"unknown\"",
+                    "minRows": 1,
+                },
+                {
+                    "type": "comment",
+                    "id": "notes",
+                    "title": "Pain Notes",
+                    "minRows": 1,
+                },
+            ]
+        },
+        {
             "type": "h1",
             "id": "h1Tasks",
             "content": "Tasks"
