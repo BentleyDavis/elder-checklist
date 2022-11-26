@@ -2,7 +2,8 @@ export const surveyFormat: any = {
 
     "elements": [
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Bms",
             "content": "BMs"
         },
@@ -77,6 +78,12 @@ export const surveyFormat: any = {
             "type": "events",
             "id": "painEvents",
             "addButtonTitle": "Report a Pain",
+            "summary": [{
+                "type": "text",
+                "suffix": " pain",
+                "id": "location",
+            }
+            ],
             "elements": [
                 {
                     "type": "select",
@@ -320,7 +327,8 @@ export const surveyFormat: any = {
             ]
         },
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Tasks",
             "content": "Tasks"
         },
@@ -364,7 +372,8 @@ export const surveyFormat: any = {
             "content": "Floss teeth",
         },
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Feel",
             "content": "How do you feel today?"
         },
@@ -403,7 +412,8 @@ export const surveyFormat: any = {
             ]
         },
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Pain",
             "content": "Pain"
         },
@@ -459,7 +469,8 @@ export const surveyFormat: any = {
             ]
         },
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Other",
             "content": "Other"
         },
@@ -538,7 +549,8 @@ export const surveyFormat: any = {
             ]
         },
         {
-            "type": "h1",
+            "type": "heading",
+            "level": 1,
             "id": "h1Notes",
             "content": "Notes"
         },
