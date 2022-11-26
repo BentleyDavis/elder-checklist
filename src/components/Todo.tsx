@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useReducer } from "react";
 import { ActionsUnion, createActions, createStates, StatesUnion, transition, useTransition } from "react-states";
 
 export default function ToDo({ elementData, dataStore, dispatch }: {
@@ -8,7 +8,6 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         data: any;
     }>
 }) {
-    const [showInstructions, setShowInstructions] = useState(false)
 
     const [localState, localDispatch] = useReducer(reducer, {
         state: dataStore[elementData.id] || 'waiting',
@@ -39,10 +38,8 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
             <div className="clearfix">
                 <div className="col-md-6 float-md-end mb-1 ms-md-1 text-end">
                     {elementData.instructions && <>
-                        <button className="btn btn-secondary mx-1"
-                            onClick={() => setShowInstructions(!showInstructions)}
-                        >
-                            {showInstructions && <>Close </>}
+                        <button type="button" className="btn btn-secondary mx-1"
+                            data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
                             Instructions
                         </button>
                     </>}
@@ -60,8 +57,8 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                 }[localState.state]}
                 {elementData.content}
 
-                {elementData.instructions && showInstructions && <>
-                    <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
+                {elementData.instructions && <>
+                    <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
                     </div>
                 </>}
             </div>
