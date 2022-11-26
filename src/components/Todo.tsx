@@ -36,17 +36,20 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
     return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
         <div className="col">
             <div className="clearfix">
-                <div className="col-md-6 float-md-end mb-1 ms-md-1 text-end">
+                <div className="float-md-start">
+                    <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
+                    <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
+                    <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
+                    <StateButton action={"reset"} title={"Reset"}></StateButton>
+                </div>
+
+                <div className="float-md-end">
                     {elementData.instructions && <>
                         <button type="button" className="btn btn-secondary mx-1"
                             data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
                             Instructions
                         </button>
                     </>}
-                    <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
-                    <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
-                    <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-                    <StateButton action={"reset"} title={"Reset"}></StateButton>
                 </div>
 
                 {{
@@ -56,12 +59,11 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                     waiting: ""
                 }[localState.state]}
                 {elementData.content}
-
-                {elementData.instructions && <>
-                    <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
-                    </div>
-                </>}
             </div>
+
+            {elementData.instructions && <>
+                <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}></div>
+            </>}
         </div>
     </div>
 }

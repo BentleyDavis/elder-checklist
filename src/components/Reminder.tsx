@@ -36,7 +36,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
     return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
         <div className="col">
             <div className="clearfix">
-                <div className="col-md-2 float-md-end mb-1 ms-md-1 text-end">
+                <div className="float-md-start">
                     <StateButton action={"complete"} title={"Ok"} btnType="primary"></StateButton>
                     <StateButton action={"reset"} title={"Reset"} btnType="secondary"></StateButton>
                 </div>
