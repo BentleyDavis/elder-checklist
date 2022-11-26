@@ -16,7 +16,7 @@ export default function Select({ elementData, dataStore, dispatch, path }: {
     return <>
 
         {elementData.title &&
-            <label htmlFor={elementData.id} className="form-label">{elementData.title}</label>
+            <label htmlFor={elementData.id} className="form-label mt-1 mb-0">{elementData.title}</label>
         }
 
         <select className="form-select"

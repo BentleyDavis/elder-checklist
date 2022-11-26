@@ -74,6 +74,7 @@ export const surveyFormat: any = {
                 {
                     "type": "comment",
                     "id": "bmNotes",
+                    "width": "full",
                     "title": "BM Notes",
                     "minRows": 1,
                 }
@@ -237,7 +238,8 @@ export const surveyFormat: any = {
                 {
                     "type": "selectButtons",
                     "id": "sensation",
-                    "title": "Sensation:",
+                    "title": "Sensations (Choose many):",
+                    "width": "full",
                     "options": [
                         {
                             "text": "shooting",
@@ -288,6 +290,7 @@ export const surveyFormat: any = {
                 {
                     "type": "selectButtons",
                     "id": "triggers",
+                    "width": "full",
                     "title": "Triggers:",
                     "options": [
                         {
@@ -327,12 +330,14 @@ export const surveyFormat: any = {
                 {
                     "type": "comment",
                     "id": "cause",
+                    "width": "full",
                     "title": "Did an event cause this pain? like a fall, accident. Please describe or put \"unknown\"",
                     "minRows": 1,
                 },
                 {
                     "type": "comment",
                     "id": "notes",
+                    "width": "full",
                     "title": "Pain Notes",
                     "minRows": 1,
                 },
