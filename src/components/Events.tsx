@@ -19,12 +19,6 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
     const data = pathGetAt(dataPath, dataStore) || {}
 
     return <>
-
-        {elementData.title &&
-            <label htmlFor="exampleFormControlTextarea1" className="form-label h1">{elementData.title}</label>
-        }
-
-
         <button className={`btn btn-${btnType} m-1`}
             onClick={(event) => {
                 const id = newId();
@@ -46,14 +40,14 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
 
                     <div className="clearfix">
 
-                        <button className="btn btn-primary float-md-end" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
+                        <button className="btn btn-primary float-md-start" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
                             open / close
                         </button>
 
                         {elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
                     </div>
 
-                    <div className="collapse" id={`c-${event.id}`}>
+                    <div className="collapse show" id={`c-${event.id}`}>
                         {elementData?.elements?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
                     </div>
 

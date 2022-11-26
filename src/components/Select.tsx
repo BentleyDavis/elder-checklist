@@ -16,10 +16,11 @@ export default function Select({ elementData, dataStore, dispatch, path }: {
     return <>
 
         {elementData.title &&
-            <label htmlFor="exampleFormControlTextarea1" className="form-label">{elementData.title}</label>
+            <label htmlFor={elementData.id} className="form-label">{elementData.title}</label>
         }
 
         <select className="form-select"
+            id={elementData.id}
             value={pathGetAt(dataPath, dataStore)}
             onChange={(event) => {
                 dispatch({
@@ -27,7 +28,7 @@ export default function Select({ elementData, dataStore, dispatch, path }: {
                     data: event.currentTarget.value.toString()
                 })
             }} >
-            <option value=""></option>
+            <option></option>
             {elementData.options.map((c: any) => {
                 return <option
                     key={c.text}

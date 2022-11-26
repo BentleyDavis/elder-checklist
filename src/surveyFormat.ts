@@ -12,6 +12,7 @@ export const surveyFormat: any = {
             "id": "bMs",
             "addButtonTitle": "Add a BM",
             "summary": [{
+                "id": "bmSummary1",
                 "type": "text",
                 "prefix": "BM",
             }],
@@ -72,11 +73,17 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "comment",
-                    "id": "notes",
+                    "id": "bmNotes",
                     "title": "BM Notes",
                     "minRows": 1,
                 }
             ]
+        },
+        {
+            "type": "heading",
+            "level": 1,
+            "id": "painEventHeading",
+            "content": "Report a special pain event"
         },
         {
             "type": "events",
@@ -334,28 +341,34 @@ export const surveyFormat: any = {
         {
             "type": "heading",
             "level": 1,
-            "id": "h1Tasks",
-            "content": "Tasks"
+            "id": "ReminderHeading",
+            "content": "Reminders"
+        },
+        {
+            "type": "reminder",
+            "id": "autosave",
+            "content": "Reminder: This form automatically saves as you type. You do not need to save or send it."
         },
         {
             "type": "reminder",
             "id": "walk",
-            "content": "Walk? try only 5 minutes, later in the day, and don't exercise arms"
-        },
-        {
-            "type": "reminder",
-            "id": "DiclofenacReminder",
-            "content": "Do not use Diclofenac gel until you speak to Ben"
+            "content": "Reminder: if you go out walking: only 5 minutes, later in the day when warm, and don't exercise arms"
         },
         {
             "type": "reminder",
             "id": "textIfNoisyNeighbor",
-            "content": "Noisy Neighbor? Text Ben when it is hapening"
+            "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
         },
         {
             "type": "reminder",
             "id": "textIfNeedGroceries",
-            "content": "Need Groceries? Text Ben that you need help with groceries"
+            "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
+        },
+        {
+            "type": "heading",
+            "level": 1,
+            "id": "tasks",
+            "content": "To Dos (Tasks)"
         },
         {
             "type": "todo",
@@ -384,7 +397,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "matrix",
-            "name": "feelToday",
+            "id": "feelToday",
             "title": "",
             "verticalAlign": "top",
             "columns": [
@@ -424,7 +437,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "matrix",
-            "name": "pain",
+            "id": "pain",
             "title": "",
             "verticalAlign": "top",
             "alternateRows": true,
@@ -481,7 +494,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "matrix",
-            "name": "other",
+            "id": "other",
             "title": "",
             "alternateRows": true,
             "columns": [

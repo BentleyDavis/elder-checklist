@@ -36,7 +36,7 @@ export default function Components(
 
     if (typeof components[element.type] !== "undefined") {
         return React.createElement(components[element.type], {
-            key: element.name || element.id,
+            key: element.id,
             // block: Components
             elementData: element,
             dataStore: dataStore,
