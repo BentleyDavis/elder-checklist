@@ -36,29 +36,35 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
     return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
         <div className="col">
-            {{
-                done: "Done: ",
-                skipped: "Skipped: ",
-                started: "Started: ",
-                waiting: ""
-            }[localState.state]}
-            {elementData.content}
-            <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
-            <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
-            <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-            <StateButton action={"reset"} title={"Reset"}></StateButton>
-            {elementData.instructions && <>
-                <button className="btn btn-secondary mx-1"
-                    onClick={() => setShowInstructions(!showInstructions)}
-                >
-                    {showInstructions && <>Close </>}
-                    Instructions
-                </button>
-                {showInstructions && <>
+            <div className="clearfix">
+                <div className="col-md-6 float-md-end mb-1 ms-md-1 text-end">
+                    {elementData.instructions && <>
+                        <button className="btn btn-secondary mx-1"
+                            onClick={() => setShowInstructions(!showInstructions)}
+                        >
+                            {showInstructions && <>Close </>}
+                            Instructions
+                        </button>
+                    </>}
+                    <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
+                    <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
+                    <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
+                    <StateButton action={"reset"} title={"Reset"}></StateButton>
+                </div>
+
+                {{
+                    done: "Done: ",
+                    skipped: "Skipped: ",
+                    started: "Started: ",
+                    waiting: ""
+                }[localState.state]}
+                {elementData.content}
+
+                {elementData.instructions && showInstructions && <>
                     <div className="card-body" dangerouslySetInnerHTML={{ __html: elementData.instructions }}>
                     </div>
                 </>}
-            </>}
+            </div>
         </div>
     </div>
 }

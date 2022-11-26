@@ -53,8 +53,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                         {elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
                     </div>
 
-
-                    <div className="card-body collapse" id={`c-${event.id}`}>
+                    <div className="collapse" id={`c-${event.id}`}>
                         {elementData?.elements?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
                     </div>
 
