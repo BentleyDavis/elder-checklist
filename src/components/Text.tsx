@@ -15,5 +15,5 @@ export default function Text({ elementData, dataStore, dispatch, path }: {
 
     const value = pathGetAt(dataPath, dataStore);
 
-    return <>{elementData.prefix}{value}{elementData.suffix}</>
+    return <>{elementData.prefix}{value ? value : elementData.default}{elementData.suffix}</>
 }

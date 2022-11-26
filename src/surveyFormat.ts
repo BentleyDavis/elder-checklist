@@ -11,6 +11,10 @@ export const surveyFormat: any = {
             "type": "events",
             "id": "bMs",
             "addButtonTitle": "Add a BM",
+            "summary": [{
+                "type": "text",
+                "prefix": "BM",
+            }],
             "elements": [
                 {
                     "type": "select",
@@ -80,7 +84,8 @@ export const surveyFormat: any = {
             "addButtonTitle": "Report a Pain",
             "summary": [{
                 "type": "text",
-                "suffix": " pain",
+                "prefix": "Pain: ",
+                "default": "New ",
                 "id": "location",
             }
             ],

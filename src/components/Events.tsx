@@ -25,7 +25,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
         }
 
 
-        <button className={`btn btn-${btnType} mx-1`}
+        <button className={`btn btn-${btnType} m-1`}
             onClick={(event) => {
                 const id = newId();
                 dispatch({
@@ -44,18 +44,10 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
             <div className="row stripeable py-1 border-bottom" key={event.id}>
                 <div className="col">
 
-                    {/* <div className="row">
-                                <div className="col-md-auto">
-                                    Variable width content
-                                </div>
-                                <div className="col">
-                                    <button className="btn btn-primary col-md-2 float-md-end mb-3 ms-md-3" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
-                                        open/close
-                                    </button>    </div></div> */}
                     <div className="clearfix">
 
                         <button className="btn btn-primary col-md-2 float-md-end mb-1 ms-md-1" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
-                            open/close
+                            open / close
                         </button>
 
                         {elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}

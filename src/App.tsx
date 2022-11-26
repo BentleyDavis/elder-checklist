@@ -104,6 +104,7 @@ function App() {
 
       {authState === "in" && formState !== undefined &&
         <>
+          This form automatically saves as you type. You do not need to save or send it.
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
           <br />
           <br />
