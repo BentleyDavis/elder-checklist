@@ -25,7 +25,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
     function StateButton({ action, title, btnType = "primary" }:
         { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" }) {
         if (can(localState, action)) {
-            return <button type="button" className={`btn btn-${btnType} mx-1`}
+            return <button type="button" className={`btn btn-${btnType} m-1`}
                 onClick={() => {
                     localActions[action]();
                 }}>{title}</button>

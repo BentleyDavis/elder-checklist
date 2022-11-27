@@ -411,56 +411,12 @@ export const surveyFormat: any = {
             "content": "How do you feel today?"
         },
         {
-            "type": "singleSelect",
+            "type": "range",
             "id": "feelToday",
-            "title": "",
-            "options": [
-                {
-                    "value": "0",
-                    "text": "Great"
-                },
-                {
-                    "value": "1",
-                    "text": "1"
-                },
-                {
-                    "value": "2",
-                    "text": "2"
-                },
-                {
-                    "value": "3",
-                    "text": "3"
-                },
-                {
-                    "value": "4",
-                    "text": "4"
-                },
-                {
-                    "value": "5",
-                    "text": "OK"
-                },
-                {
-                    "value": "6",
-                    "text": "6"
-                },
-                {
-                    "value": "7",
-                    "text": "7"
-                },
-                {
-                    "value": "8",
-                    "text": "8"
-                },
-                {
-                    "value": "9",
-                    "text": "9"
-                },
-                {
-                    "value": "10",
-                    "text": "Worst Ever"
-                },
+            "0": "Great",
+            "5": "OK",
+            "10": "Worst Ever",
 
-            ]
         },
         {
             "type": "heading",
@@ -526,6 +482,44 @@ export const surveyFormat: any = {
             "content": "Other"
         },
         {
+            "type": "row",
+            "striped": true,
+            "id": "noisyNeighbor",
+            "elements": [{
+                "type": "range",
+                "id": "noisyNeighbor",
+                "title": "How noisy were your neighbors today?",
+                "0": "silent",
+                "10": "worst",
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "confusion",
+            "elements": [{
+                "type": "range",
+                "id": "confusion",
+                "title": "How confused did you feel today?",
+                "0": "none",
+                "5": "some",
+                "10": "worst",
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "dizzy",
+            "elements": [{
+                "type": "range",
+                "id": "dizzy",
+                "title": "How dizzy did you feel today?",
+                "0": "none",
+                "5": "some",
+                "10": "worst",
+            }]
+        },
+        {
             "type": "matrix",
             "id": "other",
             "title": "",
@@ -554,20 +548,12 @@ export const surveyFormat: any = {
             ],
             "rows": [
                 {
-                    "value": "confusion",
-                    "text": "confusion"
-                },
-                {
                     "value": "forgetful",
                     "text": "forgetful"
                 },
                 {
                     "value": "swolenAnkles",
                     "text": "swolen ankles"
-                },
-                {
-                    "value": "dizziness",
-                    "text": "dizziness"
                 },
                 {
                     "value": "bladder",
@@ -584,10 +570,6 @@ export const surveyFormat: any = {
                 {
                     "value": "spam",
                     "text": "spam call ring"
-                },
-                {
-                    "value": "noise",
-                    "text": "noisy neighbors"
                 },
                 {
                     "value": "ringing",

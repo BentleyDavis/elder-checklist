@@ -10,6 +10,8 @@ import MultiSelect from "./MultiSelect";
 import Heading from "./Heading";
 import Text from "./Text";
 import Counter from "./Counter";
+import Row from "./Row";
+import Range from "./Range";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -22,6 +24,8 @@ const components: { [key: string]: any } = {
     multiSelect: MultiSelect,
     text: Text,
     counter: Counter,
+    row: Row,
+    range: Range,
 };
 
 
