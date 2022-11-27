@@ -4,11 +4,12 @@ import Matrix from "./Matrix";
 import Comment from "./Comment";
 import ToDo from "./Todo";
 import Reminder from "./Reminder";
-import Select from "./Select";
+import SingleSelect from "./SingleSelect";
 import Events from "./Events";
-import SelectButtons from "./SelectButtons";
+import MultiSelect from "./MultiSelect";
 import Heading from "./Heading";
 import Text from "./Text";
+import Counter from "./Counter";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -16,10 +17,11 @@ const components: { [key: string]: any } = {
     heading: Heading,
     todo: ToDo,
     reminder: Reminder,
-    select: Select,
+    singleSelect: SingleSelect,
     events: Events,
-    selectButtons: SelectButtons,
+    multiSelect: MultiSelect,
     text: Text,
+    counter: Counter,
 };
 
 

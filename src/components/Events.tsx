@@ -40,7 +40,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
 
                     <div className="clearfix">
 
-                        <button className="btn btn-primary float-md-start" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
+                        <button className="btn btn-primary float-md-start m-1" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
                             open / close
                         </button>
 

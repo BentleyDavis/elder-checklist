@@ -18,7 +18,7 @@ export const surveyFormat: any = {
             }],
             "elements": [
                 {
-                    "type": "select",
+                    "type": "singleSelect",
                     "id": "thickness",
                     "title": "Thickness",
                     "options": [
@@ -27,7 +27,7 @@ export const surveyFormat: any = {
                             "value": "-2"
                         },
                         {
-                            "text": "Too Soft",
+                            "text": "loose",
                             "value": "-1"
                         },
                         {
@@ -45,7 +45,7 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "select",
+                    "type": "singleSelect",
                     "id": "size",
                     "title": "Size",
                     "options": [
@@ -95,11 +95,16 @@ export const surveyFormat: any = {
                 "prefix": "Pain: ",
                 "default": "New ",
                 "id": "location",
-            }
+            },
+            {
+                "type": "counter",
+                "title": "",
+                "id": "times",
+            },
             ],
             "elements": [
                 {
-                    "type": "select",
+                    "type": "singleSelect",
                     "id": "location",
                     "title": "Pain Location",
                     "options": [
@@ -166,7 +171,7 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "select",
+                    "type": "singleSelect",
                     "id": "side",
                     "title": "Pain side",
                     "options": [
@@ -185,7 +190,7 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "select",
+                    "type": "singleSelect",
                     "id": "severity",
                     "title": "Severity",
                     "options": [
@@ -236,7 +241,12 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "selectButtons",
+                    "type": "counter",
+                    "title": "How many times today?",
+                    "id": "times",
+                },
+                {
+                    "type": "multiSelect",
                     "id": "sensation",
                     "title": "Sensations (Choose many):",
                     "width": "full",
@@ -288,7 +298,7 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "selectButtons",
+                    "type": "multiSelect",
                     "id": "triggers",
                     "width": "full",
                     "title": "Triggers:",
@@ -401,37 +411,55 @@ export const surveyFormat: any = {
             "content": "How do you feel today?"
         },
         {
-            "type": "matrix",
+            "type": "singleSelect",
             "id": "feelToday",
             "title": "",
-            "verticalAlign": "top",
-            "columns": [
+            "options": [
                 {
                     "value": "0",
-                    "text": "great"
+                    "text": "Great"
                 },
                 {
                     "value": "1",
-                    "text": "good"
+                    "text": "1"
                 },
                 {
                     "value": "2",
-                    "text": "ok"
+                    "text": "2"
                 },
                 {
                     "value": "3",
-                    "text": "so so"
+                    "text": "3"
                 },
                 {
                     "value": "4",
-                    "text": "bad"
-                }
-            ],
-            "rows": [
+                    "text": "4"
+                },
                 {
-                    "value": "feel",
-                    "text": "feel?"
-                }
+                    "value": "5",
+                    "text": "OK"
+                },
+                {
+                    "value": "6",
+                    "text": "6"
+                },
+                {
+                    "value": "7",
+                    "text": "7"
+                },
+                {
+                    "value": "8",
+                    "text": "8"
+                },
+                {
+                    "value": "9",
+                    "text": "9"
+                },
+                {
+                    "value": "10",
+                    "text": "Worst Ever"
+                },
+
             ]
         },
         {

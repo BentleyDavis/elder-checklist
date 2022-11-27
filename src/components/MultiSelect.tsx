@@ -1,6 +1,6 @@
 import { pathGetAt } from "../utils/dataStore";
 
-export default function SelectButtons({ elementData, dataStore, dispatch, path }: {
+export default function MultiSelect({ elementData, dataStore, dispatch, path }: {
     elementData: any,
     dataStore: any,
     path?: string,
@@ -19,7 +19,7 @@ export default function SelectButtons({ elementData, dataStore, dispatch, path }
         <div className="col">
 
             {elementData.title &&
-                <label htmlFor="exampleFormControlTextarea1" className="form-label">{elementData.title}</label>
+                <label className="form-label mt-1 mb-0">{elementData.title}</label>
             }
 
             {elementData.options.map((c: any) => {
