@@ -12,11 +12,17 @@ export const surveyFormat: any = {
             "id": "bMs",
             "addButtonTitle": "Add a BM",
             "summary": [{
-                "id": "bmSummary1",
+                "id": "when",
                 "type": "text",
-                "prefix": "BM",
+                "prefix": "BM: ",
             }],
             "elements": [
+                {
+                    "type": "time",
+                    "id": "when",
+                    "default": "now",
+                    "title": "When did this happen today?"
+                },
                 {
                     "type": "singleSelect",
                     "id": "thickness",
@@ -90,19 +96,26 @@ export const surveyFormat: any = {
             "type": "events",
             "id": "painEvents",
             "addButtonTitle": "Report a Pain",
-            "summary": [{
-                "type": "text",
-                "prefix": "Pain: ",
-                "default": "New ",
-                "id": "location",
-            },
-            {
-                "type": "counter",
-                "title": "",
-                "id": "times",
-            },
+            "summary": [
+                {
+                    "type": "text",
+                    "prefix": "Pain: ",
+                    "default": "New ",
+                    "id": "location",
+                },
+                {
+                    "type": "counter",
+                    "title": "",
+                    "id": "times",
+                },
             ],
             "elements": [
+                {
+                    "type": "time",
+                    "id": "timeTest",
+                    "default": "now",
+                    "title": "When did this first happen today?"
+                },
                 {
                     "type": "singleSelect",
                     "id": "location",

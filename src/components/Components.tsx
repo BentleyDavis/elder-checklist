@@ -12,6 +12,7 @@ import Text from "./Text";
 import Counter from "./Counter";
 import Row from "./Row";
 import Range from "./Range";
+import Time from "./Time";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -26,6 +27,7 @@ const components: { [key: string]: any } = {
     counter: Counter,
     row: Row,
     range: Range,
+    time: Time,
 };
 
 
