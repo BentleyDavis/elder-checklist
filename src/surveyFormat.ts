@@ -401,6 +401,23 @@ export const surveyFormat: any = {
         // },
         {
             "type": "todo",
+            "id": "bloodpressure",
+            "content": "Take your blood pressure",
+            "instructions": `
+            <ul>
+                <li> Put on right arm with the button near our elbow</li>
+                <li> Press the button, wait a second, then press it again.</li>
+            </ul>
+            <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `
+        },
+        {
+            "type": "todo",
+            "id": "weight",
+            "content": "Weigh Yourself",
+        },
+        {
+            "type": "todo",
             "id": "floss",
             "content": "Floss teeth",
         },
