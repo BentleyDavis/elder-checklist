@@ -4,6 +4,86 @@ export const surveyFormat: any = {
         {
             "type": "heading",
             "level": 1,
+            "id": "morning",
+            "content": "Do these in the morning"
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "id": "ReminderHeading",
+            "content": "Reminders"
+        },
+        {
+            "type": "reminder",
+            "id": "autosave",
+            "content": "Reminder: This form automatically saves as you type. You do not need to save or send it."
+        },
+        {
+            "type": "reminder",
+            "id": "walk",
+            "content": "Reminder: if you go out walking: only 5 minutes, later in the day when warm, and don't exercise arms"
+        },
+        {
+            "type": "reminder",
+            "id": "textIfNoisyNeighbor",
+            "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
+        },
+        {
+            "type": "reminder",
+            "id": "textIfNeedGroceries",
+            "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
+        },
+        {
+            "type": "heading",
+            "level": 1,
+            "id": "evening",
+            "content": "Review in the morning and do throughout the day"
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "id": "tasks",
+            "content": "To Dos (Tasks)"
+        },
+        // {
+        //     "type": "todo",
+        //     "id": "backStretches",
+        //     "content": "Do Back Stretches",
+        //     "instructions": `
+        //     <ul>
+        //         <li> Stand in the doorway facing the door jam</li>
+        //         <li> Grab the door jamb with both hands</li>
+        //         <li> Pull your body back stretching your arms straight and your back</li>
+        //         <li> Do 3 times for a count of 20</li>
+        //     </ul>
+        //     <iframe width="100%" style="aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        //     `
+        // },
+        {
+            "type": "todo",
+            "id": "bloodpressure",
+            "content": "Take your blood pressure",
+            "instructions": `
+            <ul>
+                <li> Put on right arm with the button near our elbow</li>
+                <li> Press the button, wait a second, then press it again.</li>
+            </ul>
+            <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `
+        },
+        {
+            "type": "todo",
+            "id": "weight",
+            "content": "Weigh Yourself",
+        },
+        {
+            "type": "todo",
+            "id": "floss",
+            "content": "Floss teeth",
+        },
+        {
+            "type": "heading",
+            "level": 2,
             "id": "h1Bms",
             "content": "BMs"
         },
@@ -91,7 +171,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "heading",
-            "level": 1,
+            "level": 2,
             "id": "painEventHeading",
             "content": "Report a special pain event"
         },
@@ -372,75 +452,24 @@ export const surveyFormat: any = {
         },
         {
             "type": "heading",
-            "level": 1,
-            "id": "ReminderHeading",
-            "content": "Reminders"
+            "level": 2,
+            "id": "h1Notes",
+            "content": "Notes"
         },
         {
-            "type": "reminder",
-            "id": "autosave",
-            "content": "Reminder: This form automatically saves as you type. You do not need to save or send it."
-        },
-        {
-            "type": "reminder",
-            "id": "walk",
-            "content": "Reminder: if you go out walking: only 5 minutes, later in the day when warm, and don't exercise arms"
-        },
-        {
-            "type": "reminder",
-            "id": "textIfNoisyNeighbor",
-            "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
-        },
-        {
-            "type": "reminder",
-            "id": "textIfNeedGroceries",
-            "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
+            "type": "comment",
+            "id": "notes",
+            "title": ""
         },
         {
             "type": "heading",
             "level": 1,
-            "id": "tasks",
-            "content": "To Dos (Tasks)"
-        },
-        // {
-        //     "type": "todo",
-        //     "id": "backStretches",
-        //     "content": "Do Back Stretches",
-        //     "instructions": `
-        //     <ul>
-        //         <li> Stand in the doorway facing the door jam</li>
-        //         <li> Grab the door jamb with both hands</li>
-        //         <li> Pull your body back stretching your arms straight and your back</li>
-        //         <li> Do 3 times for a count of 20</li>
-        //     </ul>
-        //     <iframe width="100%" style="aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        //     `
-        // },
-        {
-            "type": "todo",
-            "id": "bloodpressure",
-            "content": "Take your blood pressure",
-            "instructions": `
-            <ul>
-                <li> Put on right arm with the button near our elbow</li>
-                <li> Press the button, wait a second, then press it again.</li>
-            </ul>
-            <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            `
-        },
-        {
-            "type": "todo",
-            "id": "weight",
-            "content": "Weigh Yourself",
-        },
-        {
-            "type": "todo",
-            "id": "floss",
-            "content": "Floss teeth",
+            "id": "evening",
+            "content": "Do these in the evening"
         },
         {
             "type": "heading",
-            "level": 1,
+            "level": 2,
             "id": "h1Feel",
             "content": "How do you feel today?"
         },
@@ -454,7 +483,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "heading",
-            "level": 1,
+            "level": 2,
             "id": "h1Pain",
             "content": "Pain"
         },
@@ -511,7 +540,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "heading",
-            "level": 1,
+            "level": 2,
             "id": "h1Other",
             "content": "Other"
         },
@@ -615,16 +644,5 @@ export const surveyFormat: any = {
                 }
             ]
         },
-        {
-            "type": "heading",
-            "level": 1,
-            "id": "h1Notes",
-            "content": "Notes"
-        },
-        {
-            "type": "comment",
-            "id": "notes",
-            "title": ""
-        }
     ]
 }
