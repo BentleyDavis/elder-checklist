@@ -11,17 +11,20 @@ export const surveyFormat: any = {
             "type": "events",
             "id": "bMs",
             "addButtonTitle": "Add a BM",
-            "summary": [{
-                "id": "when",
-                "type": "text",
-                "prefix": "BM: ",
-            }],
+            "summary": [
+                {
+                    "id": "when.display",
+                    "type": "text",
+                    "prefix": "BM: ",
+                }
+            ],
             "elements": [
                 {
                     "type": "time",
                     "id": "when",
                     "default": "now",
-                    "title": "When did this happen today?"
+                    "recent": true,
+                    "title": "When did this happen?"
                 },
                 {
                     "type": "singleSelect",
@@ -114,7 +117,8 @@ export const surveyFormat: any = {
                     "type": "time",
                     "id": "timeTest",
                     "default": "now",
-                    "title": "When did this first happen today?"
+                    "revent": true,
+                    "title": "When did this first happen?"
                 },
                 {
                     "type": "singleSelect",

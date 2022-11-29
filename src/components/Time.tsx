@@ -15,14 +15,18 @@ export default function Time({ elementData, dataStore, dispatch, path }: {
         path + "." + elementData.id :
         elementData.id;
 
-    let value = pathGetAt(dataPath, dataStore) || "";
+    let value = pathGetAt(dataPath, dataStore) || { timeData: "" };
 
     useEffect(() => {
         if (pathGetAt(dataPath, dataStore) === undefined && elementData.default === "now") {
             const n = new Date();
             dispatch({
                 path: dataPath,
-                data: `${n.getHours().toString().padStart(2, '0')}:${n.getMinutes().toString().padStart(2, '0')}`
+                data: {
+                    timeData: `${n.getHours().toString().padStart(2, '0')}:${n.getMinutes().toString().padStart(2, '0')}`,
+                    whenData: n,
+                    display: n.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                }
             })
         }
         // eslint-disable-next-line
@@ -38,11 +42,26 @@ export default function Time({ elementData, dataStore, dispatch, path }: {
 
         <input type="time" className="form-control" id={elementData.id} aria-describedby="when"
             style={{ maxWidth: "8em" }}
-            value={value}
+            value={value.timeData}
             onChange={(event) => {
+                const formValue = event.currentTarget.value;
+                const hour = Number(formValue.slice(0, 2));
+                let when = new Date();
+
+                if (elementData.recent === true) {
+                    when.setHours(hour);
+                    if (when > (new Date())) {  // it's time is in the future but thry probably mean yesterday
+                        when.setDate(when.getDate() - 1)
+                    }
+                }
+
                 dispatch({
                     path: dataPath,
-                    data: event.currentTarget.value
+                    data: {
+                        timeData: event.currentTarget.value,
+                        whenData: when,
+                        display: when.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                    }
                 })
             }}
         ></input>

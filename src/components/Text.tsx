@@ -9,9 +9,10 @@ export default function Text({ elementData, dataStore, dispatch, path }: {
         data: any;
     }>
 }) {
-    const dataPath = path ?
-        path + "." + elementData.id :
-        elementData.id;
+    let dataPath = "";
+    if (path) dataPath += path + "."
+    if (elementData.path) dataPath += elementData.path + "."
+    dataPath += elementData.id;
 
     const value = pathGetAt(dataPath, dataStore);
 

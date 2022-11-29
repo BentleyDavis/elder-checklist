@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useReducer, useState } from 'react';
 import { surveyFormat } from './surveyFormat';
-import { firebaseApp, firebaseInit } from './database';
+import { firebaseApp, firebaseInit } from './utils/database';
 import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from 'firebase/auth';
 import { doc, getDoc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
@@ -11,15 +11,9 @@ import { deepCopy, pathCreateObject } from './utils/dataStore';
 import { merge } from 'lodash';
 
 import './components/tasks.css';
+import { getDateId } from './utils/getTodaysDateId';
 
 const provider = new GoogleAuthProvider();
-
-function getSurveyDateId() {
-  const date = new Date();
-  return date.getFullYear().toString() +
-    (date.getMonth() + 1).toString().padStart(2, "0") +
-    date.getDate().toString().padStart(2, "0")
-}
 
 let dbDocRef: any
 const uniqueSessionId = newId()
@@ -43,7 +37,7 @@ function App() {
         if (!dbDocRef) {
 
           // create the doc if it doesn't exist
-          const docRef = doc(db, "lists", "AL3vE9W4KNpbHaZ03IGp", "submissions", getSurveyDateId());
+          const docRef = doc(db, "lists", "AL3vE9W4KNpbHaZ03IGp", "submissions", getDateId());
           dbDocRef = docRef;
           if (!(await getDoc(docRef)).exists()) {
             await setDoc(docRef, {})
