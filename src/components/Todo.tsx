@@ -14,10 +14,12 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
     });
 
     useTransition(localState, (current, action, prev) => {
-        dispatch({
-            path: elementData.id,
-            data: current.state
-        })
+        if (prev) {
+            dispatch({
+                path: elementData.id,
+                data: current.state
+            })
+        }
     });
 
     const localActions: { [key: string]: any } = actions(localDispatch);

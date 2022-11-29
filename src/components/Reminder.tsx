@@ -14,10 +14,16 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
     });
 
     useTransition(localState, (current, action, prev) => {
-        dispatch({
-            path: elementData.id,
-            data: current.state
-        })
+        // console.log("--------");
+        if (prev) {
+            // console.log("current", current);
+            // console.log("action", action);
+            // console.log("prev", prev);
+            dispatch({
+                path: elementData.id,
+                data: current.state
+            })
+        }
     });
 
     const localActions: { [key: string]: any } = actions(localDispatch);
