@@ -47,6 +47,7 @@ function App() {
             const data = doc.data();
             if (data) {
               if (data.updateFrom !== uniqueSessionId) {
+                // console.log("initialData:", data);
                 dispatchForm({ path: "", data })
               } else {
               }
@@ -73,7 +74,7 @@ function App() {
 
   function formStateReducer(oldState: any, action: { path: string, data: any }) {
 
-    // Update Remotre State
+    // Update Remote State
     if (dbDocRef && action.path !== "") {
       updateDoc(dbDocRef, {
         [action.path]: action.data,

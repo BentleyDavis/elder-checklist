@@ -36,7 +36,7 @@ export const surveyFormat: any = {
         {
             "type": "heading",
             "level": 1,
-            "id": "evening",
+            "id": "daytime",
             "content": "Review in the morning and do throughout the day"
         },
         {
