@@ -74,14 +74,19 @@ function App() {
 
   function formStateReducer(oldState: any, action: { path: string, data: any }) {
 
-    // Update Remote State
     if (dbDocRef && action.path !== "") {
+
+      // Update Remote State
       updateDoc(dbDocRef, {
         [action.path]: action.data,
         updateFrom: uniqueSessionId,
         updated: { [action.path]: action.data }
       });
+
+      // Update messages
+
     }
+
 
 
     // Update local state

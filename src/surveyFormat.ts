@@ -547,6 +547,26 @@ export const surveyFormat: any = {
         {
             "type": "row",
             "striped": true,
+            "id": "bmToday",
+            "elements": [{
+                "type": "singleSelect",
+                "id": "bmToday",
+                "title": "Did you have a BM today?",
+                "options": [
+                    {
+                        "text": "yes",
+                        "value": true
+                    },
+                    {
+                        "text": "no",
+                        "value": false
+                    },
+                ],
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
             "id": "noisyNeighbor",
             "elements": [{
                 "type": "range",
