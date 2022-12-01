@@ -1,7 +1,7 @@
 import { config } from "../config";
 
-export function getDateId(date: Date = new Date()) {
-    date = addHours(config.hourToStartNewDay)
+export function getDateId(date: Date = new Date(), _config = config) {
+    date = addHours(-_config.hourToStartNewDay)
     return date.getFullYear().toString() +
         (date.getMonth() + 1).toString().padStart(2, "0") +
         date.getDate().toString().padStart(2, "0");
