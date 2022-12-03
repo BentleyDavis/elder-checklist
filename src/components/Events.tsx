@@ -47,11 +47,14 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                         {elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
                     </div>
 
-                    <div className="collapse show" id={`c-${event.id}`}>
+                    <div className="collapse" id={`c-${event.id}`}>
                         <div className="row">
 
                             {elementData?.elements?.map((e: any) => {
-                                return <div className={e.width === "full" ? "col-12" : "col-sm-6 col-md-4"} key={e.id}>
+                                return <div className={
+                                    // e.width === "full" ? "col-12" : "col-sm-6 col-md-4"
+                                    "col-12"
+                                } key={e.id}>
                                     {Components(e, dataStore, dispatch, dataPath + "." + event.id)}
                                 </div>
                             })}

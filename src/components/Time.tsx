@@ -41,7 +41,7 @@ export default function Time({ elementData, dataStore, dispatch, path }: {
         }
 
         <input type="time" className="form-control" id={elementData.id} aria-describedby="when"
-            style={{ maxWidth: "8em" }}
+            style={{ maxWidth: "8em", display: "inline-block" }}
             value={value.timeData}
             onChange={(event) => {
                 const formValue = event.currentTarget.value;

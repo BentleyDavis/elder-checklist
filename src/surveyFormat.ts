@@ -183,12 +183,15 @@ export const surveyFormat: any = {
                 {
                     "type": "text",
                     "prefix": "Pain: ",
-                    "default": "New ",
                     "id": "location",
+                }, {
+                    "type": "text",
+                    "prefix": "-",
+                    "id": "side",
                 },
                 {
                     "type": "counter",
-                    "title": "",
+                    "title": " | times:",
                     "id": "times",
                 },
             ],
