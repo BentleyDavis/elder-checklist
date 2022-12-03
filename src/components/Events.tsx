@@ -1,3 +1,4 @@
+import { Collapse } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 import { newId } from '../utils/newId';
 import Components from "./Components";
@@ -26,6 +27,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                     path: dataPath + "." + id,
                     data: {
                         id: id,
+                        closed: false,
                     }
                 })
             }}
@@ -40,14 +42,27 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
 
                     <div className="clearfix">
 
-                        <button className="btn btn-primary float-md-start m-1" type="button" data-bs-toggle="collapse" data-bs-target={`#c-${event.id}`} aria-expanded="true">
-                            open / close
+                        <button className="btn btn-primary float-md-start m-1" type="button"
+                            // data-bs-toggle="collapse"
+                            // data-bs-target={`#c-${event.id}`}
+                            // aria-expanded="true"
+                            onClick={() => {
+                                dispatch({
+                                    path: dataPath + "." + event.id + ".closed",
+                                    data: !event.closed,
+                                })
+                            }}
+                        >
+                            {event.closed ? "open" : "close"}
                         </button>
 
-                        {elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })}
+                        {event.closed &&
+                            elementData?.summary?.map((e: any) => { return Components(e, dataStore, dispatch, dataPath + "." + event.id) })
+                        }
+
                     </div>
 
-                    <div className="collapse" id={`c-${event.id}`}>
+                    <Collapse in={!event.closed}>
                         <div className="row">
 
                             {elementData?.elements?.map((e: any) => {
@@ -60,7 +75,22 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                             })}
 
                         </div>
-                    </div>
+                    </Collapse>
+
+                    {/* <div className="collapse" id={`c-${event.id}`}>
+                        <div className="row">
+
+                            {elementData?.elements?.map((e: any) => {
+                                return <div className={
+                                    // e.width === "full" ? "col-12" : "col-sm-6 col-md-4"
+                                    "col-12"
+                                } key={e.id}>
+                                    {Components(e, dataStore, dispatch, dataPath + "." + event.id)}
+                                </div>
+                            })}
+
+                        </div>
+                    </div> */}
 
                 </div>
             </div>

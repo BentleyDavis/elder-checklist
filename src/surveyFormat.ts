@@ -198,7 +198,7 @@ export const surveyFormat: any = {
             "elements": [
                 {
                     "type": "time",
-                    "id": "timeTest",
+                    "id": "when",
                     "default": "now",
                     "revent": true,
                     "title": "When did this first happen?"
