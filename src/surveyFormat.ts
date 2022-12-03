@@ -432,6 +432,14 @@ export const surveyFormat: any = {
                             "text": "standing",
                             "value": "standing"
                         },
+                        {
+                            "text": "sitting",
+                            "value": "sitting"
+                        },
+                        {
+                            "text": "gripping",
+                            "value": "gripping"
+                        },
                     ],
                 },
                 {
