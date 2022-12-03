@@ -31,12 +31,12 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                     }
                 })
             }}
+
         >
             + {elementData.addButtonTitle}
         </button>
 
-
-        {Object.values(data).map((event: any) =>
+        {Object.values(data).reverse().map((event: any) =>
             <div className="row stripeable py-1 border-bottom" key={event.id}>
                 <div className="col">
 
