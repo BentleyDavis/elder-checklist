@@ -15,7 +15,7 @@ export default function Comment({ elementData, dataStore, dispatch, path }: {
         path + "." + elementData.id :
         elementData.id;
 
-    const value = pathGetAt(dataPath, dataStore);
+    const value = pathGetAt(dataPath, dataStore) ?? "";
 
 
     return <div className="row">
@@ -26,7 +26,8 @@ export default function Comment({ elementData, dataStore, dispatch, path }: {
                 </label>
             }
 
-            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={elementData.minRows || 3} value={value}
+            <ReactTextareaAutosize className="form-control" id="exampleFormControlTextarea1" minRows={elementData.minRows || 3}
+                value={value}
                 onChange={(event) => {
                     dispatch({
                         path: dataPath,

@@ -10,8 +10,14 @@ import Components from "./components/Components";
 import { deepCopy, pathCreateObject } from './utils/dataStore';
 import { merge } from 'lodash';
 
+import { useLoaderData } from "react-router-dom";
+
 import './components/tasks.css';
-import { getDateId } from './utils/getTodaysDateId';
+import { getDateId } from './utils/getDateId';
+
+export async function loader({ params }: { params: any }) {
+  return params;
+}
 
 const provider = new GoogleAuthProvider();
 
@@ -19,6 +25,9 @@ let dbDocRef: any
 const uniqueSessionId = newId()
 
 function App() {
+
+  const checklist = useLoaderData();
+
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   // const [user, setUser] = useState<User>()
   const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
@@ -26,36 +35,42 @@ function App() {
   useEffect(() => { // Log Into Firebase
     firebaseInit()
     const cancelables: any[] = [];
+
+    // @ts-ignore
+    const dateId = checklist?.dateId || getDateId();
+
     const auth = getAuth();
     let unsubscribe = onAuthStateChanged(auth, async (incomingUser) => {
+
       if (incomingUser) {
         setAuthState("in");
         // setUser(incomingUser);
 
         // Subscribe the survey data
         const db = getFirestore(firebaseApp);
-        if (!dbDocRef) {
 
-          // create the doc if it doesn't exist
-          const docRef = doc(db, "lists", "AL3vE9W4KNpbHaZ03IGp", "submissions", getDateId());
-          dbDocRef = docRef;
-          if (!(await getDoc(docRef)).exists()) {
-            await setDoc(docRef, {})
-          }
+        // if (!dbDocRef) {
 
-          const unsub = onSnapshot(docRef, (doc) => {
-            const data = doc.data();
-            if (data) {
-              if (data.updateFrom !== uniqueSessionId) {
-                // console.log("initialData:", data);
-                dispatchForm({ path: "", data })
-              } else {
-              }
-            }
-          });
-
-          cancelables.push(unsub)
+        // create the doc if it doesn't exist
+        const docRef = doc(db, "lists", "AL3vE9W4KNpbHaZ03IGp", "submissions", dateId);
+        dbDocRef = docRef;
+        if (!(await getDoc(docRef)).exists()) {
+          await setDoc(docRef, {})
         }
+
+        const unsub = onSnapshot(docRef, (doc) => {
+
+          const data = doc.data();
+          if (data) {
+            if (data.updateFrom !== uniqueSessionId) {
+              dispatchForm({ path: "", data })
+            } else {
+            }
+          }
+        });
+
+        cancelables.push(unsub)
+        // }
 
       } else {
         const auth = getAuth();
@@ -70,7 +85,7 @@ function App() {
         c()
       }
     }
-  }, [])
+  }, [checklist])
 
   function formStateReducer(oldState: any, action: { path: string, data: any }) {
 
@@ -93,14 +108,17 @@ function App() {
     let partial = action.data;
     if (action.path !== "") {
       partial = pathCreateObject(action.path, action.data)
+      return merge(deepCopy(oldState), deepCopy(partial));
+    } else {
+      return action.data
     }
-    return merge(deepCopy(oldState), deepCopy(partial));
+
   }
 
   return (
     <div className="container">
+      {/* <pre>*{JSON.stringify(checklist, undefined, 2)}*</pre> */}
       {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
-      {/* <pre>{JSON.stringify(surveyData, undefined, 2)}</pre> */}
 
       {authState === "in" && formState !== undefined &&
         <>
