@@ -8,7 +8,7 @@ export interface Checklist {
 
 export async function loader() {
     const checklists: Checklist[] = [
-        { title: "Today", id: getDateId() },
+        { title: "Today", id: "" },
         { title: "Yesterday", id: getDateId(addDays(-1)) },
         { title: "2 days ago", id: getDateId(addDays(-2)) },
         { title: "3 days ago", id: getDateId(addDays(-3)) },
@@ -26,12 +26,12 @@ export default function Root() {
             <div style={{ opacity: .1 }}>
 
                 {checklists.length ? (
-                    checklists.map((checklist) => (<>
-                        <Link key={checklist.id} to={`/${checklist.id}`}>
+                    checklists.map((checklist) => (<span key={checklist.id}>
+                        <Link to={`/${checklist.id}`}>
                             {checklist.title}
                         </Link>
                         &nbsp;|&nbsp;
-                    </>
+                    </span>
                     ))
                 ) : (
                     <i>No checklists</i>
