@@ -557,7 +557,7 @@ export const surveyFormat: any = {
         },
         {
             // "type": "stepper",
-            // "id": "stepperTest",
+            // "id": "stepperOther",
             // "elements": [{
             "type": "row",
             "striped": true,

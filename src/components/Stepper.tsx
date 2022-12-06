@@ -15,11 +15,11 @@ export default function Stepper({ elementData, dataStore, dispatch, path = "" }:
         path + "." + elementData.id :
         elementData.id;
 
-    const value = pathGetAt(dataPath, dataStore) ?? "";
-    // const [elementIndex, setelementIndex] = useState<number | undefined>(0)
-    // const [tempIndex, settempIndex] = useState<number>(0)
+    let value = pathGetAt(dataPath, dataStore) ?? "";
 
-    //if (elementData?.index === undefined) elementData.index = 1;
+    // set up default
+    if (!value) value = { index: 0 };
+    if (value.index === undefined) value.index = 0;
 
     return value.showAll ?
         <>
