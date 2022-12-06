@@ -13,6 +13,7 @@ import Counter from "./Counter";
 import Row from "./Row";
 import Range from "./Range";
 import Time from "./Time";
+import Stepper from "./Stepper";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -28,6 +29,7 @@ const components: { [key: string]: any } = {
     row: Row,
     range: Range,
     time: Time,
+    stepper: Stepper,
 };
 
 

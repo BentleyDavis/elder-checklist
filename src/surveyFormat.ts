@@ -556,6 +556,9 @@ export const surveyFormat: any = {
             "content": "Other"
         },
         {
+            // "type": "stepper",
+            // "id": "stepperTest",
+            // "elements": [{
             "type": "row",
             "striped": true,
             "id": "bmToday",
@@ -612,6 +615,8 @@ export const surveyFormat: any = {
                 "5": "some",
                 "10": "worst",
             }]
+            // },
+            // ]
         },
         {
             "type": "matrix",
