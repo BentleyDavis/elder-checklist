@@ -61,6 +61,11 @@ export const surveyFormat: any = {
         // },
         {
             "type": "todo",
+            "id": "vitamins",
+            "content": "Have you taken your vitamins from the manual pill box",
+        },
+        {
+            "type": "todo",
             "id": "bloodpressure",
             "content": "Take your blood pressure",
             "instructions": `
