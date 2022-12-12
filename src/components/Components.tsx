@@ -45,17 +45,44 @@ export default function Components(
 
 
     if (typeof components[element.type] !== "undefined") {
-        return React.createElement(components[element.type], {
-            key: element.id,
-            // block: Components
-            elementData: element,
-            dataStore: dataStore,
-            dispatch: dispatch,
-            path: path
-        });
+        let show = true;
+        if (element.show) {
+            const x = new ScopedEval(dataStore)
+            show = x.eval(element.show);
+        }
+
+        if (show) {
+            return React.createElement(components[element.type], {
+                key: element.id,
+                // block: Components
+                elementData: element,
+                dataStore: dataStore,
+                dispatch: dispatch,
+                path: path
+            });
+        } else {
+            return <></>
+        }
     }
     return React.createElement(
         () => <div>The component "{element.type}" has not been created yet.</div>,
         { key: element.id }
     );
 };
+
+export class ScopedEval {
+    scope: any
+    constructor(scope: any) {
+        this.scope = scope;
+    }
+    eval(__script: any) {
+        // eslint-disable-next-line no-new-func
+        return new Function(...Object.keys(this.scope), `
+                return eval(
+                    '"use strict";delete this.__script;' 
+                    + this.__script
+                );
+            `.replace(/[\n\t]|  +/g, '')
+        ).bind({ __script })(...Object.values(this.scope));
+    }
+}
