@@ -598,6 +598,71 @@ export const surveyFormat: any = {
         {
             "type": "row",
             "striped": true,
+            "id": "runnyNose",
+            "elements": [{
+                "type": "range",
+                "id": "runnyNose",
+                "title": "How runny was your nose today?",
+                "0": "none",
+                "10": "heavy dripping",
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "pinkyBent",
+            "elements": [{
+                "type": "range",
+                "id": "pinkyBent",
+                "title": "How much was your pinky bent and/or hurting today?",
+                "0": "none",
+                "10": "constantly bent",
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "teethPain",
+            "elements": [{
+                "type": "range",
+                "id": "teethPain",
+                "title": "How painful were your teeth today?",
+                "0": "none",
+                "10": "constant strong pain",
+            }]
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "cramps",
+            "elements": [{
+                "type": "singleSelect",
+                "id": "cramps",
+                "title": "Did you have cramps or spasams anywhere in your body today?",
+                "options": [
+                    {
+                        "text": "yes",
+                        "value": true
+                    },
+                    {
+                        "text": "no",
+                        "value": false
+                    },
+                ],
+            },
+            {
+                "type": "comment",
+                "show": "cramps===true",
+                "id": "crampLocations",
+                "width": "full",
+                "title": "Is so, describe the cramps and their location",
+                "minRows": 1,
+            }
+            ]
+        },
+        {
+            "type": "row",
+            "striped": true,
             "id": "confusion",
             "elements": [{
                 "type": "range",
