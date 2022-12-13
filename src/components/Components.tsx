@@ -14,6 +14,7 @@ import Row from "./Row";
 import Range from "./Range";
 import Time from "./Time";
 import Stepper from "./Stepper";
+import { evalExpression } from "../utils/evalExpression";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -45,29 +46,21 @@ export default function Components(
 
 
     if (typeof components[element.type] !== "undefined") {
-        let show = true;
-        if (element.show) {
-            try {
-                const x = new ScopedEval({ data: dataStore })
-                show = x.eval(element.show);
-            } catch (error) {
-                console.error(error)
-                console.error('error Element:', element);
-
-            }
+        let hide = false;
+        if (element.hide) {
+            hide = evalExpression(element, dataStore, element.hide);
         }
 
-        if (show) {
+        if (hide) {
+            return <div key={element.id}></div>
+        } else {
             return React.createElement(components[element.type], {
                 key: element.id,
-                // block: Components
                 elementData: element,
                 dataStore: dataStore,
                 dispatch: dispatch,
                 path: path
             });
-        } else {
-            return <div key={element.id}></div>
         }
     }
     return React.createElement(
@@ -76,19 +69,4 @@ export default function Components(
     );
 };
 
-export class ScopedEval {
-    scope: any
-    constructor(scope: any) {
-        this.scope = scope;
-    }
-    eval(__script: any) {
-        // eslint-disable-next-line no-new-func
-        return new Function(...Object.keys(this.scope), `
-                return eval(
-                    '"use strict";delete this.__script;' 
-                    + this.__script
-                );
-            `.replace(/[\n\t]|  +/g, '')
-        ).bind({ __script })(...Object.values(this.scope));
-    }
-}
+
