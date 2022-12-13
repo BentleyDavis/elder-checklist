@@ -652,7 +652,7 @@ export const surveyFormat: any = {
             },
             {
                 "type": "comment",
-                "show": "cramps===true",
+                "show": "data.cramps===true",
                 "id": "crampLocations",
                 "width": "full",
                 "title": "Is so, describe the cramps and their location",

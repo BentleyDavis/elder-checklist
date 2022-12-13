@@ -47,8 +47,14 @@ export default function Components(
     if (typeof components[element.type] !== "undefined") {
         let show = true;
         if (element.show) {
-            const x = new ScopedEval(dataStore)
-            show = x.eval(element.show);
+            try {
+                const x = new ScopedEval({ data: dataStore })
+                show = x.eval(element.show);
+            } catch (error) {
+                console.error(error)
+                console.error('error Element:', element);
+
+            }
         }
 
         if (show) {
@@ -61,7 +67,7 @@ export default function Components(
                 path: path
             });
         } else {
-            return <></>
+            return <div key={element.id}></div>
         }
     }
     return React.createElement(
