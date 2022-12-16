@@ -87,6 +87,11 @@ export const surveyFormat: any = {
             "content": "Floss teeth",
         },
         {
+            "type": "todo",
+            "id": "lidocainePatch",
+            "content": "Put on your Lidocaine patch",
+        },
+        {
             "type": "heading",
             "level": 2,
             "id": "h1Bms",
