@@ -1,4 +1,4 @@
-import { Collapse } from "react-bootstrap";
+import { Button, Collapse, Modal } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 import { newId } from '../utils/newId';
 import Components from "./Components";
@@ -62,7 +62,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
 
                     </div>
 
-                    <Collapse in={!event.closed}>
+                    {/* <Collapse in={!event.closed}>
                         <div className="row">
 
                             {elementData?.elements?.map((e: any) => {
@@ -75,7 +75,38 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                             })}
 
                         </div>
-                    </Collapse>
+                    </Collapse> */}
+
+                    <Modal size="xl" show={!event.closed} onHide={() => {
+                        dispatch({
+                            path: dataPath + "." + event.id + ".closed",
+                            data: !event.closed,
+                        })
+                    }}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{elementData.addButtonTitle}</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body className="show-grid">
+                            {elementData?.elements?.map((e: any) => {
+                                return <div className={
+                                    // e.width === "full" ? "col-12" : "col-sm-6 col-md-4"
+                                    "col-12"
+                                } key={e.id}>
+                                    {Components(e, dataStore, dispatch, dataPath + "." + event.id)}
+                                </div>
+                            })}
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => {
+                                dispatch({
+                                    path: dataPath + "." + event.id + ".closed",
+                                    data: !event.closed,
+                                })
+                            }}>
+                                Close
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
 
                     {/* <div className="collapse" id={`c-${event.id}`}>
                         <div className="row">
