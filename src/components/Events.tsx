@@ -1,4 +1,4 @@
-import { Button, Collapse, Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 import { newId } from '../utils/newId';
 import Components from "./Components";
