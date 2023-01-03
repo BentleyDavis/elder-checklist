@@ -60,6 +60,26 @@ export const surveyFormat: any = {
         //     `
         // },
         {
+            "type": "counter",
+            "id": "glassesFilled",
+            "title": "Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
+        },
+        {
+            "type": "counter",
+            "id": "glassesDrank",
+            "title": "How many have you drank so far?",
+        },
+        {
+            "type": "row",
+            "striped": true,
+            "id": "pinkyCurls",
+            "elements": [{
+                "type": "counter",
+                "id": "pinkyCurls",
+                "title": "<b>4</b> times today take off each brace one at a time and make a fist <b>5</b> times being sure to curl your pinky. ",
+            }],
+        },
+        {
             "type": "todo",
             "id": "vitamins",
             "content": "Have you taken your vitamins from the manual pill box",

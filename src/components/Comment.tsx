@@ -21,8 +21,8 @@ export default function Comment({ elementData, dataStore, dispatch, path }: {
     return <div className="row">
         <div className="col">
             {elementData.title &&
-                <label htmlFor="exampleFormControlTextarea1" className="form-label mt-1 mb-0">
-                    {elementData.title}
+                <label htmlFor="exampleFormControlTextarea1" className="form-label mt-1 mb-0"
+                    dangerouslySetInnerHTML={{ __html: elementData.title }}>
                 </label>
             }
 

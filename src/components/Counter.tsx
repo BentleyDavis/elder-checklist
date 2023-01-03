@@ -31,8 +31,8 @@ export default function Counter({ elementData, dataStore, dispatch, path }: {
 
     return <>
         {elementData.title &&
-            <label htmlFor={dataPath} className="form-label mt-1 mb-0">
-                {elementData.title}
+            <label htmlFor="exampleFormControlTextarea1" className="form-label mt-1 mb-0"
+                dangerouslySetInnerHTML={{ __html: elementData.title }}>
             </label>
         }
         <div style={{ display: "inline-block" }}>
