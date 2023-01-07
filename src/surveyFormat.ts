@@ -2,49 +2,332 @@ export const surveyFormat: any = {
 
     "elements": [
         {
+            "type": "ShowByTime",
+            "id": "evening2",
+            "showByTime": 17,
+            "buttonTextBefore": "switch to evening list",
+            "buttonTextAfter": "switch to morning list",
+            "elementsBefore": [
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "evening",
+                    "content": "Morning List: available until 5 PM"
+                },
+                {
+                    "type": "todo",
+                    "id": "lidocainePatchRemove",
+                    "content": "Remove your Lidocaine patch from last night",
+                },
+                {
+                    "type": "reminder",
+                    "id": "walk",
+                    "content": "Reminder: if you go out walking: only 15 minutes out and 15 minutes back, later in the day when warm, and don't exercise arms"
+                },
+                {
+                    "type": "reminder",
+                    "id": "textIfNoisyNeighbor",
+                    "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
+                },
+                {
+                    "type": "reminder",
+                    "id": "textIfNeedGroceries",
+                    "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
+                },
+            ],
+            "elementsAfter": [
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "evening",
+                    "content": "Evening List: available after 5 PM"
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "id": "h1Feel",
+                    "content": "How do you feel today?"
+                },
+                {
+                    "type": "range",
+                    "id": "feelToday",
+                    "0": "Great",
+                    "5": "OK",
+                    "10": "Worst Ever",
+
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "id": "h1Pain",
+                    "content": "Pain"
+                },
+                {
+                    "type": "matrix",
+                    "id": "pain",
+                    "title": "",
+                    "verticalAlign": "top",
+                    "alternateRows": true,
+                    "columns": [
+                        {
+                            "value": "0",
+                            "text": "none"
+                        },
+                        {
+                            "value": "1",
+                            "text": "slight"
+                        },
+                        {
+                            "value": "2",
+                            "text": "some"
+                        },
+                        {
+                            "value": "3",
+                            "text": "painful"
+                        },
+                        {
+                            "value": "4",
+                            "text": "very"
+                        }
+                    ],
+                    "rows": [
+                        {
+                            "value": "chest",
+                            "text": "chest"
+                        },
+                        {
+                            "value": "upperBack",
+                            "text": "upper back"
+                        },
+                        {
+                            "value": "lowerBack",
+                            "text": "lower back"
+                        },
+                        "shoulders",
+                        "arms",
+                        "wrists",
+                        "hands",
+                        "thighs",
+                        "hip joints",
+                        "calves",
+                        "feet",
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "id": "h1Other",
+                    "content": "Other"
+                },
+                {
+                    // "type": "stepper",
+                    // "id": "stepperOther",
+                    // "elements": [{
+                    "type": "row",
+                    "striped": true,
+                    "id": "bmToday",
+                    "elements": [{
+                        "type": "singleSelect",
+                        "id": "bmToday",
+                        "title": "Did you have a BM today?",
+                        "options": [
+                            {
+                                "text": "yes",
+                                "value": true
+                            },
+                            {
+                                "text": "no",
+                                "value": false
+                            },
+                        ],
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "noisyNeighbor",
+                    "elements": [{
+                        "type": "range",
+                        "id": "noisyNeighbor",
+                        "title": "How noisy were your neighbors today?",
+                        "0": "silent",
+                        "10": "worst",
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "runnyNose",
+                    "elements": [{
+                        "type": "range",
+                        "id": "runnyNose",
+                        "title": "How runny was your nose today?",
+                        "0": "none",
+                        "10": "heavy dripping",
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "pinkyBent",
+                    "elements": [{
+                        "type": "range",
+                        "id": "pinkyBent",
+                        "title": "How much was your pinky bent and/or hurting today?",
+                        "0": "none",
+                        "10": "constantly bent",
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "teethPain",
+                    "elements": [{
+                        "type": "range",
+                        "id": "teethPain",
+                        "title": "How painful were your teeth today?",
+                        "0": "none",
+                        "10": "constant strong pain",
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "cramps",
+                    "elements": [{
+                        "type": "singleSelect",
+                        "id": "cramps",
+                        "title": "Did you have cramps or spasams anywhere in your body today?",
+                        "options": [
+                            {
+                                "text": "yes",
+                                "value": true
+                            },
+                            {
+                                "text": "no",
+                                "value": false
+                            },
+                        ],
+                    },
+                    {
+                        "type": "comment",
+                        "hide": "data.cramps!==true",
+                        "id": "crampLocations",
+                        "width": "full",
+                        "title": "Is so, describe the cramps and their location",
+                        "minRows": 1,
+                    }
+                    ]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "confusion",
+                    "elements": [{
+                        "type": "range",
+                        "id": "confusion",
+                        "title": "How confused did you feel today?",
+                        "0": "none",
+                        "5": "some",
+                        "10": "worst",
+                    }]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "dizzy",
+                    "elements": [{
+                        "type": "range",
+                        "id": "dizzy",
+                        "title": "How dizzy did you feel today?",
+                        "0": "none",
+                        "5": "some",
+                        "10": "worst",
+                    }]
+                    // },
+                    // ]
+                },
+                {
+                    "type": "matrix",
+                    "id": "other",
+                    "title": "",
+                    "alternateRows": true,
+                    "columns": [
+                        {
+                            "value": "0",
+                            "text": "none"
+                        },
+                        {
+                            "value": "1",
+                            "text": "little"
+                        },
+                        {
+                            "value": "2",
+                            "text": "some"
+                        },
+                        {
+                            "value": "3",
+                            "text": "often"
+                        },
+                        {
+                            "value": "4",
+                            "text": "bad"
+                        }
+                    ],
+                    "rows": [
+                        {
+                            "value": "forgetful",
+                            "text": "forgetful"
+                        },
+                        {
+                            "value": "swolenAnkles",
+                            "text": "swolen ankles"
+                        },
+                        {
+                            "value": "bladder",
+                            "text": " bladder trouble"
+                        },
+                        {
+                            "value": "rashes",
+                            "text": "rashes"
+                        },
+                        {
+                            "value": "gutNoise",
+                            "text": "loud gut"
+                        },
+                        {
+                            "value": "spam",
+                            "text": "spam call ring"
+                        },
+                        {
+                            "value": "ringing",
+                            "text": "ringing noise"
+                        },
+                        {
+                            "value": "weirdNoises",
+                            "text": "chanting/ mumbling"
+                        }
+                    ]
+                },
+                {
+                    "type": "todo",
+                    "id": "lidocainePatch",
+                    "content": "Put on Lidocaine patch before bed",
+                },
+            ],
+        },
+        {
             "type": "heading",
             "level": 1,
-            "id": "morning",
-            "content": "Do these in the morning"
+            "id": "allDayHeading",
+            "content": "All Day List"
         },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "ReminderHeading",
-            "content": "Reminders"
-        },
-        {
-            "type": "reminder",
-            "id": "autosave",
-            "content": "Reminder: This form automatically saves as you type. You do not need to save or send it."
-        },
-        {
-            "type": "reminder",
-            "id": "walk",
-            "content": "Reminder: if you go out walking: only 5 minutes, later in the day when warm, and don't exercise arms"
-        },
-        {
-            "type": "reminder",
-            "id": "textIfNoisyNeighbor",
-            "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
-        },
-        {
-            "type": "reminder",
-            "id": "textIfNeedGroceries",
-            "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
-        },
-        {
-            "type": "heading",
-            "level": 1,
-            "id": "daytime",
-            "content": "Review in the morning and do throughout the day"
-        },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "tasks",
-            "content": "To Dos (Tasks)"
-        },
+        // {
+        //     "type": "heading",
+        //     "level": 2,
+        //     "id": "tasks",
+        //     "content": "To Dos (Tasks)"
+        // },
         // {
         //     "type": "todo",
         //     "id": "backStretches",
@@ -62,7 +345,7 @@ export const surveyFormat: any = {
         {
             "type": "counter",
             "id": "glassesFilled",
-            "title": "Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
+            "title": "Drinks: Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
         },
         {
             "type": "counter",
@@ -76,7 +359,7 @@ export const surveyFormat: any = {
             "elements": [{
                 "type": "counter",
                 "id": "pinkyCurls",
-                "title": "<b>4</b> times today take off each brace one at a time and make a fist <b>5</b> times being sure to curl your pinky. ",
+                "title": "Pinkies: <b>4</b> times today take off each brace one at a time and make a fist <b>5</b> times being sure to curl your pinky. ",
             }],
         },
         {
@@ -105,11 +388,6 @@ export const surveyFormat: any = {
             "type": "todo",
             "id": "floss",
             "content": "Floss teeth",
-        },
-        {
-            "type": "todo",
-            "id": "lidocainePatch",
-            "content": "Put on your Lidocaine patch",
         },
         {
             "type": "heading",
@@ -501,279 +779,6 @@ export const surveyFormat: any = {
             "type": "comment",
             "id": "notes",
             "title": ""
-        },
-        {
-            "type": "heading",
-            "level": 1,
-            "id": "evening",
-            "content": "Do these in the evening"
-        },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "h1Feel",
-            "content": "How do you feel today?"
-        },
-        {
-            "type": "range",
-            "id": "feelToday",
-            "0": "Great",
-            "5": "OK",
-            "10": "Worst Ever",
-
-        },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "h1Pain",
-            "content": "Pain"
-        },
-        {
-            "type": "matrix",
-            "id": "pain",
-            "title": "",
-            "verticalAlign": "top",
-            "alternateRows": true,
-            "columns": [
-                {
-                    "value": "0",
-                    "text": "none"
-                },
-                {
-                    "value": "1",
-                    "text": "slight"
-                },
-                {
-                    "value": "2",
-                    "text": "some"
-                },
-                {
-                    "value": "3",
-                    "text": "painful"
-                },
-                {
-                    "value": "4",
-                    "text": "very"
-                }
-            ],
-            "rows": [
-                {
-                    "value": "chest",
-                    "text": "chest"
-                },
-                {
-                    "value": "upperBack",
-                    "text": "upper back"
-                },
-                {
-                    "value": "lowerBack",
-                    "text": "lower back"
-                },
-                "shoulders",
-                "arms",
-                "wrists",
-                "hands",
-                "thighs",
-                "hip joints",
-                "calves",
-                "feet",
-            ]
-        },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "h1Other",
-            "content": "Other"
-        },
-        {
-            // "type": "stepper",
-            // "id": "stepperOther",
-            // "elements": [{
-            "type": "row",
-            "striped": true,
-            "id": "bmToday",
-            "elements": [{
-                "type": "singleSelect",
-                "id": "bmToday",
-                "title": "Did you have a BM today?",
-                "options": [
-                    {
-                        "text": "yes",
-                        "value": true
-                    },
-                    {
-                        "text": "no",
-                        "value": false
-                    },
-                ],
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "noisyNeighbor",
-            "elements": [{
-                "type": "range",
-                "id": "noisyNeighbor",
-                "title": "How noisy were your neighbors today?",
-                "0": "silent",
-                "10": "worst",
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "runnyNose",
-            "elements": [{
-                "type": "range",
-                "id": "runnyNose",
-                "title": "How runny was your nose today?",
-                "0": "none",
-                "10": "heavy dripping",
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "pinkyBent",
-            "elements": [{
-                "type": "range",
-                "id": "pinkyBent",
-                "title": "How much was your pinky bent and/or hurting today?",
-                "0": "none",
-                "10": "constantly bent",
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "teethPain",
-            "elements": [{
-                "type": "range",
-                "id": "teethPain",
-                "title": "How painful were your teeth today?",
-                "0": "none",
-                "10": "constant strong pain",
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "cramps",
-            "elements": [{
-                "type": "singleSelect",
-                "id": "cramps",
-                "title": "Did you have cramps or spasams anywhere in your body today?",
-                "options": [
-                    {
-                        "text": "yes",
-                        "value": true
-                    },
-                    {
-                        "text": "no",
-                        "value": false
-                    },
-                ],
-            },
-            {
-                "type": "comment",
-                "hide": "data.cramps!==true",
-                "id": "crampLocations",
-                "width": "full",
-                "title": "Is so, describe the cramps and their location",
-                "minRows": 1,
-            }
-            ]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "confusion",
-            "elements": [{
-                "type": "range",
-                "id": "confusion",
-                "title": "How confused did you feel today?",
-                "0": "none",
-                "5": "some",
-                "10": "worst",
-            }]
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "dizzy",
-            "elements": [{
-                "type": "range",
-                "id": "dizzy",
-                "title": "How dizzy did you feel today?",
-                "0": "none",
-                "5": "some",
-                "10": "worst",
-            }]
-            // },
-            // ]
-        },
-        {
-            "type": "matrix",
-            "id": "other",
-            "title": "",
-            "alternateRows": true,
-            "columns": [
-                {
-                    "value": "0",
-                    "text": "none"
-                },
-                {
-                    "value": "1",
-                    "text": "little"
-                },
-                {
-                    "value": "2",
-                    "text": "some"
-                },
-                {
-                    "value": "3",
-                    "text": "often"
-                },
-                {
-                    "value": "4",
-                    "text": "bad"
-                }
-            ],
-            "rows": [
-                {
-                    "value": "forgetful",
-                    "text": "forgetful"
-                },
-                {
-                    "value": "swolenAnkles",
-                    "text": "swolen ankles"
-                },
-                {
-                    "value": "bladder",
-                    "text": " bladder trouble"
-                },
-                {
-                    "value": "rashes",
-                    "text": "rashes"
-                },
-                {
-                    "value": "gutNoise",
-                    "text": "loud gut"
-                },
-                {
-                    "value": "spam",
-                    "text": "spam call ring"
-                },
-                {
-                    "value": "ringing",
-                    "text": "ringing noise"
-                },
-                {
-                    "value": "weirdNoises",
-                    "text": "chanting/ mumbling"
-                }
-            ]
         },
     ]
 }

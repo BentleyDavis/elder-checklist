@@ -1,5 +1,7 @@
 import React from "react";
 
+import { evalExpression } from "../utils/evalExpression";
+
 import Matrix from "./Matrix";
 import Comment from "./Comment";
 import ToDo from "./Todo";
@@ -14,7 +16,7 @@ import Row from "./Row";
 import Range from "./Range";
 import Time from "./Time";
 import Stepper from "./Stepper";
-import { evalExpression } from "../utils/evalExpression";
+import ShowByTime from "./ShowByTime";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -31,6 +33,7 @@ const components: { [key: string]: any } = {
     range: Range,
     time: Time,
     stepper: Stepper,
+    ShowByTime: ShowByTime,
 };
 
 
