@@ -17,7 +17,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "lidocainePatchRemove",
-                    "content": "Remove your Lidocaine patch from last night",
+                    "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
                 {
                     "type": "reminder",
@@ -34,7 +34,35 @@ export const surveyFormat: any = {
                     "id": "textIfNeedGroceries",
                     "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
                 },
+                {
+                    "type": "todo",
+                    "id": "morningPt",
+                    "content": "Morning Physical Therapy with Ben",
+                    "instructions": `
+                    Shoulder Pinches
+                    <ul>
+                        <li> Sit on bench with column pillow at your back</li>
+                        <li> Pinch your shoulder blades to the back and towards each other like you are pinching the pillow itwh your shoulders.
+                        (it might help to move them slightly up if that helps you pick them narrower)</li>
+                        <li> Pinch <b>10</b> times</li>
+                    </ul>
+                    <br>
+                    Cane Raise
+                    <ul>
+                    <li> Get your cane.</li>
+                        <li> Sit on your bed near the foot board.</li>
+                        <li> Lie on your bed with your knees bent leaving lots of room between youe head and headboard.</li>
+                        <li> Hold the cane in both hands with your elbows and wrists and fingers straight</li>
+                        <li> Keeping your elbows straight, lift your arms straight up overhead as far as is comfortably possible.</li>
+                        <li> Make sure to keep your shoulders in contact with the bed</li>
+                        <li> Hold the cane for 5 seconds as far above and back of youe head</li>
+                        <li> bring the cane back to rest on your legs</li>
+                        <li>repeat this movement <b>15</b> times</li>
+                    </ul>
+                    `
+                },
             ],
+
             "elementsAfter": [
                 {
                     "type": "heading",
@@ -313,6 +341,33 @@ export const surveyFormat: any = {
                     "type": "todo",
                     "id": "lidocainePatch",
                     "content": "Put on Lidocaine patch before bed",
+                },
+                {
+                    "type": "todo",
+                    "id": "eveningPt",
+                    "content": "Evening Physical Therapy with Ben",
+                    "instructions": `
+                    Shoulder Pinches
+                    <ul>
+                        <li> Sit on bench with column pillow at your back</li>
+                        <li> Pinch your shoulder blades to the back and towards each other like you are pinching the pillow itwh your shoulders.
+                        (it might help to move them slightly up if that helps you pick them narrower)</li>
+                        <li> Pinch <b>10</b> times</li>
+                    </ul>
+                    <br>
+                    Cane Raise
+                    <ul>
+                    <li> Get your cane.</li>
+                        <li> Sit on your bed near the foot board.</li>
+                        <li> Lie on your bed with your knees bent leaving lots of room between youe head and headboard.</li>
+                        <li> Hold the cane in both hands with your elbows and wrists and fingers straight</li>
+                        <li> Keeping your elbows straight, lift your arms straight up overhead as far as is comfortably possible.</li>
+                        <li> Make sure to keep your shoulders in contact with the bed</li>
+                        <li> Hold the cane for 5 seconds as far above and back of youe head</li>
+                        <li> bring the cane back to rest on your legs</li>
+                        <li>repeat this movement <b>15</b> times</li>
+                    </ul>
+                    `
                 },
             ],
         },
