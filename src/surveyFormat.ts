@@ -11,8 +11,19 @@ export const surveyFormat: any = {
                 {
                     "type": "heading",
                     "level": 1,
-                    "id": "evening",
+                    "id": "morning heading",
                     "content": "Morning List: available until 5 PM"
+                },
+                {
+                    "type": "range",
+                    "id": "padFullness",
+                    "title": "How full was your over-night pad when you took it off?",
+                    "length": 5,
+                    "0": "dry",
+                    "1": "dribble",
+                    "2": "half full",
+                    "3": "full",
+                    "4": "overflowed",
                 },
                 {
                     "type": "todo",
