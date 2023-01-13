@@ -31,6 +31,11 @@ export const surveyFormat: any = {
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
                 {
+                    "type": "todo",
+                    "id": "caffine tea",
+                    "content": "Constant Comment Tea: Just use 1 teabag and drink all of it before noon. It has some caffine in it.",
+                },
+                {
                     "type": "reminder",
                     "id": "walk",
                     "content": "Reminder: if you go out walking: only 15 minutes out and 15 minutes back, later in the day when warm, and don't exercise arms"
