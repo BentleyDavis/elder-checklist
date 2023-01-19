@@ -172,12 +172,36 @@ export const surveyFormat: any = {
                     "content": "Other"
                 },
                 {
-                    "type": "range",
-                    "id": "eveningAnkles",
-                    "title": "How swolen are your ankles after 5 PM?",
-                    "length": 5,
-                    "0": "none",
-                    "4": "Dangerously swolen",
+                    "type": "row",
+                    "striped": true,
+                    "id": "eveningAnklesRow",
+                    "elements": [
+                        {
+                            "type": "range",
+                            "id": "eveningAnkles",
+                            "title": "How swolen are your ankles after 5 PM?",
+                            "length": 5,
+                            "0": "none",
+                            "4": "Dangerously swolen",
+                        },
+                    ]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "fingerTinglesRow",
+                    "elements": [
+                        {
+                            "type": "range",
+                            "id": "fingerTingles",
+                            "title": "Finger tip pain or tingling?",
+                            "length": 5,
+                            "0": "none",
+                            "1": "tingling several times today",
+                            "2": "Tingling Most of the day",
+                            "3": "Painful several times today",
+                            "4": "Painful Most of the day",
+                        },]
                 },
                 {
                     // "type": "stepper",
