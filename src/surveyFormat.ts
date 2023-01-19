@@ -15,25 +15,56 @@ export const surveyFormat: any = {
                     "content": "Morning List: available until 5 PM"
                 },
                 {
-                    "type": "range",
-                    "id": "padFullness",
-                    "title": "How full was your over-night pad when you took it off?",
-                    "length": 5,
-                    "0": "dry",
-                    "1": "dribble",
-                    "2": "half full",
-                    "3": "full",
-                    "4": "overflowed",
-                },
-                {
                     "type": "todo",
                     "id": "lidocainePatchRemove",
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
                 {
+                    "type": "row",
+                    "striped": true,
+                    "id": "padFullnessRow",
+                    "elements": [
+                        {
+                            "type": "range",
+                            "id": "padFullness",
+                            "title": "How full was your over-night pad when you took it off?",
+                            "length": 5,
+                            "0": "dry",
+                            "1": "dribble",
+                            "2": "half full",
+                            "3": "full",
+                            "4": "overflowed",
+                        }],
+                },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "morningAnklesRow",
+                    "elements": [
+                        {
+                            "type": "range",
+                            "id": "morningAnkles",
+                            "title": "How swolen were your ankles when you woke up?",
+                            "length": 5,
+                            "0": "none",
+                            "4": "Dangerously swolen",
+                        }
+                    ]
+                },
+                {
+                    "type": "todo",
+                    "id": "textPt",
+                    "content": "Text Ben when you are ready for morning physical therapy",
+                },
+                {
                     "type": "todo",
                     "id": "caffine tea",
                     "content": "Constant Comment Tea: Just use 1 teabag and drink all of it before noon. It has some caffine in it.",
+                },
+                {
+                    "type": "reminder",
+                    "id": "Dishes",
+                    "content": "Reminder: When you finish eating put a little wayter in the pyrex dish, put on the lid and set it in the turquoise bucket."
                 },
                 {
                     "type": "reminder",
@@ -76,7 +107,6 @@ export const surveyFormat: any = {
                     "0": "Great",
                     "5": "OK",
                     "10": "Worst Ever",
-
                 },
                 {
                     "type": "heading",
@@ -140,6 +170,14 @@ export const surveyFormat: any = {
                     "level": 2,
                     "id": "h1Other",
                     "content": "Other"
+                },
+                {
+                    "type": "range",
+                    "id": "eveningAnkles",
+                    "title": "How swolen are your ankles after 5 PM?",
+                    "length": 5,
+                    "0": "none",
+                    "4": "Dangerously swolen",
                 },
                 {
                     // "type": "stepper",
@@ -302,10 +340,6 @@ export const surveyFormat: any = {
                             "text": "forgetful"
                         },
                         {
-                            "value": "swolenAnkles",
-                            "text": "swolen ankles"
-                        },
-                        {
                             "value": "bladder",
                             "text": " bladder trouble"
                         },
@@ -397,7 +431,7 @@ export const surveyFormat: any = {
         {
             "type": "todo",
             "id": "bloodpressure",
-            "content": "Take your blood pressure",
+            "content": "Take your blood pressure. It will save your readings to the computer so you don't need to write them down.",
             "instructions": `
             <ul>
                 <li> Put on right arm with the button near our elbow</li>
@@ -409,7 +443,7 @@ export const surveyFormat: any = {
         {
             "type": "todo",
             "id": "weight",
-            "content": "Weigh Yourself",
+            "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
         },
         {
             "type": "todo",
