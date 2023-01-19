@@ -64,7 +64,7 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "Dishes",
-                    "content": "Reminder: When you finish eating put a little wayter in the pyrex dish, put on the lid and set it in the turquoise bucket."
+                    "content": "Reminder: When you finish eating put a little water in the pyrex dish, put on the lid and set it in the turquoise bucket."
                 },
                 {
                     "type": "reminder",
