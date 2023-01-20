@@ -57,8 +57,8 @@ export const surveyFormat: any = {
                     "content": "Text Ben when you are ready for morning physical therapy",
                 },
                 {
-                    "type": "todo",
-                    "id": "caffine tea",
+                    "type": "reminder",
+                    "id": "caffineTea",
                     "content": "Constant Comment Tea: Just use 1 teabag and drink all of it before noon. It has some caffine in it.",
                 },
                 {
@@ -253,7 +253,7 @@ export const surveyFormat: any = {
                 {
                     "type": "row",
                     "striped": true,
-                    "id": "pinkyBent",
+                    "id": "pinkyBentRow",
                     "elements": [{
                         "type": "range",
                         "id": "pinkyBent",
