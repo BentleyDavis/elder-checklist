@@ -575,13 +575,19 @@ export const surveyFormat: any = {
             "summary": [
                 {
                     "type": "text",
-                    "prefix": "Pain: ",
-                    "id": "location",
-                }, {
+                    "id": "sensation",
+                },
+                {
                     "type": "text",
-                    "prefix": "-",
+                    "prefix": " ",
                     "id": "side",
                 },
+                {
+                    "type": "text",
+                    "prefix": " ",
+                    "id": "location",
+                },
+
                 {
                     "type": "counter",
                     "title": " | times:",

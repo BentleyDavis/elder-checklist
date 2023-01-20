@@ -21,9 +21,8 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
         {elementData.title &&
             <label className="form-label mt-1 mb-0">{elementData.title}</label>
         }
-
         {elementData.options.map((c: any) => {
-            return (c.value === value || !!value) &&
+            return (c.value === value || value === undefined || value === "") &&
                 <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'secondary' : 'outline-primary'} m-1`}
                     onClick={(event) => {
                         if (c.value !== value) {

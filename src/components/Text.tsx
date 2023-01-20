@@ -14,7 +14,16 @@ export default function Text({ elementData, dataStore, dispatch, path }: {
     if (elementData.path) dataPath += elementData.path + "."
     dataPath += elementData.id;
 
-    const value = pathGetAt(dataPath, dataStore);
+    let value = pathGetAt(dataPath, dataStore);
+    if (typeof value === 'object') {
+        const values = [];
+        for (const [k, v] of Object.entries(value)) {
+            if (v) values.push(k)
+        }
+        value = values.join(", ")
+    }
+    console.log(value);
+
 
     return <>{elementData.prefix}{value ? value : elementData.default}{elementData.suffix}</>
 }
