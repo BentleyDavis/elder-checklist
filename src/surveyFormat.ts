@@ -86,6 +86,17 @@ export const surveyFormat: any = {
                     "id": "morningPt",
                     "content": "Morning Physical Therapy with Ben",
                 },
+                {
+                    "type": "row",
+                    "striped": true,
+                    "id": "secondMealRow",
+                    "elements": [{
+                        "type": "comment",
+                        "id": "firstMeal",
+                        "title": "What flavor was your first meal today and how did it taste?",
+                        "minRows": 1,
+                    },],
+                },
             ],
 
             "elementsAfter": [
@@ -174,6 +185,39 @@ export const surveyFormat: any = {
                 {
                     "type": "row",
                     "striped": true,
+                    "id": "temperatureRow",
+                    "elements": [
+                        {
+                            "length": 5,
+                            "0": "none",
+                            "4": "Dangerously swolen",
+                            "type": "singleSelect",
+                            "id": "temperature",
+                            "title": "How was you home temerature today?",
+                            "options": [
+                                {
+                                    "text": "mostly OK",
+                                    "value": "ok"
+                                },
+                                {
+                                    "text": "Mostly too cold",
+                                    "value": "cold"
+                                },
+                                {
+                                    "text": "Mostly too hot",
+                                    "value": "hot"
+                                },
+                                {
+                                    "text": "Fluctuates uncomfortably",
+                                    "value": "fluctuates"
+                                },
+                            ],
+                        },
+                    ]
+                },
+                {
+                    "type": "row",
+                    "striped": true,
                     "id": "eveningAnklesRow",
                     "elements": [
                         {
@@ -204,9 +248,17 @@ export const surveyFormat: any = {
                         },]
                 },
                 {
-                    // "type": "stepper",
-                    // "id": "stepperOther",
-                    // "elements": [{
+                    "type": "row",
+                    "striped": true,
+                    "id": "secondMealRow",
+                    "elements": [{
+                        "type": "comment",
+                        "id": "secondMeal",
+                        "title": "What flavor was your second meal today and how did it taste?",
+                        "minRows": 1,
+                    },],
+                },
+                {
                     "type": "row",
                     "striped": true,
                     "id": "bmToday",
@@ -618,6 +670,10 @@ export const surveyFormat: any = {
                         {
                             "text": "shoulder",
                             "value": "shoulder"
+                        },
+                        {
+                            "text": "chest",
+                            "value": "chest"
                         },
                         {
                             "text": "upper arm",
