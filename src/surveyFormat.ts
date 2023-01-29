@@ -676,6 +676,18 @@ export const surveyFormat: any = {
                             "value": "chest"
                         },
                         {
+                            "text": "upper back",
+                            "value": "upperBack"
+                        },
+                        {
+                            "text": "middle back",
+                            "value": "middleBack"
+                        },
+                        {
+                            "text": "lower back",
+                            "value": "lowerBack",
+                        },
+                        {
                             "text": "upper arm",
                             "value": "upper arm"
                         },
@@ -806,6 +818,10 @@ export const surveyFormat: any = {
                     "title": "Sensations (Choose many):",
                     "width": "full",
                     "options": [
+                        {
+                            "text": "spasm",
+                            "value": "spasm"
+                        },
                         {
                             "text": "shooting",
                             "value": "shooting"
