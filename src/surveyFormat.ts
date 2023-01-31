@@ -193,7 +193,7 @@ export const surveyFormat: any = {
                             "4": "Dangerously swolen",
                             "type": "singleSelect",
                             "id": "temperature",
-                            "title": "How was you home temerature today?",
+                            "title": "How was you home temperature today?",
                             "options": [
                                 {
                                     "text": "mostly OK",
