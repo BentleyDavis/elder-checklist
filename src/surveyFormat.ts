@@ -52,29 +52,9 @@ export const surveyFormat: any = {
                     ]
                 },
                 {
-                    "type": "todo",
-                    "id": "textPt",
-                    "content": "Text Ben when you are ready for morning physical therapy",
-                },
-                {
-                    "type": "reminder",
-                    "id": "caffineTea",
-                    "content": "Constant Comment Tea: Just use 1 teabag and drink all of it before noon. It has some caffine in it.",
-                },
-                {
                     "type": "reminder",
                     "id": "Dishes",
                     "content": "Reminder: When you finish eating put a little water in the pyrex dish, put on the lid and set it in the turquoise bucket."
-                },
-                {
-                    "type": "reminder",
-                    "id": "walk",
-                    "content": "Reminder: if you go out walking: only 15 minutes out and 15 minutes back, later in the day when warm, and don't exercise arms"
-                },
-                {
-                    "type": "reminder",
-                    "id": "textIfNoisyNeighbor",
-                    "content": "Reminder: If you neighbor is noisy then text Ben. Even if it is late in the evening."
                 },
                 {
                     "type": "reminder",
@@ -84,7 +64,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "morningPt",
-                    "content": "Morning Physical Therapy with Ben",
+                    "content": "Do Morning Exercises (based on the paper printout near your bed) ",
                 },
                 {
                     "type": "row",
@@ -480,14 +460,19 @@ export const surveyFormat: any = {
         //     `
         // },
         {
-            "type": "counter",
-            "id": "glassesFilled",
-            "title": "Drinks: Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
-        },
-        {
-            "type": "counter",
-            "id": "glassesDrank",
-            "title": "How many have you drank so far?",
+            "type": "row",
+            "striped": true,
+            "id": "drinks",
+            "elements": [{
+                "type": "counter",
+                "id": "glassesFilled",
+                "title": "Drinks: Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
+            },
+            {
+                "type": "counter",
+                "id": "glassesDrank",
+                "title": "How many have you drank so far?",
+            },],
         },
         {
             "type": "row",
