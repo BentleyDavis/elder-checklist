@@ -69,7 +69,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "drink",
-                    "content": "Drink one orange packet (collagen)",
+                    "content": "Drink one orange MetaPWR packet",
                 },
                 {
                     "type": "todo",
