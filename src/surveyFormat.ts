@@ -63,6 +63,16 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
+                    "id": "drinkKetones",
+                    "content": "Drink one Ketone Shot (red and white bottle)",
+                },
+                {
+                    "type": "todo",
+                    "id": "drink",
+                    "content": "Drink one orange drink (collagen)",
+                },
+                {
+                    "type": "todo",
                     "id": "morningPt",
                     "content": "Do Morning Exercises (based on the paper printout near your bed) ",
                 },
@@ -429,7 +439,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "eveningPt",
-                    "content": "Evening Physical Therapy with Ben",
+                    "content": "Evening Physical Therapy with Ben or the exercises on your sheet next to your bed",
                 },
             ],
         },
@@ -810,6 +820,14 @@ export const surveyFormat: any = {
                         {
                             "text": "shooting",
                             "value": "shooting"
+                        },
+                        {
+                            "text": "sharp",
+                            "value": "sharp"
+                        },
+                        {
+                            "text": "dull",
+                            "value": "dull"
                         },
                         {
                             "text": "tingling",
