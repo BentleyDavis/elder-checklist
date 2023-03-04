@@ -476,7 +476,7 @@ export const surveyFormat: any = {
             "elements": [{
                 "type": "counter",
                 "id": "glassesFilled",
-                "title": "Drinks: Make <b>6</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
+                "title": "Drinks: Make <b>4</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
             },
             {
                 "type": "counter",
