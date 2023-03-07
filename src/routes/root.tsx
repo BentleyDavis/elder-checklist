@@ -24,7 +24,7 @@ export default function Root() {
         <>
             <Outlet />
             <div style={{ opacity: .1 }}>
-
+                {getDateId()}&nbsp;|&nbsp;
                 {checklists.length ? (
                     checklists.map((checklist) => (<span key={checklist.id}>
                         <Link to={`/${checklist.id}`}>
