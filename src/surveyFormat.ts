@@ -53,8 +53,8 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "reminder",
-                    "id": "spills",
-                    "content": "Reminder: If you spill anything. Text Ben immediately."
+                    "id": "happyHome",
+                    "content": `Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.`
                 },
                 {
                     "type": "reminder",
