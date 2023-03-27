@@ -219,17 +219,6 @@ export const surveyFormat: any = {
                 {
                     "type": "row",
                     "striped": true,
-                    "id": "secondMealRow",
-                    "elements": [{
-                        "type": "comment",
-                        "id": "secondMeal",
-                        "title": "What flavor was your second meal today and how did it taste?",
-                        "minRows": 1,
-                    },],
-                },
-                {
-                    "type": "row",
-                    "striped": true,
                     "id": "bmToday",
                     "elements": [{
                         "type": "singleSelect",
@@ -269,18 +258,6 @@ export const surveyFormat: any = {
                         "title": "How runny was your nose today?",
                         "0": "none",
                         "10": "heavy dripping",
-                    }]
-                },
-                {
-                    "type": "row",
-                    "striped": true,
-                    "id": "pinkyBentRow",
-                    "elements": [{
-                        "type": "range",
-                        "id": "pinkyBent",
-                        "title": "How much was your pinky bent and/or hurting today?",
-                        "0": "none",
-                        "10": "constantly bent",
                     }]
                 },
                 {
@@ -462,16 +439,6 @@ export const surveyFormat: any = {
                 "id": "glassesDrank",
                 "title": "How many have you drank so far?",
             },],
-        },
-        {
-            "type": "row",
-            "striped": true,
-            "id": "pinkyCurls",
-            "elements": [{
-                "type": "counter",
-                "id": "pinkyCurls",
-                "title": "Pinkies: <b>4</b> times today take off each brace one at a time and make a fist <b>5</b> times being sure to curl your pinky. ",
-            }],
         },
         {
             "type": "todo",
