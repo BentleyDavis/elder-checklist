@@ -63,29 +63,8 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
-                    "id": "drinkKetones",
-                    "content": "Drink one Ketone Shot (red and white bottle)",
-                },
-                {
-                    "type": "todo",
-                    "id": "drink",
-                    "content": "Drink one orange MetaPWR packet",
-                },
-                {
-                    "type": "todo",
                     "id": "morningPt",
-                    "content": "Do Morning Exercises (based on the paper printout near your bed) ",
-                },
-                {
-                    "type": "row",
-                    "striped": true,
-                    "id": "secondMealRow",
-                    "elements": [{
-                        "type": "comment",
-                        "id": "firstMeal",
-                        "title": "What flavor was your first meal today and how did it taste?",
-                        "minRows": 1,
-                    },],
+                    "content": "Do Morning Exercises with Ben at 9 AM",
                 },
             ],
 
