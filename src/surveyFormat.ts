@@ -53,6 +53,11 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "reminder",
+                    "id": "socksWet",
+                    "content": `Wear a fresh set of socks every day. They feel wet but they are not. The fabric is special to keep your feet cool while walking so they feel wet to the toucheven even though they are not wet.`
+                },
+                {
+                    "type": "reminder",
                     "id": "happyHome",
                     "content": `Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.`
                 },
@@ -431,19 +436,9 @@ export const surveyFormat: any = {
         //     `
         // },
         {
-            "type": "row",
-            "striped": true,
+            "type": "counter",
             "id": "drinks",
-            "elements": [{
-                "type": "counter",
-                "id": "glassesFilled",
-                "title": "Drinks: Make <b>4</b> glasses of water or tea (only 1/2 tablespoon of cream in tea)",
-            },
-            {
-                "type": "counter",
-                "id": "glassesDrank",
-                "title": "How many have you drank so far?",
-            },],
+            "title": "Drink 4 16oz glasses of water (or tea) a day:",
         },
         {
             "type": "todo",
