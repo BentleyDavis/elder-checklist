@@ -402,11 +402,6 @@ export const surveyFormat: any = {
                     "id": "lidocainePatch",
                     "content": "Put on Lidocaine patch before bed",
                 },
-                {
-                    "type": "todo",
-                    "id": "eveningPt",
-                    "content": "Evening Physical Therapy with Ben or the exercises on your sheet next to your bed",
-                },
             ],
         },
         {
