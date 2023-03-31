@@ -71,11 +71,6 @@ export const surveyFormat: any = {
                     "id": "textIfNeedGroceries",
                     "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
                 },
-                {
-                    "type": "todo",
-                    "id": "morningPt",
-                    "content": "Do Morning Exercises with Ben at 9 AM",
-                },
             ],
 
             "elementsAfter": [

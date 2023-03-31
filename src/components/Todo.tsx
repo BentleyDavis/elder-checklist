@@ -39,7 +39,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         <div className="col">
             <div className="clearfix">
                 <div className="float-md-start">
-                    <StateButton action={"start"} title={"Start"} btnType="success"></StateButton>
+                    {/* <StateButton action={"start"} title={"Start"} btnType="success"></StateButton> */}
                     <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
                     <StateButton action={"reset"} title={"Reset"}></StateButton>
