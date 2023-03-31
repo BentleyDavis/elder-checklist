@@ -63,6 +63,11 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "reminder",
+                    "id": "benToDos",
+                    "content": `You can look at the <a target="_blank" href="https://airtable.com/shrjGe752Uahtrh3d">tasks Ben has for you</a>.`
+                },
+                {
+                    "type": "reminder",
                     "id": "Dishes",
                     "content": "Reminder: When you finish eating put a little water in the pyrex dish, put on the lid and set it in the turquoise bucket."
                 },
