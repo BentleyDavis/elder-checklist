@@ -64,7 +64,7 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "benToDos",
-                    "content": `You can look at the <a target="_blank" href="https://airtable.com/shrjGe752Uahtrh3d">tasks Ben has for you</a>.`
+                    "content": `You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben has for you</a>.`
                 },
                 {
                     "type": "reminder",
