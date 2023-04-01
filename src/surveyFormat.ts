@@ -20,6 +20,11 @@ export const surveyFormat: any = {
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
                 {
+                    "type": "todo",
+                    "id": "waterBottlesStart",
+                    "content": "Fill the 4 water bttles to the top line (not full). Drink them throughout the day. Use them for tea if you make tea.",
+                },
+                {
                     "type": "row",
                     "striped": true,
                     "id": "padFullnessRow",
@@ -399,6 +404,11 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
+                    "id": "waterBottlesEnd",
+                    "content": "Did you drink all 4 water bottles?",
+                },
+                {
+                    "type": "todo",
                     "id": "lidocainePatch",
                     "content": "Put on Lidocaine patch before bed",
                 },
@@ -430,11 +440,6 @@ export const surveyFormat: any = {
         //     <iframe width="100%" style="aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/vaz9sdMUeFc?clip=UgkxchdG427-SfMMBnAIbDMbVgWr92tflwCD&amp;clipt=EIiMCRjo4Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         //     `
         // },
-        {
-            "type": "counter",
-            "id": "drinks",
-            "title": "Drink 4 16oz glasses of water (or tea) a day:",
-        },
         {
             "type": "todo",
             "id": "vitamins",
