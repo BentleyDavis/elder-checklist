@@ -1,4 +1,3 @@
-import { Button } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 
 export default function Range({ elementData, dataStore, dispatch, path }: {
