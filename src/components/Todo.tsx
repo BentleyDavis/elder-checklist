@@ -42,10 +42,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                     {/* <StateButton action={"start"} title={"Start"} btnType="success"></StateButton> */}
                     <StateButton action={"markDone"} title={"Mark Done"} btnType="info"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-                </div>
-
-                <div className="float-md-end">
-                    {elementData.instructions && <>
+                    {elementData.instructions && ["started", "waiting"].includes(localState.state) && <>
                         <button type="button" className="btn btn-secondary mx-1"
                             data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
                             Instructions
@@ -60,15 +57,16 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                     waiting: ""
                 }[localState.state]}
                 {elementData.content}
+                <div className="float-md-end">
+                    <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
+                </div>
             </div>
 
             {elementData.instructions && <>
                 <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}></div>
             </>}
 
-            <div className="float-md-end">
-                <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
-            </div>
+
         </div>
     </div>
 }
