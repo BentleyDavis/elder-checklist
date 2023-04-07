@@ -17,6 +17,7 @@ import Range from "./Range";
 import Time from "./Time";
 import Stepper from "./Stepper";
 import ShowByTime from "./ShowByTime";
+import Html from "./Html";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -34,6 +35,7 @@ const components: { [key: string]: any } = {
     time: Time,
     stepper: Stepper,
     ShowByTime: ShowByTime,
+    Html: Html,
 };
 
 

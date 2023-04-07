@@ -470,7 +470,7 @@ export const surveyFormat: any = {
         {
             "type": "todo",
             "id": "floss",
-            "content": "Floss teeth",
+            "content": "Floss Teeth. Use the colorful sandles towel haning on the towl rack then hang it back up on the towel rack so it can dry.",
         },
         {
             "type": "heading",
@@ -896,6 +896,19 @@ export const surveyFormat: any = {
             "type": "comment",
             "id": "notes",
             "title": ""
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "id": "h1Calendar",
+            "content": "Calendar"
+        },
+        {
+            "type": "Html",
+            "id": "calendar",
+            "content": `
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FChicago&showTitle=0&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&mode=WEEK&src=b2xpcGhhbnRzdXphbm5lQGdtYWlsLmNvbQ&color=%23E67C73" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+            `,
         },
     ]
 }
