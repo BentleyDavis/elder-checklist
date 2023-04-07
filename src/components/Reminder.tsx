@@ -29,7 +29,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
     const localActions: { [key: string]: any } = actions(localDispatch);
 
     function StateButton({ action, title, btnType = "primary" }:
-        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" }) {
+        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" | "light" }) {
         if (can(localState, action)) {
             return <button type="button" className={`btn btn-${btnType} m-1`}
                 onClick={() => {
@@ -44,11 +44,14 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
             <div className="clearfix">
                 <div className="float-md-start">
                     <StateButton action={"complete"} title={"click to confirm you read this"} btnType="outline-primary"></StateButton>
-                    <StateButton action={"reset"} title={"Reset"} btnType="secondary"></StateButton>
+                    {localState.state === "done" && "Done:"} &nbsp;
                 </div>
                 <span
                     dangerouslySetInnerHTML={{ __html: elementData.content }}>
                 </span>
+                <div className="float-md-end">
+                    <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
+                </div>
             </div>
         </div>
 

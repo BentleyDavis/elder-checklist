@@ -81,6 +81,11 @@ export const surveyFormat: any = {
                     "id": "textIfNeedGroceries",
                     "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
                 },
+                {
+                    "type": "reminder",
+                    "id": "textquestionTimeReminder",
+                    "content": "Reminder: The questions above are just your morning list. other questions will automatically appear here after 5PM. Those should not be answered until then so don't worry about answering them until later."
+                },
             ],
 
             "elementsAfter": [

@@ -16,7 +16,9 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
     const value = pathGetAt(dataPath, dataStore)
 
 
-    return <>
+    return <div style={{ opacity: !!value ? .5 : 1 }}>
+
+        {!!value && <>Done: </>}
 
         {elementData.title &&
             <label className="form-label mt-1 mb-0">{elementData.title}</label>
@@ -40,6 +42,6 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
                     {c.text}
                 </button>
         })}
-    </>
+    </div>
 
 }

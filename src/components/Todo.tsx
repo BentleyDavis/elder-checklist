@@ -25,7 +25,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
     const localActions: { [key: string]: any } = actions(localDispatch);
 
     function StateButton({ action, title, btnType = "primary" }:
-        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" }) {
+        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "light" }) {
         if (can(localState, action)) {
             return <button type="button" className={`btn btn-${btnType} mx-1`}
                 onClick={() => {
@@ -42,7 +42,6 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                     {/* <StateButton action={"start"} title={"Start"} btnType="success"></StateButton> */}
                     <StateButton action={"complete"} title={"Done"} btnType="info"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-                    <StateButton action={"reset"} title={"Reset"}></StateButton>
                 </div>
 
                 <div className="float-md-end">
@@ -66,6 +65,10 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
             {elementData.instructions && <>
                 <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}></div>
             </>}
+
+            <div className="float-md-end">
+                <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
+            </div>
         </div>
     </div>
 }

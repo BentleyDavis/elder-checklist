@@ -1,3 +1,4 @@
+import { Button } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 
 export default function Range({ elementData, dataStore, dispatch, path }: {
@@ -29,31 +30,44 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
         })
     }
 
-    return <>
+    return <div style={{ opacity: !!value ? .5 : 1 }}>
+        <div className="col">
+            <div className="clearfix">
 
-        {elementData.title &&
-            <label className="form-label mt-1 mb-0">{elementData.title}</label>
-        }
+                {!!value && <>Done: </>}
 
-        {options.map((c: any) => {
-            return (c.value === value || !value) &&
-                <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'secondary' : 'outline-primary'} m-1`}
-                    onClick={(event) => {
-                        if (c.value !== value) {
-                            dispatch({
-                                path: dataPath,
-                                data: c.value,
-                            });
-                        } else {
-                            dispatch({
-                                path: dataPath,
-                                data: "",
-                            });
-                        }
-                    }}>
-                    {c.text}
-                </button>
-        })}
-    </>
+                {elementData.title &&
+                    <label className="form-label mt-1 mb-0">{elementData.title}</label>
+                }
+
+                {options.map((c: any) => {
+                    return (c.value === value || !value) &&
+                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'light' : 'outline-primary'} m-1`}
+                            onClick={(event) => {
+                                if (c.value !== value) {
+                                    dispatch({
+                                        path: dataPath,
+                                        data: c.value,
+                                    });
+                                } else {
+                                    // do nothing
+                                }
+                            }}>
+                            {c.text}
+                        </button>
+                })}
+                <div className="float-md-end">
+                    <button onClick={() => {
+                        dispatch({
+                            path: dataPath,
+                            data: "",
+                        })
+                    }} type="button" className="btn btn-light">Reset</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 }
