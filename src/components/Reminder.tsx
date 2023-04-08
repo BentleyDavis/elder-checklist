@@ -43,7 +43,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
         <div className="col">
             <div className="clearfix">
                 <div className="float-md-start">
-                    <StateButton action={"complete"} title={"click to confirm you read this"} btnType="outline-primary"></StateButton>
+                    <StateButton action={"complete"} title={"click to confirm you read this"} btnType="primary"></StateButton>
                     {localState.state === "done" && "Done:"} &nbsp;
                 </div>
                 <span

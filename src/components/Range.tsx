@@ -41,7 +41,7 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&
-                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'light' : 'outline-primary'} m-1`}
+                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'light' : 'primary'} m-1`}
                             onClick={(event) => {
                                 if (c.value !== value) {
                                     dispatch({
@@ -56,12 +56,14 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
                         </button>
                 })}
                 <div className="float-md-end">
-                    <button onClick={() => {
-                        dispatch({
-                            path: dataPath,
-                            data: "",
-                        })
-                    }} type="button" className="btn btn-light">Reset</button>
+                    {!!value &&
+                        <button onClick={() => {
+                            dispatch({
+                                path: dataPath,
+                                data: "",
+                            })
+                        }} type="button" className="btn btn-light">Reset</button>
+                    }
                 </div>
             </div>
         </div>
