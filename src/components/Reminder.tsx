@@ -46,12 +46,10 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
                     <StateButton action={"complete"} title={"click to confirm you read this"} btnType="primary"></StateButton>
                     {localState.state === "done" && "Done:"} &nbsp;
                 </div>
-                <span
-                    dangerouslySetInnerHTML={{ __html: elementData.content }}>
-                </span>
                 <div className="float-md-end">
                     <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
                 </div>
+                <div dangerouslySetInnerHTML={{ __html: localState.state === "done" && elementData.doneContent ? elementData.doneContent : elementData.content }}></div>
             </div>
         </div>
 

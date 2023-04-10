@@ -39,8 +39,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         <div className="col">
             <div className="clearfix">
                 <div className="float-md-start">
-                    {/* <StateButton action={"start"} title={"Start"} btnType="success"></StateButton> */}
-                    <StateButton action={"markDone"} title={"Mark Done"} btnType="info"></StateButton>
+                    <StateButton action={"markDone"} title={"Mark Done"} btnType="primary"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
                     {elementData.instructions && ["started", "waiting"].includes(localState.state) && <>
                         <button type="button" className="btn btn-secondary mx-1"
@@ -49,17 +48,21 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                         </button>
                     </>}
                 </div>
-
-                {{
-                    done: "Done: ",
-                    skipped: "Skipped: ",
-                    started: "Started: ",
-                    waiting: ""
-                }[localState.state]}
-                {elementData.content}
                 <div className="float-md-end">
                     <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
                 </div>
+                <div dangerouslySetInnerHTML={{
+                    __html: {
+                        done: "Done: ",
+                        skipped: "Skipped: ",
+                        started: "Started: ",
+                        waiting: ""
+                    }[localState.state] +
+                        (localState.state === "done" && elementData.doneContent ?
+                            elementData.doneContent :
+                            elementData.content)
+                }}></div>
+
             </div>
 
             {elementData.instructions && <>
