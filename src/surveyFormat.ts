@@ -453,7 +453,7 @@ export const surveyFormat: any = {
         {
             "type": "todo",
             "id": "vitamins",
-            "content": "(Don't take vitamins until after surgery) Have you taken your vitamins from the manual pill box",
+            "content": "Have you taken your vitamins from the manual pill box",
         },
         {
             "type": "todo",
