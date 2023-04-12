@@ -27,7 +27,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "ketoneDrink",
-                    "content": "Drink onw of the little orange bottles of Ketone IQ.",
+                    "content": "Drink one of the little orange bottles of Ketone IQ.",
                 },
                 {
                     "type": "row",
