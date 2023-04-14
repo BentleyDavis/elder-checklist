@@ -1,7 +1,7 @@
 .hourly > table > tbody > tr > td,
 .hourly > table > thead > tr > th {
   padding: 1em;
-  border: 1px solid #ddd;
+  border: 2px solid #bbb;
 }
 
 .hourly > table > thead > tr > th {

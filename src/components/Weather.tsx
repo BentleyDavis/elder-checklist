@@ -1,3 +1,4 @@
+import { Button } from 'react-bootstrap';
 import './weather.css';
 import { useEffect, useState } from "react";
 
@@ -6,6 +7,8 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
 })
 
 async function getWeather() {
+    console.log("getting weather");
+
     const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
     const OriginlhourlyData = await response.json();
     const hourlyData: any = [];
@@ -34,6 +37,7 @@ export default function Weather({ elementData }: {
     elementData: any
 }) {
     const [weather, setWeather] = useState([])
+    const [show, setShow] = useState(false)
 
 
     useEffect(() => {
@@ -45,41 +49,50 @@ export default function Weather({ elementData }: {
             })
         }
 
-        _getWeather();
+        if (show) {
+            _getWeather();
 
-        const id = setInterval(_getWeather, 1000 * 60 * 60) // 1 hour
+            const id = setInterval(_getWeather, 1000 * 60 * 60) // 1 hour
 
-        return () => { clearInterval(id) };
-    }, [setWeather]);
+            return () => { clearInterval(id) };
+        }
+    }, [setWeather, show]);
 
     return <div className="row mt-2">
-        <div className={`hourly ` + (elementData.level && `h${elementData.level}`)}>
+        <div className="col">
+            <Button variant="primary" onClick={() => { setShow(!show) }}>
+                {show ? "Hide" : "Show"} Weather
+            </Button>
+            {show &&
+                <div className={`hourly ` + (elementData.level && `h${elementData.level}`)}>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Hour</th>
-                        <th>Temp</th>
-                        <th colSpan={2}>Wind</th>
-                        <th>Sun</th>
-                        <th>Humidity</th>
-                        <th>Precip</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {weather.map((h: any) =>
-                        <tr key={h.startTime}>
-                            <td>{dateFormatter.format(new Date(h.startTime))}</td>
-                            <td style={{ textAlign: "right" }}>{h.temperature} °</td>
-                            <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
-                            <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
-                            <td >{h.shortForecast}</td>
-                            <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
-                            <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hour</th>
+                                <th>Temp</th>
+                                <th colSpan={2}>Wind</th>
+                                <th>Sun</th>
+                                <th>Humidity</th>
+                                <th>Precip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {weather.map((h: any) =>
+                                <tr key={h.startTime}>
+                                    <td>{dateFormatter.format(new Date(h.startTime))}</td>
+                                    <td style={{ textAlign: "right" }}>{h.temperature} °</td>
+                                    <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
+                                    <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
+                                    <td >{h.shortForecast}</td>
+                                    <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
+                                    <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            }
         </div>
     </div>
 }
