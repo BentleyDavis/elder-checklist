@@ -30,7 +30,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
-                    "content": "Fill the 4 water bttles to the top line (not full). Drink them throughout the day. Use them for tea if you make tea.",
+                    "content": "Fill the 4 water bottles to the top line (not full). Drink them throughout the day. Use them for tea if you make tea.",
                 },
                 {
                     "type": "todo",

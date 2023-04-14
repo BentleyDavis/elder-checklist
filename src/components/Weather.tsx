@@ -6,6 +6,16 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
 })
 
+const textToEmoji: { [key: string]: string } = {
+    // https://emojiterra.com/sky-weather/
+    "Sunny": "☀️", //         Sun
+    "Mostly Sunny": "🌤️", //  Sun Behind Small Cloud
+    "Partly Sunny": "⛅", //  Sun Behind Cloud
+    "Partly Cloudy": "🌥️", // Sun Behind Large Cloud
+    "Mostly Cloudy": "☁️", // Cloud
+    "Slight Chance Showers And Thunderstorms": "🌦️⚡", // Sun Behind Rain Cloud & High Voltage
+}
+
 async function getWeather() {
     console.log("getting weather");
 
@@ -66,31 +76,48 @@ export default function Weather({ elementData }: {
             {show &&
                 <div className={`hourly ` + (elementData.level && `h${elementData.level}`)}>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Hour</th>
-                                <th>Temp</th>
-                                <th colSpan={2}>Wind</th>
-                                <th>Sun</th>
-                                <th>Humidity</th>
-                                <th>Precip</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {weather.map((h: any) =>
-                                <tr key={h.startTime}>
-                                    <td>{dateFormatter.format(new Date(h.startTime))}</td>
-                                    <td style={{ textAlign: "right" }}>{h.temperature} °</td>
-                                    <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
-                                    <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
-                                    <td >{h.shortForecast}</td>
-                                    <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
-                                    <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
+                    {weather.length < 1 ?
+                        <div>Gathering Weather Data...</div>
+                        :
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Hour</th>
+                                    <th>Temp</th>
+                                    <th colSpan={2}>Wind</th>
+                                    <th>Humidity</th>
+                                    <th>Precip</th>
+                                    <th>Description</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {weather.map((h: any) =>
+                                    <tr key={h.startTime}>
+                                        <td style={{ textAlign: "right" }}>{dateFormatter.format(new Date(h.startTime))}</td>
+                                        <td style={{ textAlign: "right" }}>{h.temperature} °</td>
+                                        <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
+                                        <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
+                                        <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
+                                        <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
+                                        <td >
+                                            {textToEmoji[h.shortForecast] &&
+                                                <div style={{
+                                                    transform: 'scale(1.5)',
+                                                    transformOrigin: 'center',
+                                                    display: 'inline-block',
+                                                    paddingRight: '.5em'
+                                                }}>{textToEmoji[h.shortForecast]}</div>
+                                            }
+                                            {h.shortForecast}
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    }
+                    <Button variant="primary" onClick={() => { setShow(!show) }}>
+                        {show ? "Hide" : "Show"} Weather
+                    </Button>
                 </div>
             }
         </div>
