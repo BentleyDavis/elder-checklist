@@ -2,6 +2,14 @@ export const surveyFormat: any = {
 
     "elements": [
         {
+            "type": "WhenIsNow",
+            "id": "whenIsNow",
+        },
+        {
+            "type": "Weather",
+            "id": "weather",
+        },
+        {
             "type": "ShowByTime",
             "id": "evening2",
             "showByTime": 17,

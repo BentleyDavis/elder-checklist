@@ -1,0 +1,10 @@
+.hourly > table > tbody > tr > td,
+.hourly > table > thead > tr > th {
+  padding: 1em;
+  border: 1px solid #ddd;
+  font-weight: normal;
+}
+
+.hourly > table {
+  border-collapse: collapse;
+}

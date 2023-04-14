@@ -18,6 +18,8 @@ import Time from "./Time";
 import Stepper from "./Stepper";
 import ShowByTime from "./ShowByTime";
 import Html from "./Html";
+import WhenIsNow from "./WhenIsNow";
+import Weather from "./Weather";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -36,6 +38,8 @@ const components: { [key: string]: any } = {
     stepper: Stepper,
     ShowByTime: ShowByTime,
     Html: Html,
+    WhenIsNow: WhenIsNow,
+    Weather: Weather,
 };
 
 
