@@ -2,7 +2,11 @@
 .hourly > table > thead > tr > th {
   padding: 1em;
   border: 1px solid #ddd;
+}
+
+.hourly > table > thead > tr > th {
   font-weight: normal;
+  text-align: center;
 }
 
 .hourly > table {
