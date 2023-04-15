@@ -70,6 +70,22 @@ export const surveyFormat: any = {
                     ]
                 },
                 {
+                    "type": "row",
+                    "striped": true,
+                    "id": "Sleep",
+                    "elements": [
+                        {
+                            "type": "range",
+                            "id": "sleepQuality",
+                            "title": "How well did you sleep last night?",
+                            "length": 5,
+                            "0": "Perfect",
+                            "2": "Average",
+                            "4": "No Sleep",
+                        }
+                    ]
+                },
+                {
                     "type": "reminder",
                     "id": "socksWet",
                     "content": `Wear a fresh set of socks every day. They feel wet but they are not. The fabric is special to keep your feet cool while walking so they feel wet to the toucheven even though they are not wet.`
