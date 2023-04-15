@@ -10,6 +10,7 @@ const textToEmoji: { [key: string]: string } = {
     // https://emojiterra.com/sky-weather/
     "Sunny": "☀️", //         Sun
     "Mostly Sunny": "🌤️", //  Sun Behind Small Cloud
+    "Mostly Clear": "🌛",
     "Partly Sunny": "⛅", //  Sun Behind Cloud
     "Partly Cloudy": "🌥️", // Sun Behind Large Cloud
     "Mostly Cloudy": "☁️", // Cloud
@@ -17,8 +18,6 @@ const textToEmoji: { [key: string]: string } = {
 }
 
 async function getWeather() {
-    console.log("getting weather");
-
     const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
     const OriginlhourlyData = await response.json();
     const hourlyData: any = [];
@@ -36,6 +35,34 @@ async function getWeather() {
                 windMilesPerHour: windMilesPerHour
             })
         }
+
+        //             {
+        //                 "number": 1,
+        //                 "name": "",
+        //                 "startTime": "2023-04-07T12:00:00-05:00",
+        //                 "endTime": "2023-04-07T13:00:00-05:00",
+        //                 "isDaytime": true,
+        //                 "temperature": 57,
+        //                 "temperatureUnit": "F",
+        //                 "temperatureTrend": null,
+        //                 "probabilityOfPrecipitation": {
+        //                     "unitCode": "wmoUnit:percent",
+        //                     "value": 5
+        //                 },
+        //                 "dewpoint": {
+        //                     "unitCode": "wmoUnit:degC",
+        //                     "value": 5
+        //                 },
+        //                 "relativeHumidity": {
+        //                     "unitCode": "wmoUnit:percent",
+        //                     "value": 55
+        //                 },
+        //                 "windSpeed": "10 mph",
+        //                 "windDirection": "NE",
+        //                 "icon": "https://api.weather.gov/icons/land/day/ovc,5?size=small",
+        //                 "shortForecast": "Cloudy",
+        //                 "detailedForecast": ""
+        //             }
 
     }
 
@@ -106,7 +133,9 @@ export default function Weather({ elementData }: {
                                                     transformOrigin: 'center',
                                                     display: 'inline-block',
                                                     paddingRight: '.5em'
-                                                }}>{textToEmoji[h.shortForecast]}</div>
+                                                }}
+                                                    dangerouslySetInnerHTML={{ __html: textToEmoji[h.shortForecast] }}
+                                                ></div>
                                             }
                                             {h.shortForecast}
                                         </td>

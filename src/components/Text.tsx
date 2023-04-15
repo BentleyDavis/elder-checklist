@@ -22,7 +22,6 @@ export default function Text({ elementData, dataStore, dispatch, path }: {
         }
         value = values.join(", ")
     }
-    console.log(value);
 
 
     return <>{elementData.prefix}{value ? value : elementData.default}{elementData.suffix}</>
