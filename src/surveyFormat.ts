@@ -29,11 +29,6 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
-                    "id": "waterBottlesStart",
-                    "content": "Fill the 4 water bottles to the top line (not full). Drink them throughout the day. Use them for tea if you make tea.",
-                },
-                {
-                    "type": "todo",
                     "id": "ketoneDrink",
                     "content": "Drink one of the little orange bottles of Ketone IQ.",
                 },
@@ -103,7 +98,7 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "Dishes",
-                    "content": "Reminder: When you finish eating put a little water in the pyrex dish, put on the lid and set it in the turquoise bucket."
+                    "content": "Reminder: When eating, put the lid on your tray so immediately when you are done you can cover up the stinky dish. When you get up, take off the lid and put it in the water in the turquoise tub. Put the pyrex dish in the tub on it's side to get the water in then tip it upright so it is submerged."
                 },
                 {
                     "type": "reminder",
@@ -437,14 +432,25 @@ export const surveyFormat: any = {
                     ]
                 },
                 {
+                    "type": "heading",
+                    "level": 2,
+                    "id": "beforeBed",
+                    "content": "Just Before Going to Bed"
+                },
+                {
                     "type": "todo",
                     "id": "waterBottlesEnd",
                     "content": "Did you drink all 4 water bottles?",
                 },
                 {
                     "type": "todo",
+                    "id": "waterBottlesStart",
+                    "content": "Fill the 4 water bottles to the top line (not full).",
+                },
+                {
+                    "type": "todo",
                     "id": "lidocainePatch",
-                    "content": "Put on Lidocaine patch before bed",
+                    "content": "Put on Lidocaine patch",
                 },
             ],
         },
