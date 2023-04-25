@@ -156,6 +156,11 @@ export default function Weather({ elementData }: {
                                             {h.shortForecast}
                                         </td>
                                     </tr>
+                                    <tr className='when-narrow'>
+                                        <td colSpan={7} style={{ border: "none" }}>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
                                 </React.Fragment>
                                 )}
                             </tbody>

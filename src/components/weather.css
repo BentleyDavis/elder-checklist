@@ -14,8 +14,8 @@
   border-collapse: collapse;
 }
 
-.hourly > table > tbody > tr:nth-child(4n-3),
-.hourly > table > tbody > tr:nth-child(4n-2) {
+.hourly > table > tbody > tr:nth-child(6n-5),
+.hourly > table > tbody > tr:nth-child(6n-4) {
   background: rgba(0, 0, 0, 0.05);
 }
 
