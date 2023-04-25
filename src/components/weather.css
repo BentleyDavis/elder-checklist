@@ -11,7 +11,8 @@
 }
 
 .hourly > table {
-  border-collapse: collapse;
+  border-collapse: separate; /* Don't collapse */
+  border-spacing: 0;
 }
 
 .hourly > table > tbody > tr:nth-child(6n-5),
