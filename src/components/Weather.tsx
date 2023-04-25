@@ -121,7 +121,7 @@ export default function Weather({ elementData }: {
                             <tbody>
                                 {weather.map((h: any) => <React.Fragment key={h.startTime}>
                                     <tr >
-                                        <td style={{ textAlign: "right" }}>{dateFormatter.format(new Date(h.startTime))}</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{dateFormatter.format(new Date(h.startTime))}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
                                         <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
                                         <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
