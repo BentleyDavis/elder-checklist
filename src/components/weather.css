@@ -13,3 +13,21 @@
 .hourly > table {
   border-collapse: collapse;
 }
+
+.hourly > table > tbody > tr:nth-child(4n-3),
+.hourly > table > tbody > tr:nth-child(4n-2) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.when-narrow {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .when-wide {
+    display: none;
+  }
+  .when-narrow {
+    display: revert;
+  }
+}

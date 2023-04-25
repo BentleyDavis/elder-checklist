@@ -1,6 +1,7 @@
 import { Button } from 'react-bootstrap';
 import './weather.css';
 import { useEffect, useState } from "react";
+import React from 'react';
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
@@ -114,19 +115,19 @@ export default function Weather({ elementData }: {
                                     <th colSpan={2}>Wind</th>
                                     <th>Humidity</th>
                                     <th>Precip</th>
-                                    <th>Description</th>
+                                    <th className='when-wide'>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {weather.map((h: any) =>
-                                    <tr key={h.startTime}>
+                                {weather.map((h: any) => <React.Fragment key={h.startTime}>
+                                    <tr >
                                         <td style={{ textAlign: "right" }}>{dateFormatter.format(new Date(h.startTime))}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
                                         <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
                                         <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
                                         <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
                                         <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
-                                        <td >
+                                        <td className='when-wide'>
                                             {textToEmoji[h.shortForecast] &&
                                                 <div style={{
                                                     transform: 'scale(1.5)',
@@ -140,6 +141,22 @@ export default function Weather({ elementData }: {
                                             {h.shortForecast}
                                         </td>
                                     </tr>
+                                    <tr className='when-narrow'>
+                                        <td colSpan={7}>
+                                            {textToEmoji[h.shortForecast] &&
+                                                <div style={{
+                                                    transform: 'scale(1.5)',
+                                                    transformOrigin: 'center',
+                                                    display: 'inline-block',
+                                                    paddingRight: '.5em'
+                                                }}
+                                                    dangerouslySetInnerHTML={{ __html: textToEmoji[h.shortForecast] }}
+                                                ></div>
+                                            }
+                                            {h.shortForecast}
+                                        </td>
+                                    </tr>
+                                </React.Fragment>
                                 )}
                             </tbody>
                         </table>
