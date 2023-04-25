@@ -20,10 +20,10 @@ const textToEmoji: { [key: string]: string } = {
 
 async function getWeather() {
     const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
-    const OriginlhourlyData = await response.json();
+    const originlHourlyData = await response.json();
     const hourlyData: any = [];
 
-    for (const hourData of OriginlhourlyData.properties.periods) {
+    for (const hourData of originlHourlyData.properties.periods) {
         const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
 
         const when = new Date(hourData.startTime)
