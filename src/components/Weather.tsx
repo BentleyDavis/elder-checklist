@@ -3,7 +3,7 @@ import './weather.css';
 import { useEffect, useState } from "react";
 import React from 'react';
 
-const defaultShow = (new URLSearchParams(window.location.search)).get("cal") !== null ? true : false;
+const defaultShow = (new URLSearchParams(window.location.search)).get("weather") !== null ? true : false;
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
