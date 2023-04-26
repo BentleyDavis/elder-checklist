@@ -3,6 +3,8 @@ import './weather.css';
 import { useEffect, useState } from "react";
 import React from 'react';
 
+const defaultShow = (new URLSearchParams(window.location.search)).get("cal") !== null ? true : false;
+
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
 })
@@ -75,7 +77,7 @@ export default function Weather({ elementData }: {
     elementData: any
 }) {
     const [weather, setWeather] = useState([])
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(defaultShow)
 
 
     useEffect(() => {
