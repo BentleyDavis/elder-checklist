@@ -1,0 +1,8 @@
+.fc-list-day-text {
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+.fc-list-event-graphic {
+  display: none;
+}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import iCalendarPlugin from '@fullcalendar/icalendar'
 import listPlugin from '@fullcalendar/list';
+import './calendar.css';
 
 const defaultShow = (new URLSearchParams(window.location.search)).get("cal") !== null ? true : false;
 
