@@ -22,19 +22,18 @@ export default function Weather({ elementData }: {
 
                 <FullCalendar
                     plugins={[listPlugin, iCalendarPlugin]}
-                    initialView="listFourDays"
+                    initialView="list"
                     events={{
                         url: 'https://us-central1-elder-checklist.cloudfunctions.net/ical',
                         format: 'ics'
                     }}
-                    views={{
-                        listFourDays: {
-                            type: 'list',
-                            duration: { days: 4 },
-                            buttonText: '4 day'
-                        }
-                    }}
+                    duration={{ days: 7 }}
                     height="auto"
+                    listDayFormat={{
+                        weekday: 'long',
+                        month: 'long',
+                        day: 'numeric'
+                    }}
                 />
                 <br></br>
                 <br></br>
