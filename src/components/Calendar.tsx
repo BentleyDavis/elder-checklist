@@ -35,6 +35,7 @@ export default function Weather({ elementData }: {
                         month: 'long',
                         day: 'numeric'
                     }}
+                    noEventsContent="Getting Calendar Data..."
                 />
                 <br></br>
                 <br></br>
