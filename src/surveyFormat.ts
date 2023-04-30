@@ -917,11 +917,5 @@ export const surveyFormat: any = {
             "id": "notes",
             "title": ""
         },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "h1Calendar",
-            "content": "Calendar"
-        }
     ]
 }
