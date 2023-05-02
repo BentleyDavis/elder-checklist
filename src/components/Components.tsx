@@ -21,6 +21,7 @@ import Html from "./Html";
 import WhenIsNow from "./WhenIsNow";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
+import History from "./History";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -41,7 +42,8 @@ const components: { [key: string]: any } = {
     Html: Html,
     WhenIsNow: WhenIsNow,
     Weather: Weather,
-    Calendar: Calendar
+    Calendar: Calendar,
+    History: History
 };
 
 

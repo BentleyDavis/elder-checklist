@@ -9,14 +9,23 @@ import { newId } from './utils/newId';
 import Components from "./components/Components";
 import { deepCopy, pathCreateObject } from './utils/dataStore';
 import { merge } from 'lodash';
-
 import { useLoaderData } from "react-router-dom";
-
-import './components/tasks.css';
 import { getDateId } from './utils/getDateId';
+import './components/tasks.css';
 
 export async function loader({ params }: { params: any }) {
   return params;
+}
+
+export interface Action {
+  path: string;
+  data: any;
+}
+
+export interface ActionWhen {
+  path: string;
+  data: any;
+  when: number;
 }
 
 const provider = new GoogleAuthProvider();
@@ -87,7 +96,22 @@ function App() {
     }
   }, [checklist])
 
-  function formStateReducer(oldState: any, action: { path: string, data: any }) {
+  function formStateReducer(oldState: any, action: Action) {
+
+    try {
+      if (action.path !== "") {
+        let history: ActionWhen[] = JSON.parse(localStorage.getItem("history") || "[]");
+        if (history.length > 100) {
+          history = history.slice(0, 100)
+        }
+        history.push({ ...action, when: new Date().getTime() });
+        localStorage.setItem("history", JSON.stringify(history));
+      }
+    } catch (error) {
+
+    }
+
+
 
     if (dbDocRef && action.path !== "") {
 

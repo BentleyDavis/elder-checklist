@@ -917,5 +917,9 @@ export const surveyFormat: any = {
             "id": "notes",
             "title": ""
         },
+        {
+            "type": "History",
+            "id": "history",
+        },
     ]
 }
