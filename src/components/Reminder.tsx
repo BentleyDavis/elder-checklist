@@ -28,10 +28,15 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
 
     const localActions: { [key: string]: any } = actions(localDispatch);
 
-    function StateButton({ action, title, btnType = "primary" }:
-        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" | "light" }) {
+    function StateButton({ action, title, btnType = "primary", className }:
+        {
+            action: string,
+            title: string,
+            btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" | "light",
+            className?: string
+        }) {
         if (can(localState, action)) {
-            return <button type="button" className={`btn btn-${btnType} m-1`}
+            return <button type="button" className={`btn btn-${btnType} m-1 ${className}`}
                 onClick={() => {
                     localActions[action]();
                 }}>{title}</button>
@@ -42,13 +47,11 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
     return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
         <div className="col">
             <div className="clearfix">
-                <div className="float-md-start">
+                <div className="float-start">
                     <StateButton action={"complete"} title={"click to confirm you read this"} btnType="primary"></StateButton>
                     {localState.state === "done" && "Done:"} &nbsp;
                 </div>
-                <div className="float-md-end">
-                    <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
-                </div>
+                <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
                 <div dangerouslySetInnerHTML={{ __html: localState.state === "done" && elementData.doneContent ? elementData.doneContent : elementData.content }}></div>
             </div>
         </div>

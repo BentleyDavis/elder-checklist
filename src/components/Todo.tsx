@@ -24,10 +24,15 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
     const localActions: { [key: string]: any } = actions(localDispatch);
 
-    function StateButton({ action, title, btnType = "primary" }:
-        { action: string, title: string, btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "light" }) {
+    function StateButton({ action, title, btnType = "primary", className }:
+        {
+            action: string,
+            title: string,
+            btnType?: "success" | "primary" | "warning" | "info" | "secondary" | "outline-primary" | "light",
+            className?: string
+        }) {
         if (can(localState, action)) {
-            return <button type="button" className={`btn btn-${btnType} mx-1`}
+            return <button type="button" className={`btn btn-${btnType} mx-1 ${className}`}
                 onClick={() => {
                     localActions[action]();
                 }}>{title}</button>
@@ -38,7 +43,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
     return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
         <div className="col">
             <div className="clearfix">
-                <div className="float-md-start">
+                <div className="float-start">
                     <StateButton action={"markDone"} title={"Mark Done"} btnType="primary"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
                     {elementData.instructions && ["started", "waiting"].includes(localState.state) && <>
@@ -48,9 +53,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                         </button>
                     </>}
                 </div>
-                <div className="float-md-end">
-                    <StateButton action={"reset"} title={"Reset"} btnType="light"></StateButton>
-                </div>
+                <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
                 <div dangerouslySetInnerHTML={{
                     __html: {
                         done: "Done: ",

@@ -32,12 +32,7 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
     return <div style={{ opacity: !!value ? .5 : 1 }}>
         <div className="col">
             <div className="clearfix">
-
-                {!!value && <>Done: </>}
-
-                {elementData.title &&
-                    <label className="form-label mt-1 mb-0">{elementData.title}</label>
-                }
+                {!!value && <>Done: </>}{elementData.title || ""}
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&
@@ -55,14 +50,15 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
                             {c.text}
                         </button>
                 })}
-                <div className="float-md-end">
+
+                <div className="float-end">
                     {!!value &&
                         <button onClick={() => {
                             dispatch({
                                 path: dataPath,
                                 data: "",
                             })
-                        }} type="button" className="btn btn-light">Reset</button>
+                        }} type="button" className="btn btn-light btn-sm">Reset</button>
                     }
                 </div>
             </div>

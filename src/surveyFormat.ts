@@ -87,7 +87,7 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "socksWet",
-                    "content": `Wear a fresh set of socks every day. They feel wet but they are not. The fabric is special to keep your feet cool while walking so they feel wet to the toucheven even though they are not wet.`
+                    "content": `Wear a fresh set of socks every day.`
                 },
                 {
                     "type": "reminder",
