@@ -26,17 +26,27 @@ async function getWeather() {
     const hourlyData: any = [];
 
     for (const hourData of originlHourlyData.properties.periods) {
-        const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
+        // const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
 
         const when = new Date(hourData.startTime)
         if (when.getDay() !== (new Date()).getDay()) break; // Exit when not today
 
         const hour = when.getHours();
         if (hour >= 7 && hour <= 10 + 12) { //between 7 AM and 10 PM
-            hourlyData.push({
-                ...hourData,
-                windMilesPerHour: windMilesPerHour
-            })
+            hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
+
+            hourData.feelsInShade = celsiusToFarenheight(
+                australianApparentTemperature(
+                    farenheightToCelsius(hourData.temperature),
+                    hourData.relativeHumidity.value,
+                    hourData.windMPH / 2.237 // Convert to meters per second
+                )
+            ).toFixed(0);
+
+            hourData.hourText = dateFormatter.format(new Date(hourData.startTime));
+            hourData.emojiForecast = textToEmoji[hourData.shortForecast]
+
+            hourlyData.push(hourData)
         }
 
         //             {
@@ -83,9 +93,9 @@ export default function Weather({ elementData }: {
     useEffect(() => {
 
         async function _getWeather() {
-            const results = await getWeather();
+            const hourlyData = await getWeather();
             setWeather((w) => {
-                return results
+                return hourlyData
             })
         }
 
@@ -113,7 +123,8 @@ export default function Weather({ elementData }: {
                             <thead>
                                 <tr>
                                     <th>Hour</th>
-                                    <th>Temp</th>
+                                    <th>Actual<br />Temp</th>
+                                    <th>Feels in<br />Shade</th>
                                     <th colSpan={2}>Wind</th>
                                     <th>Humidity</th>
                                     <th>Precip</th>
@@ -123,21 +134,22 @@ export default function Weather({ elementData }: {
                             <tbody>
                                 {weather.map((h: any) => <React.Fragment key={h.startTime}>
                                     <tr >
-                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{dateFormatter.format(new Date(h.startTime))}</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.hourText}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
-                                        <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windSpeed.replaceAll(" mph", "")}</td>
+                                        <td style={{ textAlign: "right" }}>{h.feelsInShade} °</td>
+                                        <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windMPH}</td>
                                         <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
                                         <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
                                         <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
                                         <td className='when-wide'>
-                                            {textToEmoji[h.shortForecast] &&
+                                            {h.emojiForecast &&
                                                 <div style={{
                                                     transform: 'scale(1.5)',
                                                     transformOrigin: 'center',
                                                     display: 'inline-block',
                                                     paddingRight: '.5em'
                                                 }}
-                                                    dangerouslySetInnerHTML={{ __html: textToEmoji[h.shortForecast] }}
+                                                    dangerouslySetInnerHTML={{ __html: h.emojiForecast }}
                                                 ></div>
                                             }
                                             {h.shortForecast}
@@ -145,14 +157,14 @@ export default function Weather({ elementData }: {
                                     </tr>
                                     <tr className='when-narrow'>
                                         <td colSpan={7}>
-                                            {textToEmoji[h.shortForecast] &&
+                                            {h.emojiForecast &&
                                                 <div style={{
                                                     transform: 'scale(1.5)',
                                                     transformOrigin: 'center',
                                                     display: 'inline-block',
                                                     paddingRight: '.5em'
                                                 }}
-                                                    dangerouslySetInnerHTML={{ __html: textToEmoji[h.shortForecast] }}
+                                                    dangerouslySetInnerHTML={{ __html: h.emojiForecast }}
                                                 ></div>
                                             }
                                             {h.shortForecast}
@@ -175,4 +187,31 @@ export default function Weather({ elementData }: {
             }
         </div>
     </div>
+}
+
+
+/**
+ * 
+ * @param {number} temperature Temperature in celsius
+ * @param {number} humidity Humidity in RH (Relative Humidity)
+ * @param {number} windSpeed Windspeed in M/S (meter per second)
+ * @returns {number} Apparent Temperature in celsius
+ */
+function australianApparentTemperature(temperature: number, humidity: number, windspeed: number) {
+    // https://github.com/oyve/weather-formulas/blob/160cc4a80deeda394ecc0f684c7ecc06b4d5044c/temperature.js#L101
+    // https://en.wikipedia.org/wiki/Wind_chill#Australian_apparent_temperature
+    let Ta = temperature;
+    let v = windspeed;
+    let e = (humidity / 100) * 6.015 * Math.exp((17.27 * Ta) / (237.7 + Ta));
+    let AT = Ta + (0.33 * e) - (0.7 * v) - 4.00;
+    return AT;
+}
+
+function farenheightToCelsius(farenheight: number) {
+    return (farenheight - 32) * (5 / 9)
+    //return (apparentTemperatureC * (9 / 5)) + 32
+}
+
+function celsiusToFarenheight(celsius: number) {
+    return (celsius * (9 / 5)) + 32
 }
