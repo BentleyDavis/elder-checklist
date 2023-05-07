@@ -9,16 +9,88 @@ const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
 })
 
-const textToEmoji: { [key: string]: string } = {
+function textToEmoji(shortForecast: string, isDaytime: boolean) {
+    let emojis = ""
+    if (shortForecast.includes("Mostly Sunny")) {
+        emojis += "🌤️" //  Sun Behind Small Cloud
+    } else if (shortForecast.includes("Partly Sunny")) {
+        emojis += "⛅"; //  Sun Behind Cloud
+    } else if (shortForecast.includes("Sunny")) {
+        emojis += "☀️"; //  Sun
+    }
+
+    if (shortForecast.includes("Mostly Cloudy")) {
+        emojis += "🌥️"; // Sun Behind Large Cloud
+    } else if (shortForecast.includes("Cloudy")) {
+        // Partly Cloudy is only used for night and there is no moon with large cloud so we are just using cloud
+        emojis += "☁️"; // Cloud
+    } else if (shortForecast.includes("Cloudy")) {
+        emojis += "☁️"; // Cloud
+    }
+
+    if (shortForecast.includes("Showers")) {
+        if (shortForecast.includes("Slight")) {
+            emojis += "🌦️";
+        } else {
+            emojis += "🌧️";
+        }
+    }
+
+    if (shortForecast.includes("Thunder")) {
+        emojis += "⚡"
+    }
+
+    if (shortForecast.includes("Snow")) {
+        emojis += "❄️"
+    }
+
+    if (shortForecast.includes("Fog")) {
+        emojis += "🌫️"
+    }
+
     // https://emojiterra.com/sky-weather/
-    "Sunny": "☀️", //         Sun
-    "Mostly Sunny": "🌤️", //  Sun Behind Small Cloud
-    "Mostly Clear": "🌛",
-    "Partly Sunny": "⛅", //  Sun Behind Cloud
-    "Partly Cloudy": "🌥️", // Sun Behind Large Cloud
-    "Mostly Cloudy": "☁️", // Cloud
-    "Slight Chance Showers And Thunderstorms": "🌦️⚡", // Sun Behind Rain Cloud & High Voltage
+    // https://emojipedia.org/search/?q=cloud
+    // https://emojipedia.org/search/?q=sun
+    // https://emojipedia.org/search/?q=lightning
+
+    return emojis;
 }
+
+export function calculateSunPct(shortForecast: string, isDaytime: boolean) {
+    if (!isDaytime) {
+        return 0
+    }
+
+    if (shortForecast.includes("Mostly Sunny")) {
+        return .75
+    }
+
+    if (shortForecast.includes("Partly Sunny")) {
+        return .5
+    }
+
+    if (shortForecast.includes("Mostly Cloudy")) {
+        return .75 // May be nighttime but checked above by isDaytimg
+    }
+
+    if (shortForecast.includes("Cloudy")
+        || shortForecast.includes("Thunderstorms")
+        || shortForecast.includes("Showers")
+    ) {
+        return 0 // May be nighttime but checked above by isDaytimg
+    }
+
+    return undefined; // text not known
+
+}
+
+// https://www.weather.gov/bgm/forecast_terms
+// Sky Condition	            Opaque Cloud Coverage
+// Clear/Sunny	                1/8 or less
+// Mostly Clear/Mostly Sunny	1/8 to 3/8
+// Partly Cloudy/Partly Sunny	3/8 to 5/8
+// Mostly Cloudy	            5/8 to 7/8
+// Cloudy	                    7/8 to 8/8
 
 async function getWeather() {
     const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
@@ -44,8 +116,8 @@ async function getWeather() {
             ).toFixed(0);
 
             hourData.hourText = dateFormatter.format(new Date(hourData.startTime));
-            hourData.emojiForecast = textToEmoji[hourData.shortForecast]
-
+            hourData.emojiForecast = textToEmoji(hourData.shortForecast, hourData.isDaytime)
+            hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
             hourlyData.push(hourData)
         }
 
@@ -128,6 +200,7 @@ export default function Weather({ elementData }: {
                                     <th colSpan={2}>Wind</th>
                                     <th>Humidity</th>
                                     <th>Precip</th>
+                                    <th>Sun</th>
                                     <th className='when-wide'>Description</th>
                                 </tr>
                             </thead>
@@ -141,6 +214,7 @@ export default function Weather({ elementData }: {
                                         <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
                                         <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
                                         <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
+                                        <td>{h.sunPct}</td>
                                         <td className='when-wide'>
                                             {h.emojiForecast &&
                                                 <div style={{
