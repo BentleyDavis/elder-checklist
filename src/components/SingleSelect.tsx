@@ -18,7 +18,7 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
 
     return <div style={{ opacity: !!value ? .5 : 1 }}>
 
-        {!!value && <>Done: </>}
+        {!!value && <>✅ Done: </>}
 
         {elementData.title &&
             <label className="form-label mt-1 mb-0">{elementData.title}</label>

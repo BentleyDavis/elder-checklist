@@ -36,53 +36,36 @@ export const surveyFormat: any = {
                     "id": "ketoneDrink",
                     "content": "Drink one of the little orange bottles of Ketone IQ.",
                 },
+
                 {
-                    "type": "row",
-                    "striped": true,
-                    "id": "padFullnessRow",
-                    "elements": [
-                        {
-                            "type": "range",
-                            "id": "padFullness",
-                            "title": "How full was your over-night pad when you took it off?",
-                            "length": 5,
-                            "0": "dry",
-                            "1": "dribble",
-                            "2": "half full",
-                            "3": "full",
-                            "4": "overflowed",
-                        }],
+                    "type": "range",
+                    "id": "padFullness",
+                    "title": "How full was your over-night pad when you took it off?",
+                    "length": 5,
+                    "0": "dry",
+                    "1": "dribble",
+                    "2": "half full",
+                    "3": "full",
+                    "4": "overflowed",
                 },
+
                 {
-                    "type": "row",
-                    "striped": true,
-                    "id": "morningAnklesRow",
-                    "elements": [
-                        {
-                            "type": "range",
-                            "id": "morningAnkles",
-                            "title": "How swolen were your ankles when you woke up?",
-                            "length": 5,
-                            "0": "none",
-                            "4": "Dangerously swolen",
-                        }
-                    ]
+                    "type": "range",
+                    "id": "morningAnkles",
+                    "title": "How swolen were your ankles when you woke up?",
+                    "length": 5,
+                    "0": "none",
+                    "4": "Dangerously swolen",
                 },
+
                 {
-                    "type": "row",
-                    "striped": true,
-                    "id": "Sleep",
-                    "elements": [
-                        {
-                            "type": "range",
-                            "id": "sleepQuality",
-                            "title": "How well did you sleep last night?",
-                            "length": 5,
-                            "0": "Perfect",
-                            "2": "Average",
-                            "4": "No Sleep",
-                        }
-                    ]
+                    "type": "range",
+                    "id": "sleepQuality",
+                    "title": "How well did you sleep last night?",
+                    "length": 5,
+                    "0": "Perfect",
+                    "2": "Average",
+                    "4": "No Sleep",
                 },
                 {
                     "type": "reminder",

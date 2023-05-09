@@ -84,7 +84,7 @@ export default function Stepper({ elementData, dataStore, dispatch, path = "" }:
                             Show Next Question &gt;
                         </button>
                         :
-                        <>Done </>
+                        <>✅ Done </>
                     }
                     {value.index + 1} of {elementData.elements.length}
                 </div>

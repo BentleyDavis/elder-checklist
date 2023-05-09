@@ -3,7 +3,13 @@
   color: white;
 }
 
+.task-done::before {
+  content: "✅ Done:";
+}
+
 .task-done,
 .task-skipped {
-  opacity: 0.4;
+  .col {
+    opacity: 0.4;
+  }
 }

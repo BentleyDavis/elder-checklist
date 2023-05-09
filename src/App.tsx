@@ -155,11 +155,6 @@ function App() {
       {authState === "unknown" &&
         <h1>Checking login...</h1>
       }
-      {/* <span style={{ opacity: .2 }}>
-        {user?.displayName}
-        ({user?.uid})
-      </span> */}
-
     </div>
   );
 }

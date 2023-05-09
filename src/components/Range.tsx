@@ -29,10 +29,10 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
         })
     }
 
-    return <div style={{ opacity: !!value ? .5 : 1 }}>
+    return <div className={"row stripeable py-1 border-bottom " + (!!value && "task-done") || ""}>
         <div className="col">
             <div className="clearfix">
-                {!!value && <>Done: </>}{elementData.title || ""}
+                {elementData.title || ""}
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&
