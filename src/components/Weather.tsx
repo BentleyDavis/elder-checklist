@@ -107,17 +107,19 @@ async function getWeather() {
         if (hour >= 7 && hour <= 10 + 12) { //between 7 AM and 10 PM
             hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
 
-            hourData.feelsInShade = celsiusToFarenheight(
-                australianApparentTemperature(
+            hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
+
+            hourData.feels = celsiusToFarenheight(
+                apparentTemperature(
                     farenheightToCelsius(hourData.temperature),
                     hourData.relativeHumidity.value,
-                    hourData.windMPH / 2.237 // Convert to meters per second
+                    hourData.windMPH / 2.237, // Convert to meters per second
+                    hourData.sunPct
                 )
             ).toFixed(0);
 
             hourData.hourText = dateFormatter.format(new Date(hourData.startTime));
             hourData.emojiForecast = textToEmoji(hourData.shortForecast, hourData.isDaytime)
-            hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
             hourlyData.push(hourData)
         }
 
@@ -196,7 +198,7 @@ export default function Weather({ elementData }: {
                                 <tr>
                                     <th>Hour</th>
                                     <th>Actual<br />Temp</th>
-                                    <th>Feels in<br />Shade</th>
+                                    <th>Feels<br />Like</th>
                                     <th colSpan={2}>Wind</th>
                                     <th>Humidity</th>
                                     <th>Precip</th>
@@ -209,7 +211,7 @@ export default function Weather({ elementData }: {
                                     <tr >
                                         <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.hourText}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
-                                        <td style={{ textAlign: "right" }}>{h.feelsInShade} °</td>
+                                        <td style={{ textAlign: "right" }}>{h.feels} °</td>
                                         <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windMPH}</td>
                                         <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
                                         <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
@@ -269,16 +271,19 @@ export default function Weather({ elementData }: {
  * @param {number} temperature Temperature in celsius
  * @param {number} humidity Humidity in RH (Relative Humidity)
  * @param {number} windSpeed Windspeed in M/S (meter per second)
+ * @param {number} fractionSun Fraction of sun hitting the person. 1 being full sun, 0 being no sun
  * @returns {number} Apparent Temperature in celsius
  */
-function australianApparentTemperature(temperature: number, humidity: number, windspeed: number) {
+function apparentTemperature(temperature: number, humidity: number, windspeed: number, fractionSun: number) {
     // https://github.com/oyve/weather-formulas/blob/160cc4a80deeda394ecc0f684c7ecc06b4d5044c/temperature.js#L101
     // https://en.wikipedia.org/wiki/Wind_chill#Australian_apparent_temperature
     let Ta = temperature;
     let v = windspeed;
     let e = (humidity / 100) * 6.015 * Math.exp((17.27 * Ta) / (237.7 + Ta));
-    let AT = Ta + (0.33 * e) - (0.7 * v) - 4.00;
-    return AT;
+    let q = fractionSun * 1.5; // Net radiation absorbed per unit area of body surface (W/m2) for a person whihc is a fraction of a meter. On a sunny day this is about 1000 W/m2 for a whole meter squared
+    let apparentTemp = Ta + (0.348 * e) - (0.7 * v) + (0.7 * (q / (v + 10))) - 4.25;
+    // let AT = Ta + (0.33 * e) - (0.7 * v) - 4.00; // old formula without solar radiation
+    return apparentTemp;
 }
 
 function farenheightToCelsius(farenheight: number) {
