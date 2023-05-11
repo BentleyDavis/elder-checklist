@@ -182,183 +182,136 @@ export const surveyFormat: any = {
                     "id": "h1Other",
                     "content": "Other"
                 },
+
                 {
-                    "type": "row",
-                    "striped": true,
-                    "id": "temperatureRow",
-                    "elements": [
+                    "length": 5,
+                    "0": "none",
+                    "4": "Dangerously swolen",
+                    "type": "singleSelect",
+                    "id": "temperature",
+                    "title": "How was you home temperature today?",
+                    "options": [
                         {
-                            "length": 5,
-                            "0": "none",
-                            "4": "Dangerously swolen",
-                            "type": "singleSelect",
-                            "id": "temperature",
-                            "title": "How was you home temperature today?",
-                            "options": [
-                                {
-                                    "text": "mostly OK",
-                                    "value": "ok"
-                                },
-                                {
-                                    "text": "Mostly too cold",
-                                    "value": "cold"
-                                },
-                                {
-                                    "text": "Mostly too hot",
-                                    "value": "hot"
-                                },
-                                {
-                                    "text": "Fluctuates uncomfortably",
-                                    "value": "fluctuates"
-                                },
-                            ],
+                            "text": "mostly OK",
+                            "value": "ok"
                         },
-                    ]
-                },
-                {
-                    "type": "row",
-                    "striped": true,
-                    "id": "eveningAnklesRow",
-                    "elements": [
                         {
-                            "type": "range",
-                            "id": "eveningAnkles",
-                            "title": "How swolen are your ankles after 5 PM?",
-                            "length": 5,
-                            "0": "none",
-                            "4": "Dangerously swolen",
+                            "text": "Mostly too cold",
+                            "value": "cold"
                         },
-                    ]
-                },
-                {
-                    "type": "row",
-                    "striped": true,
-                    "id": "fingerTinglesRow",
-                    "elements": [
                         {
-                            "type": "range",
-                            "id": "fingerTingles",
-                            "title": "Finger tip pain or tingling?",
-                            "length": 5,
-                            "0": "none",
-                            "1": "tingling several times today",
-                            "2": "Tingling Most of the day",
-                            "3": "Painful several times today",
-                            "4": "Painful Most of the day",
-                        },]
+                            "text": "Mostly too hot",
+                            "value": "hot"
+                        },
+                        {
+                            "text": "Fluctuates uncomfortably",
+                            "value": "fluctuates"
+                        },
+                    ],
+
+                },
+
+                {
+                    "type": "range",
+                    "id": "eveningAnkles",
+                    "title": "How swolen are your ankles after 5 PM?",
+                    "length": 5,
+                    "0": "none",
+                    "4": "Dangerously swolen",
+                },
+
+
+                {
+                    "type": "range",
+                    "id": "fingerTingles",
+                    "title": "Finger tip pain or tingling?",
+                    "length": 5,
+                    "0": "none",
+                    "1": "tingling several times today",
+                    "2": "Tingling Most of the day",
+                    "3": "Painful several times today",
+                    "4": "Painful Most of the day",
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+                    "type": "singleSelect",
                     "id": "bmToday",
-                    "elements": [{
-                        "type": "singleSelect",
-                        "id": "bmToday",
-                        "title": "Did you have a BM today?",
-                        "options": [
-                            {
-                                "text": "yes",
-                                "value": true
-                            },
-                            {
-                                "text": "no",
-                                "value": false
-                            },
-                        ],
-                    }]
+                    "title": "Did you have a BM today?",
+                    "options": [
+                        {
+                            "text": "yes",
+                            "value": true
+                        },
+                        {
+                            "text": "no",
+                            "value": false
+                        },
+                    ],
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "range",
                     "id": "noisyNeighbor",
-                    "elements": [{
-                        "type": "range",
-                        "id": "noisyNeighbor",
-                        "title": "How noisy were your neighbors today?",
-                        "0": "silent",
-                        "10": "worst",
-                    }]
+                    "title": "How noisy were your neighbors today?",
+                    "0": "silent",
+                    "10": "worst",
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "range",
                     "id": "runnyNose",
-                    "elements": [{
-                        "type": "range",
-                        "id": "runnyNose",
-                        "title": "How runny was your nose today?",
-                        "0": "none",
-                        "10": "heavy dripping",
-                    }]
+                    "title": "How runny was your nose today?",
+                    "0": "none",
+                    "10": "heavy dripping",
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "range",
                     "id": "teethPain",
-                    "elements": [{
-                        "type": "range",
-                        "id": "teethPain",
-                        "title": "How painful were your teeth today?",
-                        "0": "none",
-                        "10": "constant strong pain",
-                    }]
+                    "title": "How painful were your teeth today?",
+                    "0": "none",
+                    "10": "constant strong pain",
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "singleSelect",
                     "id": "cramps",
-                    "elements": [{
-                        "type": "singleSelect",
-                        "id": "cramps",
-                        "title": "Did you have cramps or spasams anywhere in your body today?",
-                        "options": [
-                            {
-                                "text": "yes",
-                                "value": true
-                            },
-                            {
-                                "text": "no",
-                                "value": false
-                            },
-                        ],
-                    },
-                    {
-                        "type": "comment",
-                        "hide": "data.cramps!==true",
-                        "id": "crampLocations",
-                        "width": "full",
-                        "title": "Is so, describe the cramps and their location",
-                        "minRows": 1,
-                    }
+                    "title": "Did you have cramps or spasams anywhere in your body today?",
+                    "options": [
+                        {
+                            "text": "yes",
+                            "value": true
+                        },
+                        {
+                            "text": "no",
+                            "value": false
+                        },
+                        {
+                            "type": "comment",
+                            "hide": "data.cramps!==true",
+                            "id": "crampLocations",
+                            "width": "full",
+                            "title": "Is so, describe the cramps and their location",
+                            "minRows": 1,
+                        }
                     ]
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "range",
                     "id": "confusion",
-                    "elements": [{
-                        "type": "range",
-                        "id": "confusion",
-                        "title": "How confused did you feel today?",
-                        "0": "none",
-                        "5": "some",
-                        "10": "worst",
-                    }]
+                    "title": "How confused did you feel today?",
+                    "0": "none",
+                    "5": "some",
+                    "10": "worst",
                 },
                 {
-                    "type": "row",
-                    "striped": true,
+
+                    "type": "range",
                     "id": "dizzy",
-                    "elements": [{
-                        "type": "range",
-                        "id": "dizzy",
-                        "title": "How dizzy did you feel today?",
-                        "0": "none",
-                        "5": "some",
-                        "10": "worst",
-                    }]
-                    // },
-                    // ]
+                    "title": "How dizzy did you feel today?",
+                    "0": "none",
+                    "5": "some",
+                    "10": "worst",
                 },
                 {
                     "type": "matrix",
