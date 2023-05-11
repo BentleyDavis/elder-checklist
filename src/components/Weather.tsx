@@ -56,41 +56,48 @@ function textToEmoji(shortForecast: string, isDaytime: boolean) {
     return emojis;
 }
 
+// function to calculate sunset time
+// https://www.esrl.noaa.gov/gmd/grad/solcalc/sunrise.html
+
+// sort by length so that "Mostly Cloudy" is checked before "Cloudy"
+const SkyConditionToFractionSun: Array<[string, number]> = [
+    // https://www.weather.gov/bgm/forecast_terms
+    // Sky Condition	            Opaque Cloud    Highest Sun
+    //                              Coverage        Fraction
+    // Clear/Sunny	                1/8 or less     1
+    ["Sunny", 1],
+    // Mostly Clear/Mostly Sunny	1/8 to 3/8      7/8
+    ["Mostly Sunny", 7 / 8],
+    // Partly Cloudy/Partly Sunny	3/8 to 5/8      5/8
+    ["Partly Sunny", 5 / 8],
+    // Mostly Cloudy	            5/8 to 7/8      3/8
+    ["Mostly Cloudy", 3 / 8],
+    // Cloudy	                    7/8 to 8/8      1/8
+    // Cloudy is the default
+]
+
+// sorth the sky conditions by length of the string so overlapping words are checked in the correct order
+SkyConditionToFractionSun.sort((a: [string, number], b: [string, number]) => {
+    return b[0].length - a[0].length;
+});
+
+
 export function calculateSunPct(shortForecast: string, isDaytime: boolean) {
-    if (!isDaytime) {
-        return 0
+
+    if (!isDaytime) {  // If nighttime set to zero
+        return 0;
     }
 
-    if (shortForecast.includes("Mostly Sunny")) {
-        return .75
+    for (const [skyCondition, fractionSun] of SkyConditionToFractionSun) {
+        if (shortForecast.includes(skyCondition)) {
+            return fractionSun;
+        }
     }
 
-    if (shortForecast.includes("Partly Sunny")) {
-        return .5
-    }
-
-    if (shortForecast.includes("Mostly Cloudy")) {
-        return .75 // May be nighttime but checked above by isDaytimg
-    }
-
-    if (shortForecast.includes("Cloudy")
-        || shortForecast.includes("Thunderstorms")
-        || shortForecast.includes("Showers")
-    ) {
-        return 0 // May be nighttime but checked above by isDaytimg
-    }
-
-    return undefined; // text not known
-
+    return 1 / 8; // cloudy or other
 }
 
-// https://www.weather.gov/bgm/forecast_terms
-// Sky Condition	            Opaque Cloud Coverage
-// Clear/Sunny	                1/8 or less
-// Mostly Clear/Mostly Sunny	1/8 to 3/8
-// Partly Cloudy/Partly Sunny	3/8 to 5/8
-// Mostly Cloudy	            5/8 to 7/8
-// Cloudy	                    7/8 to 8/8
+
 
 async function getWeather() {
     const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
