@@ -65,7 +65,7 @@ export default function Components(
         }
 
         if (hide) {
-            return <div key={element.id}></div>
+            return <React.Fragment key={element.id} />
         } else {
             return React.createElement(components[element.type], {
                 key: element.id,

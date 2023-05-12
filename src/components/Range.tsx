@@ -32,7 +32,7 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
     return <div className={"row stripeable py-1 border-bottom " + (!(value === undefined) && "task-done") || ""}>
         <div className="col">
             <div className="clearfix">
-                {elementData.title || ""}
+                <label className="form-label mt-1 mb-0">{elementData.title}</label>
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&

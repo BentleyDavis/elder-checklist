@@ -42,3 +42,9 @@ h3 {
   margin-bottom: 0;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
+
+@media (max-width: 1200px) {
+  label {
+    display: block;
+  }
+}
