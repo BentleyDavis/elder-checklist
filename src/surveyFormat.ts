@@ -285,15 +285,15 @@ export const surveyFormat: any = {
                             "text": "no",
                             "value": false
                         },
-                        {
-                            "type": "comment",
-                            "hide": "data.cramps!==true",
-                            "id": "crampLocations",
-                            "width": "full",
-                            "title": "Is so, describe the cramps and their location",
-                            "minRows": 1,
-                        }
                     ]
+                },
+                {
+                    "type": "comment",
+                    "hide": "data.cramps!==true",
+                    "id": "crampLocations",
+                    "width": "full",
+                    "title": "Describe the cramps and their location",
+                    "minRows": 1,
                 },
                 {
 
