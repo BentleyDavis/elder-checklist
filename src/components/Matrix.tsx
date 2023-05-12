@@ -39,11 +39,13 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
                 <thead>
                     <tr>
                         <th scope="col"></th>
+                        <th scope="col"></th>
                         {elementData.columns.map((c: any) => {
                             return <th scope="col" key={c.text}>
                                 {c.text}
                             </th>
                         })}
+                        {/* <th scope="col"></th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -52,13 +54,20 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
                             r = { text: r, value: r }
                         }
 
+                        const isDone = (!(pathGetAt(r.value, dataStore) === undefined || pathGetAt(r.value, dataStore) === ""));
+
                         return <tr key={r.value}>
-                            <th scope="row">
+                            <th style={{ minWidth: "90px" }}>
+                                {(isDone &&
+                                    <>✅ Done:</>
+                                )}
+                            </th>
+                            <th style={isDone ? { opacity: .4 } : {}}>
                                 {r.text}
                             </th>
                             {elementData.columns.map((c: any) => {
 
-                                return <td key={c.text} style={{ textAlign: "center" }}>
+                                return <td key={c.text} style={isDone ? { opacity: .4, textAlign: "center" } : { textAlign: "center" }}>
                                     <input className="form-check-input" type="radio" name={r.value} id={c.value}
                                         checked={pathGetAt(r.value, dataStore) === c.value}
                                         onChange={() => {
@@ -69,6 +78,9 @@ export default function Matrix({ elementData, dataStore, dispatch }: {
                                         }} />
                                 </td>
                             })}
+                            {/* <th >
+                                r
+                            </th> */}
                         </tr>
                     })}
                 </tbody>
