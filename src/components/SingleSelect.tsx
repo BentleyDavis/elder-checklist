@@ -37,7 +37,7 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
                         </button>
                 })}
                 <div className="float-end">
-                    {!(value === undefined) &&
+                    {!(value === undefined || value === "") &&
                         <button onClick={() => {
                             dispatch({
                                 path: dataPath,
