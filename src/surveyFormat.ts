@@ -405,10 +405,15 @@ export const surveyFormat: any = {
             "id": "weight",
             "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
         },
+        // {
+        //     "type": "todo",
+        //     "id": "vitamins",
+        //     "content": "Have you taken your vitamins from the manual pill box",
+        // },
         {
-            "type": "todo",
+            "type": "reminder",
             "id": "vitamins",
-            "content": "Have you taken your vitamins from the manual pill box",
+            "content": `You will not take vitamins this week.`
         },
         {
             "type": "todo",
