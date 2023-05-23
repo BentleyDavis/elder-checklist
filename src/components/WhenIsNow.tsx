@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 
 const defaultShow = (new URLSearchParams(window.location.search)).get("now") !== null ? true : false;
 
+const OldNowKey = "oldNow";
+
+localStorage.removeItem(OldNowKey);
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
@@ -22,19 +25,19 @@ export default function WhenIsNow({ elementData }: {
 
     useEffect(() => {
         const id = setInterval(() => {
-            const oldNowText = localStorage.getItem("oldNow");
+            const oldNowText = localStorage.getItem(OldNowKey);
             const newNow = new Date();
             if (oldNowText) {
                 const oldNow = new Date(oldNowText);
                 if (newNow.getTime() - oldNow.getTime() > 60000) {
                     setErrorMessage((e) => { return "Needs Refresh" });
-                    localStorage.removeItem("oldNow");
+                    localStorage.removeItem(OldNowKey);
                     window.location.reload();
                 } else {
-                    localStorage.setItem("oldNow", newNow.toISOString());
+                    localStorage.setItem(OldNowKey, newNow.toISOString());
                 }
             } else {
-                localStorage.setItem("oldNow", newNow.toISOString());
+                localStorage.setItem(OldNowKey, newNow.toISOString());
             }
             setNow((n) => { return newNow });
 
