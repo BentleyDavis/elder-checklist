@@ -414,6 +414,11 @@ export const surveyFormat: any = {
             "id": "weight",
             "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
         },
+        {
+            "type": "todo",
+            "id": "weight",
+            "content": "Use the deep masager on your thighs to loosen then up.",
+        },
         // {
         //     "type": "todo",
         //     "id": "vitamins",
