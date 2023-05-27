@@ -405,6 +405,11 @@ export const surveyFormat: any = {
             "content": "All Day List"
         },
         {
+            "type": "reminder",
+            "id": "sop",
+            "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
+        },
+        {
             "type": "todo",
             "id": "weight",
             "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
