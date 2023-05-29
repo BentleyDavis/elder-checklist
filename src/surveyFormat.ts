@@ -396,6 +396,16 @@ export const surveyFormat: any = {
                     "id": "lidocainePatch",
                     "content": "Put on Lidocaine patch",
                 },
+                {
+                    "type": "reminder",
+                    "id": "bedtime",
+                    "content": `You asked to be reminded to go to bed at 9:00 PM (When the computer screen turns orange). Read some but be sure to turn out your light before 10PM. This is to make sure you can wake up and get going before it gets too hot.`
+                },
+                {
+                    "type": "todo",
+                    "id": "walkingclothes",
+                    "content": "Set out your walking clothes (or sleep in them) so you don't have to think about it in the morning.",
+                },
             ],
         },
         {
@@ -419,15 +429,10 @@ export const surveyFormat: any = {
             "id": "weight",
             "content": "Use the deep masager on your thighs to loosen then up.",
         },
-        // {
-        //     "type": "todo",
-        //     "id": "vitamins",
-        //     "content": "Have you taken your vitamins from the manual pill box",
-        // },
         {
-            "type": "reminder",
+            "type": "todo",
             "id": "vitamins",
-            "content": `You will not take vitamins this week.`
+            "content": "Have you taken your vitamins from the manual pill box",
         },
         {
             "type": "todo",
@@ -500,8 +505,8 @@ export const surveyFormat: any = {
                     ],
                 },
                 {
-                    "type": "singleSelect",
                     "id": "size",
+                    "type": "singleSelect",
                     "title": "Size",
                     "options": [
                         {
