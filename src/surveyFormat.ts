@@ -450,7 +450,7 @@ export const surveyFormat: any = {
         {
             "type": "todo",
             "id": "floss",
-            "content": "Floss Teeth. Use the colorful sandles towel haning on the towl rack then hang it back up on the towel rack so it can dry.",
+            "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
         },
         {
             "type": "heading",
