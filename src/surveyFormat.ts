@@ -426,7 +426,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "todo",
-            "id": "weight",
+            "id": "ThighMassage",
             "content": "Use the deep masager on your thighs to loosen then up.",
         },
         {
