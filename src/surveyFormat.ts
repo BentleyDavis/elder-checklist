@@ -31,15 +31,10 @@ export const surveyFormat: any = {
                     "id": "lidocainePatchRemove",
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
-                // {
-                //     "type": "todo",
-                //     "id": "ketoneDrink",
-                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
-                // },
                 {
-                    "type": "reminder",
+                    "type": "todo",
                     "id": "ketoneDrink",
-                    "content": `You will not be taking the little orange bottles of Ketone IQ a while.`
+                    "content": "Drink one of the little orange bottles of Ketone IQ.",
                 },
                 {
                     "type": "range",
