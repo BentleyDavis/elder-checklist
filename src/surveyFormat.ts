@@ -31,11 +31,11 @@ export const surveyFormat: any = {
                     "id": "lidocainePatchRemove",
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
-                {
-                    "type": "todo",
-                    "id": "ketoneDrink",
-                    "content": "Drink one of the little orange bottles of Ketone IQ.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "ketoneDrink",
+                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
+                // },
                 {
                     "type": "range",
                     "id": "padFullness",
@@ -424,10 +424,15 @@ export const surveyFormat: any = {
             "id": "ThighMassage",
             "content": "Use the deep masager on your thighs to loosen then up.",
         },
+        // {
+        //     "type": "todo",
+        //     "id": "vitamins",
+        //     "content": "Have you taken your vitamins from the manual pill box",
+        // },
         {
             "type": "todo",
-            "id": "vitamins",
-            "content": "Have you taken your vitamins from the manual pill box",
+            "id": "ProDentim",
+            "content": "After brushing your teeth chew a ProDentim tablet.",
         },
         {
             "type": "todo",
