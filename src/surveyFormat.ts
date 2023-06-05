@@ -24,18 +24,18 @@ export const surveyFormat: any = {
                     "type": "heading",
                     "level": 1,
                     "id": "morning heading",
-                    "content": "Morning List: available until 5 PM"
+                    "content": "before you go on your walk"
                 },
                 {
                     "type": "todo",
                     "id": "lidocainePatchRemove",
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
-                // {
-                //     "type": "todo",
-                //     "id": "ketoneDrink",
-                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
-                // },
+                {
+                    "type": "todo",
+                    "id": "bathroom",
+                    "content": "Use the restroom",
+                },
                 {
                     "type": "range",
                     "id": "padFullness",
@@ -47,7 +47,27 @@ export const surveyFormat: any = {
                     "3": "full",
                     "4": "overflowed",
                 },
-
+                {
+                    "type": "todo",
+                    "id": "NotBeforeWalk",
+                    "content": "Go on your walk. Do not do anything else. Do NOT put on lotion until after your walk.",
+                },
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "afterWalkHeading",
+                    "content": "AFTER your walk"
+                },
+                {
+                    "type": "todo",
+                    "id": "waterBottlesStart",
+                    "content": "Fill the 4 water bottles for tomorrow to the top line (not full).",
+                },
+                // {
+                //     "type": "todo",
+                //     "id": "ketoneDrink",
+                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
+                // },
                 {
                     "type": "range",
                     "id": "morningAnkles",
@@ -65,11 +85,6 @@ export const surveyFormat: any = {
                     "0": "Perfect",
                     "2": "Average",
                     "4": "No Sleep",
-                },
-                {
-                    "type": "reminder",
-                    "id": "socksWet",
-                    "content": `Wear a fresh set of socks every day.`
                 },
                 {
                     "type": "reminder",
@@ -182,33 +197,33 @@ export const surveyFormat: any = {
                     "content": "Other"
                 },
 
-                {
-                    "length": 5,
-                    "0": "none",
-                    "4": "Dangerously swolen",
-                    "type": "singleSelect",
-                    "id": "temperature",
-                    "title": "How was you home temperature today?",
-                    "options": [
-                        {
-                            "text": "mostly OK",
-                            "value": "ok"
-                        },
-                        {
-                            "text": "Mostly too cold",
-                            "value": "cold"
-                        },
-                        {
-                            "text": "Mostly too hot",
-                            "value": "hot"
-                        },
-                        {
-                            "text": "Fluctuates uncomfortably",
-                            "value": "fluctuates"
-                        },
-                    ],
+                // {
+                //     "length": 5,
+                //     "0": "none",
+                //     "4": "Dangerously swolen",
+                //     "type": "singleSelect",
+                //     "id": "temperature",
+                //     "title": "How was you home temperature today?",
+                //     "options": [
+                //         {
+                //             "text": "mostly OK",
+                //             "value": "ok"
+                //         },
+                //         {
+                //             "text": "Mostly too cold",
+                //             "value": "cold"
+                //         },
+                //         {
+                //             "text": "Mostly too hot",
+                //             "value": "hot"
+                //         },
+                //         {
+                //             "text": "Fluctuates uncomfortably",
+                //             "value": "fluctuates"
+                //         },
+                //     ],
 
-                },
+                // },
 
                 {
                     "type": "range",
@@ -393,11 +408,6 @@ export const surveyFormat: any = {
                     "type": "todo",
                     "id": "waterBottlesEnd",
                     "content": "Did you drink all 4 water bottles?",
-                },
-                {
-                    "type": "todo",
-                    "id": "waterBottlesStart",
-                    "content": "Fill the 4 water bottles for tomorrow to the top line (not full).",
                 },
                 {
                     "type": "todo",
