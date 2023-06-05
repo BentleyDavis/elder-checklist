@@ -378,13 +378,36 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
+                    "id": "bedTime",
+                    "content": `at 7:30 PM an alarm will go off. <br/><br/>
+                    <ul>
+                    <li> If you are watching something on your TV, pause it. You can leave it there until tomorrow.</li>
+                    <li> If you are hungry, eat some crunchies quickly just to get you to sleep.</li>
+                    <li> If you are in the middle of eating. Quickly finish or just stop around then. You don’t have to eat all of a meal.</li>
+                    <li> Text Ben that you are getting ready for bed.</li>
+                    <li> Start getting ready for bed!</li>
+                    </ul>`,
+                    "doneContent": "Started getting ready for bed",
+                },
+                {
+                    "type": "todo",
                     "id": "waterBottlesEnd",
                     "content": "Did you drink all 4 water bottles?",
                 },
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
-                    "content": "Fill the 4 water bottles to the top line (not full).",
+                    "content": "Fill the 4 water bottles for tomorrow to the top line (not full).",
+                },
+                {
+                    "type": "todo",
+                    "id": "walkClothes",
+                    "content": "Put on the clothes you will walk in for tomorrow.",
+                },
+                {
+                    "type": "todo",
+                    "id": "walkWater",
+                    "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
                 },
                 {
                     "type": "todo",
@@ -392,14 +415,22 @@ export const surveyFormat: any = {
                     "content": "Put on Lidocaine patch",
                 },
                 {
-                    "type": "reminder",
-                    "id": "bedtime",
-                    "content": `You asked to be reminded to go to bed at 9:00 PM (When the computer screen turns orange). Read some but be sure to turn out your light before 10PM. This is to make sure you can wake up and get going before it gets too hot.`
+                    "type": "todo",
+                    "id": "startReading",
+                    "content": `at 8:30 PM Get into bed and start reading<br/><br/>
+                    <ul>
+                        <li> Text Ben that you started reading.</li>
+                    </ul>`,
+                    "doneContent": "Started Reading",
                 },
                 {
                     "type": "todo",
-                    "id": "walkingclothes",
-                    "content": "Set out your walking clothes (or sleep in them) so you don't have to think about it in the morning.",
+                    "id": "lightsOut",
+                    "content": `at 9:30 PM text Ben that you are turining out your lights<br/><br/>
+                    <ul>
+                        <li> Turn off your light.</li>
+                    </ul>`,
+                    "doneContent": "Lights out",
                 },
             ],
         },
