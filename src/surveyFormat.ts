@@ -465,11 +465,11 @@ export const surveyFormat: any = {
             "id": "ThighMassage",
             "content": "Use the deep masager on your thighs to loosen then up.",
         },
-        // {
-        //     "type": "todo",
-        //     "id": "vitamins",
-        //     "content": "Have you taken your vitamins from the manual pill box",
-        // },
+        {
+            "type": "todo",
+            "id": "vitamins",
+            "content": "Have you taken your vitamins from the manual pill box",
+        },
         {
             "type": "todo",
             "id": "ProDentim",
