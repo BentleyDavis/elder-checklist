@@ -20,22 +20,29 @@ export const surveyFormat: any = {
             "buttonTextBefore": "switch to evening list",
             "buttonTextAfter": "switch to morning list",
             "elementsBefore": [
+                // {
+                //     "type": "heading",
+                //     "level": 1,
+                //     "id": "morning heading",
+                //     "content": "before you go on your walk"
+                // },
                 {
                     "type": "heading",
                     "level": 1,
                     "id": "morning heading",
-                    "content": "before you go on your walk"
+                    "content": "Morning Checklist"
                 },
+
                 {
                     "type": "todo",
                     "id": "lidocainePatchRemove",
                     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
                 },
-                {
-                    "type": "todo",
-                    "id": "bathroom",
-                    "content": "Use the restroom",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "bathroom",
+                //     "content": "Use the restroom",
+                // },
                 {
                     "type": "range",
                     "id": "padFullness",
@@ -47,17 +54,17 @@ export const surveyFormat: any = {
                     "3": "full",
                     "4": "overflowed",
                 },
-                {
-                    "type": "todo",
-                    "id": "NotBeforeWalk",
-                    "content": "Go on your walk. Do not do anything else. Do NOT put on lotion until after your walk.",
-                },
-                {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "afterWalkHeading",
-                    "content": "AFTER your walk"
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "NotBeforeWalk",
+                //     "content": "Go on your walk. Do not do anything else. Do NOT put on lotion until after your walk.",
+                // },
+                // {
+                //     "type": "heading",
+                //     "level": 1,
+                //     "id": "afterWalkHeading",
+                //     "content": "AFTER your walk"
+                // },
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
@@ -414,11 +421,11 @@ export const surveyFormat: any = {
                     "id": "walkClothes",
                     "content": "Put on the clothes you will walk in for tomorrow.",
                 },
-                {
-                    "type": "todo",
-                    "id": "walkWater",
-                    "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "walkWater",
+                //     "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
+                // },
                 {
                     "type": "todo",
                     "id": "lidocainePatch",
