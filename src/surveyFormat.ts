@@ -6,6 +6,11 @@ export const surveyFormat: any = {
             "id": "whenIsNow",
         },
         {
+            "id": "when.display",
+            "type": "text",
+            "prefix": "If the time above is not counting. Press here and drag it down to re-start it",
+        },
+        {
             "type": "Weather",
             "id": "weather",
         },
