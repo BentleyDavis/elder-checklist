@@ -8,7 +8,7 @@ export const surveyFormat: any = {
         {
             "id": "when.display",
             "type": "text",
-            "prefix": "If the time above is not counting. Press here and drag it down to re-start it",
+            "prefix": "If this app is not working. Put finger on the screen here and pull down about half the screen. That will refresh the app. ",
         },
         {
             "type": "Weather",
