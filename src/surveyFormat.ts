@@ -19,12 +19,11 @@ export const surveyFormat: any = {
             "id": "calendar",
         },
         {
-            "type": "ShowByTime",
-            "id": "evening2",
-            "showByTime": 17,
-            "buttonTextBefore": "switch to evening list",
-            "buttonTextAfter": "switch to morning list",
-            "elementsBefore": [
+            "type": "ShowBetweenHours",
+            "id": "morning",
+            "startHour": 5,
+            "endHour": 17,
+            "elements": [
                 // {
                 //     "type": "heading",
                 //     "level": 1,
@@ -124,8 +123,13 @@ export const surveyFormat: any = {
                     "content": "Reminder: The questions above are just your morning list. other questions will automatically appear here after 5PM. Those should not be answered until then so don't worry about answering them until later."
                 },
             ],
-
-            "elementsAfter": [
+        },
+        {
+            "type": "ShowBetweenHours",
+            "id": "evening",
+            "startHour": 17,
+            "endHour": 24,
+            "elements": [
                 {
                     "type": "heading",
                     "level": 1,
@@ -457,53 +461,61 @@ export const surveyFormat: any = {
             ],
         },
         {
-            "type": "heading",
-            "level": 1,
-            "id": "allDayHeading",
-            "content": "All Day List"
-        },
-        {
-            "type": "reminder",
-            "id": "sop",
-            "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
-        },
-        {
-            "type": "todo",
-            "id": "weight",
-            "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
-        },
-        {
-            "type": "todo",
-            "id": "ThighMassage",
-            "content": "Use the deep masager on your thighs to loosen then up.",
-        },
-        {
-            "type": "todo",
-            "id": "vitamins",
-            "content": "Have you taken your vitamins from the manual pill box",
-        },
-        {
-            "type": "todo",
-            "id": "ProDentim",
-            "content": "After brushing your teeth chew a ProDentim tablet.",
-        },
-        {
-            "type": "todo",
-            "id": "bloodpressure",
-            "content": `Take your blood pressure. <br/><br/>
+            "type": "ShowBetweenHours",
+            "id": "allDay",
+            "startHour": 8,
+            "endHour": 24,
+            "elements": [
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "allDayHeading",
+                    "content": "All Day List"
+                },
+                {
+                    "type": "reminder",
+                    "id": "sop",
+                    "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
+                },
+                {
+                    "type": "todo",
+                    "id": "weight",
+                    "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
+                },
+                {
+                    "type": "todo",
+                    "id": "ThighMassage",
+                    "content": "Use the deep masager on your thighs to loosen then up.",
+                },
+                {
+                    "type": "todo",
+                    "id": "vitamins",
+                    "content": "Have you taken your vitamins from the manual pill box",
+                },
+                {
+                    "type": "todo",
+                    "id": "ProDentim",
+                    "content": "After brushing your teeth chew a ProDentim tablet.",
+                },
+                {
+                    "type": "todo",
+                    "id": "bloodpressure",
+                    "content": `Take your blood pressure. <br/><br/>
             <ul>
             <li> Put on right arm with the button near our elbow</li>
             <li> Take 10 deep breaths</li>
             <li> Press the button, wait a second, then press it again</li>
             </ul>`,
-            "doneContent": "Blood Pressure",
-            "instructions": `<iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    "doneContent": "Blood Pressure",
+                    "instructions": `<iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             `
-        },
-        {
-            "type": "todo",
-            "id": "floss",
-            "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
+                },
+                {
+                    "type": "todo",
+                    "id": "floss",
+                    "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
+                },
+            ],
         },
         {
             "type": "heading",
@@ -930,6 +942,13 @@ export const surveyFormat: any = {
             "id": "notes",
             "title": ""
         },
+        // {
+        //     "type": "ShowBetweenHours",
+        //     "id": "testBetweenHours",
+        //     "startHour": 10,
+        //     "endHour": 15,
+        //     "elements": []
+        // },
         {
             "type": "History",
             "id": "history",

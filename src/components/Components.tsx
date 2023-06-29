@@ -22,6 +22,7 @@ import WhenIsNow from "./WhenIsNow";
 import Weather from "./Weather";
 import Calendar from "./Calendar";
 import History from "./History";
+import ShowBetweenHours from "./ShowBetweenHours";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -38,12 +39,13 @@ const components: { [key: string]: any } = {
     range: Range,
     time: Time,
     stepper: Stepper,
-    ShowByTime: ShowByTime,
-    Html: Html,
-    WhenIsNow: WhenIsNow,
-    Weather: Weather,
-    Calendar: Calendar,
-    History: History
+    ShowByTime,
+    Html,
+    WhenIsNow,
+    Weather,
+    Calendar,
+    History,
+    ShowBetweenHours
 };
 
 

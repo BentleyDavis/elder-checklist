@@ -26,7 +26,6 @@ export default function History({ elementData, dataStore, dispatch, path }: {
 
     useEffect(() => {
         let cancelled = false;
-        console.log("set onError");
 
         // eslint-disable-next-line no-restricted-globals
         addEventListener("error", e => {
