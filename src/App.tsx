@@ -115,12 +115,16 @@ function App() {
 
     if (dbDocRef && action.path !== "") {
 
-      // Update Remote State
-      updateDoc(dbDocRef, {
+      const cmd = {
         [action.path]: action.data,
         updateFrom: uniqueSessionId,
         updated: { [action.path]: action.data }
-      });
+      }
+
+      console.log("cmd", cmd);
+
+      // Update Remote State
+      updateDoc(dbDocRef, cmd);
 
       // Update messages
 

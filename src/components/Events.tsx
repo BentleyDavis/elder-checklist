@@ -2,6 +2,7 @@ import { Button, Modal } from "react-bootstrap";
 import { pathGetAt } from "../utils/dataStore";
 import { newId } from '../utils/newId';
 import Components from "./Components";
+import { deleteField } from "firebase/firestore";
 
 
 export default function Events({ elementData, dataStore, dispatch, path = "", btnType = "primary" }: {
@@ -95,8 +96,17 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                                     {Components(e, dataStore, dispatch, dataPath + "." + event.id)}
                                 </div>
                             })}
+                            {/* <pre>{JSON.stringify(event, null, 2)}</pre> */}
                         </Modal.Body>
                         <Modal.Footer>
+                            <Button className="float-start" style={{ opacity: .2 }} variant="light" onClick={() => {
+                                dispatch({
+                                    path: dataPath,
+                                    data: "",
+                                })
+                            }} size='sm'>
+                                🗑 delete all {dataPath}
+                            </Button><div style={{ width: "25%" }}></div>
                             <Button variant="secondary" onClick={() => {
                                 dispatch({
                                     path: dataPath + "." + event.id + ".closed",
