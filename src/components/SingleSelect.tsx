@@ -24,7 +24,7 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
                 }
                 {elementData.options.map((c: any) => {
                     return (c.value === value || value === undefined || value === "") &&
-                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'secondary' : 'primary'} m-1`}
+                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'secondary' : 'primary'} m-1 btn-lg`}
                             onClick={(event) => {
                                 if (c.value !== value) {
                                     dispatch({

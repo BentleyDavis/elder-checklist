@@ -23,7 +23,7 @@ export default function MultiSelect({ elementData, dataStore, dispatch, path }: 
             }
 
             {elementData.options.map((c: any) => {
-                return <button key={c.value} type="button" className={`btn btn-${values?.[c.value] ? 'primary' : 'secondary'} m-1`}
+                return <button key={c.value} type="button" className={`btn btn-${values?.[c.value] ? 'primary' : 'secondary'} m-1 btn-lg`}
                     onClick={(event) => {
                         dispatch({
                             path: dataPath + '.' + c.value,

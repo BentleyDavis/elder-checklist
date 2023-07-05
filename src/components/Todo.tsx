@@ -32,7 +32,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
             className?: string
         }) {
         if (can(localState, action)) {
-            return <button type="button" className={`btn btn-${btnType} mx-1 ${className}`}
+            return <button type="button" className={`btn btn-${btnType} mx-1 ${className} btn-lg`}
                 onClick={() => {
                     localActions[action]();
                 }}>{title}</button>
@@ -47,7 +47,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                     <StateButton action={"markDone"} title={"Mark Done"} btnType="primary"></StateButton>
                     <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
                     {elementData.instructions && ["started", "waiting"].includes(localState.state) && <>
-                        <button type="button" className="btn btn-secondary mx-1"
+                        <button type="button" className="btn btn-secondary mx-1 btn-lg"
                             data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
                             Instructions
                         </button>

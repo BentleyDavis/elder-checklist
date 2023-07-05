@@ -42,7 +42,7 @@ export default function History({ elementData, dataStore, dispatch, path }: {
 
     return <>
         <br></br>
-        <Button style={show ? {} : { opacity: .2 }} variant="light" onClick={() => { setShow(!show) }}>
+        <Button style={show ? {} : { opacity: .2 }} variant="light" onClick={() => { setShow(!show) }} size='lg'>
             {show ? "Hide" : "Show"} History
         </Button>
 

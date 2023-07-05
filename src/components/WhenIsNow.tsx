@@ -6,11 +6,17 @@ const OldNowKey = "oldNow";
 
 localStorage.removeItem(OldNowKey);
 
-const dateFormatter = new Intl.DateTimeFormat("en-US", {
+const dayFormatter = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
+});
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
+});
+
+const timeFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
@@ -52,7 +58,11 @@ export default function WhenIsNow({ elementData }: {
         justifyContent: 'center',
         alignItems: 'center'
     } : {}}>
-        <div className={elementData.level && `h${elementData.level}`}>Today is {dateFormatter.format(now)}</div>
+        <div className={elementData.level && `h${elementData.level}`}>
+            {dayFormatter.format(now)}<br></br>
+            {dateFormatter.format(now)}<br></br>
+            {timeFormatter.format(now)}
+        </div>
         <div>{errorMessage}</div>
     </div>
 }

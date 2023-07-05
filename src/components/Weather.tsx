@@ -191,7 +191,7 @@ export default function Weather({ elementData }: {
 
     return <div className="row mt-2">
         <div className="col">
-            <Button variant="primary" onClick={() => { setShow(!show) }}>
+            <Button variant="primary" onClick={() => { setShow(!show) }} size='lg'>
                 {show ? "Hide" : "Show"} Weather
             </Button>
             {show &&
@@ -263,7 +263,7 @@ export default function Weather({ elementData }: {
                             </tbody>
                         </table>
                     }
-                    <Button variant="primary" onClick={() => { setShow(!show) }}>
+                    <Button variant="primary" onClick={() => { setShow(!show) }} size='lg'>
                         {show ? "Hide" : "Show"} Weather
                     </Button>
                 </div>
