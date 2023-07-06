@@ -42,7 +42,7 @@ export default function ShowByTime({ elementData, dataStore, dispatch, path = ""
             (before && elementData.buttonTextBefore) ||
             (!before && elementData.buttonTextAfter)
         ) &&
-            <Button variant="outline-secondary" onClick={() => { setBefore(!before) }} size='lg'>
+            <Button variant="outline-secondary" onClick={() => { setBefore(!before) }} >
                 {before ? elementData.buttonTextBefore : elementData.buttonTextAfter}
             </Button>
         }

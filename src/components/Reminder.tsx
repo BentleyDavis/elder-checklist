@@ -36,7 +36,7 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
             className?: string
         }) {
         if (can(localState, action)) {
-            return <button type="button" className={`btn btn-${btnType} m-1 ${className} btn-lg`}
+            return <button type="button" className={`btn btn-${btnType} m-1 ${className} `}
                 onClick={() => {
                     localActions[action]();
                 }}>{title}</button>

@@ -36,7 +36,7 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&
-                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'light' : 'primary'} m-1 btn-lg`}
+                        <button key={c.value} type="button" className={`btn btn-${value === c.value ? 'light' : 'primary'} m-1 `}
                             onClick={(event) => {
                                 if (c.value !== value) {
                                     dispatch({

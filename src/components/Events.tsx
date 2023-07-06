@@ -21,7 +21,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
     const data = pathGetAt(dataPath, dataStore) || {}
 
     return <>
-        <button className={`btn btn-${btnType} m-1 btn-lg`}
+        <button className={`btn btn-${btnType} m-1 `}
             onClick={(event) => {
                 const id = newId();
                 dispatch({
@@ -43,7 +43,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
 
                     <div className="clearfix">
 
-                        <button className="btn btn-primary float-start m-1 btn-lg" type="button"
+                        <button className="btn btn-primary float-start m-1 " type="button"
                             // data-bs-toggle="collapse"
                             // data-bs-target={`#c-${event.id}`}
                             // aria-expanded="true"
@@ -112,7 +112,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
                                     path: dataPath + "." + event.id + ".closed",
                                     data: !event.closed,
                                 })
-                            }} size='lg'>
+                            }} >
                                 Close
                             </Button>
                         </Modal.Footer>
