@@ -37,11 +37,12 @@ export const surveyFormat: any = {
                     "content": "Morning Checklist"
                 },
 
-                {
-                    "type": "todo",
-                    "id": "lidocainePatchRemove",
-                    "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "lidocainePatchRemove",
+                //     "content": "First thing when you wake up. Remove your Lidocaine patch from last night",
+                // },
+
                 // {
                 //     "type": "todo",
                 //     "id": "bathroom",
