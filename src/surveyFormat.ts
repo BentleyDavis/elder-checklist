@@ -150,69 +150,69 @@ export const surveyFormat: any = {
                     "5": "OK",
                     "10": "Worst Ever",
                 },
-                {
-                    "type": "heading",
-                    "level": 2,
-                    "id": "h1Pain",
-                    "content": "Pain"
-                },
-                {
-                    "type": "matrix",
-                    "id": "pain",
-                    "title": "",
-                    "verticalAlign": "top",
-                    "alternateRows": true,
-                    "columns": [
-                        {
-                            "value": "0",
-                            "text": "none"
-                        },
-                        {
-                            "value": "1",
-                            "text": "slight"
-                        },
-                        {
-                            "value": "2",
-                            "text": "some"
-                        },
-                        {
-                            "value": "3",
-                            "text": "painful"
-                        },
-                        {
-                            "value": "4",
-                            "text": "very"
-                        }
-                    ],
-                    "rows": [
-                        {
-                            "value": "chest",
-                            "text": "chest"
-                        },
-                        {
-                            "value": "upperBack",
-                            "text": "upper back"
-                        },
-                        {
-                            "value": "lowerBack",
-                            "text": "lower back"
-                        },
-                        "shoulders",
-                        "arms",
-                        "wrists",
-                        "hands",
-                        "thighs",
-                        "hip joints",
-                        "calves",
-                        "feet",
-                    ]
-                },
-                {
-                    "type": "heading",
-                    "level": 2,
-                    "id": "h1Other",
-                    "content": "Other"
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 2,
+                //     "id": "h1Pain",
+                //     "content": "Pain"
+                // },
+                // {
+                //     "type": "matrix",
+                //     "id": "pain",
+                //     "title": "",
+                //     "verticalAlign": "top",
+                //     "alternateRows": true,
+                //     "columns": [
+                //         {
+                //             "value": "0",
+                //             "text": "none"
+                //         },
+                //         {
+                //             "value": "1",
+                //             "text": "slight"
+                //         },
+                //         {
+                //             "value": "2",
+                //             "text": "some"
+                //         },
+                //         {
+                //             "value": "3",
+                //             "text": "painful"
+                //         },
+                //         {
+                //             "value": "4",
+                //             "text": "very"
+                //         }
+                //     ],
+                //     "rows": [
+                //         {
+                //             "value": "chest",
+                //             "text": "chest"
+                //         },
+                //         {
+                //             "value": "upperBack",
+                //             "text": "upper back"
+                //         },
+                //         {
+                //             "value": "lowerBack",
+                //             "text": "lower back"
+                //         },
+                //         "shoulders",
+                //         "arms",
+                //         "wrists",
+                //         "hands",
+                //         "thighs",
+                //         "hip joints",
+                //         "calves",
+                //         "feet",
+                //     ]
+                // },
+                // {
+                //     "type": "heading",
+                //     "level": 2,
+                //     "id": "h1Other",
+                //     "content": "Other"
+                // },
 
                 // {
                 //     "length": 5,
@@ -242,27 +242,27 @@ export const surveyFormat: any = {
 
                 // },
 
-                {
-                    "type": "range",
-                    "id": "eveningAnkles",
-                    "title": "How swolen are your ankles after 5 PM?",
-                    "length": 5,
-                    "0": "none",
-                    "4": "Dangerously swolen",
-                },
+                // {
+                //     "type": "range",
+                //     "id": "eveningAnkles",
+                //     "title": "How swolen are your ankles after 5 PM?",
+                //     "length": 5,
+                //     "0": "none",
+                //     "4": "Dangerously swolen",
+                // },
 
 
-                {
-                    "type": "range",
-                    "id": "fingerTingles",
-                    "title": "Finger tip pain or tingling?",
-                    "length": 5,
-                    "0": "none",
-                    "1": "tingling several times today",
-                    "2": "Tingling Most of the day",
-                    "3": "Painful several times today",
-                    "4": "Painful Most of the day",
-                },
+                // {
+                //     "type": "range",
+                //     "id": "fingerTingles",
+                //     "title": "Finger tip pain or tingling?",
+                //     "length": 5,
+                //     "0": "none",
+                //     "1": "tingling several times today",
+                //     "2": "Tingling Most of the day",
+                //     "3": "Painful several times today",
+                //     "4": "Painful Most of the day",
+                // },
                 {
                     "type": "singleSelect",
                     "id": "bmToday",
@@ -278,130 +278,130 @@ export const surveyFormat: any = {
                         },
                     ],
                 },
-                {
+                // {
 
-                    "type": "range",
-                    "id": "noisyNeighbor",
-                    "title": "How noisy were your neighbors today?",
-                    "0": "silent",
-                    "10": "worst",
-                },
-                {
+                //     "type": "range",
+                //     "id": "noisyNeighbor",
+                //     "title": "How noisy were your neighbors today?",
+                //     "0": "silent",
+                //     "10": "worst",
+                // },
+                // {
 
-                    "type": "range",
-                    "id": "runnyNose",
-                    "title": "How runny was your nose today?",
-                    "0": "none",
-                    "10": "heavy dripping",
-                },
-                {
+                //     "type": "range",
+                //     "id": "runnyNose",
+                //     "title": "How runny was your nose today?",
+                //     "0": "none",
+                //     "10": "heavy dripping",
+                // },
+                // {
 
-                    "type": "range",
-                    "id": "teethPain",
-                    "title": "How painful were your teeth today?",
-                    "0": "none",
-                    "10": "constant strong pain",
-                },
-                {
+                //     "type": "range",
+                //     "id": "teethPain",
+                //     "title": "How painful were your teeth today?",
+                //     "0": "none",
+                //     "10": "constant strong pain",
+                // },
+                // {
 
-                    "type": "singleSelect",
-                    "id": "cramps",
-                    "title": "Did you have cramps or spasams anywhere in your body today?",
-                    "options": [
-                        {
-                            "text": "yes",
-                            "value": true
-                        },
-                        {
-                            "text": "no",
-                            "value": false
-                        },
-                    ]
-                },
-                {
-                    "type": "comment",
-                    "hide": "data.cramps!==true",
-                    "id": "crampLocations",
-                    "width": "full",
-                    "title": "Describe the cramps and their location",
-                    "minRows": 1,
-                },
-                {
+                //     "type": "singleSelect",
+                //     "id": "cramps",
+                //     "title": "Did you have cramps or spasams anywhere in your body today?",
+                //     "options": [
+                //         {
+                //             "text": "yes",
+                //             "value": true
+                //         },
+                //         {
+                //             "text": "no",
+                //             "value": false
+                //         },
+                //     ]
+                // },
+                // {
+                //     "type": "comment",
+                //     "hide": "data.cramps!==true",
+                //     "id": "crampLocations",
+                //     "width": "full",
+                //     "title": "Describe the cramps and their location",
+                //     "minRows": 1,
+                // },
+                // {
 
-                    "type": "range",
-                    "id": "confusion",
-                    "title": "How confused did you feel today?",
-                    "0": "none",
-                    "5": "some",
-                    "10": "worst",
-                },
-                {
+                //     "type": "range",
+                //     "id": "confusion",
+                //     "title": "How confused did you feel today?",
+                //     "0": "none",
+                //     "5": "some",
+                //     "10": "worst",
+                // },
+                // {
 
-                    "type": "range",
-                    "id": "dizzy",
-                    "title": "How dizzy did you feel today?",
-                    "0": "none",
-                    "5": "some",
-                    "10": "worst",
-                },
-                {
-                    "type": "matrix",
-                    "id": "other",
-                    "title": "",
-                    "alternateRows": true,
-                    "columns": [
-                        {
-                            "value": "0",
-                            "text": "none"
-                        },
-                        {
-                            "value": "1",
-                            "text": "little"
-                        },
-                        {
-                            "value": "2",
-                            "text": "some"
-                        },
-                        {
-                            "value": "3",
-                            "text": "often"
-                        },
-                        {
-                            "value": "4",
-                            "text": "bad"
-                        }
-                    ],
-                    "rows": [
-                        {
-                            "value": "forgetful",
-                            "text": "forgetful"
-                        },
-                        {
-                            "value": "bladder",
-                            "text": " bladder trouble"
-                        },
-                        {
-                            "value": "rashes",
-                            "text": "rashes"
-                        },
-                        {
-                            "value": "gutNoise",
-                            "text": "loud gut"
-                        },
-                        {
-                            "value": "spam",
-                            "text": "spam call ring"
-                        },
-                        {
-                            "value": "ringing",
-                            "text": "ringing noise"
-                        },
-                        {
-                            "value": "weirdNoises",
-                            "text": "chanting/ mumbling"
-                        }
-                    ]
-                },
+                //     "type": "range",
+                //     "id": "dizzy",
+                //     "title": "How dizzy did you feel today?",
+                //     "0": "none",
+                //     "5": "some",
+                //     "10": "worst",
+                // },
+                // {
+                //     "type": "matrix",
+                //     "id": "other",
+                //     "title": "",
+                //     "alternateRows": true,
+                //     "columns": [
+                //         {
+                //             "value": "0",
+                //             "text": "none"
+                //         },
+                //         {
+                //             "value": "1",
+                //             "text": "little"
+                //         },
+                //         {
+                //             "value": "2",
+                //             "text": "some"
+                //         },
+                //         {
+                //             "value": "3",
+                //             "text": "often"
+                //         },
+                //         {
+                //             "value": "4",
+                //             "text": "bad"
+                //         }
+                //     ],
+                //     "rows": [
+                //         {
+                //             "value": "forgetful",
+                //             "text": "forgetful"
+                //         },
+                //         {
+                //             "value": "bladder",
+                //             "text": " bladder trouble"
+                //         },
+                //         {
+                //             "value": "rashes",
+                //             "text": "rashes"
+                //         },
+                //         {
+                //             "value": "gutNoise",
+                //             "text": "loud gut"
+                //         },
+                //         {
+                //             "value": "spam",
+                //             "text": "spam call ring"
+                //         },
+                //         {
+                //             "value": "ringing",
+                //             "text": "ringing noise"
+                //         },
+                //         {
+                //             "value": "weirdNoises",
+                //             "text": "chanting/ mumbling"
+                //         }
+                //     ]
+                // },
                 {
                     "type": "heading",
                     "level": 2,
@@ -483,11 +483,11 @@ export const surveyFormat: any = {
                     "id": "weight",
                     "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
                 },
-                {
-                    "type": "todo",
-                    "id": "ThighMassage",
-                    "content": "Use the deep masager on your thighs to loosen then up.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "ThighMassage",
+                //     "content": "Use the deep masager on your thighs to loosen then up.",
+                // },
                 {
                     "type": "todo",
                     "id": "vitamins",
@@ -515,6 +515,12 @@ export const surveyFormat: any = {
                     "type": "todo",
                     "id": "floss",
                     "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
+                },
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "exerciseHeading",
+                    "content": "Exercise throughout the day"
                 },
             ],
         },
