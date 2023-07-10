@@ -23,6 +23,7 @@ import Weather from "./Weather";
 import Calendar from "./Calendar";
 import History from "./History";
 import ShowBetweenHours from "./ShowBetweenHours";
+import Counter2 from "./Counter2";
 
 const components: { [key: string]: any } = {
     matrix: Matrix,
@@ -45,7 +46,8 @@ const components: { [key: string]: any } = {
     Weather,
     Calendar,
     History,
-    ShowBetweenHours
+    ShowBetweenHours,
+    Counter2
 };
 
 

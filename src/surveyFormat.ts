@@ -517,10 +517,10 @@ export const surveyFormat: any = {
                     "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
                 },
                 {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "exerciseHeading",
-                    "content": "Exercise throughout the day"
+                    "type": "Counter2",
+                    "title": "Vigorously Rub lotion on the pinky scar 4 times a day:",
+                    "id": "hand exercises",
+                    "max": 4,
                 },
             ],
         },

@@ -48,7 +48,6 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
                 </div>
             </div>
         </div>
-
     </div>
 
 }
