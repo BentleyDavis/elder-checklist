@@ -108,21 +108,21 @@ export const surveyFormat: any = {
                     "id": "benToDos",
                     "content": `You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.`
                 },
-                {
-                    "type": "reminder",
-                    "id": "Dishes",
-                    "content": "Reminder: When eating, put the lid on your tray so immediately when you are done you can cover up the stinky dish. When you get up, take off the lid and put it in the water in the turquoise tub. Put the pyrex dish in the tub on it's side to get the water in then tip it upright so it is submerged."
-                },
-                {
-                    "type": "reminder",
-                    "id": "textIfNeedGroceries",
-                    "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
-                },
-                {
-                    "type": "reminder",
-                    "id": "textquestionTimeReminder",
-                    "content": "Reminder: The questions above are just your morning list. other questions will automatically appear here after 5PM. Those should not be answered until then so don't worry about answering them until later."
-                },
+                // {
+                //     "type": "reminder",
+                //     "id": "Dishes",
+                //     "content": "Reminder: When eating, put the lid on your tray so immediately when you are done you can cover up the stinky dish. When you get up, take off the lid and put it in the water in the turquoise tub. Put the pyrex dish in the tub on it's side to get the water in then tip it upright so it is submerged."
+                // },
+                // {
+                //     "type": "reminder",
+                //     "id": "textIfNeedGroceries",
+                //     "content": "Reminder: If you need Groceries? Text Ben that you need help with groceries. Do not buy them by yourself"
+                // },
+                // {
+                //     "type": "reminder",
+                //     "id": "textquestionTimeReminder",
+                //     "content": "Reminder: The questions above are just your morning list. other questions will automatically appear here after 5PM. Those should not be answered until then so don't worry about answering them until later."
+                // },
             ],
         },
         {
@@ -518,7 +518,7 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "Counter2",
-                    "title": "Vigorously Rub lotion on the pinky scar 4 times a day:",
+                    "title": "Vigorously rub lotion on the pinky scar 4 times a day:",
                     "id": "hand exercises",
                     "max": 4,
                 },
