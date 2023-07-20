@@ -37,6 +37,12 @@ export const surveyFormat: any = {
                     "content": "Morning Checklist"
                 },
 
+                {
+                    "type": "reminder",
+                    "id": "meals3",
+                    "content": `Eat 3 meals a day and less crunchies`
+                },
+
                 // {
                 //     "type": "todo",
                 //     "id": "lidocainePatchRemove",
