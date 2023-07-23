@@ -5,11 +5,11 @@ export const surveyFormat: any = {
             "type": "WhenIsNow",
             "id": "whenIsNow",
         },
-        {
-            "id": "when.display",
-            "type": "text",
-            "prefix": "If this app is not working. Put finger on the screen here and pull down about half the screen. That will refresh the app. ",
-        },
+        // {
+        //     "id": "when.display",
+        //     "type": "text",
+        //     "prefix": "If this app is not working. Put finger on the screen here and pull down about half the screen. That will refresh the app. ",
+        // },
         {
             "type": "Weather",
             "id": "weather",
@@ -497,7 +497,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "vitamins",
-                    "content": "Have you taken your vitamins from the manual pill box",
+                    "content": "Have you taken your vitamins from the manual pill box. For one week it will be just a small white pill due to the surgery",
                 },
                 {
                     "type": "todo",
