@@ -79,7 +79,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
-                    "content": "Fill the 4 water bottles to the top line (not full).",
+                    "content": "Fill the 5 water cups to drink today.",
                 },
                 // {
                 //     "type": "todo",
