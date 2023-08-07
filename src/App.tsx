@@ -104,7 +104,7 @@ function App() {
         if (history.length > 100) {
           history = history.slice(0, 100)
         }
-        history.push({ ...action, when: new Date().getTime() });
+        history.unshift({ ...action, when: new Date().getTime() });
         localStorage.setItem("history", JSON.stringify(history));
       }
     } catch (error) {
