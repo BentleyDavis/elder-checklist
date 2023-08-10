@@ -111,7 +111,7 @@ async function getWeather() {
         if (when.getDay() !== (new Date()).getDay()) break; // Exit when not today
 
         const hour = when.getHours();
-        if (hour >= 7 && hour <= 10 + 12) { //between 7 AM and 10 PM
+        if (hour >= 5 && hour <= (10 + 12)) { //between 7 AM and 10 PM
             hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
 
             hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
