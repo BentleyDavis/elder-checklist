@@ -434,6 +434,11 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
+                    "id": "lidocanePatch",
+                    "content": "Put on your lidocane patch",
+                },
+                {
+                    "type": "todo",
                     "id": "walkClothes",
                     "content": "Put on the clothes you will walk in for tomorrow.",
                 },
@@ -470,7 +475,7 @@ export const surveyFormat: any = {
         {
             "type": "ShowBetweenHours",
             "id": "allDay",
-            "startHour": 8,
+            "startHour": 5,
             "endHour": 24,
             "elements": [
                 {
@@ -483,6 +488,20 @@ export const surveyFormat: any = {
                     "type": "reminder",
                     "id": "sop",
                     "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
+                },
+                {
+                    "type": "reminder",
+                    "id": "eatingTime",
+                    "doneContent": "Eating Tips: Spices, Dressing, Microwave",
+                    "content": `<b>Eating Tips</b><br/><br/>
+                    <ul>
+                    <li> <b>Spices</b>: Don't combine the "Zesty" spices and the "Italian" spices. Using them separately will give you more variety.</li>
+                    <li> <b>Dressing</b>: Use only about 1/2 tablespoon once a day.</li>
+                    <li> <b>Microwave</b>: for at most 30 secoonds at a time and check the heat to reduce boiling over.</li>
+                    </ul>
+                    
+                    
+                    `
                 },
                 {
                     "type": "todo",
@@ -524,7 +543,7 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "Counter2",
-                    "title": "Vigorously rub lotion on the pinky scar 4 times a day:",
+                    "title": "Vigorously rub lotion on both pinky scars 4 times a day:",
                     "id": "hand exercises",
                     "max": 4,
                 },
