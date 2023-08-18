@@ -525,16 +525,32 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
-                    "id": "bloodpressure",
-                    "content": `Take your blood pressure. <br/><br/>
-            <ul>
-            <li> Put on right arm with the button near our elbow</li>
-            <li> Take 10 deep breaths</li>
-            <li> Press the button, wait a second, then press it again</li>
-            </ul>`,
+                    "id": "exerciseShouldSqueeze",
+                    "content": `Exercise: Shoulder Squeeze`,
                     "doneContent": "Blood Pressure",
-                    "instructions": `<iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            `
+                    "instructions": `
+                        <ol>
+                            <li>Bend your elbows and point your fingers upward. Lift your elbows out from your sides until your wrists are at shoulder height.</li>
+                            <li>Keeping your fingers pointing up, push your elbows backward to squeeze your shoulder blades together. Hold for <b>10</b> seconds. Slowly return to the starting position.</li>
+                            <li>Repeat <b>3</b> times.Do <b>one</b> set a day.</li>
+                        </ol>
+                        <img src="https://drive.google.com/uc?id=1_KbpB4O3WFm0vtsbNI3_usnxncqzwaj7"/>
+                        `
+                },
+
+                {
+                    "type": "todo",
+                    "id": "bloodpressure",
+                    "content": `Take your blood pressure. `,
+                    "doneContent": "Blood Pressure",
+                    "instructions": `
+                        <br/><br/>
+                        <ul>
+                            <li> Put on right arm with the button near our elbow</li>
+                            <li> Take 10 deep breaths</li>
+                            <li> Press the button, wait a second, then press it again</li>
+                        </ul>
+                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                 },
                 {
                     "type": "todo",
