@@ -81,11 +81,6 @@ export const surveyFormat: any = {
                     "id": "waterBottlesStart",
                     "content": "Fill the 5 water cups to drink today.",
                 },
-                // {
-                //     "type": "todo",
-                //     "id": "ketoneDrink",
-                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
-                // },
                 {
                     "type": "range",
                     "id": "morningAnkles",
@@ -133,16 +128,128 @@ export const surveyFormat: any = {
         },
         {
             "type": "ShowBetweenHours",
-            "id": "evening",
-            "startHour": 17,
+            "id": "allDay",
+            "startHour": 5,
             "endHour": 24,
             "elements": [
                 {
                     "type": "heading",
                     "level": 1,
-                    "id": "evening",
-                    "content": "Evening List: available after 5 PM"
+                    "id": "allDayHeading",
+                    "content": "All Day List"
                 },
+                {
+                    "type": "reminder",
+                    "id": "sop",
+                    "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
+                },
+                {
+                    "type": "reminder",
+                    "id": "eatingTime",
+                    "doneContent": "Eating Tips: Spices, Dressing, Microwave",
+                    "content": `<b>Eating Tips</b><br/><br/>
+                    <ul>
+                    <li> <b>Spices</b>: Don't combine the "Zesty" spices and the "Italian" spices. Using them separately will give you more variety.</li>
+                    <li> <b>Dressing</b>: Use only about 1/2 tablespoon once a day.</li>
+                    <li> <b>Microwave</b>: for at most 30 secoonds at a time and check the heat to reduce boiling over.</li>
+                    </ul>
+                    
+                    
+                    `
+                },
+                {
+                    "type": "todo",
+                    "id": "weight",
+                    "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
+                },
+                // {
+                //     "type": "todo",
+                //     "id": "ThighMassage",
+                //     "content": "Use the deep masager on your thighs to loosen then up.",
+                // },
+                {
+                    "type": "todo",
+                    "id": "vitamins",
+                    "content": "Have you taken your vitamins from the manual pill box.",
+                },
+                {
+                    "type": "todo",
+                    "id": "ketoneDrink",
+                    "content": "Drink one of the little orange bottles of Ketone IQ.",
+                },
+                {
+                    "type": "todo",
+                    "id": "ProDentim",
+                    "content": "After brushing your teeth chew a ProDentim tablet.",
+                },
+                {
+                    "type": "todo",
+                    "id": "exerciseShouldSqueeze",
+                    "content": `Exercise: Shoulder Squeeze`,
+                    "doneContent": "Blood Pressure",
+                    "instructions": `
+                        <ol>
+                            <li>Bend your elbows and point your fingers upward. Lift your elbows out from your sides until your wrists are at shoulder height.</li>
+                            <li>Keeping your fingers pointing up, push your elbows backward to squeeze your shoulder blades together. Hold for <b>10</b> seconds. Slowly return to the starting position.</li>
+                            <li>Repeat <b>3</b> times.Do <b>one</b> set a day.</li>
+                        </ol>
+                        <img src="https://drive.google.com/uc?id=1_KbpB4O3WFm0vtsbNI3_usnxncqzwaj7"/>
+                        `
+                },
+
+                {
+                    "type": "todo",
+                    "id": "bloodpressure",
+                    "content": `Take your blood pressure. `,
+                    "doneContent": "Blood Pressure",
+                    "instructions": `
+                        <br/><br/>
+                        <ul>
+                            <li> Put on right arm with the button near our elbow</li>
+                            <li> Take 10 deep breaths</li>
+                            <li> Press the button, wait a second, then press it again</li>
+                        </ul>
+                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                },
+                {
+                    "type": "todo",
+                    "id": "floss",
+                    "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
+                },
+                {
+                    "type": "Counter2",
+                    "title": "Vigorously rub lotion on both pinky scars 4 times a day:",
+                    "id": "hand exercises",
+                    "max": 4,
+                },
+            ],
+        },
+        {
+            "type": "heading",
+            "level": 1,
+            "id": "evening",
+            "content": "Evening List: available after 5 PM"
+        },
+        {
+            "type": "ShowBetweenHours",
+            "id": "evening",
+            "startHour": 5,
+            "endHour": 16,
+            "elements": [
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "id": "evening",
+                    "content": "Your evening checklist will appear here after after 5 PM"
+                },
+            ]
+        },
+        {
+            "type": "ShowBetweenHours",
+            "id": "evening",
+            "startHour": 17,
+            "endHour": 24,
+            "elements": [
                 {
                     "type": "heading",
                     "level": 2,
@@ -469,99 +576,6 @@ export const surveyFormat: any = {
                         <li> Turn off your light.</li>
                     </ul>`,
                     "doneContent": "Lights out",
-                },
-            ],
-        },
-        {
-            "type": "ShowBetweenHours",
-            "id": "allDay",
-            "startHour": 5,
-            "endHour": 24,
-            "elements": [
-                {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "allDayHeading",
-                    "content": "All Day List"
-                },
-                {
-                    "type": "reminder",
-                    "id": "sop",
-                    "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
-                },
-                {
-                    "type": "reminder",
-                    "id": "eatingTime",
-                    "doneContent": "Eating Tips: Spices, Dressing, Microwave",
-                    "content": `<b>Eating Tips</b><br/><br/>
-                    <ul>
-                    <li> <b>Spices</b>: Don't combine the "Zesty" spices and the "Italian" spices. Using them separately will give you more variety.</li>
-                    <li> <b>Dressing</b>: Use only about 1/2 tablespoon once a day.</li>
-                    <li> <b>Microwave</b>: for at most 30 secoonds at a time and check the heat to reduce boiling over.</li>
-                    </ul>
-                    
-                    
-                    `
-                },
-                {
-                    "type": "todo",
-                    "id": "weight",
-                    "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
-                },
-                // {
-                //     "type": "todo",
-                //     "id": "ThighMassage",
-                //     "content": "Use the deep masager on your thighs to loosen then up.",
-                // },
-                {
-                    "type": "todo",
-                    "id": "vitamins",
-                    "content": "Have you taken your vitamins from the manual pill box. For one week it will be just a small white pill due to the surgery",
-                },
-                {
-                    "type": "todo",
-                    "id": "ProDentim",
-                    "content": "After brushing your teeth chew a ProDentim tablet.",
-                },
-                {
-                    "type": "todo",
-                    "id": "exerciseShouldSqueeze",
-                    "content": `Exercise: Shoulder Squeeze`,
-                    "doneContent": "Blood Pressure",
-                    "instructions": `
-                        <ol>
-                            <li>Bend your elbows and point your fingers upward. Lift your elbows out from your sides until your wrists are at shoulder height.</li>
-                            <li>Keeping your fingers pointing up, push your elbows backward to squeeze your shoulder blades together. Hold for <b>10</b> seconds. Slowly return to the starting position.</li>
-                            <li>Repeat <b>3</b> times.Do <b>one</b> set a day.</li>
-                        </ol>
-                        <img src="https://drive.google.com/uc?id=1_KbpB4O3WFm0vtsbNI3_usnxncqzwaj7"/>
-                        `
-                },
-
-                {
-                    "type": "todo",
-                    "id": "bloodpressure",
-                    "content": `Take your blood pressure. `,
-                    "doneContent": "Blood Pressure",
-                    "instructions": `
-                        <br/><br/>
-                        <ul>
-                            <li> Put on right arm with the button near our elbow</li>
-                            <li> Take 10 deep breaths</li>
-                            <li> Press the button, wait a second, then press it again</li>
-                        </ul>
-                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-                },
-                {
-                    "type": "todo",
-                    "id": "floss",
-                    "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
-                },
-                {
-                    "type": "Counter2",
-                    "title": "Vigorously rub lotion on both pinky scars 4 times a day:",
-                    "id": "hand exercises",
-                    "max": 4,
                 },
             ],
         },
