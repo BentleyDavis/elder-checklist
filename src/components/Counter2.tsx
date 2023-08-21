@@ -28,7 +28,7 @@ export default function Counter2({ elementData, dataStore, dispatch, path }: {
         }
     }
 
-    return <div className={"row stripeable py-1 border-bottom " + (elementData.max && value >= elementData.max ? "task-done" : "")}>
+    return <div className={"row list-item " + (elementData.max && value >= elementData.max ? "task-done" : "")}>
         <div className="col">
             {elementData.title &&
                 <label htmlFor="exampleFormControlTextarea1" className="form-label mt-1 mb-0"

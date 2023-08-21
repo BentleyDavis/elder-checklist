@@ -36,7 +36,7 @@ export default function Stepper({ elementData, dataStore, dispatch, path = "" }:
                     </button>
                 </div>
             </div>
-            <div className={`row ${elementData.striped && 'stripeable py-1 border-bottom'} `}>
+            <div className={`row ${elementData.striped && 'list-item'} `}>
                 <div className="col">
                     {elementData.elements.map((e: any) => { return Components(e, dataStore, dispatch, path) })}
                 </div>
@@ -73,7 +73,7 @@ export default function Stepper({ elementData, dataStore, dispatch, path = "" }:
                     {Components(elementData.elements[value.index], dataStore, dispatch, path)}
                 </div>
             </div>
-            <div className={`row ${elementData.striped && 'stripeable py-1 border-bottom'} `}>
+            <div className={`row ${elementData.striped && 'list-item'} `}>
                 <div className="col">
                     {value.index + 1 < elementData.elements.length ?
                         <button type="button" className={`btn btn-outline-primary m-1`}

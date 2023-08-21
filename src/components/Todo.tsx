@@ -40,7 +40,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         return null;
     }
 
-    return <div className={"row stripeable py-1 border-bottom task-" + localState.state}>
+    return <div className={"row list-item task-" + localState.state}>
         <div className="col">
             <div className="clearfix">
                 <div className="float-start">

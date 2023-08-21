@@ -14,7 +14,7 @@ export default function Weather({ elementData }: {
     const [show, setShow] = useState(defaultShow)
 
 
-    return <div className="row mt-2">
+    return <div className="row mt-2 mb-2">
         <div className="col">
             <Button variant="primary" onClick={() => { setShow(!show) }} >
                 {show ? "Hide" : "Show"} Calendar

@@ -18,7 +18,7 @@ export default function Comment({ elementData, dataStore, dispatch, path }: {
     const value = pathGetAt(dataPath, dataStore) ?? "";
 
 
-    return <div className={"row stripeable py-1 border-bottom "}>
+    return <div className={"row list-item "}>
         <div className="col">
             {elementData.title &&
                 <label htmlFor="exampleFormControlTextarea1" className="form-label mt-1 mb-0"

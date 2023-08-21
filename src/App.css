@@ -1,5 +1,11 @@
-.stripeable:nth-of-type(odd) {
-  background: rgba(0, 0, 0, 0.05);
+.list-item:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.list-item {
+  padding: 1em 0;
+  border-bottom: 0.5em solid #555;
+  border-top: 0.5em solid #555;
 }
 
 .card {
@@ -38,7 +44,7 @@ h2 {
 h1,
 h2,
 h3 {
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 0;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }

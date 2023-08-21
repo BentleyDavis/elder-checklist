@@ -16,7 +16,7 @@ export default function SingleSelect({ elementData, dataStore, dispatch, path }:
     const value = pathGetAt(dataPath, dataStore)
 
 
-    return <div className={"row stripeable py-1 border-bottom " + (!(value === undefined || value === "") && "task-done") || ""}>
+    return <div className={"row list-item " + (!(value === undefined || value === "") && "task-done") || ""}>
         <div className="col">
             <div className="clearfix">
                 {elementData.title &&

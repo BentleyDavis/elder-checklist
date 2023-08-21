@@ -37,7 +37,7 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
         </button>
 
         {Object.values(data).reverse().map((event: any) =>
-            <div className="row stripeable py-1 border-bottom" key={event.id}>
+            <div className="row list-item" key={event.id}>
                 <div className="col">
 
                     <div className="clearfix">

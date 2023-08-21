@@ -10,7 +10,7 @@ export default function Row({ elementData, dataStore, dispatch, path = "" }: {
     }>
 }) {
 
-    return <div className={`row ${elementData.striped && 'stripeable py-1 border-bottom'} `}>
+    return <div className={`row ${elementData.striped && 'list-item'} `}>
         <div className="col">
             {elementData.elements.map((e: any) => { return Components(e, dataStore, dispatch, path) })}
         </div>
