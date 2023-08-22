@@ -102,13 +102,37 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "happyHome",
-                    "content": `Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.`
+                    "doneContent": `
+                    <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>
+                    -- <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">Ben's tasks</a>
+                    -- <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedures (SOPs)</a>
+                    `,
+                    "content": `
+                    <ul>
+                    <li>Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.</li>
+                    <li>You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.</li>
+                    <li>We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.</li>
+                    </ul>
+                    `
                 },
                 {
                     "type": "reminder",
-                    "id": "benToDos",
-                    "content": `You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.`
+                    "id": "clothing",
+                    "doneContent": "Reminder about Temperature and clothing",
+                    "content": `
+                    <ul>
+                    <li>Always wear a t-shirt</li>
+                    <li>when you get cold when the AC turns on, put on a blouse over your t-shirt</li>
+                    <li>The AC is set as good as it can be but you will get cold and hot throughout the day.</li>
+                    <Li> Do not notify Ben unless it is extreamly hot or cold like the AC is broken.</li>
+                    </ul>
+                    `
                 },
+                // {
+                //     "type": "reminder",
+                //     "id": "benToDos",
+                //     "content": `You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.`
+                // },
                 // {
                 //     "type": "reminder",
                 //     "id": "Dishes",
@@ -138,11 +162,11 @@ export const surveyFormat: any = {
                     "id": "allDayHeading",
                     "content": "All Day List"
                 },
-                {
-                    "type": "reminder",
-                    "id": "sop",
-                    "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
-                },
+                // {
+                //     "type": "reminder",
+                //     "id": "sop",
+                //     "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
+                // },
                 {
                     "type": "reminder",
                     "id": "eatingTime",
