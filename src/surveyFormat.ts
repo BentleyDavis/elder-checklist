@@ -176,6 +176,7 @@ export const surveyFormat: any = {
                     <li> <b>Spices</b>: Don't combine the "Zesty" spices and the "Italian" spices. Using them separately will give you more variety.</li>
                     <li> <b>Dressing</b>: Use only about 1/2 tablespoon once a day.</li>
                     <li> <b>Microwave</b>: for at most 30 secoonds at a time and check the heat to reduce boiling over.</li>
+                    <li> <b>Salad Dressing</b>: Use oil and vinegar.</li>
                     </ul>
                     
                     

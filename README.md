@@ -2,7 +2,9 @@
 
 ## ✅👩🏿‍🦳👨‍🦳👩🏼‍🦳👨🏻‍🦳👨🏿‍🦳👩🏾‍🦳👨🏼‍🦳👨🏽‍🦳👩🏽‍🦳👨🏾‍🦳👩‍🦳👩🏻‍🦳✅
 
----
+## Next Tasks:
+
+- Show sunrise and sunset to calculate walk times https://github.com/mourner/suncalc/blob/master/suncalc.js
 
 ## Tech
 
