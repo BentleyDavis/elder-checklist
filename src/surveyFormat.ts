@@ -605,10 +605,10 @@ export const surveyFormat: any = {
             ],
         },
         {
-            "type": "General",
+            "type": "heading",
             "level": 1,
             "id": "h1General",
-            "content": "BMs"
+            "content": "General"
         },
         {
             "type": "heading",
