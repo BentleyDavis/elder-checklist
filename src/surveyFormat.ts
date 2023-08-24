@@ -605,9 +605,15 @@ export const surveyFormat: any = {
             ],
         },
         {
+            "type": "General",
+            "level": 1,
+            "id": "h1General",
+            "content": "BMs"
+        },
+        {
             "type": "heading",
             "level": 2,
-            "id": "h1Bms",
+            "id": "BmsHeading",
             "content": "BMs"
         },
         {
