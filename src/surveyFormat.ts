@@ -77,11 +77,6 @@ export const surveyFormat: any = {
                 //     "content": "AFTER your walk"
                 // },
                 {
-                    "type": "todo",
-                    "id": "waterBottlesStart",
-                    "content": "Fill the 5 water cups. Be sure to always use the lids.",
-                },
-                {
                     "type": "range",
                     "id": "morningAnkles",
                     "title": "How swolen were your ankles when you woke up?",
@@ -156,12 +151,12 @@ export const surveyFormat: any = {
             "startHour": 5,
             "endHour": 24,
             "elements": [
-                {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "allDayHeading",
-                    "content": "All Day List"
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 1,
+                //     "id": "allDayHeading",
+                //     "content": "All Day List"
+                // },
                 // {
                 //     "type": "reminder",
                 //     "id": "sop",
@@ -181,6 +176,11 @@ export const surveyFormat: any = {
                     
                     
                     `
+                },
+                {
+                    "type": "todo",
+                    "id": "waterBottlesStart",
+                    "content": "Fill the 5 water cups. Be sure to always use the lids.",
                 },
                 {
                     "type": "todo",
