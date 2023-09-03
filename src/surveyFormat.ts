@@ -198,9 +198,11 @@ export const surveyFormat: any = {
                     "content": "Have you taken your vitamins from the manual pill box.",
                 },
                 {
-                    "type": "todo",
+                    // "type": "reminder",
+                    "type": "reminder",
                     "id": "ketoneDrink",
-                    "content": "Drink one of the little orange bottles of Ketone IQ.",
+                    // "content": "Drink one of the little orange bottles of Ketone IQ.",
+                    "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
                 },
                 {
                     "type": "todo",
