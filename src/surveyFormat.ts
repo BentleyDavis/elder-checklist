@@ -24,19 +24,12 @@ export const surveyFormat: any = {
             "startHour": 5,
             "endHour": 17,
             "elements": [
-                // {
-                //     "type": "heading",
-                //     "level": 1,
-                //     "id": "morning heading",
-                //     "content": "before you go on your walk"
-                // },
                 {
                     "type": "heading",
                     "level": 1,
                     "id": "morning heading",
-                    "content": "Morning Checklist"
+                    "content": "before you go on your walk"
                 },
-
                 // {
                 //     "type": "reminder",
                 //     "id": "meals3",
@@ -93,6 +86,12 @@ export const surveyFormat: any = {
                     "0": "Perfect",
                     "2": "Average",
                     "4": "No Sleep",
+                },
+                {
+                    "type": "heading",
+                    "level": 1,
+                    "id": "morning heading",
+                    "content": "After your walk"
                 },
                 {
                     "type": "reminder",
