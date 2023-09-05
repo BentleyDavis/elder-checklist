@@ -104,18 +104,24 @@ async function getWeather() {
     const originlHourlyData = await response.json();
     const hourlyData: any = [];
 
+    let lastDate = new Date().getDay()
     for (const hourData of originlHourlyData.properties.periods) {
         // const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
 
         const when = new Date(hourData.startTime)
-        if (when.getDay() !== (new Date()).getDay()) break; // Exit when not today
+        const hoursFromNow = (when.getTime() - new Date().getTime()) / (1000 * 60 * 60);
+        console.log(hoursFromNow)
+        if (hoursFromNow > 23) break
+        //if (when.getDay() !== (new Date()).getDay()) break; // Exit when not today
 
         const hour = when.getHours();
         if (hour >= 5 && hour <= (10 + 12)) { //between 5 AM and 10 PM
+            if (lastDate !== when.getDay()) {
+                hourData.startTomorrow = true;
+                lastDate = when.getDay()
+            }
             hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
-
             hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
-
             hourData.feels = celsiusToFarenheight(
                 apparentTemperature(
                     farenheightToCelsius(hourData.temperature),
@@ -215,6 +221,12 @@ export default function Weather({ elementData }: {
                             </thead>
                             <tbody>
                                 {weather.map((h: any) => <React.Fragment key={h.startTime}>
+                                    {h.startTomorrow &&
+                                        <tr >
+                                            <td colSpan={9} style={{ fontWeight: "bold", border: 'none', background: 'white', paddingBottom: 0, paddingTop: ".5em" }}>
+                                                Tomorrow
+                                            </td>
+                                        </tr>}
                                     <tr >
                                         <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.hourText}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
