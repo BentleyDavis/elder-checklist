@@ -1,5 +1,6 @@
 .hourly > table > tbody > tr > td,
-.hourly > table > thead > tr > th {
+.hourly > table > thead > tr > th,
+.hourly > table > tbody > tr > th {
   padding: 0 1em;
   padding-bottom: 0.5em;
   border: 3px solid #eee;
@@ -9,6 +10,18 @@
   font-weight: normal;
   text-align: center;
   padding: 0;
+  background-color: white;
+  top: -1px;
+  z-index: 9999;
+}
+
+.hourly > table > tbody > tr > th {
+  font-weight: normal;
+  text-align: center;
+  padding: 0;
+  background-color: white;
+  top: -1px;
+  z-index: 9999;
 }
 
 .hourly > table {

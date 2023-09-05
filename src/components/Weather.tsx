@@ -5,6 +5,17 @@ import React from 'react';
 
 const defaultShow = (new URLSearchParams(window.location.search)).get("weather") !== null ? true : false;
 
+const weatherHeader = <tr>
+    <th>Hour</th>
+    <th>Actual<br />Temp</th>
+    <th>Feels<br />Like</th>
+    <th colSpan={2}>Wind</th>
+    <th>Humidity</th>
+    <th>Precip</th>
+    <th>Sun</th>
+    <th className='when-wide'>Description</th>
+</tr>
+
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
 })
@@ -208,25 +219,19 @@ export default function Weather({ elementData }: {
                         :
                         <table>
                             <thead>
-                                <tr>
-                                    <th>Hour</th>
-                                    <th>Actual<br />Temp</th>
-                                    <th>Feels<br />Like</th>
-                                    <th colSpan={2}>Wind</th>
-                                    <th>Humidity</th>
-                                    <th>Precip</th>
-                                    <th>Sun</th>
-                                    <th className='when-wide'>Description</th>
-                                </tr>
+                                {weatherHeader}
                             </thead>
                             <tbody>
                                 {weather.map((h: any) => <React.Fragment key={h.startTime}>
-                                    {h.startTomorrow &&
+                                    {h.startTomorrow && <>
                                         <tr >
                                             <td colSpan={9} style={{ fontWeight: "bold", border: 'none', background: 'white', paddingBottom: 0, paddingTop: ".5em" }}>
                                                 Tomorrow
                                             </td>
-                                        </tr>}
+                                        </tr>
+                                        {weatherHeader}
+                                    </>
+                                    }
                                     <tr >
                                         <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.hourText}</td>
                                         <td style={{ textAlign: "right" }}>{h.temperature} °</td>
