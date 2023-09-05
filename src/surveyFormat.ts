@@ -27,7 +27,7 @@ export const surveyFormat: any = {
                 {
                     "type": "heading",
                     "level": 1,
-                    "id": "morning heading",
+                    "id": "walk heading",
                     "content": "before you go on your walk"
                 },
                 // {
@@ -253,7 +253,7 @@ export const surveyFormat: any = {
         {
             "type": "heading",
             "level": 1,
-            "id": "evening",
+            "id": "evening Heading",
             "content": "Evening List: available after 5 PM"
         },
         {
@@ -272,7 +272,7 @@ export const surveyFormat: any = {
         },
         {
             "type": "ShowBetweenHours",
-            "id": "evening",
+            "id": "evening show",
             "startHour": 17,
             "endHour": 24,
             "elements": [
