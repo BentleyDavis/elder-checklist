@@ -58,3 +58,11 @@ h3 {
 html {
   font-size: 20px;
 }
+
+.isAdmin {
+  display: none;
+}
+
+.admin .isAdmin {
+  display: block;
+}

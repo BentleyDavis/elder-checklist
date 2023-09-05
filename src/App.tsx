@@ -12,6 +12,7 @@ import { merge } from 'lodash';
 import { useLoaderData } from "react-router-dom";
 import { getDateId } from './utils/getDateId';
 import './components/tasks.css';
+import { Button } from 'react-bootstrap';
 
 export async function loader({ params }: { params: any }) {
   return params;
@@ -40,6 +41,7 @@ function App() {
   const [authState, setAuthState] = useState<"in" | "unknown">("unknown")
   // const [user, setUser] = useState<User>()
   const [formState, dispatchForm] = useReducer(formStateReducer, undefined)
+  const [isAdmin, setisAdmin] = useState(false)
 
   useEffect(() => { // Log Into Firebase
     firebaseInit()
@@ -144,7 +146,7 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <div className={"container" + (isAdmin ? " admin" : "")}>
       {/* <pre>*{JSON.stringify(checklist, undefined, 2)}*</pre> */}
       {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
 
@@ -153,6 +155,11 @@ function App() {
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
           <br />
           <br />
+          <div className="isAdmin">
+            Test!!!
+          </div>
+          <Button variant='link' style={{ opacity: .1 }}
+            onClick={() => setisAdmin(!isAdmin)}>admin</Button>
         </>
       }
 
