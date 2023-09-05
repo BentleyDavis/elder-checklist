@@ -2,17 +2,22 @@ import { Button } from 'react-bootstrap';
 import './weather.css';
 import { useEffect, useState } from "react";
 import React from 'react';
+import { apparentTempUs } from './apparentTemp';
 
 const defaultShow = (new URLSearchParams(window.location.search)).get("weather") !== null ? true : false;
 
 const weatherHeader = <tr>
     <th>Hour</th>
-    <th>Actual<br />Temp</th>
-    <th>Feels<br />Like</th>
+    <th>
+        Apparent<br />Temp
+        <div className='isAdmin' style={{ fontSize: ".5em", opacity: .75 }}>💧, 💨, ☀️-💨 </div>
+
+    </th>
+    <th>Air<br />Temp</th>
     <th colSpan={2}>Wind</th>
     <th>Humidity</th>
     <th>Precip</th>
-    <th>Sun</th>
+    {/* <th>Sun</th> */}
     <th className='when-wide'>Description</th>
 </tr>
 
@@ -111,73 +116,103 @@ export function calculateSunPct(shortForecast: string, isDaytime: boolean) {
 
 
 async function getWeather() {
-    const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
-    const originlHourlyData = await response.json();
-    const hourlyData: any = [];
 
-    let lastDate = new Date().getDay()
-    for (const hourData of originlHourlyData.properties.periods) {
-        // const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
-
-        const when = new Date(hourData.startTime)
-        const hoursFromNow = (when.getTime() - new Date().getTime()) / (1000 * 60 * 60);
-        console.log(hoursFromNow)
-        if (hoursFromNow > 23) break
-        //if (when.getDay() !== (new Date()).getDay()) break; // Exit when not today
-
-        const hour = when.getHours();
-        if (hour >= 5 && hour <= (10 + 12)) { //between 5 AM and 10 PM
-            if (lastDate !== when.getDay()) {
-                hourData.startTomorrow = true;
-                lastDate = when.getDay()
-            }
-            hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
-            hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
-            hourData.feels = celsiusToFarenheight(
-                apparentTemperature(
-                    farenheightToCelsius(hourData.temperature),
-                    hourData.relativeHumidity.value,
-                    hourData.windMPH / 2.237, // Convert to meters per second
-                    hourData.sunPct
-                )
-            ).toFixed(0);
-
-            hourData.hourText = dateFormatter.format(new Date(hourData.startTime));
-            hourData.emojiForecast = textToEmoji(hourData.shortForecast, hourData.isDaytime)
-            hourlyData.push(hourData)
+    // abadon if this was checked in th previous hour
+    const lastChecked = localStorage.getItem("weatherLastChecked")
+    let originlHourlyData;
+    if (lastChecked) {
+        const lastCheckedDate = new Date(lastChecked)
+        const now = new Date()
+        if (now.getTime() - lastCheckedDate.getTime() < 1000 * 60 * 60) {
+            originlHourlyData = JSON.parse(localStorage.getItem("weather") || "[]")
         }
-
-        //             {
-        //                 "number": 1,
-        //                 "name": "",
-        //                 "startTime": "2023-04-07T12:00:00-05:00",
-        //                 "endTime": "2023-04-07T13:00:00-05:00",
-        //                 "isDaytime": true,
-        //                 "temperature": 57,
-        //                 "temperatureUnit": "F",
-        //                 "temperatureTrend": null,
-        //                 "probabilityOfPrecipitation": {
-        //                     "unitCode": "wmoUnit:percent",
-        //                     "value": 5
-        //                 },
-        //                 "dewpoint": {
-        //                     "unitCode": "wmoUnit:degC",
-        //                     "value": 5
-        //                 },
-        //                 "relativeHumidity": {
-        //                     "unitCode": "wmoUnit:percent",
-        //                     "value": 55
-        //                 },
-        //                 "windSpeed": "10 mph",
-        //                 "windDirection": "NE",
-        //                 "icon": "https://api.weather.gov/icons/land/day/ovc,5?size=small",
-        //                 "shortForecast": "Cloudy",
-        //                 "detailedForecast": ""
-        //             }
-
+    }
+    if (!originlHourlyData) {
+        const response = await fetch("https://api.weather.gov/gridpoints/FWD/86,114/forecast/hourly");
+        if (response.status === 200) {
+            originlHourlyData = await response.json();
+            localStorage.setItem("weatherLastChecked", new Date().toISOString())
+            localStorage.setItem("weather", JSON.stringify(originlHourlyData))
+        }
     }
 
-    return hourlyData
+    if (originlHourlyData) {
+        const hourlyData: any = [];
+
+        let lastDate = new Date().getDay()
+        for (const hourData of originlHourlyData.properties.periods) {
+            // const windMilesPerHour = parseInt(hourData.windSpeed.replaceAll(" mph", ""));
+
+            const when = new Date(hourData.startTime)
+            const hoursFromNow = (when.getTime() - new Date().getTime()) / (1000 * 60 * 60);
+            if (hoursFromNow > 23) break
+
+            const hour = when.getHours();
+            if (hour >= 5 && hour <= (10 + 12)) { //between 5 AM and 10 PM
+                if (lastDate !== when.getDay()) {
+                    hourData.startTomorrow = true;
+                    lastDate = when.getDay()
+                }
+                hourData.windMPH = parseInt(hourData.windSpeed.replaceAll(" mph", ""))
+                hourData.sunPct = calculateSunPct(hourData.shortForecast, hourData.isDaytime)
+                hourData.feels = apparentTempUs(
+                    hourData.temperature,
+                    hourData.relativeHumidity.value,
+                    hourData.windMPH,
+                    hourData.sunPct
+                ).apparentTemp.toFixed(0)
+                hourData.apparentData = apparentTempUs(
+                    hourData.temperature,
+                    hourData.relativeHumidity.value,
+                    hourData.windMPH,
+                    hourData.sunPct
+                )
+                // hourData.feels = celsiusToFarenheight(
+                //     apparentTemperature(
+                //         farenheightToCelsius(hourData.temperature),
+                //         hourData.relativeHumidity.value,
+                //         hourData.windMPH / 2.237, // Convert to meters per second
+                //         hourData.sunPct
+                //     )
+                // ).toFixed(0);
+                hourData.shadeΔ = hourData.feels - hourData.temperature;
+                hourData.hourText = dateFormatter.format(new Date(hourData.startTime));
+                hourData.emojiForecast = textToEmoji(hourData.shortForecast, hourData.isDaytime)
+                hourlyData.push(hourData)
+            }
+
+            //             {
+            //                 "number": 1,
+            //                 "name": "",
+            //                 "startTime": "2023-04-07T12:00:00-05:00",
+            //                 "endTime": "2023-04-07T13:00:00-05:00",
+            //                 "isDaytime": true,
+            //                 "temperature": 57,
+            //                 "temperatureUnit": "F",
+            //                 "temperatureTrend": null,
+            //                 "probabilityOfPrecipitation": {
+            //                     "unitCode": "wmoUnit:percent",
+            //                     "value": 5
+            //                 },
+            //                 "dewpoint": {
+            //                     "unitCode": "wmoUnit:degC",
+            //                     "value": 5
+            //                 },
+            //                 "relativeHumidity": {
+            //                     "unitCode": "wmoUnit:percent",
+            //                     "value": 55
+            //                 },
+            //                 "windSpeed": "10 mph",
+            //                 "windDirection": "NE",
+            //                 "icon": "https://api.weather.gov/icons/land/day/ovc,5?size=small",
+            //                 "shortForecast": "Cloudy",
+            //                 "detailedForecast": ""
+            //             }
+
+        }
+
+        return hourlyData
+    }
 
 }
 
@@ -234,13 +269,24 @@ export default function Weather({ elementData }: {
                                     }
                                     <tr >
                                         <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.hourText}</td>
-                                        <td style={{ textAlign: "right" }}>{h.temperature} °</td>
-                                        <td style={{ textAlign: "right" }}>{h.feels} °</td>
-                                        <td style={{ textAlign: "right", borderRight: "none", paddingRight: ".5em" }} >{h.windMPH}</td>
-                                        <td style={{ borderLeft: "none", paddingLeft: "0" }}>{h.windDirection}</td>
-                                        <td style={{ textAlign: "right" }}>{h.relativeHumidity.value} %</td>
-                                        <td style={{ textAlign: "right" }}>{h.probabilityOfPrecipitation.value} %</td>
-                                        <td>{h.sunPct}</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
+                                            {/* {h.feels} ° */}
+                                            {h.apparentData.apparentTemp.toFixed(0)} °
+                                            {/* <span className='isAdmin'> {(h.shadeΔ >= 0 ? "+" : "") + h.shadeΔ}</span> */}
+                                            <div className='isAdmin' style={{ fontSize: ".5em", opacity: .75 }}> {
+                                                [h.apparentData.humidityAdjustment.toFixed(0),
+                                                h.apparentData.windAdjustment.toFixed(0),
+                                                h.apparentData.radiationAdjustment.toFixed(0),
+                                                h.apparentData.radiationWindAdjustment.toFixed(0)].join(", ")
+                                            }</div>
+
+                                        </td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.temperature}°</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap", borderRight: "none", paddingRight: ".5em" }} >{h.windMPH}</td>
+                                        <td style={{ borderLeft: "none", whiteSpace: "nowrap", paddingLeft: "0" }}>{h.windDirection}</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.relativeHumidity.value} %</td>
+                                        <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>{h.probabilityOfPrecipitation.value} %</td>
+                                        {/* <td>{h.sunPct}</td> */}
                                         <td className='when-wide'>
                                             {h.emojiForecast &&
                                                 <div style={{

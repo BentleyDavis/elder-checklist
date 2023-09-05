@@ -146,7 +146,7 @@ function App() {
   }
 
   return (
-    <div className={"container" + (isAdmin ? " admin" : "")}>
+    <div className={"container" + (isAdmin ? "" : " notAdmin")}>
       {/* <pre>*{JSON.stringify(checklist, undefined, 2)}*</pre> */}
       {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
 
@@ -155,9 +155,6 @@ function App() {
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
           <br />
           <br />
-          <div className="isAdmin">
-            Test!!!
-          </div>
           <Button variant='link' style={{ opacity: .1 }}
             onClick={() => setisAdmin(!isAdmin)}>admin</Button>
         </>

@@ -19,7 +19,7 @@ import Stepper from "./Stepper";
 import ShowByTime from "./ShowByTime";
 import Html from "./Html";
 import WhenIsNow from "./WhenIsNow";
-import Weather from "./Weather";
+import Weather from "./weather/Weather";
 import Calendar from "./Calendar";
 import History from "./History";
 import ShowBetweenHours from "./ShowBetweenHours";
