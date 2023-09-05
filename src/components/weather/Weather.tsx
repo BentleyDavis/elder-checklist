@@ -260,11 +260,12 @@ export default function Weather({ elementData }: {
                                 {weather.map((h: any) => <React.Fragment key={h.startTime}>
                                     {h.startTomorrow && <>
                                         <tr >
-                                            <td colSpan={9} style={{ fontWeight: "bold", border: 'none', background: 'white', paddingBottom: 0, paddingTop: ".5em" }}>
+                                            <td colSpan={8} style={{ fontWeight: "bold", border: 'none', background: 'white', paddingBottom: 0, paddingTop: ".5em" }}>
                                                 Tomorrow
                                             </td>
                                         </tr>
                                         {weatherHeader}
+                                        <tr></tr>
                                     </>
                                     }
                                     <tr >
