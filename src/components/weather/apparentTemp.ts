@@ -25,7 +25,13 @@ export interface ApparentTempUS {
 
 
 
-export function apparentTempSI(temperatureC: celsius, humidity: number, windspeed: metersPerSecond, fractionSun: number, maxNetRadiation: number = maxNetRadiationDefault) {
+export function apparentTempSI(
+    temperatureC: celsius,
+    humidity: number,
+    windspeed: metersPerSecond,
+    fractionSun: number,
+    maxNetRadiation: number = maxNetRadiationDefault
+): ApparentTempSI {
     // https://github.com/oyve/weather-formulas/blob/160cc4a80deeda394ecc0f684c7ecc06b4d5044c/temperature.js#L101
     // https://en.wikipedia.org/wiki/Wind_chill#Australian_apparent_temperature
     const e = (humidity / 100) * 6.015 * Math.exp((17.27 * temperatureC) / (237.7 + temperatureC));
@@ -40,12 +46,12 @@ export function apparentTempSI(temperatureC: celsius, humidity: number, windspee
         + radiationAdjustment
         + radiationWindAdjustment;
 
-    return <ApparentTempSI>{
+    return {
         apparentTempC: roundNumberTo(apparentTempC),
         humidityAdjustment: roundNumberTo(humidityAdjustment),
         windAdjustment: roundNumberTo(windAdjustment),
         radiationAdjustment: roundNumberTo(radiationAdjustment),
-        radiationWindAdjustment: roundNumberTo(radiationWindAdjustment)
+        radiationWindAdjustment: roundNumberTo(radiationWindAdjustment),
     };
 }
 

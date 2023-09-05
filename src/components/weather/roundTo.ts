@@ -40,11 +40,11 @@ export function roundNumberTo<T extends number>(original: T, digits: number = 2)
 // }
 
 
-function isObject(value: number | Object): value is { [id: string]: any } {
-    return typeof value === "object"
-}
+// function isObject(value: number | Object): value is { [id: string]: any } {
+//     return typeof value === "object"
+// }
 
-// typescript isNumber function
-function isNumber(value: number | Object): value is number {
-    return typeof value === "number"
-}
+// // typescript isNumber function
+// function isNumber(value: number | Object): value is number {
+//     return typeof value === "number"
+// }

@@ -337,30 +337,30 @@ export default function Weather({ elementData }: {
 
 
 /**
- * 
+ *
  * @param {number} temperature Temperature in celsius
  * @param {number} humidity Humidity in RH (Relative Humidity)
  * @param {number} windSpeed Windspeed in M/S (meter per second)
  * @param {number} fractionSun Fraction of sun hitting the person. 1 being full sun, 0 being no sun
  * @returns {number} Apparent Temperature in celsius
  */
-function apparentTemperature(temperature: number, humidity: number, windspeed: number, fractionSun: number) {
-    // https://github.com/oyve/weather-formulas/blob/160cc4a80deeda394ecc0f684c7ecc06b4d5044c/temperature.js#L101
-    // https://en.wikipedia.org/wiki/Wind_chill#Australian_apparent_temperature
-    let Ta = temperature;
-    let v = windspeed;
-    let e = (humidity / 100) * 6.015 * Math.exp((17.27 * Ta) / (237.7 + Ta));
-    let q = fractionSun * 1.5; // Net radiation absorbed per unit area of body surface (W/m2) for a person whihc is a fraction of a meter. On a sunny day this is about 1000 W/m2 for a whole meter squared
-    let apparentTemp = Ta + (0.348 * e) - (0.7 * v) + (0.7 * (q / (v + 10))) - 4.25;
-    // let AT = Ta + (0.33 * e) - (0.7 * v) - 4.00; // old formula without solar radiation
-    return apparentTemp;
-}
+// function apparentTemperature(temperature: number, humidity: number, windspeed: number, fractionSun: number) {
+//     // https://github.com/oyve/weather-formulas/blob/160cc4a80deeda394ecc0f684c7ecc06b4d5044c/temperature.js#L101
+//     // https://en.wikipedia.org/wiki/Wind_chill#Australian_apparent_temperature
+//     let Ta = temperature;
+//     let v = windspeed;
+//     let e = (humidity / 100) * 6.015 * Math.exp((17.27 * Ta) / (237.7 + Ta));
+//     let q = fractionSun * 1.5; // Net radiation absorbed per unit area of body surface (W/m2) for a person whihc is a fraction of a meter. On a sunny day this is about 1000 W/m2 for a whole meter squared
+//     let apparentTemp = Ta + (0.348 * e) - (0.7 * v) + (0.7 * (q / (v + 10))) - 4.25;
+//     // let AT = Ta + (0.33 * e) - (0.7 * v) - 4.00; // old formula without solar radiation
+//     return apparentTemp;
+// }
 
-function farenheightToCelsius(farenheight: number) {
-    return (farenheight - 32) * (5 / 9)
-    //return (apparentTemperatureC * (9 / 5)) + 32
-}
+// function farenheightToCelsius(farenheight: number) {
+//     return (farenheight - 32) * (5 / 9)
+//     //return (apparentTemperatureC * (9 / 5)) + 32
+// }
 
-function celsiusToFarenheight(celsius: number) {
-    return (celsius * (9 / 5)) + 32
-}
+// function celsiusToFarenheight(celsius: number) {
+//     return (celsius * (9 / 5)) + 32
+// }
