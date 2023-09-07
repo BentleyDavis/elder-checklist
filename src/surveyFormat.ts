@@ -164,7 +164,7 @@ export const surveyFormat: any = {
                 {
                     "type": "reminder",
                     "id": "eatingTime",
-                    "doneContent": "Eating Tips: Spices, Dressing, Microwave",
+                    "doneContent": "Eating Tips: Spices, Microwave",
                     "content": `<b>Eating Tips</b><br/><br/>
                     <ul>
                     <li>DO NOT ADD SPICES until after you heat you food!</li>
