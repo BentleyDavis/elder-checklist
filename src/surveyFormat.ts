@@ -167,9 +167,11 @@ export const surveyFormat: any = {
                     "doneContent": "Eating Tips: Spices, Microwave",
                     "content": `<b>Eating Tips</b><br/><br/>
                     <ul>
-                    <li>DO NOT ADD SPICES until after you heat you food!</li>
-                    <li> <b>Microwave</b>: for no more than <b>30 secoonds</b> then stir and check if it is hot enough.</li>
-                    <li> <b>Spices</b>: Don't combine the "Zesty" spices and the "Italian" spices. Using them separately will give you more variety.</li>
+                        <li> <b>DO NOT ADD SPICES until after you heat</b> your food!</li>
+                        <li> Microwave for only <b>1</> minute at a time for <b>3 times</b> and stir in-between.</li>
+                        <li> Use only the first spice in the conatiner.</li>
+                        <li> Use the 1/2 teaspoon measure <b>once</b>.</li>
+                        <li> Put the spice in back on the container</li>
                     </ul>
                     `
                 },
