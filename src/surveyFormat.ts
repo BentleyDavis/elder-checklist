@@ -114,11 +114,12 @@ export const surveyFormat: any = {
                     "id": "clothing",
                     "doneContent": "Reminder about Temperature and clothing",
                     "content": `
+                    <b>Clothing Tips</b><br/><br/>
                     <ul>
-                    <li>Always wear a t-shirt</li>
-                    <li>when you get cold when the AC turns on, put on a blouse over your t-shirt</li>
-                    <li>The AC is set as good as it can be but you will get cold and hot throughout the day.</li>
-                    <Li> Do not notify Ben unless it is extreamly hot or cold like the AC is broken.</li>
+                        <li>Always wear a t-shirt</li>
+                        <li>when you get cold when the AC turns on, put on a blouse over your t-shirt</li>
+                        <li>The AC is set as good as it can be but you will get cold and hot throughout the day.</li>
+                        <li> Do not notify Ben unless it is extreamly hot or cold like the AC is broken.</li>
                     </ul>
                     `
                 },
