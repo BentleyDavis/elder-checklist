@@ -266,7 +266,7 @@ export const surveyFormat: any = {
                     "type": "heading",
                     "level": 3,
                     "id": "evening",
-                    "content": "Your evening checklist will appear here after after 5 PM"
+                    "content": "Your evening checklist will appear here after after 5 PM <br><br><br>"
                 },
             ]
         },
