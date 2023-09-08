@@ -211,8 +211,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "exerciseShouldSqueeze",
-                    "content": `Exercise: Shoulder Squeeze`,
-                    "doneContent": "Blood Pressure",
+                    "content": `<b>Upper Back Pain</b>: Your back is hurting because you HAVEN'T been doing these exercises so be sure to do these very day, especially if it hurts. <br>Physical Therapy: Shoulder Squeeze. `,
                     "instructions": `
                         <ol>
                             <li>Bend your elbows and point your fingers upward. Lift your elbows out from your sides until your wrists are at shoulder height.</li>
