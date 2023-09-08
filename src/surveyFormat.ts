@@ -236,11 +236,11 @@ export const surveyFormat: any = {
                         </ul>
                         <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                 },
-                {
-                    "type": "todo",
-                    "id": "floss",
-                    "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "floss",
+                //     "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
+                // },
                 {
                     "type": "Counter2",
                     "title": "Vigorously rub lotion on both pinky scars 4 times a day:",
