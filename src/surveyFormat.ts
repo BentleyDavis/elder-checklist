@@ -221,6 +221,21 @@ export const surveyFormat: any = {
                         <img src="https://drive.google.com/uc?id=1_KbpB4O3WFm0vtsbNI3_usnxncqzwaj7"/>
                         `
                 },
+                {
+                    "type": "todo",
+                    "id": "exerciseWindshieldWipers",
+                    "content": `Physical Therapy: Windshield Wipers. `,
+                    "instructions": `
+                        <ul>
+                            <li>Lay on bed on back</li>
+                            <li>Bend knees</li>
+                            <li>Slowly make a windshield wiper move with your knees each way.</li>
+                            <li>lift hip to go further</li>
+                            <li>Don’t rush and do it slowly</li>
+                        </ul>
+                        <img src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
+                        `
+                },
 
                 {
                     "type": "todo",
