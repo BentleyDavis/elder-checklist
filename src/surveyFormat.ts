@@ -210,16 +210,29 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
-                    "id": "exerciseShouldSqueeze",
-                    "content": `<b>Upper Back Pain</b>: Your back is hurting because you HAVEN'T been doing these exercises so be sure to do these very day, especially if it hurts. <br>Physical Therapy: Shoulder Squeeze. `,
+                    "id": "bloodpressure",
+                    "content": `Take your blood pressure. `,
                     "instructions": `
-                        <ol>
-                            <li>Bend your elbows and point your fingers upward. Lift your elbows out from your sides until your wrists are at shoulder height.</li>
-                            <li>Keeping your fingers pointing up, push your elbows backward to squeeze your shoulder blades together. Hold for <b>10</b> seconds. Slowly return to the starting position.</li>
-                            <li>Repeat <b>3</b> times.Do <b>one</b> set a day.</li>
-                        </ol>
-                        <img src="https://drive.google.com/uc?id=1_KbpB4O3WFm0vtsbNI3_usnxncqzwaj7"/>
-                        `
+                        <ul>
+                            <li> Put on right arm with the button near our elbow</li>
+                            <li> Take 10 deep breaths</li>
+                            <li> Press the button, wait a second, then press it again</li>
+                        </ul>
+                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                },
+                {
+                    "type": "todo",
+                    "id": "exerciseShouldSqueeze",
+                    "content": `Physical Therapy: Shoulder Squeeze. `,
+                    "instructions": `
+                    <ol>
+                        <li>Sit or stand up tall with your arms at your sides.</li>
+                        <li>Keep your shoulders relaxed and down, not shrugged.</li>
+                        <li>Squeeze your shoulder blades together.</li>
+                        <li>Hold for <b>10 seconds,</b> then relax.</li>
+                        <li>Repeat <b>10 times</b>.</li>
+                    </ol>
+                    <img src="https://drive.google.com/uc?id=1qaBlFzCw0gAMqITbPNgcOG_6ZqcAOS2w"/>`
                 },
                 {
                     "type": "todo",
@@ -227,7 +240,7 @@ export const surveyFormat: any = {
                     "content": `Physical Therapy: Windshield Wipers. `,
                     "instructions": `
                         <ul>
-                            <li>Lay on bed on back</li>
+                            <li>Lay on your back</li>
                             <li>Bend knees</li>
                             <li>Slowly make a windshield wiper move with your knees each way.</li>
                             <li>lift hip to go further</li>
@@ -239,17 +252,35 @@ export const surveyFormat: any = {
 
                 {
                     "type": "todo",
-                    "id": "bloodpressure",
-                    "content": `Take your blood pressure. `,
-                    "doneContent": "Blood Pressure",
+                    "id": "exerciseBookStretch",
+                    "content": `Physical Therapy: Book Stretch`,
                     "instructions": `
-                        <br/><br/>
-                        <ul>
-                            <li> Put on right arm with the button near our elbow</li>
-                            <li> Take 10 deep breaths</li>
-                            <li> Press the button, wait a second, then press it again</li>
-                        </ul>
-                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                    <ol>
+                        <li>Lie on your side with your knees bent and your arms extended in front of you, palms together.</li>
+                        <li>Keeping your knees and hips stationary, open your top arm and rotate it all the way to the other side, trying to touch the floor if possible.</li>
+                        <li>Your head and eyes should follow your hand as it moves.</li>
+                        <li>Hold the stretch for a few seconds, then return to the starting position.</li>
+                        <li>Repeat this movement for several repetitions, then switch sides.</li>
+                    </ol>
+                    <img src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
+                    `
+                },
+
+                {
+                    "type": "todo",
+                    "id": "exerciseBridge",
+                    "content": `Physical Therapy: Bridge`,
+                    "instructions": `
+                    <ol>
+                        <li>Lie on your back.</li>
+                        <li>Rest your hands at your sides, bend your knees, and place your feet flat on the bed.</li>
+                        <li>Raise your hips as high as you can confortable.</li>
+                        <li>Hold for 10 seconds.</li>
+                        <li>Lower the hips to return to the starting position.</li>
+                        <li>Repeat <b>10 times</b>.</li>
+                    </ol>
+                    <img src="https://drive.google.com/uc?id=1bjHFpq68FKb5yYMgr5oo9zMuQRuX4w43"/>
+                    `
                 },
                 // {
                 //     "type": "todo",
@@ -594,11 +625,6 @@ export const surveyFormat: any = {
                 //     "id": "walkWater",
                 //     "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
                 // },
-                {
-                    "type": "todo",
-                    "id": "lidocainePatch",
-                    "content": "Put on Lidocaine patch",
-                },
                 {
                     "type": "todo",
                     "id": "startReading",
