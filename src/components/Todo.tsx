@@ -68,7 +68,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
             </div>
 
-            {elementData.instructions && <>
+            {elementData.instructions && ["started", "waiting"].includes(localState.state) && <>
                 <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}></div>
             </>}
 
