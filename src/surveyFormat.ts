@@ -275,7 +275,7 @@ export const surveyFormat: any = {
                         <li>Lie on your back.</li>
                         <li>Rest your hands at your sides, bend your knees, and place your feet flat on the bed.</li>
                         <li>Raise your hips as high as you can confortable.</li>
-                        <li>Hold for 10 seconds.</li>
+                        <li>Hold for <b>10 seconds</b>.</li>
                         <li>Lower the hips to return to the starting position.</li>
                         <li>Repeat <b>10 times</b>.</li>
                     </ol>
