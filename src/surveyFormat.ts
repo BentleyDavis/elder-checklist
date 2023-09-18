@@ -24,12 +24,12 @@ export const surveyFormat: any = {
             "startHour": 5,
             "endHour": 17,
             "elements": [
-                {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "walk heading",
-                    "content": "before you go on your walk"
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 1,
+                //     "id": "walk heading",
+                //     "content": "before you go on your walk"
+                // },
                 // {
                 //     "type": "reminder",
                 //     "id": "meals3",
@@ -87,12 +87,12 @@ export const surveyFormat: any = {
                     "2": "Average",
                     "4": "No Sleep",
                 },
-                {
-                    "type": "heading",
-                    "level": 1,
-                    "id": "morning heading",
-                    "content": "After your walk"
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 1,
+                //     "id": "morning heading",
+                //     "content": "After your walk"
+                // },
                 {
                     "type": "reminder",
                     "id": "happyHome",
@@ -200,8 +200,8 @@ export const surveyFormat: any = {
                     // "type": "reminder",
                     "type": "reminder",
                     "id": "ketoneDrink",
-                    // "content": "Drink one of the little orange bottles of Ketone IQ.",
-                    "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
+                    "content": "Drink one of the little orange bottles of Ketone IQ.",
+                    // "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
                 },
                 {
                     "type": "todo",
@@ -605,21 +605,21 @@ export const surveyFormat: any = {
                     </ul>`,
                     "doneContent": "Started getting ready for bed",
                 },
-                {
-                    "type": "todo",
-                    "id": "waterBottlesEnd",
-                    "content": "Did you drink all 4 water bottles?",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "waterBottlesEnd",
+                //     "content": "Did you drink all 4 water bottles?",
+                // },
                 {
                     "type": "todo",
                     "id": "lidocanePatch",
                     "content": "Put on your lidocane patch",
                 },
-                {
-                    "type": "todo",
-                    "id": "walkClothes",
-                    "content": "Put on the clothes you will walk in for tomorrow.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "walkClothes",
+                //     "content": "Put on the clothes you will walk in for tomorrow.",
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "walkWater",
