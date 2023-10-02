@@ -246,7 +246,7 @@ export const surveyFormat: any = {
                             <li>lift hip to go further</li>
                             <li>Don’t rush and do it slowly</li>
                         </ul>
-                        <img src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
+                        <img class="img-fluid" src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
                         `
                 },
 
@@ -262,7 +262,7 @@ export const surveyFormat: any = {
                         <li>Hold the stretch for a few seconds, then return to the starting position.</li>
                         <li>Repeat this movement for several repetitions, then switch sides.</li>
                     </ol>
-                    <img src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
+                    <img class="img-fluid"  src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
                     `
                 },
 
@@ -279,7 +279,7 @@ export const surveyFormat: any = {
                         <li>Lower the hips to return to the starting position.</li>
                         <li>Repeat <b>10 times</b>.</li>
                     </ol>
-                    <img src="https://drive.google.com/uc?id=1bjHFpq68FKb5yYMgr5oo9zMuQRuX4w43"/>
+                    <img class="img-fluid" src="https://drive.google.com/uc?id=1bjHFpq68FKb5yYMgr5oo9zMuQRuX4w43"/>
                     `
                 },
                 // {
