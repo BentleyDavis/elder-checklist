@@ -50,7 +50,7 @@ export const surveyFormat: any = {
                 {
                     "type": "range",
                     "id": "padFullness",
-                    "title": "How full was your over-night pad when you took it off?",
+                    "title": "How full was your pad when you looked? If it is dry, leave it on to save money?",
                     "length": 5,
                     "0": "dry",
                     "1": "dribble",
@@ -83,9 +83,9 @@ export const surveyFormat: any = {
                     "id": "sleepQuality",
                     "title": "How well did you sleep last night?",
                     "length": 5,
-                    "0": "Perfect",
-                    "2": "Average",
-                    "4": "No Sleep",
+                    "0": "0 - Perfect",
+                    "2": "2 - Average",
+                    "4": "4 - No Sleep",
                 },
                 // {
                 //     "type": "heading",
@@ -116,10 +116,11 @@ export const surveyFormat: any = {
                     "content": `
                     <b>Clothing Tips</b><br/><br/>
                     <ul>
-                        <li>Always wear a t-shirt</li>
-                        <li>when you get cold when the AC turns on, put on a blouse over your t-shirt</li>
                         <li>The AC is set as good as it can be but you will get cold and hot throughout the day.</li>
-                        <li> Do not notify Ben unless it is extreamly hot or cold like the AC is broken.</li>
+                        <li>Always wear a t-shirt</li>
+                        <li>When you get cold put on a blouse over your t-shirt</li>
+                        <li>When you get hot take off your blouse and turn on the fan</li>
+                        <li>Do not notify Ben unless it is extreamly hot or cold like the AC is broken.</li>
                     </ul>
                     `
                 },
@@ -226,7 +227,7 @@ export const surveyFormat: any = {
                     "content": `Physical Therapy: Shoulder Squeeze. `,
                     "instructions": `
                     <ol>
-                        <li>Sit or stand up tall with your arms at your sides.</li>
+                        <li>Stand up tall with your arms at your sides.Hands beside your shoulder</li>
                         <li>Keep your shoulders relaxed and down, not shrugged.</li>
                         <li>Squeeze your shoulder blades together.</li>
                         <li>Hold for <b>10 seconds,</b> then relax.</li>
@@ -245,7 +246,8 @@ export const surveyFormat: any = {
                             <li>Slowly make a windshield wiper move with your knees each way.</li>
                             <li>lift hip to go further</li>
                             <li>Don’t rush and do it slowly</li>
-                        </ul>
+                            <li>Repeat <b>20 times</b>.</li>
+                            </ul>
                         <img class="img-fluid" src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
                         `
                 },
@@ -260,8 +262,8 @@ export const surveyFormat: any = {
                         <li>Keeping your knees and hips stationary, open your top arm and rotate it all the way to the other side, trying to touch the floor if possible.</li>
                         <li>Your head and eyes should follow your hand as it moves.</li>
                         <li>Hold the stretch for a few seconds, then return to the starting position.</li>
-                        <li>Repeat this movement for several repetitions, then switch sides.</li>
-                    </ol>
+                        <li>Repeat <b>10 times</b> on each side.</li>
+                        </ol>
                     <img class="img-fluid"  src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
                     `
                 },
