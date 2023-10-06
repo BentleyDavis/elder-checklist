@@ -206,8 +206,8 @@ export const surveyFormat: any = {
                 },
                 {
                     "type": "todo",
-                    "id": "ProDentim",
-                    "content": "After brushing your teeth chew a ProDentim tablet.",
+                    "id": "brushTeeth",
+                    "content": "Confirm here if you brushed your teets at least once today",
                 },
                 {
                     "type": "todo",
