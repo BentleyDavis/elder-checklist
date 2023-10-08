@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { ActionsUnion, createActions, createStates, StatesUnion, transition, useTransition } from "react-states";
 
 export default function ToDo({ elementData, dataStore, dispatch }: {
@@ -8,6 +8,7 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         data: any;
     }>
 }) {
+
 
     const [localState, localDispatch] = useReducer(reducer, {
         state: dataStore[elementData.id] || 'waiting',
@@ -23,6 +24,17 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
     });
 
     const localActions: { [key: string]: any } = actions(localDispatch);
+
+    const eventState = dataStore[elementData.id] || 'waiting';
+    useEffect(() => {
+        if (eventState !== localState.state) {
+            localActions[eventState]()
+        }
+
+        return () => {
+            // TODO: What here to unsubscribe???
+        }
+    }, [eventState, localActions, localState])
 
     function StateButton({ action, title, btnType = "primary", className }:
         {
@@ -96,6 +108,11 @@ export const actions = createActions({
     markDone: () => ({}),
     skip: () => ({}),
     reset: () => ({}),
+    // add direct actions
+    waiting: () => ({}),
+    done: () => ({}),
+    skipped: () => ({}),
+
 });
 type Action = ActionsUnion<typeof actions>;
 
@@ -104,17 +121,29 @@ const transitions = {
         start: () => states.started(),
         markDone: () => states.done(),
         skip: () => states.skipped(),
+        // add direct actions
+        waiting: () => states.waiting(),
+        done: () => states.done(),
+        skipped: () => states.skipped(),
     },
     started: {
         markDone: () => states.done(),
         skip: () => states.skipped(),
         reset: () => states.waiting(),
+        // add direct actions
+        waiting: () => states.waiting(),
+        done: () => states.done(),
+        skipped: () => states.skipped(),
     },
     done: {
         reset: () => states.waiting(),
+        // add direct actions
+        waiting: () => states.waiting(),
     },
     skipped: {
         reset: () => states.waiting(),
+        // add direct actions
+        waiting: () => states.waiting(),
     }
 }
 

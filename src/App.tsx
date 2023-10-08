@@ -123,8 +123,6 @@ function App() {
         updated: { [action.path]: action.data }
       }
 
-      console.log("cmd", cmd);
-
       // Update Remote State
       updateDoc(dbDocRef, cmd);
 
