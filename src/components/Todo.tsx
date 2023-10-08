@@ -1,4 +1,3 @@
-import { useEffect, useReducer } from "react";
 import { ActionsUnion, createActions, createStates, StatesUnion, transition, useTransition } from "react-states";
 
 export default function ToDo({ elementData, dataStore, dispatch }: {
@@ -10,20 +9,22 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 }) {
 
 
-    const [localState, localDispatch] = useReducer(reducer, {
-        state: dataStore[elementData.id] || 'waiting',
-    });
+    // const [localState, localDispatch] = useReducer(reducer, {
+    //     state: dataStore[elementData.id] || 'waiting',
+    // });
+
+    const localState = { state: dataStore[elementData.id] || 'waiting' }
 
     useTransition(localState, (current, action, prev) => {
-        if (prev) {
-            dispatch({
-                path: elementData.id,
-                data: current.state
-            })
-        }
+        // if (prev) {
+        //     dispatch({
+        //         path: elementData.id,
+        //         data: current.state
+        //     })
+        // }
     });
 
-    const localActions: { [key: string]: any } = actions(localDispatch);
+    const localActions: { [key: string]: any } = actions(() => { });
 
     // useEffect(() => {
     //     const newState = dataStore[elementData.id] || 'waiting';
@@ -48,7 +49,11 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
         if (can(localState, action)) {
             return <button type="button" className={`btn btn-${btnType} mx-1 ${className} `}
                 onClick={() => {
-                    localActions[action]();
+                    console.log(localActions[action]());
+                    // dispatch({
+                    //             path: elementData.id,
+                    //             data: action
+                    //         })
                 }}>{title}</button>
         }
         return null;
@@ -69,12 +74,12 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
                 </div>
                 <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
                 <div dangerouslySetInnerHTML={{
-                    __html: {
+                    __html: ({
                         done: "Done: ",
                         skipped: "Skipped: ",
                         started: "Started: ",
                         waiting: ""
-                    }[localState.state] +
+                    } as { [id: string]: string })[localState.state] +
                         (localState.state === "done" && elementData.doneContent ?
                             elementData.doneContent :
                             elementData.content)
