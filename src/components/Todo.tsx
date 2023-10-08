@@ -25,16 +25,18 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
     const localActions: { [key: string]: any } = actions(localDispatch);
 
-    const eventState = dataStore[elementData.id] || 'waiting';
-    useEffect(() => {
-        if (eventState !== localState.state) {
-            localActions[eventState]()
-        }
+    // useEffect(() => {
+    //     const newState = dataStore[elementData.id] || 'waiting';
+    //     const oldState = localState.state || 'waiting';
+    //     console.log("useEffect", newState, oldState)
+    //     // if (newState !== oldState) {
+    //     //     localActions[newState]()
+    //     // }
 
-        return () => {
-            // TODO: What here to unsubscribe???
-        }
-    }, [eventState, localActions, localState])
+    //     return () => {
+    //         // TODO: What here to unsubscribe???
+    //     }
+    // }, [dataStore, localActions, localState, elementData])
 
     function StateButton({ action, title, btnType = "primary", className }:
         {
