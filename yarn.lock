@@ -8327,11 +8327,6 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react-states@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/react-states/-/react-states-7.2.0.tgz#b27361ea54556177de9c59a0bf5032d610f0515b"
-  integrity sha512-Gkem+dcGW/+7Z54Cxubpsiz2N2bfENJsDCHiU9hVheQITO1t7tm9q0AggJq1aV6Zje9Z9xePL+k49FYDxapMwA==
-
 react-textarea-autosize@^8.4.0:
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-8.4.1.tgz#bcfc5462727014b808b14ee916c01e275e8a8335"
