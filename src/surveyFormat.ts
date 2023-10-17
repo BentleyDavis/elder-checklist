@@ -180,7 +180,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
-                    "content": "Fill the 5 water cups. Be sure to always use the lids.",
+                    "content": "WATER: You keep remembering the wrong thing so follow these instructions exactly. Use the black bottle carrier and carry 5 cups with lids to the bathroom. Fill them ALL and put the lids back on before carrying the back in the black bottle carrier.",
                 },
                 {
                     "type": "todo",
