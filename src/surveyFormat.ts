@@ -291,8 +291,8 @@ export const surveyFormat: any = {
                 // },
                 {
                     "type": "todo",
-                    "title": "use massager all around the base of your pinkies <br> for 30 seconds each",
-                    "id": "hand exercises",
+                    "content": "Pinkies:use massager all around the base of your pinkies <br> for 30 seconds each",
+                    "id": "handExercises",
                 },
             ],
         },
