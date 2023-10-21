@@ -153,8 +153,12 @@ function App() {
           {surveyFormat.elements.map((e: any) => { return Components(e, formState, dispatchForm) })}
           <br />
           <br />
-          <Button variant='link' style={{ opacity: .1 }}
-            onClick={() => setisAdmin(!isAdmin)}>admin</Button>
+          <Button variant='link' style={{ opacity: isAdmin ? 1 : .1 }}
+            onClick={() => {
+              console.log("click");
+
+              setisAdmin(!isAdmin);
+            }}>Admin: {isAdmin ? "on" : "off"}</Button>
         </>
       }
 

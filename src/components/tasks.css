@@ -13,3 +13,10 @@
     opacity: 0.4;
   }
 }
+
+.notAdmin {
+  .task-done,
+  .task-skipped {
+    display: none;
+  }
+}
