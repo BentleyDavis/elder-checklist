@@ -78,37 +78,37 @@ export const surveyFormat: any = {
                     "4": "Dangerously swolen",
                 },
 
-                {
-                    "type": "range",
-                    "id": "sleepQuality",
-                    "title": "How well did you sleep last night?",
-                    "length": 5,
-                    "0": "0 - Perfect",
-                    "2": "2 - Average",
-                    "4": "4 - No Sleep",
-                },
+                // {
+                //     "type": "range",
+                //     "id": "sleepQuality",
+                //     "title": "How well did you sleep last night?",
+                //     "length": 5,
+                //     "0": "0 - Perfect",
+                //     "2": "2 - Average",
+                //     "4": "4 - No Sleep",
+                // },
                 // {
                 //     "type": "heading",
                 //     "level": 1,
                 //     "id": "morning heading",
                 //     "content": "After your walk"
                 // },
-                {
-                    "type": "reminder",
-                    "id": "happyHome",
-                    "doneContent": `
-                    <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>
-                    -- <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">Ben's tasks</a>
-                    -- <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedures (SOPs)</a>
-                    `,
-                    "content": `
-                    <ul>
-                    <li>Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.</li>
-                    <li>You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.</li>
-                    <li>We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.</li>
-                    </ul>
-                    `
-                },
+                // {
+                //     "type": "reminder",
+                //     "id": "happyHome",
+                //     "doneContent": `
+                //     <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>
+                //     -- <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">Ben's tasks</a>
+                //     -- <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedures (SOPs)</a>
+                //     `,
+                //     "content": `
+                //     <ul>
+                //     <li>Review your <a target="_blank" href="https://docs.google.com/document/d/18jUBmUHkGcMsaqP7mDtTXkRPzfTsvelNH0cBs3J1Lb4/edit">Happy Home Guide</a>.</li>
+                //     <li>You can look at the <a target="_blank" href="https://airtable.com/appF0QFBllxKyqbrA/tblz2dYmjvcTY1mKV/viwqV9Dz3NhqUAd00?blocks=hide">tasks Ben is working on for you</a>.</li>
+                //     <li>We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.</li>
+                //     </ul>
+                //     `
+                // },
                 {
                     "type": "reminder",
                     "id": "clothing",
@@ -199,7 +199,7 @@ export const surveyFormat: any = {
                 // },
                 {
                     // "type": "reminder",
-                    "type": "reminder",
+                    "type": "todo",
                     "id": "ketoneDrink",
                     "content": "Drink one of the little orange bottles of Ketone IQ.",
                     // "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
@@ -221,79 +221,79 @@ export const surveyFormat: any = {
                         </ul>
                         <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
                 },
-                {
-                    "type": "todo",
-                    "id": "exerciseShouldSqueeze",
-                    "content": `Physical Therapy: Shoulder Squeeze. `,
-                    "instructions": `
-                    <ol>
-                        <li>Stand up tall with your arms at your sides.Hands beside your shoulder</li>
-                        <li>Keep your shoulders relaxed and down, not shrugged.</li>
-                        <li>Squeeze your shoulder blades together.</li>
-                        <li>Hold for <b>10 seconds,</b> then relax.</li>
-                        <li>Repeat <b>10 times</b>.</li>
-                    </ol>
-                    <img src="https://drive.google.com/uc?id=1qaBlFzCw0gAMqITbPNgcOG_6ZqcAOS2w"/>`
-                },
-                {
-                    "type": "todo",
-                    "id": "exerciseWindshieldWipers",
-                    "content": `Physical Therapy: Windshield Wipers. `,
-                    "instructions": `
-                        <ul>
-                            <li>Lay on your back</li>
-                            <li>Bend knees</li>
-                            <li>Slowly make a windshield wiper move with your knees each way.</li>
-                            <li>lift hip to go further</li>
-                            <li>Don’t rush and do it slowly</li>
-                            <li>Repeat <b>20 times</b>.</li>
-                            </ul>
-                        <img class="img-fluid" src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
-                        `
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "exerciseShouldSqueeze",
+                //     "content": `Physical Therapy: Shoulder Squeeze. `,
+                //     "instructions": `
+                //     <ol>
+                //         <li>Stand up tall with your arms at your sides.Hands beside your shoulder</li>
+                //         <li>Keep your shoulders relaxed and down, not shrugged.</li>
+                //         <li>Squeeze your shoulder blades together.</li>
+                //         <li>Hold for <b>10 seconds,</b> then relax.</li>
+                //         <li>Repeat <b>10 times</b>.</li>
+                //     </ol>
+                //     <img src="https://drive.google.com/uc?id=1qaBlFzCw0gAMqITbPNgcOG_6ZqcAOS2w"/>`
+                // },
+                // {
+                //     "type": "todo",
+                //     "id": "exerciseWindshieldWipers",
+                //     "content": `Physical Therapy: Windshield Wipers. `,
+                //     "instructions": `
+                //         <ul>
+                //             <li>Lay on your back</li>
+                //             <li>Bend knees</li>
+                //             <li>Slowly make a windshield wiper move with your knees each way.</li>
+                //             <li>lift hip to go further</li>
+                //             <li>Don’t rush and do it slowly</li>
+                //             <li>Repeat <b>20 times</b>.</li>
+                //             </ul>
+                //         <img class="img-fluid" src="https://drive.google.com/uc?id=1co8m8Yb4Zc0n0pTItNQPeBeWRx9aBfE9"/>
+                //         `
+                // },
 
-                {
-                    "type": "todo",
-                    "id": "exerciseBookStretch",
-                    "content": `Physical Therapy: Book Stretch`,
-                    "instructions": `
-                    <ol>
-                        <li>Lie on your side with your knees bent and your arms extended in front of you, palms together.</li>
-                        <li>Keeping your knees and hips stationary, open your top arm and rotate it all the way to the other side, trying to touch the floor if possible.</li>
-                        <li>Your head and eyes should follow your hand as it moves.</li>
-                        <li>Hold the stretch for a few seconds, then return to the starting position.</li>
-                        <li>Repeat <b>10 times</b> on each side.</li>
-                        </ol>
-                    <img class="img-fluid"  src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
-                    `
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "exerciseBookStretch",
+                //     "content": `Physical Therapy: Book Stretch`,
+                //     "instructions": `
+                //     <ol>
+                //         <li>Lie on your side with your knees bent and your arms extended in front of you, palms together.</li>
+                //         <li>Keeping your knees and hips stationary, open your top arm and rotate it all the way to the other side, trying to touch the floor if possible.</li>
+                //         <li>Your head and eyes should follow your hand as it moves.</li>
+                //         <li>Hold the stretch for a few seconds, then return to the starting position.</li>
+                //         <li>Repeat <b>10 times</b> on each side.</li>
+                //         </ol>
+                //     <img class="img-fluid"  src="https://drive.google.com/uc?id=1Fxp2oY5oJtw3Tc4rCga5-ONQ7w9XWsVC"/>
+                //     `
+                // },
 
-                {
-                    "type": "todo",
-                    "id": "exerciseBridge",
-                    "content": `Physical Therapy: Bridge`,
-                    "instructions": `
-                    <ol>
-                        <li>Lie on your back.</li>
-                        <li>Rest your hands at your sides, bend your knees, and place your feet flat on the bed.</li>
-                        <li>Raise your hips as high as you can confortable.</li>
-                        <li>Hold for <b>10 seconds</b>.</li>
-                        <li>Lower the hips to return to the starting position.</li>
-                        <li>Repeat <b>10 times</b>.</li>
-                    </ol>
-                    <img class="img-fluid" src="https://drive.google.com/uc?id=1bjHFpq68FKb5yYMgr5oo9zMuQRuX4w43"/>
-                    `
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "exerciseBridge",
+                //     "content": `Physical Therapy: Bridge`,
+                //     "instructions": `
+                //     <ol>
+                //         <li>Lie on your back.</li>
+                //         <li>Rest your hands at your sides, bend your knees, and place your feet flat on the bed.</li>
+                //         <li>Raise your hips as high as you can confortable.</li>
+                //         <li>Hold for <b>10 seconds</b>.</li>
+                //         <li>Lower the hips to return to the starting position.</li>
+                //         <li>Repeat <b>10 times</b>.</li>
+                //     </ol>
+                //     <img class="img-fluid" src="https://drive.google.com/uc?id=1bjHFpq68FKb5yYMgr5oo9zMuQRuX4w43"/>
+                //     `
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "floss",
                 //     "content": "Floss Teeth. Use the colorful sandles towel hanging on the towl rack then hang it back up on the towel rack so it can dry.",
                 // },
-                {
-                    "type": "todo",
-                    "content": "Pinkies:use massager all around the base of your pinkies <br> for 30 seconds each",
-                    "id": "handExercises",
-                },
+                // {
+                //     "type": "todo",
+                //     "content": "Pinkies:use massager all around the base of your pinkies <br> for 30 seconds each",
+                //     "id": "handExercises",
+                // },
             ],
         },
         {
@@ -322,19 +322,19 @@ export const surveyFormat: any = {
             "startHour": 17,
             "endHour": 24,
             "elements": [
-                {
-                    "type": "heading",
-                    "level": 2,
-                    "id": "h1Feel",
-                    "content": "How do you feel today?"
-                },
-                {
-                    "type": "range",
-                    "id": "feelToday",
-                    "0": "Great",
-                    "5": "OK",
-                    "10": "Worst Ever",
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 2,
+                //     "id": "h1Feel",
+                //     "content": "How do you feel today?"
+                // },
+                // {
+                //     "type": "range",
+                //     "id": "feelToday",
+                //     "0": "Great",
+                //     "5": "OK",
+                //     "10": "Worst Ever",
+                // },
                 // {
                 //     "type": "heading",
                 //     "level": 2,
@@ -587,35 +587,35 @@ export const surveyFormat: any = {
                 //         }
                 //     ]
                 // },
-                {
-                    "type": "heading",
-                    "level": 2,
-                    "id": "beforeBed",
-                    "content": "Just Before Going to Bed"
-                },
-                {
-                    "type": "todo",
-                    "id": "bedTime",
-                    "content": `at 7:30 PM an alarm will go off. <br/><br/>
-                    <ul>
-                    <li> If you are watching something on your TV, pause it. You can leave it there until tomorrow.</li>
-                    <li> If you are hungry, eat some crunchies quickly just to get you to sleep.</li>
-                    <li> If you are in the middle of eating. Quickly finish or just stop around then. You don’t have to eat all of a meal.</li>
-                    <li> Text Ben that you are getting ready for bed.</li>
-                    <li> Start getting ready for bed!</li>
-                    </ul>`,
-                    "doneContent": "Started getting ready for bed",
-                },
+                // {
+                //     "type": "heading",
+                //     "level": 2,
+                //     "id": "beforeBed",
+                //     "content": "Just Before Going to Bed"
+                // },
+                // {
+                //     "type": "todo",
+                //     "id": "bedTime",
+                //     "content": `at 7:30 PM an alarm will go off. <br/><br/>
+                //     <ul>
+                //     <li> If you are watching something on your TV, pause it. You can leave it there until tomorrow.</li>
+                //     <li> If you are hungry, eat some crunchies quickly just to get you to sleep.</li>
+                //     <li> If you are in the middle of eating. Quickly finish or just stop around then. You don’t have to eat all of a meal.</li>
+                //     <li> Text Ben that you are getting ready for bed.</li>
+                //     <li> Start getting ready for bed!</li>
+                //     </ul>`,
+                //     "doneContent": "Started getting ready for bed",
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "waterBottlesEnd",
                 //     "content": "Did you drink all 4 water bottles?",
                 // },
-                {
-                    "type": "todo",
-                    "id": "lidocanePatch",
-                    "content": "Put on your lidocane patch",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "lidocanePatch",
+                //     "content": "Put on your lidocane patch",
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "walkClothes",
@@ -626,24 +626,24 @@ export const surveyFormat: any = {
                 //     "id": "walkWater",
                 //     "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
                 // },
-                {
-                    "type": "todo",
-                    "id": "startReading",
-                    "content": `at 8:30 PM Get into bed and start reading<br/><br/>
-                    <ul>
-                        <li> Text Ben that you started reading.</li>
-                    </ul>`,
-                    "doneContent": "Started Reading",
-                },
-                {
-                    "type": "todo",
-                    "id": "lightsOut",
-                    "content": `at 9:30 PM text Ben that you are turining out your lights<br/><br/>
-                    <ul>
-                        <li> Turn off your light.</li>
-                    </ul>`,
-                    "doneContent": "Lights out",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "startReading",
+                //     "content": `at 8:30 PM Get into bed and start reading<br/><br/>
+                //     <ul>
+                //         <li> Text Ben that you started reading.</li>
+                //     </ul>`,
+                //     "doneContent": "Started Reading",
+                // },
+                // {
+                //     "type": "todo",
+                //     "id": "lightsOut",
+                //     "content": `at 9:30 PM text Ben that you are turining out your lights<br/><br/>
+                //     <ul>
+                //         <li> Turn off your light.</li>
+                //     </ul>`,
+                //     "doneContent": "Lights out",
+                // },
             ],
         },
         {
