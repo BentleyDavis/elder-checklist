@@ -4,7 +4,8 @@
 } */
 
 .list-item {
-  padding: 1em 0;
+  padding-top: 1em;
+  padding-bottom: 10em;
   border-bottom: 0.5em solid #555;
   border-top: 0.5em solid #555;
   max-height: 1000px;
