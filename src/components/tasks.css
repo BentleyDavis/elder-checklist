@@ -14,9 +14,7 @@
   }
 }
 
-.notAdmin {
-  .task-done,
-  .task-skipped {
-    display: none;
-  }
+.notAdmin .task-done,
+.notAdmin .task-skipped {
+  display: none;
 }
