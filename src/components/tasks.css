@@ -16,5 +16,10 @@
 
 .notAdmin .task-done,
 .notAdmin .task-skipped {
-  display: none;
+  /* display: none; */
+  overflow: hidden;
+
+  padding: 0px;
+  border-width: 0px;
+  max-height: 0px;
 }

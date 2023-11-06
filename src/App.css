@@ -1,11 +1,14 @@
-.list-item:nth-of-type(odd) {
+/* .list-item:nth-of-type(odd) {
   background: rgba(0, 0, 0, 0.1);
-}
+  max-height: 1500px;
+} */
 
 .list-item {
   padding: 1em 0;
   border-bottom: 0.5em solid #555;
   border-top: 0.5em solid #555;
+  max-height: 1000px;
+  transition: 3s;
 }
 
 .card {
