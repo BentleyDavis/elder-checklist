@@ -59,9 +59,19 @@ export default function WhenIsNow({ elementData }: {
         alignItems: 'center'
     } : {}}>
         <div className={elementData.level && `h${elementData.level}`}>
-            {dayFormatter.format(now)}<br></br>
-            {dateFormatter.format(now)}<br></br>
-            {timeFormatter.format(now)}
+
+            <span style={{ whiteSpace: "nowrap" }}>
+                {dayFormatter.format(now)} &emsp;
+            </span>&emsp;
+
+            <span style={{ whiteSpace: "nowrap" }}>
+                {dateFormatter.format(now)}
+            </span>&emsp;
+
+            <span style={{ whiteSpace: "nowrap" }}>
+                {timeFormatter.format(now)} &emsp;
+            </span>
+
         </div>
         <div>{errorMessage}</div>
     </div>

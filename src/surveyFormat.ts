@@ -291,12 +291,12 @@ export const surveyFormat: any = {
                 // },
             ],
         },
-        {
-            "type": "heading",
-            "level": 1,
-            "id": "evening Heading",
-            "content": "Evening List: available after 5 PM"
-        },
+        // {
+        //     "type": "heading",
+        //     "level": 1,
+        //     "id": "evening Heading",
+        //     "content": "Evening List: available after 5 PM"
+        // },
         {
             "type": "ShowBetweenHours",
             "id": "evening",
@@ -307,7 +307,7 @@ export const surveyFormat: any = {
                     "type": "heading",
                     "level": 3,
                     "id": "evening",
-                    "content": "Your evening checklist will appear here after after 5 PM <br><br><br>"
+                    "content": "<br/>Your evening checklist will appear here after after 5 PM <br><br><br>"
                 },
             ]
         },
@@ -641,25 +641,21 @@ export const surveyFormat: any = {
                 // },
             ],
         },
-        {
-            "type": "heading",
-            "level": 1,
-            "id": "h1General",
-            "content": "General"
-        },
-        {
-            "type": "heading",
-            "level": 2,
-            "id": "h1Notes",
-            "content": "Notes"
-        },
-
-
         // {
-        //     "type": "comment",
-        //     "id": "notes",
-        //     "title": ""
+        //     "type": "heading",
+        //     "level": 1,
+        //     "id": "h1General",
+        //     "content": "General"
         // },
+        // {
+        //     "type": "heading",
+        //     "level": 2,
+        //     "id": "h1Notes",
+        //     "content": "Notes"
+        // },
+
+
+
 
 
         // {
@@ -1085,5 +1081,10 @@ export const surveyFormat: any = {
             "type": "History",
             "id": "history",
         },
+        // {
+        //     "type": "comment",
+        //     "id": "notes",
+        //     "title": "Notes:"
+        // },
     ]
 }
