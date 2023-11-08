@@ -37,11 +37,11 @@ export default function Events({ elementData, dataStore, dispatch, path = "", bt
         </button>
 
         {Object.values(data).reverse().map((event: any) =>
-            <span  >
+            <span key={event.id} >
 
 
 
-                <button key={event.id} className="btn btn-secondary m-1 " type="button"
+                <button className="btn btn-secondary m-1 " type="button"
                     // data-bs-toggle="collapse"
                     // data-bs-target={`#c-${event.id}`}
                     // aria-expanded="true"
