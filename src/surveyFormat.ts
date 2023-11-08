@@ -10,434 +10,9 @@ export const surveyFormat: any = {
         //     "type": "text",
         //     "prefix": "If this app is not working. Put finger on the screen here and pull down about half the screen. That will refresh the app. ",
         // },
-        {
-            "type": "Weather",
-            "id": "weather",
-        },
-        {
-            "type": "Calendar",
-            "id": "calendar",
-        },
-        // {
-        //     "type": "heading",
-        //     "level": 2,
-        //     "id": "BmsHeading",
-        //     "content": "BMs"
-        // },
-        { // Add BM
-            "type": "events",
-            "id": "bMs",
-            "addButtonTitle": "Add a BM",
-            "summary": [
-                {
-                    "id": "when.display",
-                    "type": "text",
-                    "prefix": "BM: ",
-                }
-            ],
-            "elements": [
-                {
-                    "type": "time",
-                    "id": "when",
-                    "default": "now",
-                    "recent": true,
-                    "title": "When did this happen?"
-                },
-                {
-                    "type": "singleSelect",
-                    "id": "thickness",
-                    "title": "Thickness",
-                    "options": [
-                        {
-                            "text": "Diarrhea",
-                            "value": "-2"
-                        },
-                        {
-                            "text": "loose",
-                            "value": "-1"
-                        },
-                        {
-                            "text": "Just Right; toothpaste",
-                            "value": "0"
-                        },
-                        {
-                            "text": "Too hard",
-                            "value": "1"
-                        },
-                        {
-                            "text": "Painful",
-                            "value": "2"
-                        },
-                    ],
-                },
-                {
-                    "id": "size",
-                    "type": "singleSelect",
-                    "title": "Size",
-                    "options": [
-                        {
-                            "text": "Tablespoon",
-                            "value": "-2"
-                        },
-                        {
-                            "text": "1 Cup",
-                            "value": "-1"
-                        },
-                        {
-                            "text": "2 Cups - Just right",
-                            "value": "0"
-                        },
-                        {
-                            "text": "3 Cups",
-                            "value": "1"
-                        },
-                        {
-                            "text": "Massive",
-                            "value": "2"
-                        },
-                    ],
-                },
-                {
-                    "type": "comment",
-                    "id": "bmNotes",
-                    "width": "full",
-                    "title": "BM Notes",
-                    "minRows": 1,
-                }
-            ]
-        },
-        // {
-        //     "type": "heading",
-        //     "level": 2,
-        //     "id": "painEventHeading",
-        //     "content": "Report a special pain event"
-        // },
-        { // Add pain
-            "type": "events",
-            "id": "painEvents",
-            "addButtonTitle": "Report a Pain",
-            "summary": [
-                {
-                    "type": "text",
-                    "id": "sensation",
-                },
-                {
-                    "type": "text",
-                    "prefix": " ",
-                    "id": "side",
-                },
-                {
-                    "type": "text",
-                    "prefix": " ",
-                    "id": "location",
-                },
 
-                {
-                    "type": "counter",
-                    "title": " | times:",
-                    "id": "times",
-                },
-            ],
-            "elements": [
-                {
-                    "type": "time",
-                    "id": "when",
-                    "default": "now",
-                    "revent": true,
-                    "title": "When did this first happen?"
-                },
-                {
-                    "type": "singleSelect",
-                    "id": "location",
-                    "title": "Pain Location",
-                    "options": [
-                        {
-                            "text": "head",
-                            "value": "head"
-                        },
-                        {
-                            "text": "neck",
-                            "value": "neck"
-                        },
-                        {
-                            "text": "shoulder",
-                            "value": "shoulder"
-                        },
-                        {
-                            "text": "chest",
-                            "value": "chest"
-                        },
-                        {
-                            "text": "upper back",
-                            "value": "upperBack"
-                        },
-                        {
-                            "text": "middle back",
-                            "value": "middleBack"
-                        },
-                        {
-                            "text": "lower back",
-                            "value": "lowerBack",
-                        },
-                        {
-                            "text": "upper arm",
-                            "value": "upper arm"
-                        },
-                        {
-                            "text": "elbow",
-                            "value": "elbow"
-                        },
-                        {
-                            "text": "wrist",
-                            "value": "wrist"
-                        },
-                        {
-                            "text": "hand",
-                            "value": "hand"
-                        },
-                        {
-                            "text": "finger",
-                            "value": "finger"
-                        },
-                        {
-                            "text": "gut",
-                            "value": "gut"
-                        },
-                        {
-                            "text": "hip joint",
-                            "value": "hip joint"
-                        },
-                        {
-                            "text": "thigh",
-                            "value": "thigh"
-                        },
-                        {
-                            "text": "knee",
-                            "value": "knee"
-                        },
-                        {
-                            "text": "ankle",
-                            "value": "ankle"
-                        },
-                        {
-                            "text": "ball of foot",
-                            "value": "ball of foot"
-                        },
-                        {
-                            "text": "toe",
-                            "value": "toe"
-                        },
-                    ],
-                },
-                {
-                    "type": "singleSelect",
-                    "id": "side",
-                    "title": "Pain side",
-                    "options": [
-                        {
-                            "text": "left",
-                            "value": "left"
-                        },
-                        {
-                            "text": "right",
-                            "value": "right"
-                        },
-                        {
-                            "text": "both",
-                            "value": "both"
-                        },
-                    ],
-                },
-                {
-                    "type": "singleSelect",
-                    "id": "severity",
-                    "title": "Severity",
-                    "options": [
-                        {
-                            "text": "0",
-                            "value": "0"
-                        },
-                        {
-                            "text": "1",
-                            "value": "1"
-                        },
-                        {
-                            "text": "2",
-                            "value": "2"
-                        },
-                        {
-                            "text": "3",
-                            "value": "3"
-                        },
-                        {
-                            "text": "4",
-                            "value": "4"
-                        },
-                        {
-                            "text": "5",
-                            "value": "5"
-                        },
-                        {
-                            "text": "6",
-                            "value": "6"
-                        },
-                        {
-                            "text": "7",
-                            "value": "7"
-                        },
-                        {
-                            "text": "8",
-                            "value": "8"
-                        },
-                        {
-                            "text": "9",
-                            "value": "9"
-                        },
-                        {
-                            "text": "10",
-                            "value": "10"
-                        },
-                    ],
-                },
-                {
-                    "type": "counter",
-                    "title": "How many times today?",
-                    "id": "times",
-                },
-                {
-                    "type": "multiSelect",
-                    "id": "sensation",
-                    "title": "Sensations (Choose many):",
-                    "width": "full",
-                    "options": [
-                        {
-                            "text": "spasm",
-                            "value": "spasm"
-                        },
-                        {
-                            "text": "shooting",
-                            "value": "shooting"
-                        },
-                        {
-                            "text": "sharp",
-                            "value": "sharp"
-                        },
-                        {
-                            "text": "dull",
-                            "value": "dull"
-                        },
-                        {
-                            "text": "tingling",
-                            "value": "tingling"
-                        },
-                        {
-                            "text": "aching",
-                            "value": "aching"
-                        },
-                        {
-                            "text": "joint",
-                            "value": "joint"
-                        },
-                        {
-                            "text": "muscle",
-                            "value": "muscle"
-                        },
-                        {
-                            "text": "skin",
-                            "value": "skin"
-                        },
-                        {
-                            "text": "itchy",
-                            "value": "itchy"
-                        },
-                        {
-                            "text": "stings",
-                            "value": "stings"
-                        },
-                        {
-                            "text": "bleeding",
-                            "value": "bleeding"
-                        },
-                        {
-                            "text": "burning",
-                            "value": "burning"
-                        },
-                        {
-                            "text": "throbbing",
-                            "value": "throbbing"
-                        },
-                    ],
-                },
-                {
-                    "type": "multiSelect",
-                    "id": "triggers",
-                    "width": "full",
-                    "title": "Triggers:",
-                    "options": [
-                        {
-                            "text": "morning",
-                            "value": "morning"
-                        },
-                        {
-                            "text": "evening",
-                            "value": "evening"
-                        },
-                        {
-                            "text": "eating",
-                            "value": "eating"
-                        },
-                        {
-                            "text": "walking",
-                            "value": "walking"
-                        },
-                        {
-                            "text": "chores",
-                            "value": "chores"
-                        },
-                        {
-                            "text": "bending over",
-                            "value": "bending over"
-                        },
-                        {
-                            "text": "lying down",
-                            "value": "lying down"
-                        },
-                        {
-                            "text": "standing",
-                            "value": "standing"
-                        },
-                        {
-                            "text": "sitting",
-                            "value": "sitting"
-                        },
-                        {
-                            "text": "gripping",
-                            "value": "gripping"
-                        },
-                    ],
-                },
-                {
-                    "type": "comment",
-                    "id": "cause",
-                    "width": "full",
-                    "title": "Did an event cause this pain? like a fall, accident. Please describe or put \"unknown\"",
-                    "minRows": 1,
-                },
-                {
-                    "type": "comment",
-                    "id": "notes",
-                    "width": "full",
-                    "title": "Pain Notes",
-                    "minRows": 1,
-                },
-            ]
-        },
-        {
-            "type": "heading",
-            "level": 3,
-            "id": "spacer",
-            "content": "<br>"
-        },
+
+
         {
             "type": "ShowBetweenHours",
             "id": "morning",
@@ -1078,11 +653,15 @@ export const surveyFormat: any = {
             "id": "h1Notes",
             "content": "Notes"
         },
-        {
-            "type": "comment",
-            "id": "notes",
-            "title": ""
-        },
+
+
+        // {
+        //     "type": "comment",
+        //     "id": "notes",
+        //     "title": ""
+        // },
+
+
         // {
         //     "type": "ShowBetweenHours",
         //     "id": "testBetweenHours",
@@ -1090,6 +669,418 @@ export const surveyFormat: any = {
         //     "endHour": 15,
         //     "elements": []
         // },
+        {
+            "type": "Weather",
+            "id": "weather",
+        },
+        {
+            "type": "Calendar",
+            "id": "calendar",
+        },
+
+        { // Add BM
+            "type": "events",
+            "id": "bMs",
+            "addButtonTitle": "Add a BM",
+            "summary": [
+                {
+                    "id": "when.display",
+                    "type": "text",
+                    "prefix": "BM: ",
+                }
+            ],
+            "elements": [
+                {
+                    "type": "time",
+                    "id": "when",
+                    "default": "now",
+                    "recent": true,
+                    "title": "When did this happen?"
+                },
+                {
+                    "type": "singleSelect",
+                    "id": "thickness",
+                    "title": "Thickness",
+                    "options": [
+                        {
+                            "text": "Diarrhea",
+                            "value": "-2"
+                        },
+                        {
+                            "text": "loose",
+                            "value": "-1"
+                        },
+                        {
+                            "text": "Just Right; toothpaste",
+                            "value": "0"
+                        },
+                        {
+                            "text": "Too hard",
+                            "value": "1"
+                        },
+                        {
+                            "text": "Painful",
+                            "value": "2"
+                        },
+                    ],
+                },
+                {
+                    "id": "size",
+                    "type": "singleSelect",
+                    "title": "Size",
+                    "options": [
+                        {
+                            "text": "Tablespoon",
+                            "value": "-2"
+                        },
+                        {
+                            "text": "1 Cup",
+                            "value": "-1"
+                        },
+                        {
+                            "text": "2 Cups - Just right",
+                            "value": "0"
+                        },
+                        {
+                            "text": "3 Cups",
+                            "value": "1"
+                        },
+                        {
+                            "text": "Massive",
+                            "value": "2"
+                        },
+                    ],
+                },
+                {
+                    "type": "comment",
+                    "id": "bmNotes",
+                    "width": "full",
+                    "title": "BM Notes",
+                    "minRows": 1,
+                }
+            ]
+        },
+
+        { // Add pain
+            "type": "events",
+            "id": "painEvents",
+            "addButtonTitle": "Report a Pain",
+            "summary": [
+                {
+                    "type": "text",
+                    "id": "sensation",
+                },
+                {
+                    "type": "text",
+                    "prefix": " ",
+                    "id": "side",
+                },
+                {
+                    "type": "text",
+                    "prefix": " ",
+                    "id": "location",
+                },
+
+                {
+                    "type": "counter",
+                    "title": " | times:",
+                    "id": "times",
+                },
+            ],
+            "elements": [
+                {
+                    "type": "time",
+                    "id": "when",
+                    "default": "now",
+                    "revent": true,
+                    "title": "When did this first happen?"
+                },
+                {
+                    "type": "singleSelect",
+                    "id": "location",
+                    "title": "Pain Location",
+                    "options": [
+                        {
+                            "text": "head",
+                            "value": "head"
+                        },
+                        {
+                            "text": "neck",
+                            "value": "neck"
+                        },
+                        {
+                            "text": "shoulder",
+                            "value": "shoulder"
+                        },
+                        {
+                            "text": "chest",
+                            "value": "chest"
+                        },
+                        {
+                            "text": "upper back",
+                            "value": "upperBack"
+                        },
+                        {
+                            "text": "middle back",
+                            "value": "middleBack"
+                        },
+                        {
+                            "text": "lower back",
+                            "value": "lowerBack",
+                        },
+                        {
+                            "text": "upper arm",
+                            "value": "upper arm"
+                        },
+                        {
+                            "text": "elbow",
+                            "value": "elbow"
+                        },
+                        {
+                            "text": "wrist",
+                            "value": "wrist"
+                        },
+                        {
+                            "text": "hand",
+                            "value": "hand"
+                        },
+                        {
+                            "text": "finger",
+                            "value": "finger"
+                        },
+                        {
+                            "text": "gut",
+                            "value": "gut"
+                        },
+                        {
+                            "text": "hip joint",
+                            "value": "hip joint"
+                        },
+                        {
+                            "text": "thigh",
+                            "value": "thigh"
+                        },
+                        {
+                            "text": "knee",
+                            "value": "knee"
+                        },
+                        {
+                            "text": "ankle",
+                            "value": "ankle"
+                        },
+                        {
+                            "text": "ball of foot",
+                            "value": "ball of foot"
+                        },
+                        {
+                            "text": "toe",
+                            "value": "toe"
+                        },
+                    ],
+                },
+                {
+                    "type": "singleSelect",
+                    "id": "side",
+                    "title": "Pain side",
+                    "options": [
+                        {
+                            "text": "left",
+                            "value": "left"
+                        },
+                        {
+                            "text": "right",
+                            "value": "right"
+                        },
+                        {
+                            "text": "both",
+                            "value": "both"
+                        },
+                    ],
+                },
+                {
+                    "type": "singleSelect",
+                    "id": "severity",
+                    "title": "Severity",
+                    "options": [
+                        {
+                            "text": "0",
+                            "value": "0"
+                        },
+                        {
+                            "text": "1",
+                            "value": "1"
+                        },
+                        {
+                            "text": "2",
+                            "value": "2"
+                        },
+                        {
+                            "text": "3",
+                            "value": "3"
+                        },
+                        {
+                            "text": "4",
+                            "value": "4"
+                        },
+                        {
+                            "text": "5",
+                            "value": "5"
+                        },
+                        {
+                            "text": "6",
+                            "value": "6"
+                        },
+                        {
+                            "text": "7",
+                            "value": "7"
+                        },
+                        {
+                            "text": "8",
+                            "value": "8"
+                        },
+                        {
+                            "text": "9",
+                            "value": "9"
+                        },
+                        {
+                            "text": "10",
+                            "value": "10"
+                        },
+                    ],
+                },
+                {
+                    "type": "counter",
+                    "title": "How many times today?",
+                    "id": "times",
+                },
+                {
+                    "type": "multiSelect",
+                    "id": "sensation",
+                    "title": "Sensations (Choose many):",
+                    "width": "full",
+                    "options": [
+                        {
+                            "text": "spasm",
+                            "value": "spasm"
+                        },
+                        {
+                            "text": "shooting",
+                            "value": "shooting"
+                        },
+                        {
+                            "text": "sharp",
+                            "value": "sharp"
+                        },
+                        {
+                            "text": "dull",
+                            "value": "dull"
+                        },
+                        {
+                            "text": "tingling",
+                            "value": "tingling"
+                        },
+                        {
+                            "text": "aching",
+                            "value": "aching"
+                        },
+                        {
+                            "text": "joint",
+                            "value": "joint"
+                        },
+                        {
+                            "text": "muscle",
+                            "value": "muscle"
+                        },
+                        {
+                            "text": "skin",
+                            "value": "skin"
+                        },
+                        {
+                            "text": "itchy",
+                            "value": "itchy"
+                        },
+                        {
+                            "text": "stings",
+                            "value": "stings"
+                        },
+                        {
+                            "text": "bleeding",
+                            "value": "bleeding"
+                        },
+                        {
+                            "text": "burning",
+                            "value": "burning"
+                        },
+                        {
+                            "text": "throbbing",
+                            "value": "throbbing"
+                        },
+                    ],
+                },
+                {
+                    "type": "multiSelect",
+                    "id": "triggers",
+                    "width": "full",
+                    "title": "Triggers:",
+                    "options": [
+                        {
+                            "text": "morning",
+                            "value": "morning"
+                        },
+                        {
+                            "text": "evening",
+                            "value": "evening"
+                        },
+                        {
+                            "text": "eating",
+                            "value": "eating"
+                        },
+                        {
+                            "text": "walking",
+                            "value": "walking"
+                        },
+                        {
+                            "text": "chores",
+                            "value": "chores"
+                        },
+                        {
+                            "text": "bending over",
+                            "value": "bending over"
+                        },
+                        {
+                            "text": "lying down",
+                            "value": "lying down"
+                        },
+                        {
+                            "text": "standing",
+                            "value": "standing"
+                        },
+                        {
+                            "text": "sitting",
+                            "value": "sitting"
+                        },
+                        {
+                            "text": "gripping",
+                            "value": "gripping"
+                        },
+                    ],
+                },
+                {
+                    "type": "comment",
+                    "id": "cause",
+                    "width": "full",
+                    "title": "Did an event cause this pain? like a fall, accident. Please describe or put \"unknown\"",
+                    "minRows": 1,
+                },
+                {
+                    "type": "comment",
+                    "id": "notes",
+                    "width": "full",
+                    "title": "Pain Notes",
+                    "minRows": 1,
+                },
+            ]
+        },
         {
             "type": "History",
             "id": "history",
