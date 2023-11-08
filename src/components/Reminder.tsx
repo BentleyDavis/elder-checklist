@@ -42,13 +42,9 @@ export default function Reminder({ elementData, dataStore, dispatch }: {
 
     return <div className={"row list-item task-" + machineState}>
         <div className="col">
-            <div className="clearfix">
-                <div className="float-start">
-                    <StateButton action={"complete"} title={"click to confirm you read this"} btnType="primary" className="me-4"></StateButton>
-                </div>
-                <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
-                <div dangerouslySetInnerHTML={{ __html: machineState === "done" && elementData.doneContent ? elementData.doneContent : elementData.content }}></div>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: machineState === "done" && elementData.doneContent ? elementData.doneContent : elementData.content }}></div>
+            <StateButton action={"complete"} title={"click to confirm you read this"} btnType="primary" className="me-4"></StateButton>
+            <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
         </div>
 
     </div>

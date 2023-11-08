@@ -48,31 +48,30 @@ export default function ToDo({ elementData, dataStore, dispatch }: {
 
     return <div className={"row list-item task-" + machineState}>
         <div className="col">
-            <div className="clearfix">
-                <div className="float-start">
-                    <StateButton action={"markDone"} title={"Mark Done"} btnType="primary"></StateButton>
-                    <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
-                    {elementData.instructions && ["started", "waiting"].includes(machineState) && <>
-                        <button type="button" className="btn btn-secondary mx-1 "
-                            data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
-                            Instructions
-                        </button>
-                    </>}
-                </div>
-                <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm float-end"></StateButton>
-                <div dangerouslySetInnerHTML={{
-                    __html: ({
-                        done: "Done: ",
-                        skipped: "Skipped: ",
-                        started: "Started: ",
-                        waiting: ""
-                    } as { [id: string]: string })[machineState] +
-                        (machineState === "done" && elementData.doneContent ?
-                            elementData.doneContent :
-                            elementData.content)
-                }}></div>
+            <div dangerouslySetInnerHTML={{
+                __html: ({
+                    done: "Done: ",
+                    skipped: "Skipped: ",
+                    started: "Started: ",
+                    waiting: ""
+                } as { [id: string]: string })[machineState] +
+                    (machineState === "done" && elementData.doneContent ?
+                        elementData.doneContent :
+                        elementData.content)
+            }}></div>
 
-            </div>
+
+            <StateButton action={"markDone"} title={"Mark Done"} btnType="primary"></StateButton>
+            <StateButton action={"skip"} title={"Skip"} btnType="warning"></StateButton>
+            {elementData.instructions && ["started", "waiting"].includes(machineState) && <>
+                <button type="button" className="btn btn-secondary mx-1 "
+                    data-bs-toggle="collapse" data-bs-target={`#c-${elementData.id}`} aria-expanded="true">
+                    Instructions
+                </button>
+            </>}
+            <StateButton action={"reset"} title={"Reset"} btnType="light" className="btn-sm "></StateButton>
+
+
 
             {elementData.instructions && ["started", "waiting"].includes(machineState) && <>
                 <div className="collapse" id={`c-${elementData.id}`} dangerouslySetInnerHTML={{ __html: elementData.instructions }}></div>

@@ -436,7 +436,7 @@ export const surveyFormat: any = {
             "type": "heading",
             "level": 3,
             "id": "spacer",
-            "content": "_<br>_"
+            "content": "<br>"
         },
         {
             "type": "ShowBetweenHours",
@@ -534,7 +534,7 @@ export const surveyFormat: any = {
                     "id": "clothing",
                     "doneContent": "Reminder about Temperature and clothing",
                     "content": `
-                    <b>Clothing Tips</b><br/><br/>
+                    <b>Reminder: Clothing Tips</b>
                     <ul>
                         <li>The AC is set as good as it can be but you will get cold and hot throughout the day.</li>
                         <li>Always wear a t-shirt</li>
@@ -587,7 +587,7 @@ export const surveyFormat: any = {
                     "type": "reminder",
                     "id": "eatingTime",
                     "doneContent": "Eating Tips: Spices, Microwave",
-                    "content": `<b>Eating Tips</b><br/><br/>
+                    "content": `<b>Reminder: Eating Tips</b>
                     <ul>
                         <li> <b>DO NOT ADD SPICES until after you heat</b> your food!</li>
                         <li> Microwave for only <b>1</> minute at a time for <b>3 times</b> and stir in-between.</li>

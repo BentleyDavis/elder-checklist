@@ -31,8 +31,8 @@ export default function Range({ elementData, dataStore, dispatch, path }: {
 
     return <div className={"row list-item " + (!(value === undefined || value === "") && "task-done") || ""}>
         <div className="col">
+            <label className="form-label mt-1 mb-0">{elementData.title}</label>
             <div className="clearfix">
-                <label className="form-label mt-1 mb-0">{elementData.title}</label>
 
                 {options.map((c: any) => {
                     return (c.value === value || !value) &&
