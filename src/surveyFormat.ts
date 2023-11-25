@@ -202,7 +202,7 @@ export const surveyFormat: any = {
                 {
                     "type": "todo",
                     "id": "brushTeeth",
-                    "content": "Confirm here if you brushed your teeth at least once today",
+                    "content": "AFTER YOU HAVE EATEN: Did you brush your teeth",
                 },
                 {
                     "type": "todo",
@@ -666,12 +666,13 @@ export const surveyFormat: any = {
         //     "elements": []
         // },
         {
-            "type": "Weather",
-            "id": "weather",
-        },
-        {
             "type": "Calendar",
             "id": "calendar",
+        },
+
+        {
+            "type": "Weather",
+            "id": "weather",
         },
 
         { // Add BM
