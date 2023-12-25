@@ -8,7 +8,7 @@ import { EventApi } from '@fullcalendar/core';
 import React from 'react';
 
 const defaultShow = (new URLSearchParams(window.location.search)).get("cal") !== null ? true : false;
-
+const SoonIsHours = 8
 
 const FullCalendarMemo = React.memo((props: any) => {
     // Your FullCalendar configuration here
@@ -36,7 +36,7 @@ export default function Weather({ elementData }: {
         console.log(_events)
     }
 
-    const DisplayUntilWhen = new Date(now.getTime() + 6 * 60 * 60 * 1000); // 6 hours in milliseconds
+    const DisplayUntilWhen = new Date(now.getTime() + SoonIsHours * 60 * 60 * 1000); // 6 hours in milliseconds
 
     const soon = events?.filter((event: EventApi) => {
         return event.start && event.start >= now && event.start <= DisplayUntilWhen
@@ -59,16 +59,16 @@ export default function Weather({ elementData }: {
     return <div className="row mt-2 mb-2">
         <div className="col">
 
-            <table>
+            <table className='soon'>
                 <tbody>
 
                     {
                         hapeningNow?.map((event: EventApi) =>
                             <tr key={event.id}>
-                                <td style={{ padding: "5px", border: "1px solid lightgrey" }}>
+                                <td>
                                     Hapening NOW!
                                 </td>
-                                <td style={{ padding: "5px", border: "1px solid lightgrey" }}>
+                                <td >
                                     {event.title}
                                 </td>
                             </tr>
@@ -78,16 +78,16 @@ export default function Weather({ elementData }: {
                     {
                         soon?.map((event: EventApi) =>
                             <tr key={event.id}>
-                                <td style={{ padding: "5px", border: "1px solid grey" }}>
+                                <td >
                                     {
                                         event.start
                                             ? `${Math.floor((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60 / 60)} : 
                                         ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60) % 60)} : 
-                                        ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000) % 60)} until : `
+                                        ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000) % 60)} until`
                                             : ''
                                     }
                                 </td>
-                                <td style={{ padding: "5px", border: "1px solid grey" }}>
+                                <td >
                                     {event.title}
                                 </td>
                             </tr>

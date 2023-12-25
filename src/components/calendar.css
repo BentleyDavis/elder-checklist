@@ -6,3 +6,8 @@
 .fc-list-event-graphic {
   display: none;
 }
+
+.soon td {
+  border: 1px solid lightgrey;
+  padding: 10px;
+}
