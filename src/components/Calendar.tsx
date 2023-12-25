@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import iCalendarPlugin from '@fullcalendar/icalendar'
 import listPlugin from '@fullcalendar/list';
