@@ -55,6 +55,18 @@ export default function Weather({ elementData }: {
             ;
     }, []);
 
+    function calcDescriptionOfTimeUntil(when: Date | undefined | null, now: Date = new Date()) {
+        if (!when) return ('')
+        const dif = when.getTime() - now.getTime()
+        let result = 'in '
+        if (dif > (1000 * 60 * 60)) result += `${Math.floor(dif / 1000 / 60 / 60)} hours `
+        if (dif < (1000 * 60 * 60 * 2)) {
+            result += ` ${Math.floor(((dif) / 1000 / 60) % 60)} minutes `;
+            result += ` ${Math.floor(((dif) / 1000) % 60)} seconds `
+        }
+        return result;
+    }
+
 
     return <div className="row mt-2 mb-2">
         <div className="col">
@@ -79,13 +91,7 @@ export default function Weather({ elementData }: {
                         soon?.map((event: EventApi) =>
                             <tr key={event.id}>
                                 <td >
-                                    {
-                                        event.start
-                                            ? `${Math.floor((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60 / 60)} : 
-                                        ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60) % 60)} : 
-                                        ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000) % 60)} until`
-                                            : ''
-                                    }
+                                    {calcDescriptionOfTimeUntil(event?.start, now)}
                                 </td>
                                 <td >
                                     {event.title}
