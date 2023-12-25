@@ -37,8 +37,13 @@ export default function Weather({ elementData }: {
     }
 
     const DisplayUntilWhen = new Date(now.getTime() + 6 * 60 * 60 * 1000); // 6 hours in milliseconds
+
     const soon = events?.filter((event: EventApi) => {
         return event.start && event.start >= now && event.start <= DisplayUntilWhen
+    })
+
+    const hapeningNow = events?.filter((event: EventApi) => {
+        return event.start && event.end && event.start <= now && event.end >= now
     })
 
     useEffect(() => {
@@ -56,18 +61,35 @@ export default function Weather({ elementData }: {
 
             <table>
                 <tbody>
+
+                    {
+                        hapeningNow?.map((event: EventApi) =>
+                            <tr key={event.id}>
+                                <td style={{ padding: "5px", border: "1px solid lightgrey" }}>
+                                    Hapening NOW!
+                                </td>
+                                <td style={{ padding: "5px", border: "1px solid lightgrey" }}>
+                                    {event.title}
+                                </td>
+                            </tr>
+                        )
+                    }
+
                     {
                         soon?.map((event: EventApi) =>
                             <tr key={event.id}>
-                                <td>{
-                                    event.start
-                                        ? `${Math.floor((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60 / 60)} : 
+                                <td style={{ padding: "5px", border: "1px solid grey" }}>
+                                    {
+                                        event.start
+                                            ? `${Math.floor((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60 / 60)} : 
                                         ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000 / 60) % 60)} : 
                                         ${Math.floor(((new Date(event.start).getTime() - new Date().getTime()) / 1000) % 60)} until : `
-                                        : ''
-                                }
+                                            : ''
+                                    }
                                 </td>
-                                <td> {event.title} </td>
+                                <td style={{ padding: "5px", border: "1px solid grey" }}>
+                                    {event.title}
+                                </td>
                             </tr>
                         )
                     }
