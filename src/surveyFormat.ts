@@ -11,7 +11,10 @@ export const surveyFormat: any = {
         //     "prefix": "If this app is not working. Put finger on the screen here and pull down about half the screen. That will refresh the app. ",
         // },
 
-
+        {
+            "type": "Calendar",
+            "id": "calendar",
+        },
 
         {
             "type": "ShowBetweenHours",
@@ -665,10 +668,7 @@ export const surveyFormat: any = {
         //     "endHour": 15,
         //     "elements": []
         // },
-        {
-            "type": "Calendar",
-            "id": "calendar",
-        },
+
 
         {
             "type": "Weather",
