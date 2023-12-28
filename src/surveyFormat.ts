@@ -195,13 +195,13 @@ export const surveyFormat: any = {
                 //     "id": "vitamins",
                 //     "content": "Have you taken your vitamins from the manual pill box.",
                 // },
-                {
-                    // "type": "reminder",
-                    "type": "todo",
-                    "id": "ketoneDrink",
-                    "content": "Drink one of the little orange bottles of Ketone IQ.",
-                    // "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
-                },
+                // {
+                //     // "type": "reminder",
+                //     "type": "todo",
+                //     "id": "ketoneDrink",
+                //     "content": "Drink one of the little orange bottles of Ketone IQ.",
+                //     // "content": "We are SKIPPING the little orange bottles of Ketone IQ this week",
+                // },
                 {
                     "type": "todo",
                     "id": "brushTeeth",
