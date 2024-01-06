@@ -162,41 +162,42 @@ function App() {
               setisAdmin(!isAdmin);
             }}>Admin: {isAdmin ? "on" : "off"}</Button>
 
-          <button
-            onClick={() => {
-              // @ts-ignore
-              window.chrome.webview.postMessage("window:minimize")
-            }}
-          >
-            min
-          </button>
+          {isAdmin && <>
+            <button
+              onClick={() => {
+                // @ts-ignore
+                window.chrome.webview.postMessage("window:minimize")
+              }}
+            >
+              min
+            </button>
 
-          <button
-            onClick={() => {
-              // @ts-ignore
-              window.chrome.webview.postMessage("window:normal")
-            }}
-          >
-            normal
-          </button>
-          <button
-            onClick={() => {
-              // @ts-ignore
-              window.chrome.webview.postMessage("window:maximize")
-            }}
-          >
-            maximize
-          </button>
+            <button
+              onClick={() => {
+                // @ts-ignore
+                window.chrome.webview.postMessage("window:normal")
+              }}
+            >
+              normal
+            </button>
+            <button
+              onClick={() => {
+                // @ts-ignore
+                window.chrome.webview.postMessage("window:maximize")
+              }}
+            >
+              maximize
+            </button>
 
-          <button
-            onMouseDown={() => {
-              // @ts-ignore
-              window.chrome.webview.postMessage("window:drag")
-            }}
-          >
-            drag
-          </button>
-
+            <button
+              onMouseDown={() => {
+                // @ts-ignore
+                window.chrome.webview.postMessage("window:drag")
+              }}
+            >
+              drag
+            </button>
+          </>}
         </>
       }
 

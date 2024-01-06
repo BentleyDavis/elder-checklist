@@ -21,7 +21,7 @@ const FullCalendarMemo = React.memo((props: any) => {
 });
 
 
-export default function Weather({ elementData }: {
+export default function Calendar({ elementData }: {
     elementData: any
 }) {
     const [show, setShow] = useState(defaultShow)
@@ -33,7 +33,6 @@ export default function Weather({ elementData }: {
         setEvents(
             _events
         )
-        console.log(_events)
     }
 
     const DisplayUntilWhen = new Date(now.getTime() + SoonIsHours * 60 * 60 * 1000); // 6 hours in milliseconds
@@ -71,12 +70,19 @@ export default function Weather({ elementData }: {
     return <div className="row mt-2 mb-2">
         <div className="col">
 
+            {events?.length === 0 &&
+                <div className="">Getting Calendar Data...
+                    <div className="spinner-border" role="status">
+                        <span></span>
+                    </div>
+                </div>
+            }
             <table className='soon'>
                 <tbody>
 
                     {
                         hapeningNow?.map((event: EventApi) =>
-                            <tr key={event.id}>
+                            <tr key={event.title}>
                                 <td>
                                     Hapening NOW!
                                 </td>
@@ -89,7 +95,7 @@ export default function Weather({ elementData }: {
 
                     {
                         soon?.map((event: EventApi) =>
-                            <tr key={event.id}>
+                            <tr key={event.title}>
                                 <td >
                                     {calcDescriptionOfTimeUntil(event?.start, now)}
                                 </td>
