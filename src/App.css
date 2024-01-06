@@ -3,6 +3,10 @@
   max-height: 1500px;
 } */
 
+body {
+  background-color: transparent;
+}
+
 .list-item {
   padding-top: 1em;
   padding-bottom: 5em;

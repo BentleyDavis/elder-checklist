@@ -13,6 +13,7 @@ import { useLoaderData } from "react-router-dom";
 import { getDateId } from './utils/getDateId';
 import './components/tasks.css';
 import { Button } from 'react-bootstrap';
+import DesktopInteraction from './components/DesktopInteraction';
 
 export async function loader({ params }: { params: any }) {
   return params;
@@ -145,6 +146,7 @@ function App() {
 
   return (
     <div className={"container" + (isAdmin ? "" : " notAdmin")}>
+      <DesktopInteraction />
       {/* <pre>*{JSON.stringify(checklist, undefined, 2)}*</pre> */}
       {/* <pre>{JSON.stringify(formState, undefined, 2)}</pre> */}
 
@@ -159,6 +161,42 @@ function App() {
 
               setisAdmin(!isAdmin);
             }}>Admin: {isAdmin ? "on" : "off"}</Button>
+
+          <button
+            onClick={() => {
+              // @ts-ignore
+              window.chrome.webview.postMessage("window:minimize")
+            }}
+          >
+            min
+          </button>
+
+          <button
+            onClick={() => {
+              // @ts-ignore
+              window.chrome.webview.postMessage("window:normal")
+            }}
+          >
+            normal
+          </button>
+          <button
+            onClick={() => {
+              // @ts-ignore
+              window.chrome.webview.postMessage("window:maximize")
+            }}
+          >
+            maximize
+          </button>
+
+          <button
+            onMouseDown={() => {
+              // @ts-ignore
+              window.chrome.webview.postMessage("window:drag")
+            }}
+          >
+            drag
+          </button>
+
         </>
       }
 
