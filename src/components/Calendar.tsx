@@ -108,9 +108,10 @@ export default function Calendar({ elementData }: {
                 </tbody>
 
             </table>
-            <Button variant="primary" onClick={() => { setShow(!show) }} >
+            {/* <Button variant="primary" onClick={() => { setShow(!show) }} >
                 {show ? "Hide" : "Show more"} calendar items
-            </Button>            {/* <pre>*
+            </Button> */}
+            {/* <pre>*
                 {JSON.stringify(events, null, 2)}
                 *</pre> */}
             <div style={show ? {} : { display: "none" }}>

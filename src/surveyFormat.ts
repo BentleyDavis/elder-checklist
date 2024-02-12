@@ -161,24 +161,29 @@ export const surveyFormat: any = {
                 //     "id": "sop",
                 //     "content": `We have documented a lot of things you want to remember how to do in this <a href="https://docs.google.com/document/d/e/2PACX-1vQW7bUZNzJxoJlTagqDHHl6pmQWAXEzYNKlZru1pT-Wek6uWdNgxoEBJ18nfMGuxWqSFpUZhtPg9j8P/pub">Standard Operation Procedure (SOP) document</a>.`
                 // },
-                {
-                    "type": "reminder",
-                    "id": "eatingTime",
-                    "doneContent": "Eating Tips: Spices, Microwave",
-                    "content": `<b>Reminder: Eating Tips</b>
-                    <ul>
-                        <li> <b>DO NOT ADD SPICES until after you heat</b> your food!</li>
-                        <li> Microwave for only <b>1</> minute at a time for <b>3 times</b> and stir in-between.</li>
-                        <li> Use only the first spice in the conatiner.</li>
-                        <li> Use the 1/2 teaspoon measure <b>once</b>.</li>
-                        <li> Put the spice in back on the container</li>
-                    </ul>
-                    `
-                },
+                // {
+                //     "type": "reminder",
+                //     "id": "eatingTime",
+                //     "doneContent": "Eating Tips: Spices, Microwave",
+                //     "content": `<b>Reminder: Eating Tips</b>
+                //     <ul>
+                //         <li> <b>DO NOT ADD SPICES until after you heat</b> your food!</li>
+                //         <li> Microwave for only <b>1</> minute at a time for <b>3 times</b> and stir in-between.</li>
+                //         <li> Use only the first spice in the conatiner.</li>
+                //         <li> Use the 1/2 teaspoon measure <b>once</b>.</li>
+                //         <li> Put the spice in back on the container</li>
+                //     </ul>
+                //     `
+                // },
                 {
                     "type": "todo",
                     "id": "waterBottlesStart",
-                    "content": "WATER: You keep remembering the wrong thing so follow these instructions exactly. Use the black bottle carrier and carry 5 cups with lids to the bathroom. Fill them ALL and put the lids back on before carrying the back in the black bottle carrier.",
+                    "content": `
+                    WATER:
+                    <ul>
+                    <li>You keep remembering the wrong thing so follow these instructions <b>EXACTLY<b>.</li>
+                    <li>Use the <B>BLACK BOTTLE CARRIER</b> and carry 5 cups with lids to the bathroom.</li>
+                    <li>Fill them ALL and put the lids back on before carrying the back in the <b>black bottle carrier<b>.</li>`,
                 },
                 {
                     "type": "todo",
