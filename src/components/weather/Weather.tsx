@@ -1,4 +1,4 @@
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import './weather.css';
 import { useEffect, useState } from "react";
 import React from 'react';
@@ -220,7 +220,7 @@ export default function Weather({ elementData }: {
     elementData: any
 }) {
     const [weather, setWeather] = useState([])
-    const [show, setShow] = useState(defaultShow)
+    const [show /*, setShow*/] = useState(defaultShow)
 
 
     useEffect(() => {
