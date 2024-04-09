@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import { apparentTempUs } from './apparentTemp';
 
-const defaultShow = (new URLSearchParams(window.location.search)).get("weather") !== null ? true : false;
+const defaultShow = true//(new URLSearchParams(window.location.search)).get("weather") !== null ? true : false;
 
 const weatherHeader = <tr>
     <th>Hour</th>
@@ -243,9 +243,9 @@ export default function Weather({ elementData }: {
 
     return <div className="row mt-2">
         <div className="col">
-            <Button variant="primary" onClick={() => { setShow(!show) }} >
+            {/* <Button variant="primary" onClick={() => { setShow(!show) }} >
                 {show ? "Hide" : "Show"} Weather
-            </Button>
+            </Button> */}
             {show &&
                 <div className={`hourly ` + (elementData.level && `h${elementData.level}`)}>
 
@@ -327,9 +327,9 @@ export default function Weather({ elementData }: {
                             </tbody>
                         </table>
                     }
-                    <Button variant="primary" onClick={() => { setShow(!show) }} >
+                    {/* <Button variant="primary" onClick={() => { setShow(!show) }} >
                         {show ? "Hide" : "Show"} Weather
-                    </Button>
+                    </Button> */}
                 </div>
             }
         </div>

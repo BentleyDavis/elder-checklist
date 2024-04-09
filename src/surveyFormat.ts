@@ -185,11 +185,11 @@ export const surveyFormat: any = {
                     <li>Use the <B>BLACK BOTTLE CARRIER</b> and carry 5 cups with lids to the bathroom.</li>
                     <li>Fill them ALL and put the lids back on before carrying the back in the <b>black bottle carrier<b>.</li>`,
                 },
-                {
-                    "type": "todo",
-                    "id": "weight",
-                    "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "weight",
+                //     "content": "Weigh Yourself. It will save your readings to the computer so you don't need to write them down.",
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "ThighMassage",
@@ -212,18 +212,18 @@ export const surveyFormat: any = {
                     "id": "brushTeeth",
                     "content": "AFTER YOU HAVE EATEN: Did you brush your teeth",
                 },
-                {
-                    "type": "todo",
-                    "id": "bloodpressure",
-                    "content": `Take your blood pressure. `,
-                    "instructions": `
-                        <ul>
-                            <li> Put on right arm with the button near our elbow</li>
-                            <li> Take 10 deep breaths</li>
-                            <li> Press the button, wait a second, then press it again</li>
-                        </ul>
-                        <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-                },
+                // {
+                //     "type": "todo",
+                //     "id": "bloodpressure",
+                //     "content": `Take your blood pressure. `,
+                //     "instructions": `
+                //         <ul>
+                //             <li> Put on right arm with the button near our elbow</li>
+                //             <li> Take 10 deep breaths</li>
+                //             <li> Press the button, wait a second, then press it again</li>
+                //         </ul>
+                //         <iframe style="width:100%;aspect-ratio: 16 / 9; max-height:90vh; max-width:90vw" src="https://www.youtube.com/embed/e5Cem5oahho?start=53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                // },
                 // {
                 //     "type": "todo",
                 //     "id": "exerciseShouldSqueeze",
@@ -305,350 +305,350 @@ export const surveyFormat: any = {
         //     "id": "evening Heading",
         //     "content": "Evening List: available after 5 PM"
         // },
-        {
-            "type": "ShowBetweenHours",
-            "id": "evening",
-            "startHour": 5,
-            "endHour": 16,
-            "elements": [
-                {
-                    "type": "heading",
-                    "level": 3,
-                    "id": "evening",
-                    "content": "<br/>Your evening checklist will appear here after after 5 PM <br><br><br>"
-                },
-            ]
-        },
-        {
-            "type": "ShowBetweenHours",
-            "id": "evening show",
-            "startHour": 17,
-            "endHour": 24,
-            "elements": [
-                // {
-                //     "type": "heading",
-                //     "level": 2,
-                //     "id": "h1Feel",
-                //     "content": "How do you feel today?"
-                // },
-                // {
-                //     "type": "range",
-                //     "id": "feelToday",
-                //     "0": "Great",
-                //     "5": "OK",
-                //     "10": "Worst Ever",
-                // },
-                // {
-                //     "type": "heading",
-                //     "level": 2,
-                //     "id": "h1Pain",
-                //     "content": "Pain"
-                // },
-                // {
-                //     "type": "matrix",
-                //     "id": "pain",
-                //     "title": "",
-                //     "verticalAlign": "top",
-                //     "alternateRows": true,
-                //     "columns": [
-                //         {
-                //             "value": "0",
-                //             "text": "none"
-                //         },
-                //         {
-                //             "value": "1",
-                //             "text": "slight"
-                //         },
-                //         {
-                //             "value": "2",
-                //             "text": "some"
-                //         },
-                //         {
-                //             "value": "3",
-                //             "text": "painful"
-                //         },
-                //         {
-                //             "value": "4",
-                //             "text": "very"
-                //         }
-                //     ],
-                //     "rows": [
-                //         {
-                //             "value": "chest",
-                //             "text": "chest"
-                //         },
-                //         {
-                //             "value": "upperBack",
-                //             "text": "upper back"
-                //         },
-                //         {
-                //             "value": "lowerBack",
-                //             "text": "lower back"
-                //         },
-                //         "shoulders",
-                //         "arms",
-                //         "wrists",
-                //         "hands",
-                //         "thighs",
-                //         "hip joints",
-                //         "calves",
-                //         "feet",
-                //     ]
-                // },
-                // {
-                //     "type": "heading",
-                //     "level": 2,
-                //     "id": "h1Other",
-                //     "content": "Other"
-                // },
+        // {
+        //     "type": "ShowBetweenHours",
+        //     "id": "evening",
+        //     "startHour": 5,
+        //     "endHour": 16,
+        //     "elements": [
+        //         {
+        //             "type": "heading",
+        //             "level": 3,
+        //             "id": "evening",
+        //             "content": "<br/>Your evening checklist will appear here after after 5 PM <br><br><br>"
+        //         },
+        //     ]
+        // },
+        // {
+        //     "type": "ShowBetweenHours",
+        //     "id": "evening show",
+        //     "startHour": 17,
+        //     "endHour": 24,
+        //     "elements": [
+        //         // {
+        //         //     "type": "heading",
+        //         //     "level": 2,
+        //         //     "id": "h1Feel",
+        //         //     "content": "How do you feel today?"
+        //         // },
+        //         // {
+        //         //     "type": "range",
+        //         //     "id": "feelToday",
+        //         //     "0": "Great",
+        //         //     "5": "OK",
+        //         //     "10": "Worst Ever",
+        //         // },
+        //         // {
+        //         //     "type": "heading",
+        //         //     "level": 2,
+        //         //     "id": "h1Pain",
+        //         //     "content": "Pain"
+        //         // },
+        //         // {
+        //         //     "type": "matrix",
+        //         //     "id": "pain",
+        //         //     "title": "",
+        //         //     "verticalAlign": "top",
+        //         //     "alternateRows": true,
+        //         //     "columns": [
+        //         //         {
+        //         //             "value": "0",
+        //         //             "text": "none"
+        //         //         },
+        //         //         {
+        //         //             "value": "1",
+        //         //             "text": "slight"
+        //         //         },
+        //         //         {
+        //         //             "value": "2",
+        //         //             "text": "some"
+        //         //         },
+        //         //         {
+        //         //             "value": "3",
+        //         //             "text": "painful"
+        //         //         },
+        //         //         {
+        //         //             "value": "4",
+        //         //             "text": "very"
+        //         //         }
+        //         //     ],
+        //         //     "rows": [
+        //         //         {
+        //         //             "value": "chest",
+        //         //             "text": "chest"
+        //         //         },
+        //         //         {
+        //         //             "value": "upperBack",
+        //         //             "text": "upper back"
+        //         //         },
+        //         //         {
+        //         //             "value": "lowerBack",
+        //         //             "text": "lower back"
+        //         //         },
+        //         //         "shoulders",
+        //         //         "arms",
+        //         //         "wrists",
+        //         //         "hands",
+        //         //         "thighs",
+        //         //         "hip joints",
+        //         //         "calves",
+        //         //         "feet",
+        //         //     ]
+        //         // },
+        //         // {
+        //         //     "type": "heading",
+        //         //     "level": 2,
+        //         //     "id": "h1Other",
+        //         //     "content": "Other"
+        //         // },
 
-                // {
-                //     "length": 5,
-                //     "0": "none",
-                //     "4": "Dangerously swolen",
-                //     "type": "singleSelect",
-                //     "id": "temperature",
-                //     "title": "How was you home temperature today?",
-                //     "options": [
-                //         {
-                //             "text": "mostly OK",
-                //             "value": "ok"
-                //         },
-                //         {
-                //             "text": "Mostly too cold",
-                //             "value": "cold"
-                //         },
-                //         {
-                //             "text": "Mostly too hot",
-                //             "value": "hot"
-                //         },
-                //         {
-                //             "text": "Fluctuates uncomfortably",
-                //             "value": "fluctuates"
-                //         },
-                //     ],
+        //         // {
+        //         //     "length": 5,
+        //         //     "0": "none",
+        //         //     "4": "Dangerously swolen",
+        //         //     "type": "singleSelect",
+        //         //     "id": "temperature",
+        //         //     "title": "How was you home temperature today?",
+        //         //     "options": [
+        //         //         {
+        //         //             "text": "mostly OK",
+        //         //             "value": "ok"
+        //         //         },
+        //         //         {
+        //         //             "text": "Mostly too cold",
+        //         //             "value": "cold"
+        //         //         },
+        //         //         {
+        //         //             "text": "Mostly too hot",
+        //         //             "value": "hot"
+        //         //         },
+        //         //         {
+        //         //             "text": "Fluctuates uncomfortably",
+        //         //             "value": "fluctuates"
+        //         //         },
+        //         //     ],
 
-                // },
+        //         // },
 
-                // {
-                //     "type": "range",
-                //     "id": "eveningAnkles",
-                //     "title": "How swolen are your ankles after 5 PM?",
-                //     "length": 5,
-                //     "0": "none",
-                //     "4": "Dangerously swolen",
-                // },
+        //         // {
+        //         //     "type": "range",
+        //         //     "id": "eveningAnkles",
+        //         //     "title": "How swolen are your ankles after 5 PM?",
+        //         //     "length": 5,
+        //         //     "0": "none",
+        //         //     "4": "Dangerously swolen",
+        //         // },
 
 
-                // {
-                //     "type": "range",
-                //     "id": "fingerTingles",
-                //     "title": "Finger tip pain or tingling?",
-                //     "length": 5,
-                //     "0": "none",
-                //     "1": "tingling several times today",
-                //     "2": "Tingling Most of the day",
-                //     "3": "Painful several times today",
-                //     "4": "Painful Most of the day",
-                // },
-                {
-                    "type": "singleSelect",
-                    "id": "bmToday",
-                    "title": "Did you have a BM today?",
-                    "options": [
-                        {
-                            "text": "yes",
-                            "value": true
-                        },
-                        {
-                            "text": "no",
-                            "value": false
-                        },
-                    ],
-                },
-                // {
+        //         // {
+        //         //     "type": "range",
+        //         //     "id": "fingerTingles",
+        //         //     "title": "Finger tip pain or tingling?",
+        //         //     "length": 5,
+        //         //     "0": "none",
+        //         //     "1": "tingling several times today",
+        //         //     "2": "Tingling Most of the day",
+        //         //     "3": "Painful several times today",
+        //         //     "4": "Painful Most of the day",
+        //         // },
+        //         {
+        //             "type": "singleSelect",
+        //             "id": "bmToday",
+        //             "title": "Did you have a BM today?",
+        //             "options": [
+        //                 {
+        //                     "text": "yes",
+        //                     "value": true
+        //                 },
+        //                 {
+        //                     "text": "no",
+        //                     "value": false
+        //                 },
+        //             ],
+        //         },
+        //         // {
 
-                //     "type": "range",
-                //     "id": "noisyNeighbor",
-                //     "title": "How noisy were your neighbors today?",
-                //     "0": "silent",
-                //     "10": "worst",
-                // },
-                // {
+        //         //     "type": "range",
+        //         //     "id": "noisyNeighbor",
+        //         //     "title": "How noisy were your neighbors today?",
+        //         //     "0": "silent",
+        //         //     "10": "worst",
+        //         // },
+        //         // {
 
-                //     "type": "range",
-                //     "id": "runnyNose",
-                //     "title": "How runny was your nose today?",
-                //     "0": "none",
-                //     "10": "heavy dripping",
-                // },
-                // {
+        //         //     "type": "range",
+        //         //     "id": "runnyNose",
+        //         //     "title": "How runny was your nose today?",
+        //         //     "0": "none",
+        //         //     "10": "heavy dripping",
+        //         // },
+        //         // {
 
-                //     "type": "range",
-                //     "id": "teethPain",
-                //     "title": "How painful were your teeth today?",
-                //     "0": "none",
-                //     "10": "constant strong pain",
-                // },
-                // {
+        //         //     "type": "range",
+        //         //     "id": "teethPain",
+        //         //     "title": "How painful were your teeth today?",
+        //         //     "0": "none",
+        //         //     "10": "constant strong pain",
+        //         // },
+        //         // {
 
-                //     "type": "singleSelect",
-                //     "id": "cramps",
-                //     "title": "Did you have cramps or spasams anywhere in your body today?",
-                //     "options": [
-                //         {
-                //             "text": "yes",
-                //             "value": true
-                //         },
-                //         {
-                //             "text": "no",
-                //             "value": false
-                //         },
-                //     ]
-                // },
-                // {
-                //     "type": "comment",
-                //     "hide": "data.cramps!==true",
-                //     "id": "crampLocations",
-                //     "width": "full",
-                //     "title": "Describe the cramps and their location",
-                //     "minRows": 1,
-                // },
-                // {
+        //         //     "type": "singleSelect",
+        //         //     "id": "cramps",
+        //         //     "title": "Did you have cramps or spasams anywhere in your body today?",
+        //         //     "options": [
+        //         //         {
+        //         //             "text": "yes",
+        //         //             "value": true
+        //         //         },
+        //         //         {
+        //         //             "text": "no",
+        //         //             "value": false
+        //         //         },
+        //         //     ]
+        //         // },
+        //         // {
+        //         //     "type": "comment",
+        //         //     "hide": "data.cramps!==true",
+        //         //     "id": "crampLocations",
+        //         //     "width": "full",
+        //         //     "title": "Describe the cramps and their location",
+        //         //     "minRows": 1,
+        //         // },
+        //         // {
 
-                //     "type": "range",
-                //     "id": "confusion",
-                //     "title": "How confused did you feel today?",
-                //     "0": "none",
-                //     "5": "some",
-                //     "10": "worst",
-                // },
-                // {
+        //         //     "type": "range",
+        //         //     "id": "confusion",
+        //         //     "title": "How confused did you feel today?",
+        //         //     "0": "none",
+        //         //     "5": "some",
+        //         //     "10": "worst",
+        //         // },
+        //         // {
 
-                //     "type": "range",
-                //     "id": "dizzy",
-                //     "title": "How dizzy did you feel today?",
-                //     "0": "none",
-                //     "5": "some",
-                //     "10": "worst",
-                // },
-                // {
-                //     "type": "matrix",
-                //     "id": "other",
-                //     "title": "",
-                //     "alternateRows": true,
-                //     "columns": [
-                //         {
-                //             "value": "0",
-                //             "text": "none"
-                //         },
-                //         {
-                //             "value": "1",
-                //             "text": "little"
-                //         },
-                //         {
-                //             "value": "2",
-                //             "text": "some"
-                //         },
-                //         {
-                //             "value": "3",
-                //             "text": "often"
-                //         },
-                //         {
-                //             "value": "4",
-                //             "text": "bad"
-                //         }
-                //     ],
-                //     "rows": [
-                //         {
-                //             "value": "forgetful",
-                //             "text": "forgetful"
-                //         },
-                //         {
-                //             "value": "bladder",
-                //             "text": " bladder trouble"
-                //         },
-                //         {
-                //             "value": "rashes",
-                //             "text": "rashes"
-                //         },
-                //         {
-                //             "value": "gutNoise",
-                //             "text": "loud gut"
-                //         },
-                //         {
-                //             "value": "spam",
-                //             "text": "spam call ring"
-                //         },
-                //         {
-                //             "value": "ringing",
-                //             "text": "ringing noise"
-                //         },
-                //         {
-                //             "value": "weirdNoises",
-                //             "text": "chanting/ mumbling"
-                //         }
-                //     ]
-                // },
-                // {
-                //     "type": "heading",
-                //     "level": 2,
-                //     "id": "beforeBed",
-                //     "content": "Just Before Going to Bed"
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "bedTime",
-                //     "content": `at 7:30 PM an alarm will go off. <br/><br/>
-                //     <ul>
-                //     <li> If you are watching something on your TV, pause it. You can leave it there until tomorrow.</li>
-                //     <li> If you are hungry, eat some crunchies quickly just to get you to sleep.</li>
-                //     <li> If you are in the middle of eating. Quickly finish or just stop around then. You don’t have to eat all of a meal.</li>
-                //     <li> Text Ben that you are getting ready for bed.</li>
-                //     <li> Start getting ready for bed!</li>
-                //     </ul>`,
-                //     "doneContent": "Started getting ready for bed",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "waterBottlesEnd",
-                //     "content": "Did you drink all 4 water bottles?",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "lidocanePatch",
-                //     "content": "Put on your lidocane patch",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "walkClothes",
-                //     "content": "Put on the clothes you will walk in for tomorrow.",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "walkWater",
-                //     "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "startReading",
-                //     "content": `at 8:30 PM Get into bed and start reading<br/><br/>
-                //     <ul>
-                //         <li> Text Ben that you started reading.</li>
-                //     </ul>`,
-                //     "doneContent": "Started Reading",
-                // },
-                // {
-                //     "type": "todo",
-                //     "id": "lightsOut",
-                //     "content": `at 9:30 PM text Ben that you are turining out your lights<br/><br/>
-                //     <ul>
-                //         <li> Turn off your light.</li>
-                //     </ul>`,
-                //     "doneContent": "Lights out",
-                // },
-            ],
-        },
+        //         //     "type": "range",
+        //         //     "id": "dizzy",
+        //         //     "title": "How dizzy did you feel today?",
+        //         //     "0": "none",
+        //         //     "5": "some",
+        //         //     "10": "worst",
+        //         // },
+        //         // {
+        //         //     "type": "matrix",
+        //         //     "id": "other",
+        //         //     "title": "",
+        //         //     "alternateRows": true,
+        //         //     "columns": [
+        //         //         {
+        //         //             "value": "0",
+        //         //             "text": "none"
+        //         //         },
+        //         //         {
+        //         //             "value": "1",
+        //         //             "text": "little"
+        //         //         },
+        //         //         {
+        //         //             "value": "2",
+        //         //             "text": "some"
+        //         //         },
+        //         //         {
+        //         //             "value": "3",
+        //         //             "text": "often"
+        //         //         },
+        //         //         {
+        //         //             "value": "4",
+        //         //             "text": "bad"
+        //         //         }
+        //         //     ],
+        //         //     "rows": [
+        //         //         {
+        //         //             "value": "forgetful",
+        //         //             "text": "forgetful"
+        //         //         },
+        //         //         {
+        //         //             "value": "bladder",
+        //         //             "text": " bladder trouble"
+        //         //         },
+        //         //         {
+        //         //             "value": "rashes",
+        //         //             "text": "rashes"
+        //         //         },
+        //         //         {
+        //         //             "value": "gutNoise",
+        //         //             "text": "loud gut"
+        //         //         },
+        //         //         {
+        //         //             "value": "spam",
+        //         //             "text": "spam call ring"
+        //         //         },
+        //         //         {
+        //         //             "value": "ringing",
+        //         //             "text": "ringing noise"
+        //         //         },
+        //         //         {
+        //         //             "value": "weirdNoises",
+        //         //             "text": "chanting/ mumbling"
+        //         //         }
+        //         //     ]
+        //         // },
+        //         // {
+        //         //     "type": "heading",
+        //         //     "level": 2,
+        //         //     "id": "beforeBed",
+        //         //     "content": "Just Before Going to Bed"
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "bedTime",
+        //         //     "content": `at 7:30 PM an alarm will go off. <br/><br/>
+        //         //     <ul>
+        //         //     <li> If you are watching something on your TV, pause it. You can leave it there until tomorrow.</li>
+        //         //     <li> If you are hungry, eat some crunchies quickly just to get you to sleep.</li>
+        //         //     <li> If you are in the middle of eating. Quickly finish or just stop around then. You don’t have to eat all of a meal.</li>
+        //         //     <li> Text Ben that you are getting ready for bed.</li>
+        //         //     <li> Start getting ready for bed!</li>
+        //         //     </ul>`,
+        //         //     "doneContent": "Started getting ready for bed",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "waterBottlesEnd",
+        //         //     "content": "Did you drink all 4 water bottles?",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "lidocanePatch",
+        //         //     "content": "Put on your lidocane patch",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "walkClothes",
+        //         //     "content": "Put on the clothes you will walk in for tomorrow.",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "walkWater",
+        //         //     "content": "Fill up the small bottle of water for you to take on your walk tomorrow.",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "startReading",
+        //         //     "content": `at 8:30 PM Get into bed and start reading<br/><br/>
+        //         //     <ul>
+        //         //         <li> Text Ben that you started reading.</li>
+        //         //     </ul>`,
+        //         //     "doneContent": "Started Reading",
+        //         // },
+        //         // {
+        //         //     "type": "todo",
+        //         //     "id": "lightsOut",
+        //         //     "content": `at 9:30 PM text Ben that you are turining out your lights<br/><br/>
+        //         //     <ul>
+        //         //         <li> Turn off your light.</li>
+        //         //     </ul>`,
+        //         //     "doneContent": "Lights out",
+        //         // },
+        //     ],
+        // },
         // {
         //     "type": "heading",
         //     "level": 1,
@@ -675,10 +675,10 @@ export const surveyFormat: any = {
         // },
 
 
-        {
-            "type": "Weather",
-            "id": "weather",
-        },
+        // {
+        //     "type": "Weather",
+        //     "id": "weather",
+        // },
 
         { // Add BM
             "type": "events",

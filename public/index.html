@@ -45,7 +45,9 @@
       localStorage.setItem('cacheBuster', JSON.stringify(updatedCacheBusterData));
       localStorage.setItem('cacheBusterLog', JSON.stringify(newLog));
       document.getElementById('cacheBusterOut').innerHTML =
-        JSON.stringify(updatedCacheBusterData, undefined, 2)
+        "<pre>"
+        + JSON.stringify(updatedCacheBusterData, undefined, 2).toString()
+        + "</pre>"
         + "<hr>"
         + `<table class="cacheLog">
             <thead>
@@ -128,17 +130,22 @@
     crossorigin="anonymous"></script> -->
   <hr>
 
-  <div style="opacity: .25;">
-    <pre id="cacheBusterOut">
-      nothing yet
-  </pre>
+  <details style="opacity: .25;">
+    <summary>Debug</summary>
 
+    <div id="cacheBusterOut">
+      nothing yet
+    </div>
 
     <button onclick="window.clearCacheBusterData()">Clear Cache Buster Data</button>
 
-    <script>
-      updatedCacheBusterData({ "Script": new Date().toLocaleString() })
-    </script>
+  </details>
+
+
+
+  <script>
+    updatedCacheBusterData({ "Script": new Date().toLocaleString() })
+  </script>
   </div>
 </body>
 

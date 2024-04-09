@@ -5,6 +5,7 @@ import ErrorPage from './error-page';
 import App, {
   loader as appLoader,
 } from './App';
+import Weather from './components/weather/Weather';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,10 @@ const router = createBrowserRouter([
         loader: appLoader,
       },
     ],
-  },
+  }, {
+    path: "/weather",
+    element: <Weather elementData />,
+  }
 ]);
 
 const container = document.getElementById('app');
