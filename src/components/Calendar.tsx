@@ -10,6 +10,10 @@ import React from 'react';
 const defaultShow = (new URLSearchParams(window.location.search)).get("cal") !== null ? true : false;
 const SoonIsHours = 8
 
+const sortEvents = (a: EventApi, b: EventApi) => {
+    return (a?.start?.getTime() ?? 0) - (b?.start?.getTime() ?? 0);
+};
+
 const FullCalendarMemo = React.memo((props: any) => {
     // Your FullCalendar configuration here
     return <FullCalendar {...props} />;
@@ -39,19 +43,18 @@ export default function Calendar({ elementData }: {
 
     const soon = events?.filter((event: EventApi) => {
         return event.start && event.start >= now && event.start <= DisplayUntilWhen
-    })
+    }).sort(sortEvents)
 
     const hapeningNow = events?.filter((event: EventApi) => {
-        return event.start && event.end && event.start <= now && event.end >= now
-    })
+        return event.start && event.end && event.start <= now && event.end >= now;
+    }).sort(sortEvents);
 
     useEffect(() => {
         const id = setInterval(() => {
             const newNow = new Date();
             setNow((n) => { return newNow });
         }, 1000)
-        return () => { clearInterval(id) }
-            ;
+        return () => { clearInterval(id) };
     }, []);
 
     function calcDescriptionOfTimeUntil(when: Date | undefined | null, now: Date = new Date()) {
@@ -96,6 +99,9 @@ export default function Calendar({ elementData }: {
                     {
                         soon?.map((event: EventApi) =>
                             <tr key={event.title}>
+                                <td>
+                                    {event?.start?.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })}
+                                </td>
                                 <td >
                                     {calcDescriptionOfTimeUntil(event?.start, now)}
                                 </td>
