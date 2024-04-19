@@ -87,6 +87,9 @@ export default function Calendar({ elementData }: {
                         hapeningNow?.map((event: EventApi) =>
                             <tr key={event.title}>
                                 <td>
+                                    {event?.start?.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })}
+                                </td>
+                                <td>
                                     Hapening NOW!
                                 </td>
                                 <td >
