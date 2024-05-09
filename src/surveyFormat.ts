@@ -48,7 +48,7 @@ export const surveyFormat: any = {
                 {
                     "type": "range",
                     "id": "padFullness",
-                    "title": "How full was your pad when you looked? If it is dry, leave it on to save money?",
+                    "title": "What was the fullest your pad was this morning?",
                     "length": 5,
                     "0": "dry",
                     "1": "dribble",
