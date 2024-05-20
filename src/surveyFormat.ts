@@ -180,10 +180,13 @@ export const surveyFormat: any = {
                     "id": "waterBottlesStart",
                     "content": `
                     WATER:
-                    <ul>
+                    <ol>
                     <li>You keep remembering the wrong thing so follow these instructions <b>EXACTLY<b>.</li>
-                    <li>Use the <B>BLACK BOTTLE CARRIER</b> and carry 5 cups with lids to the bathroom.</li>
-                    <li>Fill them ALL and put the lids back on before carrying the back in the <b>black bottle carrier<b>.</li>`,
+                    <li>Get the <B>BLACK BOTTLE CARRIER</b></li>
+                    <li>Put all 5 cups with lids in the <B>BLACK BOTTLE CARRIER</b></li>
+                    <li>carry 5 cups with lids to the bathroom.</li>
+                    <li>Fill them ALL and put the lids back on before carrying the back.</li>
+                    </ol>`,
                 },
                 // {
                 //     "type": "todo",
