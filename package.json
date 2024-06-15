@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "install-all": "yarn install",
+    "install-all": "npm install",
     "test": "react-scripts test"
   },
   "eslintConfig": {
